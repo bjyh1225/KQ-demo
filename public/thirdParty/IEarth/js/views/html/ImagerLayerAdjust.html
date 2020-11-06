@@ -1,0 +1,106 @@
+<style>
+    #toolbar {
+        background: rgba(42, 42, 42, 0.8);
+        padding: 3px;
+        border-radius: 4px;
+        margin: 0;
+        padding: 0;
+    }
+
+    #toolbar input {
+        vertical-align: middle;
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+</style>
+<div id="toolbar">
+    <table style="width:100%">
+        <tbody >
+            <tr>
+                <td style="width: 80px;text-align: center">{{titles.brightness}}</td>
+                <td >
+                    <input type="range" min="0" max="3" step="0.02" :onchange="AdjustLayerAttribute('brightness')"  v-model="imagerAttribute.alpha">
+                </td>
+                <td style="width: 40px;">
+                    <input type="text" style="border-radius: 4px;height: 30px; background-color: #fff;margin-right: 10px;" size="5" v-model="imagerAttribute.alpha">
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 80px;text-align: center">{{titles.contrast}}</td>
+                <td>
+                    <input type="range" min="0" max="3" step="0.02" :onchange="AdjustLayerAttribute('contrast')" v-model="imagerAttribute.contrast">
+                </td>
+                <td style="width: 40px;">
+                    <input type="text" style="border-radius: 4px;height:30px;background-color: #fff;margin-right: 10px;" size="5" v-model="imagerAttribute.contrast">
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 80px;text-align: center">{{titles.hue}}</td>
+                <td>
+                    <input type="range" min="0" max="3" step="0.02" :onchange="AdjustLayerAttribute('hue')"  v-model="imagerAttribute.hue">
+                </td>
+                <td style="width: 40px;">
+                    <input type="text" style="border-radius: 4px;height:30px;background-color: #fff;margin-right: 10px;" size="5" v-model="imagerAttribute.hue">
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 80px;text-align: center">{{titles.saturation}}</td>
+                <td>
+                    <input type="range" min="0" max="3" step="0.02" :onchange="AdjustLayerAttribute('saturation')" v-model="imagerAttribute.saturation">
+                </td>
+                <td style="width: 40px">
+                    <input type="text" style="border-radius: 4px;height:30px;background-color: #fff;margin-right: 10px;" size="5" v-model="imagerAttribute.saturation">
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 80px;text-align: center">{{titles.gamma}}</td>
+                <td>
+                    <input type="range" min="0" max="3" step="0.02" :onchange="AdjustLayerAttribute('gamma')" v-model="imagerAttribute.gamma">
+                </td>
+                <td style="width: 40px;">
+                    <input type="text" style="border-radius: 4px;height:30px;background-color: #fff;margin-right: 10px" size="5" v-model="imagerAttribute.gamma">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- <div id="toolbar">
+  <table>
+      <tbody><tr>
+          <td>Brightness</td>
+          <td>
+              <input type="range" min="0" max="3" step="0.02" v-model="imagerAttribute.brightness">
+              <input type="text" size="5" v-model="imagerAttribute.brightness">
+          </td>
+      </tr>
+      <tr>
+          <td>Contrast</td>
+          <td>
+              <input type="range" min="0" max="3" step="0.02" v-model="imagerAttribute.contrast">
+              <input type="text" size="5" v-model="imagerAttribute.contrast">
+          </td>
+      </tr>
+      <tr>
+          <td>Hue</td>
+          <td>
+              <input type="range" min="0" max="3" step="0.02" v-model="imagerAttribute.hue">
+              <input type="text" size="5" v-model="imagerAttribute.hue">
+          </td>
+      </tr>
+      <tr>
+          <td>Saturation</td>
+          <td>
+              <input type="range" min="0" max="3" step="0.02" v-model="imagerAttribute.saturation">
+              <input type="text" size="5" v-model="imagerAttribute.saturation">
+          </td>
+      </tr>
+      <tr>
+          <td>Gamma</td>
+          <td>
+              <input type="range" min="0" max="3" step="0.02" v-model="imagerAttribute.gamma">
+              <input type="text" size="5" v-model="imagerAttribute.gamma">
+          </td>
+      </tr>
+    </tbody>
+  </table> -->
+</div>

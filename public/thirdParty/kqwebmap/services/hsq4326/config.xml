@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config custom="0">
+  <theme name="large-blue"/>
+  <map id="map" min_scale_id="0" full_extent="114.167899653714 30.383607632199 114.63462462531 30.69607384338769 " init_extent="114.167899653714 30.383607632199 114.63462462531 30.69607384338769 ">
+    <scales>
+      <scale id="0">0.0000009999999999999999547481</scale>
+      <scale id="1">0.0000019999999999999999094962</scale>
+      <scale id="2">0.0000039999999999999998189924</scale>
+      <scale id="3">0.0000079999999999999996379849</scale>
+      <scale id="4">0.0000156250000000000003252607</scale>
+      <scale id="5">0.0000312500000000000006505213</scale>
+      <scale id="6">0.0000625000000000000013010426</scale>
+      <scale id="7">0.0001250000000000000026020852</scale>
+      <scale id="8">0.0002500000000000000052041704</scale>
+      <scale id="9">0.0005000000000000000104083409</scale>
+    </scales>
+    <projection>
+      <prj>GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433],AUTHORITY["EPSG",4326]]&#xd;
+</prj>
+      <proj4>+proj=longlat +datum=WGS84 +no_defs </proj4>
+    </projection>
+  </map>
+  <controls custom="1">
+    <control type="mainmenu"/>
+    <control type="plotting" position="topleft"/>
+    <control type="sidebar" init_open_id="layers" position="topleft">
+      <subcontrol type="tree" id="controlTree"/>
+      <subcontrol type="advanced" id="controlAdvancedQuery"/>
+      <subcontrol type="overlay" id="controlOverlayAnalysis"/>
+      <subcontrol type="featureImport" id="controlFeatureImport" is_add="1" is_delete="1" is_update="1"/>
+      <subcontrol type="bookmark" id="controlBookmark"/>
+      <subcontrol type="setting" id="controlSetting"/>
+    </control>
+    <control type="draw" import_export="1" position="topleft"/>
+    <control type="styleeditor" position="topleft"/>
+    <control type="toolbar" position="topright">
+      <subcontrol type="zoom_in"/>
+      <subcontrol type="zoom_out"/>
+      <subcontrol type="roaming"/>
+      <subcontrol type="forward-map"/>
+      <subcontrol type="backward-map"/>
+      <subcontrol type="full-map"/>
+      <subcontrol type="drawing"/>
+      <subcontrol type="info-query"/>
+      <subcontrol type="network-analysis" is_trace_back="1" is_optimal_path="1" is_traveling_salesman_problem="1"/>
+      <subcontrol type="raster-image-analysis"/>
+    </control>
+    <control type="zoom" fullscreen="1" position="topright"/>
+    <control type="measureseparate" position="topright"/>
+    <control type="compare" position="topright"/>
+    <control type="searchlight" light_size="256" position="topright"/>
+    <control type="sidebyside" position="topright"/>
+    <control type="screenshot" position="topright"/>
+    <control type="print" position="topright"/>
+    <control type="setlocation" position="topright"/>
+    <control type="coordinates" decimals="2" position="bottomleft" label_x="经度" label_y="纬度" is_project="1"/>
+    <control type="scale" position="bottomleft"/>
+    <control type="attribution" img="../../images/logo.png" label="苍穹数码" url="http://www.kanq.com.cn" tooltip="苍穹数码"/>
+  </controls>
+  <tree label="图层">
+    <sources is_ipmapping="1">
+      <source type="kqmapping" url="http://172.16.1.174:8699/KQGis/rest/services/hsq4326" name="source0"/>
+    </sources>
+    <layers id="layers">
+      <layer is_dynamic="0" type="sl" opacity="1" is_building="0" id="1" label="洪山区_行政区" is_network_analysis="0" icon="polygon" min_standard_scale="0.0000000001000000000000000036" layer_extent="114.1678996537140022837775177322 30.3836076321989985160598735092 114.6346246253100105150224408135 30.6960738433876940689515322447" tooltip_forefather="洪山区_行政区" src_name="source0"/>
+    </layers>
+  </tree>
+</config>

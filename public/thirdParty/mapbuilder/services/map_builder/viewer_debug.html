@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>KQWebMap Example</title>
+
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <link href="../../dist/kqmaploading.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../../dist/kqbuildercss.js"></script>
+
+    <!--<script src="./window/analysis/common.js"></script>-->
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<!-- Side Bar -->
+<div id="buildersidebar" class="buildersidebar collapsed">
+    <!-- Nav tabs -->
+    <div class="buildersidebar-tabs">
+        <ul role="tablist">
+            <li class="nav-icon-top">
+                <a href="#home" role="tab">
+                    <div id="builder-title-image" class="slide-link"><span class="iconfont icon-builder-logo"></span>
+                    </div>
+                    <div class="slide-link"><span class="nav-icon-font iconfont icon-menu-unfold"></span></div>
+                </a>
+            </li>
+            <li class="nav-icon">
+                <a href="#layers" role="tab" class="nav-icon-content">
+                    <span class="nav-icon-font iconfont icon-layers"></span>
+                    <span class="nav-icon-name">图层</span>
+                </a>
+            </li>
+            <li class="nav-icon">
+                <a href="#analysis" role="tab" class="nav-icon-content">
+                    <span class="nav-icon-font iconfont icon-map-builder-analysis"></span>
+                    <span class="nav-icon-name">工具</span>
+                </a>
+            </li>
+            <li class="nav-icon">
+                <a href="#settings" role="tab" class="nav-icon-content">
+                    <span class="nav-icon-font iconfont icon-setting"></span>
+                    <span class="nav-icon-name">设置</span>
+                </a>
+            </li>
+        </ul>
+        <div class="nav-space-left"></div>
+        <ul role="tablist">
+            <li class="nav-icon nav-icon-bottom user-info">
+                <a role="tab">
+                    <span class="nav-icon-font iconfont icon-user"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Tab panes -->
+    <div class="buildersidebar-content">
+        <div class="buildersidebar-pane" id="home">
+        </div>
+
+        <div class="buildersidebar-pane" id="layers">
+            <div class="sidebar-layers-manager" style="height: 100%">
+                <h1 class="buildersidebar-header">
+                    <p id="current-project-name" contenteditable="true"
+                       style="width: 145px; height: 32px; line-height: 32px; display:inline-block; vertical-align: middle; text-overflow: ellipsis; white-space:nowrap; overflow:hidden;"
+                       onkeydown='if(event.keyCode==13) { //输入框屏蔽回车键，回车后失去焦点
+                           this.blur();
+                           return false;
+                       }'>
+                        无标题</p>
+                    <div class="saveToolBar"></div>
+                </h1>
+                <div class="buildersidebar-body">
+                    <div tabindex="-1" class="add-layer-container">
+                        <div class="add-layer-tag">
+                            <span class="fa fa-plus"></span>
+                            <span>添加图层</span>
+                        </div>
+
+                        <div class="add-layer-list" style="display: none;" tabindex="1">
+                            <div class="add-layer-list-item" id="add-layer-list-item-file"><span>通过远程文件添加</span></div>
+                            <div class="add-layer-list-item" id="add-layer-list-item-database"><span>通过数据服务添加</span>
+                            </div>
+                            <div class="add-layer-list-item" id="add-layer-list-item-web"><span>通过Web添加</span></div>
+                            <div class="add-layer-list-item" id="add-layer-list-item-hand-draw"><span>创建注记图层</span>
+                            </div>
+                        </div>
+                        <div id="load-file-layer-container"></div>
+                        <div id="load-database-layer-container"></div>
+                        <div id="load-web-layer-container"></div>
+                        <div id="project-download-container"></div>
+                        <div id="project-saveas-container"></div>
+                        <div id="account-info-container"></div>
+                    </div>
+                    <div class="layers-container" style="height: 100%">
+                        <div style="position: relative; overflow: hidden; width: 100%; height: 100%;">
+                            <div class="vector-layers layer-sort-container" id="vector-layers-container"></div>
+                            <div class="web-layers layer-sort-container"></div>
+                            <div class="base-layers layer-sort-container">
+                                <li class="" data-type="geoq" data-sub-type="blue">
+                                    <div onmouseenter="onmouseenterHandleBaseMap(this)"
+                                         onmouseleave="onmouseleaveHandleBaseMap(this)"
+                                         style="height: 100%; width: 100%">
+                                        <div class="first-line">
+                                            <div class="layer-icon">
+                                                <img src="./images/amap.png"/>
+                                            </div>
+                                            <span class="editable-span title" title="智图蓝色">
+                      <span style="display: inline-block;">智图蓝色</span>
+                        <input value="智图蓝色" style="display: none;"/>
+                      </span>
+                                            <span class="fa fa-eye" style="opacity: 0;"
+                                                  onclick="toggleBaseMapVisible(this)"></span>
+                                        </div>
+                                        <div class="secound-line" style="display: none;">
+                                            <!--<span class="fa fa-arrows-alt" style="display: inline-block;" onclick="triggerEventHandleBuilder('builder_full_map', this, event)"></span>-->
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-content-panel" style="display: none;">
+                <h1 class="buildersidebar-header">
+                    <span class="buildersiderbar-back"><i class="fa fa-mail-reply"></i></span>
+                    <span class="layer-editor-title-name">line-layer-test-name</span>
+                    <span class="buildersidebar-close"><i class="fa fa-caret-left"></i></span>
+                </h1>
+                <div class="content-editor-pane content-editor-pane-point" style="display: none;"></div>
+                <div class="content-editor-pane content-editor-pane-line" style="display: none;"></div>
+                <div class="content-editor-pane content-editor-pane-polygon" style="display: none;"></div>
+                <div class="content-editor-pane content-editor-pane-basemap" style="display: none;"></div>
+                <div class="content-editor-pane content-editor-pane-hand-draw" style="display: none;"></div>
+            </div>
+        </div>
+        <div class="buildersidebar-pane" id="analysis">
+            <div class="analysis-main" style="display: block; height: 100%"></div>
+        </div>
+        <div class="buildersidebar-pane" id="settings"></div>
+    </div>
+
+    <!-- buildersidebar-user-info -->
+    <div class="buildersidebar-user-info"></div>
+
+    <!-- buildersidebar-searchbar -->
+    <div class="builder-searchbar"></div>
+
+    <!-- CreateFirstMapDialog-->
+    <div id="create-first-map"></div>
+
+</div>
+
+
+<div class="buildersidebar-pane" id="bottom-menu">
+    <h1 class="buildersidebar-header">用户<span class="buildersidebar-close"><i class="fa fa-caret-left"></i></span>
+    </h1>
+</div>
+
+<div id="map" style="height: 100%;" class="loading">
+    <div class="kqmaploadingtxt">Loading...</div>
+
+    <div id="hand-draw-edit-dialog" style="display: none">
+        <div id="hand-draw-edit-content"></div>
+    </div>
+
+    <div id="hand-draw-text-edit-dialog" style="display: none">
+        <textarea class="content" cols="30" rows="10" style="height:440px"></textarea>
+    </div>
+
+    <div id="empty-window"></div>
+    <div id="confirm-div"></div>
+</div>
+
+<!--<script>L_NO_TOUCH = true;</script>-->
+<script type="text/javascript" src="../../dist/jquery.min.js"></script>
+<script type="text/javascript" src="../../dist/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../dist/kqlibs.js"></script>
+<script type="text/javascript" src="../../dist/map-example_3.js"></script>
+<script type="text/javascript" src="../../dist/other.js"></script>
+<script type="text/javascript" src="../../dist/kqbuilder-debug.js"></script>
+<!--<script src="../../../src/builder/viewer.js"></script>-->
+
+<script>
+
+  $(document).ready(function () {
+    builderInit();
+  });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,306 @@
+[{
+	"id": "document",
+	"name": "图标注记",
+	"version": "1.0"
+},
+{
+	"id": "some-unique-id-222",
+	"name": "iPipeline",
+	"description": "<table class='cesium-infoBox-defaultTable'><tr><td>Name</td><td>iPipeline</td></tr></table>",
+	"billboard": {
+		"image": "resources/symbols/pushpin/wht-pushpin.png",
+        "scale": 1,
+        "color":{
+            "rgba": [255,0,0,255]
+        },
+        "width": "32",
+        "height": "32",
+		"verticalOrigin": "BOTTOM",
+		"distanceDisplayCondition":{
+            "distanceDisplayCondition":[0,1200]
+        },
+        "disableDepthTestDistance":1000000000000
+	},
+	"label": {
+		"fillColor": {
+			"rgba": [255,255,255,255]
+		},
+		"font": "18px Arial, Helvetica",
+		"horizontalOrigin": "LEFT",
+		"verticalOrigin": "BOTTOM",
+		"pixelOffset": {
+			"cartesian2": [18,-5]
+		},
+		"style": "FILL_AND_OUTLINE",
+		"text": "iPipeline",
+		"showBackground": true,
+        "backgroundColor": {
+            "rgba": [166,104,250,185]
+        },
+        "distanceDisplayCondition":{
+            "distanceDisplayCondition":[0,1200]
+        },
+        "disableDepthTestDistance":600
+	},
+	"position": {
+		"cartographicDegrees": [-75.59752,40.03872,23.74]
+	}
+},
+{
+	"id": "some-unique-id-220",
+	"name": "Analytical Graphics",
+	"description": "<table class='cesium-infoBox-defaultTable'><tr><td>Name</td><td>Analytical Graphics</td></tr></table>",
+	"billboard": {
+		"image": "resources/symbols/pushpin/wht-pushpin.png",
+		"scale": 1,
+		"color":{
+            "rgba": [255,255,0, 255]
+        },
+        "width": "32",
+        "height": "32",
+		"verticalOrigin": "BOTTOM",
+		"distanceDisplayCondition":{
+            "distanceDisplayCondition":[0,1200]
+        },
+        "disableDepthTestDistance":1000000000000
+	},
+	"label": {
+		"fillColor": {
+			"rgba": [255,255,255,255]
+		},
+		"font": "18px sans-serif, Arial, Helvetica",
+		"horizontalOrigin": "LEFT",
+		"verticalOrigin": "BOTTOM",
+		"pixelOffset": {
+			"cartesian2": [18,-5]
+		},
+		"style": "FILL_AND_OUTLINE",
+		"text": "Analytical Graphics",
+		"showBackground": true,
+        "backgroundColor": {
+            "rgba": [228,1,255,185]
+        },
+        "distanceDisplayCondition":{
+            "distanceDisplayCondition":[0,1200]
+        },
+        "disableDepthTestDistance":600
+    },
+	"position": {
+		"cartographicDegrees": [-75.5966,40.0386,28.55]
+	}
+},
+{
+	"id": "some-unique-id-224",
+	"name": "HomeNet Automotive",
+	"description": "<table class='cesium-infoBox-defaultTable'><tr><td>Name</td><td>HomeNet Automotive</td></tr></table>",
+	"billboard": {
+		"image": "resources/symbols/pushpin/wht-pushpin.png",
+		"scale": 1,
+		"color":{
+            "rgba": [0,0,255,255]
+        },
+        "width": "32",
+        "height": "32",
+		"verticalOrigin": "BOTTOM",
+		"distanceDisplayCondition":{
+            "distanceDisplayCondition":[0,1200]
+        },
+        "disableDepthTestDistance":1000000000000
+	},
+	"label": {
+		"fillColor": {
+			"rgba": [255,255,255,255]
+		},
+		"font": "18px sans-serif, Arial, Helvetica",
+		"horizontalOrigin": "LEFT",
+		"verticalOrigin": "BOTTOM",
+		"pixelOffset": {
+			"cartesian2": [18,-5]
+		},
+		"style": "FILL_AND_OUTLINE",
+		"text": "HomeNet Automotive",
+		"showBackground": true,
+		"backgroundColor": {
+			"rgba": [0,0,255,185]
+		},
+		"distanceDisplayCondition":{
+            "distanceDisplayCondition":[0,1200]
+        },
+        "disableDepthTestDistance":600
+	},
+	"position": {
+		"cartographicDegrees": [-75.59715,40.03936,25.50]
+	}
+},
+{
+	"id": "some-unique-id-0010",
+	"name": "Parking Place-1",
+	"description": "<table class='cesium-infoBox-defaultTable'><tr><td>Name</td><td>Parking Place</td></tr></table>",
+	"billboard": {
+		"image": "resources/symbols/shapes/parking_lot.png",
+		"scale": 1,
+		"color":{
+            "rgba": [0,0,255,255]
+        },
+        "width": "24",
+        "height": "24",
+		"verticalOrigin": "BOTTOM",
+		"distanceDisplayCondition":{
+            "distanceDisplayCondition":[0,800]
+        },
+        "disableDepthTestDistance":50
+	},
+	"label": {
+		"fillColor": {
+			"rgba": [255,255,255,255]
+		},
+		"font": "18px sans-serif, Arial, Helvetica",
+		"horizontalOrigin": "LEFT",
+		"verticalOrigin": "BOTTOM",
+		"pixelOffset": {
+			"cartesian2":  [15,0]
+		},
+		"style": "FILL_AND_OUTLINE",
+		"text": "Parking Place",
+		"showBackground": true,
+		"backgroundColor": {
+			"rgba": [1,253,255,185]
+		},
+		"distanceDisplayCondition":{
+            "distanceDisplayCondition":[0,1200]
+        },
+        "disableDepthTestDistance":600
+	},
+	"position": {
+		"cartographicDegrees": [-75.5987,40.03931,5]
+	}
+},
+{
+	"id": "some-unique-id-0011",
+	"name": "Parking Place-2",
+	"description": "<table class='cesium-infoBox-defaultTable'><tr><td>Name</td><td>Parking Place</td></tr></table>",
+	"billboard": {
+		"image": "resources/symbols/shapes/parking_lot.png",
+		"scale": 1,
+		"color":{
+            "rgba": [0,0,255,255]
+        },
+        "width": "24",
+        "height": "24",
+		"verticalOrigin": "BOTTOM",
+		"distanceDisplayCondition":{
+            "distanceDisplayCondition":[0,800]
+        },
+        "disableDepthTestDistance":50
+	},
+	"label": {
+		"fillColor": {
+			"rgba": [255,255,255,255]
+		},
+		"font": "18px sans-serif, Arial, Helvetica",
+		"horizontalOrigin": "LEFT",
+		"verticalOrigin": "BOTTOM",
+		"pixelOffset": {
+			"cartesian2": [15,0]
+		},
+		"style": "FILL_AND_OUTLINE",
+		"text": "Parking Place",
+		"showBackground": true,
+		"backgroundColor": {
+			"rgba": [255,0,0,185]
+		},
+		"distanceDisplayCondition":{
+            "distanceDisplayCondition":[0,1200]
+        },
+        "disableDepthTestDistance":600
+	},
+	"position": {
+		"cartographicDegrees": [-75.59793,40.0401,6.5]
+	}
+},
+{
+	"id": "some-unique-id-0012",
+	"name": "Parking Place-3",
+	"description": "<table class='cesium-infoBox-defaultTable'><tr><td>Name</td><td>Parking Place</td></tr></table>",
+	"billboard": {
+		"image": "resources/symbols/shapes/parking_lot.png",
+		"scale": 1,
+		"color":{
+            "rgba": [0,0,255,255]
+        },
+        "width": "24",
+        "height": "24",
+		"verticalOrigin": "BOTTOM",
+		"distanceDisplayCondition":{
+            "distanceDisplayCondition":[0,800]
+        },
+        "disableDepthTestDistance":50
+	},
+	"label": {
+		"fillColor": {
+			"rgba": [255,255,255,255]
+		},
+		"font": "18px sans-serif, Arial, Helvetica",
+		"horizontalOrigin": "LEFT",
+		"verticalOrigin": "BOTTOM",
+		"pixelOffset": {
+			"cartesian2": [15,0]
+		},
+		"style": "FILL_AND_OUTLINE",
+		"text": "Parking Place",
+		"showBackground": true,
+		"backgroundColor": {
+			"rgba": [0,255,79,185]
+		},
+		"distanceDisplayCondition":{
+            "distanceDisplayCondition":[0,1200]
+        },
+        "disableDepthTestDistance":600
+	},
+	"position": {
+		"cartographicDegrees": [-75.59581,40.03872,9.0]
+	}
+},
+{
+	"id": "some-unique-id-0013",
+	"name": "Parking Place-4",
+	"description": "<table class='cesium-infoBox-defaultTable'><tr><td>Name</td><td>Parking Place</td></tr></table>",
+	"billboard": {
+		"image": "resources/symbols/shapes/parking_lot.png",
+		"scale": 1,
+		"color":{
+            "rgba": [0,0,255,255]
+        },
+        "width": "24",
+        "height": "24",
+		"verticalOrigin": "BOTTOM",
+		"distanceDisplayCondition":{
+            "distanceDisplayCondition":[0,800]
+        },
+        "disableDepthTestDistance":100
+	},
+	"label": {
+		"fillColor": {
+			"rgba": [255,255,255,255]
+		},
+		"font": "18px sans-serif, Arial, Helvetica",
+		"horizontalOrigin": "LEFT",
+		"verticalOrigin": "BOTTOM",
+		"pixelOffset": {
+			"cartesian2": [15,0]
+		},
+		"style": "FILL_AND_OUTLINE",
+		"text": "Parking Place",
+		"showBackground": true,
+		"backgroundColor": {
+			"rgba": [0,245,255,185]
+		},
+		"distanceDisplayCondition":{
+            "distanceDisplayCondition":[0,1200]
+        },
+        "disableDepthTestDistance":600
+	},
+	"position": {
+		"cartographicDegrees": [-75.59804,40.03823,7.35]
+	}
+}]

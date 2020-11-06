@@ -1,0 +1,64 @@
+<style>
+  
+  /*#bookmark-div {*/
+    /*height: 100%;*/
+  /*}*/
+
+  #bookmark-sidebar {
+    /*height: calc(100% - 90px);*/
+    height: 100%;
+  }
+
+  .sidebar-content-bookmark {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-right: 14px;
+    padding-bottom: 20px;
+  
+    position: absolute;
+    top: 32px;
+    right: -1px;
+    bottom: 0px;
+    left: 10px;
+  }
+  
+  #bookmark-div {
+    height: 100%;
+  }
+  
+  #bookmark-add-button {
+    min-width: 80px;
+    margin: 12px 8px 10px 8px;
+  }
+
+  #bookmark-record-grid {
+    /*overflow-y: auto;*/
+    /*overflow: auto;*/
+    /*overflow-y: auto;*/
+  
+    /*height: calc(100% - 55px);*/
+  }
+
+  #bookmark-record-grid > .k-grid-content {
+    height: calc(100% - 20px);
+    overflow-y: scroll;
+  }
+  
+</style>
+
+
+<div id="bookmark-div">
+
+  <label id="bookmark-scale-label" style="float:left; margin: 5px 0 0 0;" ></label>
+  <!--<div id="bookmark-listview" class="marker-listview"></div>-->
+  <div id="bookmark-control-buttons-div">
+    <button id="bookmark-add-button" class="k-primary" type="button">__add-bookmark__</button>
+    <!--<button id="bookmark-delete-button" type="button">__delete-bookmark__</button>-->
+  </div>
+  
+  <div id="bookmark-record-grid"></div>
+  <!--<div>-->
+    <!--<button id="bookmark-select-button" class="k-primary" type="button">__select-bookmark__</button>-->
+  <!--</div>-->
+
+</div>

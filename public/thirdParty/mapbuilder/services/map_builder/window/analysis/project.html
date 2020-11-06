@@ -1,0 +1,52 @@
+<div class="analysis-item-body-project">
+    <div class="parameters">
+        <div class="parameters-container">
+            <div>
+                <div class="parameter-src-layers"></div>
+                <!--<div class="parameter-geo-srs"></div>-->
+                <div class="parameter-out-srs"></div>
+                <div class="parameter-result"></div>
+            </div>
+        </div>
+
+        <div class="toolbox-scrollbar">
+            <div style="display: none"></div>
+        </div>
+    </div>
+
+    <div class="analysis-item-run"></div>
+</div>
+
+<script>
+
+  $(document).ready(function () {
+    let selector = ".analysis-item-body-project";
+    let mapView = KQ.Builder.BuilderProject.getInstance().mapView;
+
+    KQ.Control.Waiting.show(mapView._getMap(), 'pin', 'meter');
+
+    setTimeout(function () {
+      try {
+        // 进行初始化
+        createParametersHtml(selector);
+        initControls(selector);
+
+        // 添加tips
+        $(".analysis-item-body-project .parameter-src-layers label").append('<div class="add-information"></div>');
+        $(".analysis-item-body-project .parameter-out-srs label").append('<div class="add-information"></div>');
+        KQ.Builder.BuilderUi.InformationTips.getInstance().init(selector + " .parameter-src-layers .add-information", KQ.Local.Builder.layerHelp.projectSrcLayerTips());
+        KQ.Builder.BuilderUi.InformationTips.getInstance().init(selector + " .parameter-out-srs .add-information", KQ.Local.Builder.layerHelp.projectOutSrsTips());
+
+        /* 滚动条 */
+        toolBoxScrollBar(selector);
+
+        // 进行投影格式转换接口的事件绑定
+        KQ.Builder.BuilderToolbox.BuilderProject.getInstance().init(selector);
+
+      } finally {
+        KQ.Control.Waiting.close();
+      }
+    }, 50);
+  })
+
+</script>

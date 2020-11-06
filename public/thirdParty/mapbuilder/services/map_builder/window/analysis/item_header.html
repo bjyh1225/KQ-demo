@@ -1,0 +1,68 @@
+<!--<img class="analysis-item-title-img" fontClass="icon-analysis-overlay">-->
+<span class="analysis-item-title-iconfont iconfont"></span>
+<span class="analysis-item-title-name">聚合点</span>
+<span class="analysis-item-title-return"><i class="fa fa-mail-reply"></i></span>
+
+
+<style>
+    .analysis-item-header {
+        height: 52px;
+        width: 292px;
+        line-height: 52px;
+
+        color: #fff;
+        border-bottom: 1px solid rgba(255, 255, 255, .15);
+        background: #152242;
+
+        padding: 0 10px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .analysis-item-title-return {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 52px;
+        height: 72px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .analysis-item-title-iconfont {
+        position: absolute;
+        top: 0;
+        left: 10px;
+    }
+
+    .analysis-item-title-name {
+        display: table-caption;
+        font-size: 14px;
+        color: #fff;
+        /*overflow: hidden;*/
+        /*white-space: nowrap;*/
+        /*text-overflow: ellipsis;*/
+        padding-left: 50px;
+    }
+
+</style>
+
+<script>
+
+  $(document).ready(function () {
+    $(".analysis-item-title-return").click(function () {
+      $(this).closest("div[class*='analysis-item']").css("display", "none");    // 隐藏自身页面
+      $(".analysis-main").css("display", "block");                              // 显示主页面
+
+      let buildProject = KQ.Builder.BuilderProject.getInstance();
+      let geoJSON = buildProject.analysis_result[buildProject.setting.analysisCurrentPage];
+
+      if (geoJSON) {
+        geoJSON.remove();
+      }
+
+      buildProject.setting.analysisCurrentPage = "";
+    })
+  })
+
+</script>

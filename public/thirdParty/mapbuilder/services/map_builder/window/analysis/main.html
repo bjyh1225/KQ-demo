@@ -1,0 +1,239 @@
+<h1 class="buildersidebar-header">工具
+    <span class="buildersidebar-close">
+        <i class="fa fa-caret-left"></i>
+    </span>
+</h1>
+
+<div class="buildersidebar-body">
+    <div class="analysis-content">
+        <div class="panelbar"></div>
+    </div>
+</div>
+
+<style>
+    .analysis-content .panelbar {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .analysis-content .panelbar .item {
+        padding: 0 10px;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .analysis-content .panelbar .item:hover {
+        background-color: #495572;
+    }
+
+    .analysis-content .panelbar .item .add-information {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 14px;
+      height: 14px;
+      color: black;
+      background-color: #f0ad4e;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .analysis-content .panelbar .k-item .k-header {
+        padding-left: 10px;
+        font-family: FontAwesome;
+        font-size: 1.1em;
+    }
+
+    .analysis-content .panelbar {
+        background: rgba(27, 43, 82, .86);
+    }
+
+    .analysis-content .panelbar .k-item > div {
+        background: rgba(0, 0, 0, 0);
+    }
+
+    .analysis-content .k-panelbar .k-item {
+        border: none;
+    }
+
+    .analysis-content .panelbar .item h2 {
+        font-family: FontAwesome;
+        font-size: 1em;
+        font-weight: normal;
+        padding-top: 10px;
+    }
+
+    .analysis-content .panelbar .item span {
+        color: #45bde6;
+        font-size: 24px;
+        display: inline-block;
+        margin: 0px 15px 0px 5px;
+    }
+
+    .analysis-content .panelbar .details {
+        display: inline-block;
+        vertical-align: top;
+    }
+</style>
+
+
+<script>
+
+  // panelbar的源数据
+  let dataSource = [
+    {
+      catalog: "几何服务",
+      items: [
+        {type: "overlay", title: "叠置分析", fontClass: "icon-analysis-overlay"},
+        {type: "difference", title: "差异分析", fontClass: "icon-analysis-difference"},
+        {type: "project", title: "坐标投影转换", fontClass: "icon-analysis-project"},
+        {type: "projectsystem", title: "投影系统转换", fontClass: "icon-analysis-projectsystem"},
+        {type: "sym_difference", title: "对称差", fontClass: "icon-analysis-symdifference"},
+        {type: "geometry_check", title: "图形检查", fontClass: "icon-analysis-geometrycheck"},
+        {type: "union", title: "图形合并", fontClass: "icon-analysis-union"},
+        // {type: "area", title: "面积长度计算", fontClass: "icon-analysis-area"},
+        {type: "geometry_attribute", title: "几何属性", fontClass: "icon-analysis-geometry-attribute"},
+        {type: "buffer", title: "缓冲分析", fontClass: "icon-analysis-buffer"},
+      ]
+    },
+
+    {
+      catalog: "通用查询服务",
+      items: [
+        {type: "analysis_server_difference", title: "差异分析", fontClass: "icon-analysis-difference"},
+        {type: "analysis_server_differenceext", title: "多层差异分析", fontClass: "icon-analysis-difference"},
+        {type: "analysis_server_overlap", title: "叠置分析", fontClass: "icon-analysis-overlay"},
+        {type: "analysis_server_overlapext", title: "多层叠置分析", fontClass: "icon-analysis-overlay"},
+        {type: "analysis_server_fields", title: "表字段查询", fontClass: "icon-analysis-fields"},
+        {type: "analysis_server_query", title: "空间查询", fontClass: "icon-analysis-spatial"},
+        {type: "analysis_server_summary", title: "汇总查询", fontClass: "icon-analysis-sumstatistics"},
+        {type: "analysis_server_execute", title: "SQL查询", fontClass: "icon-analysis-sql"},
+      ]
+    },
+
+    {
+      catalog: "空间统计",
+      items: [
+        {type: "developing", title: "空间自相关分析", fontClass: "icon-analysis-autocorrelation"},
+        {type: "developing", title: "聚类分析", fontClass: "icon-analysis-clustering"},
+        {type: "developing", title: "汇总统计分析", fontClass: "icon-analysis-sumstatistics"},
+      ]
+    },
+
+    {
+      catalog: "要素查询",
+      items: [
+        {type: "developing", title: "叠置分析", fontClass: "icon-analysis-overlay"},
+        {type: "developing", title: "差异分析", fontClass: "icon-analysis-difference"},
+        {type: "developing", title: "多层叠置分析", fontClass: "icon-analysis-overlay"},
+        {type: "developing", title: "多层差异分析", fontClass: "icon-analysis-difference"},
+        {type: "developing", title: "空间查询", fontClass: "icon-analysis-difference"},
+        {type: "developing", title: "查询汇总", fontClass: "icon-analysis-difference"},
+      ]
+    }
+  ];
+
+  // 拼接每个item的html
+  function _createItemHtml() {
+    let html = '';
+
+    for (let i = 0; i < dataSource.length; ++i) {
+      let data = dataSource[i];
+      let items = data.items;
+
+      html += '<li><span>' + data.catalog + '</span><div>';
+
+      for (let j = 0; j < items.length; ++j) {
+        let item = items[j];
+
+        html += '<div class="item ' + item.type + '" data-item-attrs="' + item.type + ' ' + item.title + ' ' + item.fontClass + '">';
+        html += '<span class="iconfont ' + item.fontClass + '"></span>';
+        html += '<div class="details"><h2>' + item.title + '</h2></div>';
+        html += '<div class="add-information"></div></div>';
+      }
+
+      html += '</div></li>';
+    }
+
+    return html;
+  }
+
+  $(document).ready(function () {
+    setTimeout(function () {
+      // 插入item的html
+      $(".analysis-content .panelbar").append(_createItemHtml());
+
+      // 生成panelbar并展开第一项
+      var panelBar = $(".analysis-content .panelbar").kendoPanelBar({
+        expandMode: "single"
+      }).data("kendoPanelBar");
+      panelBar.select($(".analysis-content .panelbar li").eq(0));
+      panelBar.expand($(".analysis-content .panelbar li").eq(0));
+
+      $(".analysis-content .panelbar .item").click(function () {
+        // 隐藏主页
+        $("#analysis .analysis-main").css("display", "none");
+
+        // 属性数组  0: type 1: title 2: fontClass
+        let attrs = $(this).data("item-attrs").split(" ");
+        let item_class = "analysis-item" + attrs[0];
+        let isHtmlLoad = $("#analysis ." + item_class).length > 0;
+
+        // 判断当前html片段是否加载过
+        if (!isHtmlLoad) {
+          $("#analysis").append('<div class=' + item_class + '><h1 class="analysis-item-header"></h1><div class="analysis-item-body" style="background-color: rgba(27,43,82,.86)"></div></div>');
+
+          // 加载header
+          $("#analysis ." + item_class + " .analysis-item-header").load("./window/analysis/item_header.html", function () {
+            $("#analysis ." + item_class + " .analysis-item-header .analysis-item-title-iconfont").addClass(attrs[2]);
+            $("#analysis ." + item_class + " .analysis-item-header .analysis-item-title-name").text(attrs[1]);
+          });
+
+          // 加载body
+          $("#analysis ." + item_class + " .analysis-item-body").load("./window/analysis/" + attrs[0] + ".html");
+        }
+
+        // 显示页面
+        $("#analysis ." + item_class).css("display", "block");
+
+        let currentPage = ".analysis-item-body-" + attrs[0];
+        let buildProject = KQ.Builder.BuilderProject.getInstance();
+        buildProject.setting.analysisCurrentPage = currentPage;
+
+        // 更新数据
+        if (isHtmlLoad) {
+          KQ.Builder.BuilderCommon.refreshAnalysisLayersControl();
+          let geoJSON = buildProject.analysis_result[currentPage];
+
+          if (geoJSON) {
+            geoJSON.addToMapView(mapView);
+          }
+        }
+      });
+
+      // 添加tips
+      KQ.Builder.BuilderUi.InformationTips.getInstance().init(".item.overlay .add-information", KQ.Local.Builder.analysisHelp.overlayTips());
+      KQ.Builder.BuilderUi.InformationTips.getInstance().init(".item.difference .add-information", KQ.Local.Builder.analysisHelp.differenceTips());
+      KQ.Builder.BuilderUi.InformationTips.getInstance().init(".item.project .add-information", KQ.Local.Builder.analysisHelp.projectTips());
+      KQ.Builder.BuilderUi.InformationTips.getInstance().init(".item.projectsystem .add-information", KQ.Local.Builder.analysisHelp.projectSystemTips());
+      KQ.Builder.BuilderUi.InformationTips.getInstance().init(".item.sym_difference .add-information", KQ.Local.Builder.analysisHelp.symDifferentTips(), 195);
+      KQ.Builder.BuilderUi.InformationTips.getInstance().init(".item.geometry_check .add-information", KQ.Local.Builder.analysisHelp.geometryCheckTips());
+      KQ.Builder.BuilderUi.InformationTips.getInstance().init(".item.union .add-information", KQ.Local.Builder.analysisHelp.unionTips());
+      KQ.Builder.BuilderUi.InformationTips.getInstance().init(".item.geometry_attribute .add-information", KQ.Local.Builder.analysisHelp.geometryAttributeTips(), 235);
+      KQ.Builder.BuilderUi.InformationTips.getInstance().init(".item.buffer .add-information", KQ.Local.Builder.analysisHelp.bufferTips());
+      KQ.Builder.BuilderUi.InformationTips.getInstance().init(".item.analysis_server_difference .add-information", KQ.Local.Builder.analysisHelp.analysisServerDifferenceTip(), 250);
+      KQ.Builder.BuilderUi.InformationTips.getInstance().init(".item.analysis_server_differenceext .add-information", KQ.Local.Builder.analysisHelp.analysisServerDifferenceExtTip(), 320);
+      KQ.Builder.BuilderUi.InformationTips.getInstance().init(".item.analysis_server_overlap .add-information", KQ.Local.Builder.analysisHelp.analysisServerOverlapTip(), 230);
+      KQ.Builder.BuilderUi.InformationTips.getInstance().init(".item.analysis_server_overlapext .add-information", KQ.Local.Builder.analysisHelp.analysisServerOverlapExtTip(), 310);
+      KQ.Builder.BuilderUi.InformationTips.getInstance().init(".item.analysis_server_fields .add-information", KQ.Local.Builder.analysisHelp.analysisServerFieldsTip(), 220);
+      KQ.Builder.BuilderUi.InformationTips.getInstance().init(".item.analysis_server_query .add-information", KQ.Local.Builder.analysisHelp.analysisServerQueryTip(), 210);
+      KQ.Builder.BuilderUi.InformationTips.getInstance().init(".item.analysis_server_summary .add-information", KQ.Local.Builder.analysisHelp.analysisServerSummaryTip(), 210);
+      KQ.Builder.BuilderUi.InformationTips.getInstance().init(".item.analysis_server_execute .add-information", KQ.Local.Builder.analysisHelp.analysisServerExecuteTip(), 210);
+      KQ.Builder.BuilderUi.InformationTips.getInstance().init(".item.developing .add-information", KQ.Local.Builder.analysisHelp.developingTip());
+
+    }, 1000);
+  });
+</script>

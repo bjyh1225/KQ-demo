@@ -1,0 +1,94 @@
+// 默认主题
+$default-theme: ( baseColor:#242424, //基础字体色
+baseBgColor:#3691e9, //基础背景颜色
+baseActiveColor:#3691e9, //基础选中颜色,且运用于系统有颜色的字体
+baseButtonBgColor:#3691e9, //基础按钮背景颜色
+baseButtonBgHoverColor:rgba(54, 145, 233, 0.8), //基础按钮hover背景颜色
+baseButtonColor:#fff, //基础按钮文字颜色
+baseButtonDelBgColor:#f56c6c, //基础删除按钮背景颜色
+baseButtonDelColor:#fff, //基础删除按钮文字颜色
+baseButtonDelHoverColor:rgba(245, 108, 108, 0.8), //基础删除hover背景颜色
+baseButtonLinearColor:#3691e9, //线性按钮基础颜色
+baseButtonLinearHoverColor:#ecf5ff,//线性按钮基础Hover颜色
+indexPageMenuColor:#808080, //首页菜单字体颜色
+manageMenuColor:#fff, //管理页面菜单字体颜色
+manageBorderColor:#EBEEF5, //管理页面边框颜色
+tabBorderColor:#c8ceda, //管理页面tab的边框颜色
+topBannerBgURL:'~img/theme/default/banner/top_banner.jpg', //顶部banner图地址
+/*页码，需要与elementui保持一致，一般只改字体颜色和背景色*/
+paginationBgColor:#f5f5f5, //页码背景颜色
+paginationColor:#242424, //页码字体颜色
+paginationActiveBgColor:#3691e9, //页码选中背景颜色
+paginationActiveColor:#fff, //页码选中字体颜色
+paginationDisableBgColor:#f5f5f5, //页码选中背景颜色
+paginationDisableColor:#c9c9c9, //页码选中字体颜色
+gradientStart:#32a2e7,//渐变色起始
+gradientEnd:#267cec,//渐变色截止
+treeHighLightBgColor:#d8e9fd,//树高亮背景色
+resourcesHoverBgColor:#ecf5ff,//资源列表hover背景色
+homeAppBuildIconUrl:'~img/index/appBuild/theme/defaultTheme/appBuildIcon.png',//首页应用构建icon
+baseKeywordBsColor:#b3d8ff//详情标签样式
+);
+//深蓝色主题
+$navyblue-theme:( baseColor:#242424, //基础字体色
+baseBgColor:#0079c1, //基础背景颜色
+baseActiveColor:#0079c1, //基础选中颜色
+baseButtonBgColor:#0079c1, //基础按钮背景颜色
+baseButtonBgHoverColor:rgba(54, 145, 233, 0.8), //基础按钮hover背景颜色
+baseButtonColor:#fff, //基础按钮文字颜色
+baseButtonDelBgColor:#f56c6c, //基础删除按钮背景颜色
+baseButtonDelColor:#fff, //基础删除按钮文字颜色
+baseButtonDelHoverColor:rgba(245, 108, 108, 0.8), //基础删除hover背景颜色
+baseButtonLinearColor:#0079c1, //线性按钮基础颜色
+baseButtonLinearHoverColor:#ecf5ff,//线性按钮基础Hover颜色
+indexPageMenuColor:#808080, //首页菜单字体颜色
+manageMenuColor:#fff, //管理页面菜单字体颜色
+manageBorderColor:#EBEEF5, //管理页面边框颜色
+tabBorderColor:#c8ceda, //管理页面tab的边框颜色
+paginationBgColor:#f5f5f5, //页码背景颜色
+paginationColor:#242424, //页码字体颜色
+paginationActiveBgColor:#0079c1, //页码选中背景颜色
+paginationActiveColor:#fff, //页码选中字体颜色
+paginationDisableBgColor:#f5f5f5, //页码选中背景颜色
+paginationDisableColor:#c9c9c9, //页码选中字体颜色
+topBannerBgURL:'~img/theme/navyblue/banner/top_banner.jpg', //顶部banner图地址
+gradientStart:#32a2e7,//渐变色起始
+gradientEnd:#267cec,//渐变色截止
+treeHighLightBgColor:#d8e9fd,//树高亮背景色
+resourcesHoverBgColor:#ecf5ff,//资源列表hover背景色
+homeAppBuildIconUrl:'~img/index/appBuild/theme/navyblueTheme/appBuildIcon.png',//首页应用构建icon
+baseKeywordBsColor:#87bef8//详情标签样式
+);
+//绿色主题
+$green-theme: ( baseColor:#242424, //基础字体色
+baseBgColor:#18bc9c, //基础背景颜色
+baseActiveColor:#18bc9c, //基础选中颜色,且运用于系统有颜色的字体
+baseButtonBgColor:#18bc9c, //基础按钮背景颜色
+baseButtonBgHoverColor:rgba(24, 188, 156, 0.8), //基础按钮hover背景颜色
+baseButtonColor:#fff, //基础按钮文字颜色
+baseButtonDelBgColor:#f56c6c, //基础删除按钮背景颜色
+baseButtonDelColor:#fff, //基础删除按钮文字颜色
+baseButtonDelHoverColor:rgba(245, 108, 108, 0.8), //基础删除hover背景颜色
+baseButtonLinearColor:#18bc9c, //线性按钮基础颜色
+baseButtonLinearHoverColor:#E8F8F5,//线性按钮基础Hover颜色
+indexPageMenuColor:#808080, //首页菜单字体颜色
+manageMenuColor:#fff, //管理页面菜单字体颜色
+manageBorderColor:#EBEEF5, //管理页面边框颜色
+tabBorderColor:#c8ceda, //管理页面tab的边框颜色
+topBannerBgURL:'~img/theme/green/banner/top_banner.jpg', //顶部banner图地址
+/*页码，需要与elementui保持一致，一般只改字体颜色和背景色*/
+paginationBgColor:#f5f5f5, //页码背景颜色
+paginationColor:#242424, //页码字体颜色
+paginationActiveBgColor:#18bc9c, //页码选中背景颜色
+paginationActiveColor:#fff, //页码选中字体颜色
+paginationDisableBgColor:#f5f5f5, //页码选中背景颜色
+paginationDisableColor:#c9c9c9, //页码选中字体颜色
+gradientStart:#18bc9c,//渐变色起始
+gradientEnd:#16a98c,//渐变色截止
+treeHighLightBgColor:#d8e9fd,//树高亮背景色
+resourcesHoverBgColor:#e8f8f5,//资源列表hover背景色
+homeAppBuildIconUrl:'~img/index/appBuild/theme/greenTheme/appBuildIcon.png',//首页应用构建icon
+baseKeywordBsColor:#A8E8DC//详情标签样式
+);
+// 默认主题
+$themes: ( default-theme: $default-theme, navyblue-theme: $navyblue-theme, green-theme:$green-theme);

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config custom="0">
+  <theme name="large-blue"/>
+  <map init_extent="12709112.454389 3552954.946287176 12761068.04056757 3593341.130560235 " full_extent="12709112.454389 3552954.946287176 12761068.04056757 3593341.130560235 " min_scale_id="0" id="map">
+    <scales>
+      <scale id="9">0.0000008653654458855756129534</scale>
+      <scale id="10">0.0000017307308917711512259068</scale>
+      <scale id="11">0.0000034614617835423024518136</scale>
+      <scale id="12">0.0000069229235670846049036271</scale>
+      <scale id="13">0.0000138458471341692098072543</scale>
+      <scale id="14">0.0000276916942683384196145085</scale>
+      <scale id="15">0.0000553833885366768392290171</scale>
+      <scale id="16">0.0001107667770733536784580342</scale>
+      <scale id="17">0.0002215335541467073569160684</scale>
+      <scale id="18">0.0004430671082934147138321368</scale>
+      <scale id="19">0.0008861342165868294276642736</scale>
+      <scale id="20">0.0017722684331736588553285472</scale>
+    </scales>
+    <projection>
+      <prj>PROJCS["WGS_1984_Web_Mercator_Auxiliary_Sphere",GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Mercator_Auxiliary_Sphere"],PARAMETER["False_Easting",0.0],PARAMETER["False_Northing",0.0],PARAMETER["Central_Meridian",0.0],PARAMETER["Standard_Parallel_1",0.0],PARAMETER["Auxiliary_Sphere_Type",0.0],UNIT["Meter",1.0],AUTHORITY["EPSG",3857]]&#xd;
+</prj>
+      <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs</proj4>
+    </projection>
+  </map>
+  <controls custom="1">
+    <control type="mainmenu"/>
+    <control position="topleft" type="plotting"/>
+    <control init_open_id="layers" position="topleft" type="sidebar">
+      <subcontrol type="tree" id="controlTree"/>
+      <subcontrol type="advanced" id="controlAdvancedQuery"/>
+      <subcontrol type="overlay" id="controlOverlayAnalysis"/>
+      <subcontrol is_delete="1" is_add="1" is_update="1" type="featureImport" id="controlFeatureImport"/>
+      <subcontrol type="bookmark" id="controlBookmark"/>
+      <subcontrol type="setting" id="controlSetting"/>
+    </control>
+    <control import_export="1" position="topleft" type="draw"/>
+    <control position="topleft" type="styleeditor"/>
+    <control position="topright" type="toolbar">
+      <subcontrol type="zoom_in"/>
+      <subcontrol type="zoom_out"/>
+      <subcontrol type="roaming"/>
+      <subcontrol type="forward-map"/>
+      <subcontrol type="backward-map"/>
+      <subcontrol type="full-map"/>
+      <subcontrol type="drawing"/>
+      <subcontrol type="info-query"/>
+      <subcontrol is_trace_back="1" is_traveling_salesman_problem="1" is_optimal_path="1" type="network-analysis"/>
+      <subcontrol type="raster-image-analysis"/>
+    </control>
+    <control position="topright" fullscreen="1" type="zoom"/>
+    <control position="topright" type="measureseparate"/>
+    <control position="topright" type="compare"/>
+    <control light_size="256" position="topright" type="searchlight"/>
+    <control position="topright" type="sidebyside"/>
+    <control position="topright" type="screenshot"/>
+    <control position="topright" type="print"/>
+    <control position="topright" type="setlocation"/>
+    <control decimals="2" position="bottomleft" label_x="经度" label_y="纬度" type="coordinates"/>
+    <control position="bottomleft" type="scale"/>
+    <control tooltip="苍穹数码" url="http://www.kanq.com.cn" img="../../images/logo.png" type="attribution" label="苍穹数码"/>
+  </controls>
+  <tree label="图层">
+    <sources is_ipmapping="1">
+      <source url="http://172.16.1.174:8699/KQGis/rest/services/hsq3857" name="source0" type="kqmapping"/>
+      <source url="http://172.16.1.174:8699/KQGis/rest/services/hsq3857/MapServer/WMS?" type="wms" name="sourceWMS"/>
+    </sources>
+    <layers id="layers">
+      <layer src_name="source0" is_dynamic="0" min_standard_scale="0.0000000001000000000000000036" icon="polygon" is_building="0" tooltip_forefather="洪山区_行政区" opacity="1" layer_extent="12709112.4543890003114938735961914063 3552954.9462871756404638290405273438 12761068.0405675712972879409790039063 3593341.1305602346546947956085205078" id="1" label="洪山区_行政区" is_network_analysis="0" type="sl"/>
+      <layer src_name="sourceWMS" is_dynamic="0" min_standard_scale="0.0000000001000000000000000036" icon="polygon" is_building="0" tooltip_forefather="洪山区_行政区" opacity="1" layer_extent="12709112.4543890003114938735961914063 3552954.9462871756404638290405273438 12761068.0405675712972879409790039063 3593341.1305602346546947956085205078" id="1" label="洪山区_行政区" is_network_analysis="0" type="sl"/>
+    </layers>
+  </tree>
+</config>

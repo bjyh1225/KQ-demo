@@ -1,0 +1,64 @@
+<style>
+  
+  #feature-import-button {
+    min-width: 80px;
+    float: right;
+    min-width: 80px;
+    margin: 15px 28px 10px 6px;
+  }
+
+  #feature-import-attribute-dialog {
+    overflow: hidden;
+    display: inline-block;
+  }
+
+  #feature-import-record-list {
+    overflow-y: auto;
+    float: left;
+    margin-right: 8px;
+  
+    width: 200px;
+    max-height: 99%;
+    min-height: 99%;
+  }
+
+  #feature-import-property-div {
+    height: 100%;
+  }
+  
+  #feature-import-property-grid {
+    overflow: auto;
+    height: calc(99% - 38px);
+    /*height: 558px;*/
+    margin-bottom: 4px;
+  }
+  
+
+  #feature-import-button-div {
+    display: inline-block;
+  }
+
+  #featureImportButton, #featureImportResetButton {
+    min-width: 100px;
+    margin: 6px 3px 6px 3px;
+  }
+
+  .k-dialog .k-dialog-title {
+    opacity: 80;
+    color: #000;
+    font-weight: bold;
+  }
+  
+</style>
+
+<div id="feature-import-attribute-dialog">
+  <ul id="feature-import-record-list"></ul>
+  <div id="feature-import-property-div" >
+    <div id="feature-import-button-div" >
+      <button class="k-button k-primary" id="featureImportButton" >__feature-import__</button>
+      <button class="k-button" id="featureImportResetButton" >__feature-reset__</button>
+    </div>
+    <div id="feature-import-property-grid"></div>
+  </div>
+  
+</div>

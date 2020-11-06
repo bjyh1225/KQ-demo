@@ -1,0 +1,30 @@
+<style type="text/css">
+    .module-draw-content a.btn {
+        border: none;
+    }
+</style>
+
+<div class="module-draw-content">
+    <!--Draw buttons-->
+    <div class="btn-group-vertical" role="group">
+        <!--Point-->
+        <a href="#" class="btn btn-default" @click="onDrawPointBtnClk" :title="titles.drawPoint" style="text-align: left;">
+            <span class="iconfont icon-vectorpoint"
+                  aria-hidden="true"></span><span>&nbsp;&nbsp;{{titles.drawPoint}}</span>
+        </a>
+        <!--Polyline-->
+        <a href="#" class="btn btn-default" @click="onDrawPolylineBtnClk" :title="titles.drawPolyline" style="text-align: left;">
+            <span class="iconfont icon-vector-polyline" aria-hidden="true"></span><span>&nbsp;&nbsp;{{titles.drawPolyline}}</span>
+        </a>
+        <!--Polygon-->
+        <a href="#" class="btn btn-default" @click="onDrawPolygonBtnClk" :title="titles.drawPolygon" style="text-align: left;"><span
+                class="iconfont icon-vectorpolygon"
+                aria-hidden="true"></span><span>&nbsp;&nbsp;{{titles.drawPolygon}}</span>
+        </a>
+        <!--model-->
+        <a href="#" class="btn btn-default" @click="onDrawModelBtnClk" :title="titles.drawModel" style="text-align: left;"><span
+            class="glyphicon glyphicon-asterisk"
+            aria-hidden="true"></span><span>&nbsp;&nbsp;{{titles.drawModel}}</span>
+        </a>
+    </div>
+</div>

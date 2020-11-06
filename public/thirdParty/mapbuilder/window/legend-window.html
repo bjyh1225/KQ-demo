@@ -1,0 +1,156 @@
+<div id="legend-window">
+  <div class="legend-item">
+    <div class="item-title">
+      <div class="item-icon icon iconfont icon-shape-point" style="color: red;"></div>
+      <p>point</p>
+    </div>
+    <br/>
+    <div class="item-content">
+      <div class="content-info">
+        专题字段：
+        <span>测试字段</span>
+      </div>
+    </div>
+  </div>
+
+  <style>
+
+    #legend-window {
+      background: rgba(27,43,82,.86);
+    }
+
+    .fields-container .legend-item {
+      height: 12px;
+    }
+
+    .legend-item br {
+      line-height: 1px;
+    }
+
+    #legend-window {
+      max-height: 535px;
+    }
+
+    .item-title {
+      margin-left: 10px;
+    }
+
+    .item-title .item-icon {
+      margin: 9px 0 0;
+      float: left;
+      vertical-align: middle;
+    }
+
+    .item-title p {
+      display: inline-block;
+      width: calc(100% - 45px);
+      margin: 10px 0 0;
+      vertical-align: middle;
+      font-size: 13px;
+      font-weight: bold;
+      color: #ffffff;
+      text-align: left;
+      line-height: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .item-content {
+      position: relative;
+      padding-bottom: 4px;
+      box-sizing: border-box;
+    }
+
+    #legend-window .content-info {
+      margin-left: 10px;
+      font-size: 12px;
+      color: #999999;
+      line-height: 18px;
+      box-sizing: border-box;
+    }
+
+    .content-info span {
+      display: inline-block;
+      max-width: 120px;
+      vertical-align: bottom;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: #fff;
+    }
+
+    .legend-item {
+      margin-left: 15px;
+    }
+
+    .legend-item .fields-container .fields-item {
+      margin-bottom: 8px;
+      height: 16px;
+      display: flex;
+    }
+
+    .legend-item .fields-container .selected-value {
+      margin: 15px 0 15px;
+      width: 220px;
+      height: 12px;
+    }
+
+    #legend-window .fields-container {
+      max-height: 240px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    #legend-window .fields-container span .selected-value {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+
+    #legend-window .fields-container::-webkit-scrollbar {
+      /*滚动条整体样式*/
+      width: 6px;
+      /*高宽分别对应横竖滚动条的尺寸*/
+      height: 1px; }
+
+    #legend-window .fields-container::-webkit-scrollbar-thumb {
+      /*滚动条里面小方块*/
+      border-radius: 6px;
+      -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+      background: #c4c4c4; }
+
+    #legend-window .fields-container::-webkit-scrollbar-track {
+      /*滚动条里面轨道*/
+      -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+      border-radius: 6px;
+      background: #EDEDED; }
+
+    #legend-window .fields-item span.value {
+      width: 150px;
+      height: 24px;
+      display: inline;
+      line-height: 24px;
+      margin-left: 47px;
+      text-align: left;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .fields-item .range-values {
+      height: 24px;
+      margin-left: 47px;
+    }
+
+    .fields-item .range-values input {
+      height: 24px;
+      width: 50px;
+      border-radius: 4px;
+      float: left;
+      text-align: left;
+      line-height: 24px;
+      padding: 0;
+    }
+
+  </style>
+
+</div>

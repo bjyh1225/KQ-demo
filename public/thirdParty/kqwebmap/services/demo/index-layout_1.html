@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>KQWebMap Example</title>
+
+  <meta name="mobile-web-app-capable" content="yes">
+</head>
+<style type="text/css">
+  html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .parent {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  .left {
+    width: 100px;
+    background-color: #5cb85c;
+  }
+
+  .right {
+    flex:1;
+    border: 1px solid green;
+  }
+
+  .logo {
+    width: 100%;
+    height: 100px;
+    background-color: #3388ff;
+  }
+
+</style>
+<body>
+<div class="logo">Logo</div>
+<div class="parent">
+  <div class="left">Sidebar</div>
+  <div class="right">
+    <div id="map"></div>
+  </div>
+</div>
+
+<script src="../../dist/jquery.min.js"></script>
+<script src="../../dist/jquery-ui.min.js"></script>
+
+<script src="../../dist/kqcss.js"></script>
+<script src="../../dist/map-example.js"></script>
+<script src="../../dist/other.js"></script>
+
+<script>
+  $(document).ready(function () {
+    testGeoJSONData();
+  });
+</script>
+</body>
+</html>

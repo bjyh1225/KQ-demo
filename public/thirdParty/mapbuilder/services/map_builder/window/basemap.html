@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<div class="basemap-list"></div>
+
+<style>
+    #buildersidebar .buildersidebar-content .buildersidebar-pane .basemap-list {
+        padding: 30px 0px;
+        min-height: 510px;
+
+        border: none;
+        background: none;
+    }
+
+    #buildersidebar .basemap-list .basemap {
+        float: left;
+        position: relative;
+        width: 76px;
+        height: 118px;
+        margin: 0 4px;
+    }
+
+    #buildersidebar .basemap-list .basemap>div {
+        width: 72px;
+        height: 72px;
+        display: block;
+        cursor: pointer;
+        border-radius: 4px;
+        background-size: 100% 100%;
+        border: 2px solid transparent;
+    }
+
+    #buildersidebar .basemap-list .basemap>div:hover,
+    #buildersidebar .basemap-list .select-basemap>div{
+        border: 2px solid rgb(0, 131, 255);
+    }
+
+    #buildersidebar .basemap-list .k-state-selected {
+        background: none;
+    }
+
+    #buildersidebar .basemap-list .basemap>span {
+        display: block;
+        max-width: 76px;
+        height: 18px;
+        padding: 8px 0 16px;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        line-height: 18px;
+        font-family: Microsoft YaHei, sans-serif !important
+    }
+
+</style>
+
+<script>
+
+  $(function () {
+    $(".basemap-list").kendoListView({
+      dataSource: {
+        data: [
+          {name: "智图蓝色", thumb: "geoq_blue", type: "geoq", subType: "blue"},
+          {name: "智图灰色", thumb: "geoq_gray", type: "geoq", subType: "gray"},
+          {name: "智图矢量", thumb: "geoq_vector", type: "geoq", subType: "vector"},
+          {name: "智图暖色", thumb: "geoq_warm", type: "geoq", subType: "warm"},
+
+          {name: "天地图矢量", thumb: "tianditu_vector", type: "tianditu", subType: "vector"},
+          {name: "天地图影像", thumb: "tianditu_image", type: "tianditu", subType: "image"},
+          {name: "天地图地形", thumb: "tianditu_terrain", type: "tianditu", subType: "terrain"},
+
+          {name: "高德矢量", thumb: "gaode_vector", type: "gaode", subType: "vector"},
+          {name: "高德影像", thumb: "gaode_image", type: "gaode", subType: "image"},
+
+          {name: "谷歌矢量", thumb: "google_vector", type: "google", subType: "vector"},
+          {name: "谷歌影像", thumb: "google_image", type: "google", subType: "image"},
+        ]
+      },
+
+      template:
+            '<div class="basemap"><div style="background-image: url(' + "'./images/basemap_thumb/#:thumb#.png')" + '"></div> <span title=#:name#>#:name#</span></div></div>',
+
+      selectable: "single",
+      change: function (e) {
+        e.sender.select().addClass("select-basemap").siblings().removeClass("select-basemap");
+
+        let basemapGroup = KQ.Builder.BuilderProject.getInstance().basemapGroup;
+        let dataItem = this.dataItem(e.sender.select());
+        let baselayers = KQ.Control.MapBaseLayer.getLayers(dataItem.type, dataItem.subType);
+
+        // 清除之前的图层
+        basemapGroup.clearLayers();
+
+        // 添加新的图层
+        for (let i = 0; i < baselayers.length; ++i) {
+          basemapGroup.addLayer(baselayers[i]);
+        }
+
+        $(".layer-editor-title-name").text(dataItem.name);
+
+        $(".layers-container .base-layers .title").attr("title", dataItem.name);
+        $(".layers-container .base-layers .title span").text(dataItem.name);
+        $(".layers-container .base-layers .layer-icon img").attr("src", './images/basemap_thumb/' + dataItem.thumb + '.png');
+
+        $(".layers-container .base-layers li").attr("data-type", dataItem.type);
+        $(".layers-container .base-layers li").attr("data-sub-type", dataItem.subType);
+      },
+    }).data("kendoListView");
+  })
+
+</script>

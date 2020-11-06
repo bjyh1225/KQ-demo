@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config custom="0">
+  <layers>
+    <layer src_name="source0" query_id="2" max_stdscale="0.001" label="洪山区_行政区注记" min_stdscale="0.00000001" id="2">
+      <fields>OID,GEOMETRY,XZBM,FHDM,QSRQ,ZZRQ,BSM,YSDM,XZQDM,XZQMC,KZMJ,JSMJ,MSSM,BGRQ</fields>
+      <fields_alias>OID,GEOMETRY,XZBM,FHDM,QSRQ,ZZRQ,BSM,YSDM,XZQDM,XZQMC,KZMJ,JSMJ,MSSM,BGRQ</fields_alias>
+      <show_name>OID</show_name>
+      <expression></expression>
+    </layer>
+    <layer src_name="source0" query_id="3" max_stdscale="0.001" label="洪山区_线状地物" min_stdscale="0.00000001" id="3">
+      <fields>OID,GEOMETRY,XZBM,FHDM,QSRQ,ZZRQ,GQLX,XZDWMJ45,SOID1,SOID2,BSM,YSDM,DLBM,DLMC,XZDWYBH,XZDWBH,CD,KD,XZDWMJ,XZDWMC,QSDWDM,QSDWMC,QSDWDM1,QSDWMC1,QSDWDM2,QSDWMC2,KCTBBH1,KCTBDWDM1,KCTBBH2,KCTBDWDM2,QSXZ,KCBL,BGJLH,BGRQ,QSXT,KANQDB_LENGTH</fields>
+      <fields_alias>OID,GEOMETRY,XZBM,FHDM,QSRQ,ZZRQ,GQLX,XZDWMJ45,SOID1,SOID2,BSM,YSDM,DLBM,DLMC,XZDWYBH,XZDWBH,CD,KD,XZDWMJ,XZDWMC,QSDWDM,QSDWMC,QSDWDM1,QSDWMC1,QSDWDM2,QSDWMC2,KCTBBH1,KCTBDWDM1,KCTBBH2,KCTBDWDM2,QSXZ,KCBL,BGJLH,BGRQ,QSXT,KANQDB_LENGTH</fields_alias>
+      <show_name>OID</show_name>
+      <expression></expression>
+    </layer>
+    <layer src_name="source0" query_id="4" max_stdscale="0.001" label="洪山区_行政区" min_stdscale="0.00000001" id="4">
+      <fields>OID,GEOMETRY,XZBM,FHDM,QSRQ,ZZRQ,BSM,YSDM,XZQDM,XZQMC,KZMJ,JSMJ,MSSM,BGRQ,KANQDB_LENGTH,KANQDB_AREA</fields>
+      <fields_alias>OID,GEOMETRY,XZBM,FHDM,QSRQ,ZZRQ,BSM,YSDM,XZQDM,XZQMC,KZMJ,JSMJ,MSSM,BGRQ,KANQDB_LENGTH,KANQDB_AREA</fields_alias>
+      <show_name>OID</show_name>
+      <expression></expression>
+    </layer>
+  </layers>
+</config>

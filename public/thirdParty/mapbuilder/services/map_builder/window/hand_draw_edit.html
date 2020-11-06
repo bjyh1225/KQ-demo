@@ -1,0 +1,106 @@
+<div id="tabstrip" xmlns="">
+    <ul>
+        <li>信息</li>
+        <li class="k-state-active">样式</li>
+        <li>属性</li>
+    </ul>
+    <!--tabstrip-1-->
+    <div>
+        <div class="title">
+            <span>标题</span>
+            <label>
+                <input placeholder="未命名标记" type="text" class="k-input k-textbox">
+            </label>
+        </div>
+        <div class="des">
+            <span>描述</span>
+            <label>
+                <textarea class="k-textbox"></textarea>
+            </label>
+        </div>
+        <div class="picture">
+            <span>图片</span>
+            <div class="pic-container k-textbox">
+                <div class="pic-container-header">
+                    <span class="active">本地上传</span>
+                    <span>网络图片</span>
+                </div>
+                <div class="pic-container-content upload-image">
+                    <div class="upload">
+                        <div>
+                            <input type="file" name="upload-image-files" id="upload-image-files" aria-label="upload-image-files" />
+                        </div>
+                    </div>
+                    <span class="suggestion">建议上传图片不超过2M</span>
+                </div>
+                <textarea placeholder="https://" style="display: none" class="pic-container-content network-image k-textbox"></textarea>
+            </div>
+        </div>
+        <div class="video-link">
+            <span>视频链接</span>
+            <label>
+                <input placeholder="https://" type="text" class="k-input k-textbox">
+            </label>
+        </div>
+        <div class="related-link">
+            <span>相关链接</span>
+            <label>
+                <input placeholder="https://" type="text" class="k-input k-textbox">
+            </label>
+        </div>
+    </div>
+    <!--tabstrip-2-->
+    <div>
+        <div class="hand-draw-edit-point">
+            <div class="point-type-switching-container"/>
+
+            <div class="point-render-container">
+                <div class="point-render-container-image" style="display: block"/>
+                <div class="point-render-container-vector" style="display: none"/>
+            </div>
+        </div>
+
+        <div class="hand-draw-edit-line">
+            <div class="line-color-container"/>
+            <div class="line-style-list-container"/>
+            <div class="line-width-container"/>
+            <div class="line-opacity-container"/>
+        </div>
+
+        <div class="hand-draw-edit-polygon">
+            <div class="polygon-color-container"/>
+            <div class="polygon-opacity-container"/>
+            <div class="line-color-container"/>
+            <div class="line-style-list-container"/>
+            <div class="line-width-container"/>
+            <div class="line-opacity-container"/>
+        </div>
+    </div>
+    <!--tabstrip-3-->
+    <div>
+        <div class="name">
+            <span>name</span>
+            <label>
+                <input type="text" class="k-input k-textbox">
+            </label>
+        </div>
+        <div class="tel">
+            <span>tel</span>
+            <label>
+                <input type="text" class="k-input k-textbox">
+            </label>
+        </div>
+        <div class="address">
+            <span>address</span>
+            <label>
+                <input type="text" class="k-input k-textbox">
+            </label>
+        </div>
+        <div class="type">
+            <span>type</span>
+            <label>
+                <input type="text" class="k-input k-textbox">
+            </label>
+        </div>
+    </div>
+</div>

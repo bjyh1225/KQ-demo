@@ -1,0 +1,360 @@
+@charset "utf-8";
+@font-face {
+  font-family: 'Fredoka One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Fredoka One'), local('FredokaOne-Regular'), url(./FredokaOne.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+#preloader {
+  font-family: "Fredoka One", cursive;
+	font-size: 16px;
+	margin: 0px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:9999;
+  width: 100%;
+  height: 100%;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	/* min-height: 100vh; */
+	/* background: rgba(249, 249, 249, 0.9); */
+	background:#fff;
+	overflow: hidden;
+	animation-duration: 1s;
+	/* transition: 10s; */
+}
+
+.text-wrapper {
+	padding: 0 20px;
+	/* max-width: 50rem; */
+	width: 100%;
+	text-align: center;
+}
+
+.text {
+	font-size: 8em;
+	text-transform: uppercase;
+	letter-spacing: -14px;
+}
+
+.text .letter {
+	position: relative;
+	display: inline-block;
+	-webkit-transition: all .4s;
+	transition: all .4s;
+}
+
+.text .letter .character {
+	opacity: 0.65;
+	-webkit-transition: color .4s;
+	transition: color .4s;
+	cursor: pointer;
+}
+
+.text .letter span {
+	position: absolute;
+	bottom: .8rem;
+	left: .4rem;
+	display: block;
+	width: 100%;
+	height: 15px;
+}
+
+.text .letter span::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	background: rgba(0, 0, 0, 0.25);
+}
+
+/* .text .letter:hover .character {
+	color: #fff !important;
+} */
+
+.text.part1 .letter:nth-child(1) .character {
+	color: #1428a0;
+	-webkit-animation: wave 1.2s linear infinite;
+	animation: wave 1.2s linear infinite;
+}
+
+.text.part1 .letter:nth-child(1) span::before {
+	-webkit-animation: shadow 1.2s linear infinite;
+	animation: shadow 1.2s linear infinite;
+}
+
+.text.part1 .letter:nth-child(2) .character {
+	color: #00b140;
+	-webkit-animation: wave 1.2s linear infinite;
+	animation: wave 1.2s linear infinite;
+	-webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+.text.part1 .letter:nth-child(2) span::before {
+	-webkit-animation: shadow 1.2s linear infinite;
+	animation: shadow 1.2s linear infinite;
+	-webkit-animation-delay: 0.3s;
+	animation-delay: 0.3s;
+}
+
+.text.part1 .letter:nth-child(3) .character {
+	color: #0689d8;
+	-webkit-animation: wave 1.2s linear infinite;
+	animation: wave 1.2s linear infinite;
+	-webkit-animation-delay: 0.6s;
+	animation-delay: 0.6s;
+}
+
+.text.part1 .letter:nth-child(3) span::before {
+	-webkit-animation: shadow 1.2s linear infinite;
+	animation: shadow 1.2s linear infinite;
+	-webkit-animation-delay: 0.6s;
+	animation-delay: 0.6s;
+}
+
+.text.part1 .letter:nth-child(4) .character {
+	color: #ffc600;
+	-webkit-animation: wave 1.2s linear infinite;
+	animation: wave 1.2s linear infinite;
+	-webkit-animation-delay: 0.9s;
+	animation-delay: 0.9s;
+}
+
+.text.part1 .letter:nth-child(4) span::before {
+	-webkit-animation: shadow 1.2s linear infinite;
+	animation: shadow 1.2s linear infinite;
+	-webkit-animation-delay: 0.9s;
+	animation-delay: 0.9s;
+}
+
+.text.part1 .letter:nth-child(5) .character {
+	color: #ff6900;
+	-webkit-animation: wave 1.2s linear infinite;
+	animation: wave 1.2s linear infinite;
+	-webkit-animation-delay: 1.2s;
+	animation-delay: 1.2s;
+}
+
+.text.part1 .letter:nth-child(5) span::before {
+	-webkit-animation: shadow 1.2s linear infinite;
+	animation: shadow 1.2s linear infinite;
+	-webkit-animation-delay: 1.2s;
+	animation-delay: 1.2s;
+}
+
+.text.part1 .letter:nth-child(6) .character {
+	color: #e4002b;
+	-webkit-animation: wave 1.2s linear infinite;
+	animation: wave 1.2s linear infinite;
+	-webkit-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+}
+
+.text.part1 .letter:nth-child(6) span::before {
+	-webkit-animation: shadow 1.2s linear infinite;
+	animation: shadow 1.2s linear infinite;
+	-webkit-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+}
+
+.text.part1 .letter:nth-child(7) .character {
+	color: #c800a1;
+	-webkit-animation: wave 1.2s linear infinite;
+	animation: wave 1.2s linear infinite;
+	-webkit-animation-delay: 1.8s;
+	animation-delay: 1.8s;
+}
+
+.text.part1 .letter:nth-child(7) span::before {
+	-webkit-animation: shadow 1.2s linear infinite;
+	animation: shadow 1.2s linear infinite;
+	-webkit-animation-delay: 1.8s;
+	animation-delay: 1.8s;
+}
+
+@-webkit-keyframes wave {
+	0% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+	50% {
+		-webkit-transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+
+@keyframes wave {
+	0% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+	50% {
+		-webkit-transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+
+@-webkit-keyframes shadow {
+	0% {
+		width: 0;
+		height: 0;
+	}
+	50% {
+		width: 100%;
+		height: 100%;
+	}
+	100% {
+		width: 0;
+		height: 0;
+	}
+}
+
+@keyframes shadow {
+	0% {
+		width: 0;
+		height: 0;
+	}
+	50% {
+		width: 100%;
+		height: 100%;
+	}
+	100% {
+		width: 0;
+		height: 0;
+	}
+}
+
+.how-to {
+	margin: 2rem 0 2rem 1rem;
+	font-family: "Opens Sans", sans-serif;
+	font-weight: 300;
+	font-size: .85em;
+	letter-spacing: 4px;
+	color: rgba(0, 0, 0, 0.8);
+}
+
+@-webkit-keyframes rotate {
+	0% {
+		-webkit-transform: rotateZ(0) scale(0.7);
+		transform: rotateZ(0) scale(0.7);
+	}
+	100% {
+		-webkit-transform: rotateZ(360deg) scale(0.7);
+		transform: rotateZ(360deg) scale(0.7);
+	}
+}
+
+@keyframes rotate {
+	0% {
+		-webkit-transform: rotateZ(0) scale(0.7);
+		transform: rotateZ(0) scale(0.7);
+	}
+	100% {
+		-webkit-transform: rotateZ(360deg) scale(0.7);
+		transform: rotateZ(360deg) scale(0.7);
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.text {
+		font-size: 4em;
+		letter-spacing: -2px;
+	}
+	.text .letter span {
+		bottom: .5rem;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.text {
+		font-size: 2em;
+		letter-spacing: -2px;
+	}
+	.text .letter span {
+		bottom: 0;
+	}
+}
+
+.text.part1 .letter:nth-child(8) span::before {
+	-webkit-animation: shadow 1.2s linear infinite;
+	animation: shadow 1.2s linear infinite;
+	-webkit-animation-delay: 1.2s;
+	animation-delay: 1.2s;
+}
+
+.text.part1 .letter:nth-child(8) .character {
+	color: #6b5bc7;
+	-webkit-animation: wave 1.2s linear infinite;
+	animation: wave 1.2s linear infinite;
+	-webkit-animation-delay: 1.2s;
+	animation-delay: 1.2s;
+}
+
+.text.part1 .letter:nth-child(9) span::before {
+	-webkit-animation: shadow 1.2s linear infinite;
+	animation: shadow 1.2s linear infinite;
+	-webkit-animation-delay: 0.9s;
+	animation-delay: 0.9s;
+}
+
+.text.part1 .letter:nth-child(9) .character {
+	color: #0057b8;
+	-webkit-animation: wave 1.2s linear infinite;
+	animation: wave 1.2s linear infinite;
+	-webkit-animation-delay: 0.9s;
+	animation-delay: 0.9s;
+}
+
+.text.part1 .letter:nth-child(10) span::before {
+	-webkit-animation: shadow 1.2s linear infinite;
+	animation: shadow 1.2s linear infinite;
+	-webkit-animation-delay: 0.6s;
+	animation-delay: 0.6s;
+}
+
+.text.part1 .letter:nth-child(10) .character {
+	color: #00a9e0;
+	-webkit-animation: wave 1.2s linear infinite;
+	animation: wave 1.2s linear infinite;
+	-webkit-animation-delay: 0.6s;
+	animation-delay: 0.6s;
+}
+
+.text.part1 .letter:nth-child(11) span::before {
+	-webkit-animation: shadow 1.2s linear infinite;
+	animation: shadow 1.2s linear infinite;
+	-webkit-animation-delay: 0.3s;
+	animation-delay: 0.3s;
+}
+
+.text.part1 .letter:nth-child(11) .character {
+	color: #009ca6;
+	-webkit-animation: wave 1.2s linear infinite;
+	animation: wave 1.2s linear infinite;
+	-webkit-animation-delay: 0s;
+	animation-delay: 0s;
+}

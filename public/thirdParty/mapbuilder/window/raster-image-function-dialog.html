@@ -1,0 +1,78 @@
+<style>
+  
+  #raster-image-function-input-label,
+  #raster-image-function-select-label, #raster-image-function-output-label {
+    font-weight: bold;
+    font-size: 12px;
+  }
+  
+  #raster-image-function-input-panel {
+    margin: 12px 8px 8px 16px;
+  }
+  
+  .raster-image-function-input-dropdownlist {
+    margin-top: 5px;
+    width: 95%;
+  }
+  
+  #raster-image-function-output-panel {
+    margin: 20px 8px 8px 16px;
+  }
+  
+  #raster-image-function-output-data {
+    font-size: 15px;
+    display: none;
+  }
+  
+  #raster-image-function-select-function {
+    margin: 20px 8px 8px 16px;
+  }
+  
+  .raster-image-function-select-dropdownlist {
+    margin-top: 5px;
+    width: 95%;
+  }
+  
+  #raster-image-function-execute-btn {
+    margin: 20px 8px 8px 16px;
+    min-width: 80px;
+  }
+  
+  #raster-image-function-close-btn {
+    margin: 20px 8px 8px 16px;
+    min-width: 80px;
+  }
+  
+  #raster-image-function-button-panel {
+    text-align: center;
+  }
+
+</style>
+
+<div id="raster-image-function-dialog" >
+  
+  <div id="raster-image-function-input-panel">
+    <label id="raster-image-function-input-label">__input__</label><br/>
+    <input id="raster-image-function-input-dropdownlist" class="raster-image-function-input-dropdownlist"/>
+  </div>
+  
+  <div id="raster-image-function-output-panel">
+    <label id="raster-image-function-output-label" for="raster-image-function-output-data">__output-raster-data__</label><br/>
+    <!--<input id="raster-image-function-output-data" type="text" class="k-textbox raster-image-function-output-data" />-->
+    <div style="margin-top: 5px; height: 25px;">
+      <a id="raster-image-function-output-data" href="javascript: void(0)">__download-analysis-results__</a>
+    </div>
+    
+  </div>
+  
+  <div id="raster-image-function-select-function">
+    <label id="raster-image-function-select-label">__function__</label><br/>
+    <input id="raster-image-function-select-dropdownlist" class="raster-image-function-select-dropdownlist"/>
+  </div>
+  
+  <div id="raster-image-function-button-panel">
+    <button id="raster-image-function-execute-btn" class="k-button k-primary" type="button" >__confirm__</button>
+    <button id="raster-image-function-close-btn" class="k-button" type="button" >__close__</button>
+  </div>
+
+</div>

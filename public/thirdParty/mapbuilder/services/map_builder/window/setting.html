@@ -1,0 +1,60 @@
+<h1 class="buildersidebar-header">设置<span class="buildersidebar-close"><i class="fa fa-caret-left"></i></span>
+</h1>
+<div class="buildersidebar-body">
+
+    <div class="mapsetting-content"
+         style="position: relative; overflow: hidden; width: 100%; height: calc(100% - 60px);">
+        <div class="layer-data-container">
+            <div>
+                <div class="span-text"><span>标题</span><input type="text" class="k-textbox" placeholder="暂无地图标题" value="无标题">
+                </div>
+                <div class="span-text-button"><span>标签</span><span class="tips">（多个标签用逗号隔开，最多6个）</span>
+                    <div class="dataViz-maptags setting-maptags">
+                        <div id="addtagsdialog"></div>
+                        <input style="padding-right: 6em;float: left" type="text" class="maptags-text k-textbox" title="用户地图"
+                               placeholder="暂无地图标签" value="用户地图">
+                        <a class="maptags-btn kq-icons-add fa fa-plus"><span class="addtags">添加标签</span></a>
+                    </div>
+                </div>
+                <div class="span-text"><span>描述</span><textarea class="k-textbox mapdescribe-text" placeholder="暂无描述信息"
+                                                                style="height: 98px; padding: .375rem .75rem"></textarea>
+                </div>
+                <hr style="margin: 24px auto;">
+                <span style="font-weight: bold">地图中心点和地图级别</span>
+                <div class="span-text"><span>经度</span><input type="text" class="map-center-x k-textbox"
+                                                             data-bind="value: centerX"></div>
+                <div class="span-text"><span>纬度</span><input type="text" class="map-center-y k-textbox"
+                                                             data-bind="value: centerY"></div>
+                <div class="span-text"><span>地图级别</span><input class="map-level k-textbox" type="text"
+                                                               data-bind="value: level"></div>
+                <hr style="margin: 24px auto;">
+                <div>
+                    <div class="aboutDataViz-top">
+                        <img src="./images/editor_logo.png">
+                        <span class="title" style="font-size: 14px; font-weight: bold;">KQ Web Map Builder</span><span
+                            class="version" style="margin-left: 5px;">v1.0</span>
+                    </div>
+                    <div id="occdialog"></div>
+                    <p class="aboutDataViz-info">基于KQGIS Server、KQPortal 和 KQClient 产品以及其他<a
+                            style="color: #4DD2FF; cursor: pointer" class="ooc">开源软件</a></p>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mapsetting-scrollbar">
+            <div style="display: none"></div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+  $(function () {
+    // wait for buildProject.mapView init
+    setTimeout(function () {
+      KQ.Builder.BuilderSetting.getInstance().init();
+    }, 1000);
+  });
+
+</script>

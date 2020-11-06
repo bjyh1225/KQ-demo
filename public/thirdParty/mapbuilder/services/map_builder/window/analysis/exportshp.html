@@ -1,0 +1,26 @@
+<div class="analysis-item-body-exportshp">
+    <div class="parameters">
+        <div class="parameter-src-layers"></div>
+        <div class="parameter-geo-srs"></div>
+        <div class="parameter-out-srs"></div>
+        <div class="parameter-exportshp-format"></div>
+    </div>
+
+    <div class="analysis-item-run"></div>
+</div>
+
+<script>
+
+  $(document).ready(function () {
+    let selector = " .analysis-item-body-exportshp";
+
+    // 进行初始化
+    createParametersHtml(selector);
+    initControls(selector);
+
+    // 进行导出shape文件接口的事件绑定
+    KQ.Builder.BuilderToolbox.BuilderExportShp.getInstance().init(selector);
+
+  })
+
+</script>

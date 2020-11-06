@@ -1,0 +1,204 @@
+<div class="user-info-content">
+    <div class="account-info" style="border-width: 0 1px 1px 0;">
+        <span class="user-info-icon-font iconfont icon-account-info"></span>
+        <span class="title">账户信息</span>
+    </div>
+    <div class="create-map" style="border-width: 0 0 1px 0;">
+        <span class="user-info-icon-font iconfont icon-add-map"></span>
+        <span class="title">创建地图</span>
+    </div>
+    <div class="my-map" style="border-width: 0 1px 0 0;">
+        <span class="user-info-icon-font iconfont icon-my-map"></span>
+        <span class="title">我的地图</span>
+    </div>
+    <div class="back-home" style="border-width: 0;">
+        <span class="user-info-icon-font iconfont icon-home-page"></span>
+        <span class="title">返回首页</span>
+    </div>
+</div>
+
+<style>
+    .buildersidebar-user-info {
+        display: none;
+        background-color: #0a4d85;
+        position: fixed;
+        left: 52px;
+        bottom: 0;
+        width: 200px;
+        height: 200px;
+        border-radius:0 5px 0 0;
+        padding: 20px;
+        color: white;
+    }
+    .buildersidebar-user-info .user-info-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center
+    }
+    .buildersidebar-user-info .user-info-content div {
+        width: 80px;
+        height: 80px;
+        padding: 5px;
+        text-align: center;
+        border-color: gray;
+        border-style: solid;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+    }
+    .buildersidebar-user-info .user-info-content div .user-info-icon-font {
+        width: 100%;
+        height: 70%;
+        font-size: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .buildersidebar-user-info .user-info-content div .title {
+        width: 100%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .buildersidebar-user-info .user-info-content div:nth-child(-n+5):hover {
+        cursor: pointer;
+        background: #1A2A51;
+    }
+    .buildersidebar-user-info .user-info-content .problem-feedback:hover {
+        cursor: not-allowed;
+        background: #1A2A51;
+    }
+    .buildersidebar-user-info .skin-content {
+        display: none;
+        flex-direction: column;
+        justify-content: center
+    }
+    .buildersidebar-user-info .skin-content .skin-content-body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 10px;
+    }
+    .buildersidebar-user-info .skin-content .skin-content-body div {
+        width: 80px;
+        height: 70px;
+        padding: 5px;
+        text-align: center;
+        border-color: gray;
+        border-style: solid;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .buildersidebar-user-info .skin-content .skin-content-body div .iconfont {
+        width: 100%;
+        height: 70%;
+        font-size: 30px;
+    }
+    .buildersidebar-user-info .skin-content .skin-content-body div .title {
+        width: 100%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .buildersidebar-user-info .skin-content .skin-content-body div:nth-child(-n+2):hover {
+        cursor: pointer;
+        background: #1A2A51;
+    }
+    .buildersidebar-user-info .skin-content .skin-content-body .skins-coming-soon:hover {
+        cursor: not-allowed;
+        background: #1A2A51;
+    }
+</style>
+
+<script>
+    $(function () {
+      $(".user-info-content").appendTo($(".buildersidebar-user-info"));
+
+      // 点击显示用户信息
+      $(".user-info").on("click", function (e) {
+        e.stopPropagation();
+        let userInfoShow = $(".buildersidebar-user-info")[0].style.display;
+        if (userInfoShow === "" || "none") {
+          setTimeout(function () {
+            $(".buildersidebar-user-info").css("display", "block");
+          }, 200);
+          $(document).on("mousedown", function (event) {
+            let target = $(event.target);
+            if (target.context.className !== 'buildersidebar-user-info' &&
+              target.context.parentNode.className !== 'buildersidebar-user-info' &&
+              target.context.parentNode.parentNode.className !== 'buildersidebar-user-info' &&
+              target.context.parentNode.parentNode.parentNode.className !== 'buildersidebar-user-info' &&
+              (target.context.parentNode.parentNode.parentNode.className && target.context.parentNode.parentNode.parentNode.parentNode.className) !== 'buildersidebar-user-info') {
+              $(".buildersidebar-user-info").css("display", "none");
+            }
+          })
+        }
+      });
+
+      //  账户信息
+      $(".account-info").on("click", function () {
+        console.log('click--账户信息',KQ.Builder.BuilderPortalProxy.currentInfo());
+        window.accountInfoDialog = null;
+        if (!window.accountInfoDialog) {
+          new KQ.Builder.BuilderUi.AccountInfoDialog("#account-info-container");
+        }
+        $("#account-info-container").data("kendoWindow").center().open();
+        $(".buildersidebar-user-info").css("display", "none");
+      });
+
+      //  创建地图
+      $(".create-map").on("click", function () {
+        console.log('click--创建地图',window.location.href);
+        window.open(window.location.href);
+        $(".buildersidebar-user-info").css("display", "none");
+      });
+
+      //  我的地图
+      $(".my-map").on("click", function () {
+        console.log('click--我的地图');
+        window.loadProjectDialog = null;
+        if (!window.loadProjectDialog) {
+          window.loadProjectDialog = new KQ.Builder.BuilderUi.ProjectLoadDialog("#project-download-container", {title: '我的地图'}, {filter: "prj"});
+
+          window.loadProjectDialog.on('load', async function (data) {
+            await loadProject(data.dataSourceInfo['url']);
+          });
+
+          window.loadProjectDialog.on('delete', async function (data) {
+            // 初始化删除工程按钮
+            $("#confirm-div").kendoConfirm({
+              title: "删除远程工程",
+              content: "工程删除后无法恢复，确定删除？",
+              messages: {
+                okText: "确定",
+                cancelText: "取消",
+              }
+            }).data("kendoConfirm").result.done(function () {
+              $('body').append($('<div id="confirm-div">'));
+              window.loadProjectDialog.fire("delete_event", data);
+            }).fail(function () {
+              $('body').append($('<div id="confirm-div">'));
+            });
+          });
+
+          window.loadProjectDialog.on("delete_event", async function (data) {
+            await deleteProjectFile(data.dataSourceInfo['url']);
+          })
+        }
+
+        $("#project-download-container").data("kendoWindow").center().open();
+        $(".buildersidebar-user-info").css("display", "none");
+      });
+
+      //  返回首页
+      $(".back-home").on("click", function () {
+        console.log('click--返回首页');
+        window.open(window.location.origin + '/' + 'index');
+        $(".buildersidebar-user-info").css("display", "none");
+      })
+
+    })
+</script>

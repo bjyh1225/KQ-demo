@@ -1,0 +1,244 @@
+<style type="text/css">
+    .module-measure-content .btn {
+        border: none;
+        width:36px;
+        height:36px;
+        line-height: 36px;
+        padding: 0;
+    }
+
+    .module-measure-content td.cnt {
+        padding-left: 10px;
+    }
+</style>
+
+
+<div class="module-measure-content">
+    <!--Measure buttons-->
+    <div class="btn-group" role="group">
+        <!--Coordinate-->
+        <a href="#" class="btn btn-default" @click="onMeasureCoordinationBtnClk" :title="titles.measureCoordination">
+            <span class="iconfont icon-coordinate" aria-hidden="true"></span><span></span>
+        </a>
+        <!--HorizontalDistance-->
+        <a href="#" class="btn btn-default" @click="onMeasureHorizontalDistanceBtnClk"
+           :title="titles.measureHorizontalDistance">
+            <span class="iconfont icon-hdistance" aria-hidden="true"></span><span></span>
+        </a>
+        <!--VerticalDistance-->
+        <a href="#" class="btn btn-default" @click="onMeasureVerticalDistanceBtnClk"
+           :title="titles.measureVerticalDistance">
+            <span class="iconfont icon-vdistance" aria-hidden="true"></span><span></span>
+        </a>
+        <!--SpaceDistance-->
+        <a href="#" class="btn btn-default" @click="onMeasureSpaceDistanceBtnClk"
+           :title="titles.measureSpaceDistance">
+            <span class="iconfont icon-sdistance" aria-hidden="true"></span><span></span>
+        </a>
+        <!--ComplexDistance-->
+        <a href="#" class="btn btn-default" @click="onMeasureComplexDistanceBtnClk"
+           :title="titles.measureComplexDistance">
+            <span class="iconfont icon-sdistance" aria-hidden="true"></span><span></span>
+        </a>
+        <!--TerrainDistance-->
+        <a href="#" class="btn btn-default" @click="onMeasureTerrainDistanceBtnClk"
+           :title="titles.measureTerrainDistance">
+            <span class="iconfont icon-vector-polyline" aria-hidden="true"></span><span></span>
+        </a>
+
+        <!--MeasureArea-->
+        <a href="#" class="btn btn-default" @click="onMeasureAreaBtnClk" :title="titles.measureArea">
+            <span class="iconfont icon-area" aria-hidden="true"></span><span></span>
+        </a>
+        <!--MeasureTerrainArea-->
+        <a href="#" class="btn btn-default" @click="onMeasureTerrainAreaBtnClk" :title="titles.measureTerrainArea"
+           data-toggle="modal" data-target="#measureModal" style="display: none;">
+            <span class="iconfont icon-terrain-area" aria-hidden="true"></span><span></span>
+        </a>
+        <!--Measure Azimuth-->
+        <a href="#" class="btn btn-default" @click="onMeasureAzimuthBtnClk" :title="titles.measureAzimuth" >
+            <span class="iconfont icon-angle" aria-hidden="true"></span><span></span>
+        </a>
+        <hr>
+
+        <a href="#" class="btn btn-default" @click="onMeasureStopBtnClk"
+           :title="titles.measureStop">
+            <span class="iconfont icon-stop" aria-hidden="true"></span><span></span>
+        </a>
+        <a href="#" class="btn btn-default" @click="onMeasureClearBtnClk"
+           :title="titles.measureClear">
+            <span class="iconfont icon-clear" aria-hidden="true"></span><span></span>
+        </a>
+
+    </div>
+    <!--<hr>-->
+    <!--Coordination-->
+    <div v-show="measureType==measureTypeEnum.Coordination">
+        <table class="table">
+            <tbody>
+            <tr>
+                <td colspan="2">{{titles.longitude}}</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="cnt">{{results.longitude}}</td>
+            </tr>
+            <tr>
+                <td colspan="2">{{titles.latitude}}</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="cnt">{{results.latitude}}</td>
+            </tr>
+            <tr>
+                <td colspan="2">{{titles.altitude}}</td>
+            </tr>
+            <tr>
+                <td class="cnt">{{results.altitude}}</td>
+                <td>{{units.lengthUnit}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--Horizontal Distance-->
+    <div v-show="measureType==measureTypeEnum.HorizontalDistance">
+        <table class="table">
+            <tbody>
+            <tr>
+                <td colspan="2">{{titles.length}}</td>
+            </tr>
+            <tr>
+                <td class="cnt">{{results.length}}</td>
+                <td>{{units.lengthUnit}}</td>
+            </tr>
+            <!--<tr>-->
+                <!--<td colspan="2">{{titles.heading}}</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td colspan="2" class="cnt">{{results.heading}}</td>-->
+            <!--</tr>-->
+            </tbody>
+        </table>
+    </div>
+    <!--TerrainDistance-->
+    <div v-show="measureType==measureTypeEnum.TerrainDistance">
+        <table class="table">
+            <tbody>
+            <tr>
+                <td colspan="2">{{titles.length}}</td>
+            </tr>
+            <tr>
+                <td class="cnt" class="cnt">{{results.length}}</td>
+                <td>{{units.lengthUnit}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--VerticalDistance-->
+    <div v-show="measureType==measureTypeEnum.VerticalDistance">
+        <table class="table">
+            <tbody>
+            <tr>
+                <td colspan="2">{{titles.height}}</td>
+            </tr>
+            <tr>
+                <td class="cnt">{{results.height}}</td>
+                <td>{{units.lengthUnit}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--SpaceDistance-->
+    <div v-show="measureType==measureTypeEnum.SpaceDistance">
+        <table class="table">
+            <tbody>
+            <tr>
+                <td colspan="2">{{titles.length}}</td>
+            </tr>
+            <tr>
+                <td class="cnt">{{results.length}}</td>
+                <td>{{units.lengthUnit}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--ComplexDistance-->
+    <div v-show="measureType==measureTypeEnum.ComplexDistance">
+        <table class="table">
+            <tbody>
+            <tr>
+                <td colspan="2">{{titles.hDistance}}</td>
+            </tr>
+            <tr>
+                <td class="cnt">{{results.length}}</td>
+                <td>{{units.lengthUnit}}</td>
+            </tr>
+            <tr>
+                <td colspan="2">{{titles.vDistance}}</td>
+            </tr>
+            <tr>
+                <td class="cnt">{{results.height}}</td>
+                <td>{{units.lengthUnit}}</td>
+            </tr>
+            <tr>
+                <td colspan="2">{{titles.sDistance}}</td>
+            </tr>
+            <tr>
+                <td class="cnt">{{results.distance}}</td>
+                <td>{{units.lengthUnit}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--Area or TerrainArea-->
+    <div v-show="measureType==measureTypeEnum.HorizontalArea || measureType==measureTypeEnum.EllipesoidArea || measureType==measureTypeEnum.TerrainArea || measureType==measureTypeEnum.Area">
+        <table class="table">
+            <tbody>
+            <tr>
+                <td colspan="2">{{titles.circumference}}</td>
+            </tr>
+            <tr>
+                <td class="cnt">{{results.circumference}}</td>
+                <td>{{units.lengthUnit}}</td>
+            </tr>
+            <tr>
+                <td colspan="2">{{titles.area}}</td>
+            </tr>
+            <tr>
+                <td class="cnt">{{results.area}}</td>
+                <td>{{units.areaUnit}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--Azimuth-->
+    <div v-show="measureType==measureTypeEnum.Azimuth">
+        <table class="table">
+            <tbody>
+            <tr>
+                <td colspan="2">{{titles.azimuth}}</td>
+            </tr>
+            <tr>
+                <td class="cnt">{{results.azimuth}}</td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="measureModal" tabindex="-1" role="dialog" aria-labelledby="measureModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" class="close" data-dismiss="modal" aria-hidden="true">&times;</a>
+                <h5 id="measureModalTitle" class="modal-title">Tips:</h5>
+            </div>
+            <div id="measureModalContent" class="modal-body">{{measureModalContent}}</div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-default" data-dismiss="modal">关闭</a>
+                <a href="#" class="btn btn-primary" data-dismiss="modal">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+

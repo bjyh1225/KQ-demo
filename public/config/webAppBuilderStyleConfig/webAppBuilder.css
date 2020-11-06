@@ -1,0 +1,326 @@
+/*背景颜色，运用于头部和侧边*/
+.app-bg-color{
+  background: #273142;
+}
+/*背景颜色上文字颜色*/
+.app-bg-font-color{
+  color:#fff;
+}
+/*底部边框线*/
+.app-border-bottom{
+  border-bottom:1px solid #525a68;
+}
+/*底部边框线*/
+.app-border-right{
+  border-right:1px solid #525a68;
+}
+/*hover颜色*/
+.app-hover-color:hover{
+  color:#3691e9;
+}
+/*hover背景色*/
+.app-hover-bg:hover{
+  background:#3691e9;
+}
+/*右侧头部按钮选中颜色*/
+.right-header-btn-is-active{
+  background:#3691e9;
+}
+/*侧边栏选中颜色*/
+.app-aside-active{
+  color:#3691e9;
+  background: #fff;
+}
+.app-aside-title-font-color{
+  color:#5f646e;
+}
+.app-aside-normal-font-color{
+  color:#595959;
+}
+.app-aside-border-bottom{
+  border-bottom:1px solid #ebebeb;
+}
+.app-aside-title-icon::before{
+  background: #3691e9;
+}
+.app-base-color{
+  color:#3691e9;
+}
+.app-base-color-hover:hover{
+  color:rgba(54, 145, 233,0.8);
+}
+/*通用样式处理*/
+  /*按钮颜色*/
+  .app-builder-btn{
+    background: #3691e9;
+    color:#fff;
+    border:none;
+  }
+  .app-builder-btn:hover{
+    background: rgba(54, 145, 233,0.8);
+    color:#fff;
+  }
+  /*文本框处理*/
+  #web-app-builder #web-app-builder-body .el-input__inner:focus{
+    border: 1px solid #3691e9;
+  }
+  .service-list-pop .el-input__inner:focus{
+    border: 1px solid #3691e9;
+  }
+  /*复选框*/
+  #web-app-builder #web-app-builder-body .is-indeterminate .el-checkbox__inner{
+    background-color:#3691e9;
+    border-color:#3691e9;
+  }
+  #web-app-builder #web-app-builder-body .is-indeterminate .el-checkbox__inner::after{
+    border-color:#fff;
+  }
+  #web-app-builder #web-app-builder-body .is-checked .el-checkbox__inner{
+    background-color:#3691e9;
+    border-color:#3691e9;
+  }
+  #web-app-builder #web-app-builder-body .is-checked .el-checkbox__inner::after{
+    border-color:#fff;
+  } 
+  #web-app-builder #web-app-builder-body .el-checkbox__input .el-checkbox__inner:hover{
+    border-color:#3691e9;
+  }
+  /*下拉框*/
+  .app-builer-select .el-select-dropdown__wrap .el-select-dropdown__list .el-select-dropdown__item.selected{
+    color:#3691e9;
+  }
+  /*弹出窗关闭按钮*/
+  .layer-manage-dialog-pop .el-dialog__header .el-dialog__headerbtn:focus .el-dialog__close{
+    color:#3691e9 !important;
+  }
+  .layer-manage-dialog-pop .el-dialog__header .el-dialog__headerbtn:hover .el-dialog__close{
+    color:#3691e9 !important;
+  }
+  /*单选按钮*/
+  #web-app-builder #web-app-builder-body .el-radio__inner:hover {
+    border-color:#3691e9;
+  }
+  #web-app-builder #web-app-builder-body .el-radio__input.is-checked .el-radio__inner{
+    background-color:#3691e9;
+    border-color:#3691e9;
+  }
+  #web-app-builder #web-app-builder-body .el-radio__input.is-checked+.el-radio__label{
+    color:#3691e9;
+  }
+  /*数字选择器*/
+  #web-app-builder #web-app-builder-body .el-input-number__increase:hover:not(.is-disabled){
+    color:#3691e9;
+  }
+/*end*/
+/*主题面板配色*/
+.app-aside-theme-img-border{
+  border:2px solid #3691e9;
+}
+.color-block:hover{
+  border:2px solid #ffd461 !important;
+}
+.color-block.is-active{
+  border:2px solid #ffd461 !important;
+}
+.content .layout-block-container:hover .layout-block {
+  border: 2px solid #3691e9;
+}
+.layout-block-container:hover p{
+  color:#3691e9;
+}
+.content .layout-block-container.is-active .layout-block{
+  border:2px solid #3691e9;
+}
+.layout-block-container.is-active p{
+  color:#3691e9;
+}
+
+/*打开应用列表弹出*/
+.el-popover.app-list-popover{
+  background: rgba(39, 49, 66,.9);
+  color:#fff;
+  border:1px solid #273142;
+  box-shadow: 1px 1px 10px rgba(0,0,0,.5);
+}
+.el-popover.app-list-popover .popper__arrow{
+  border-bottom-color:rgba(39, 49, 66,.9);
+}
+.el-popover.app-list-popover .popper__arrow::after{
+  border-bottom-color:rgba(39, 49, 66,.9);
+}
+/*打开应用-页码*/
+.app-pagination .el-pagination .btn-prev{
+  background:none;
+  color:#fff;
+}
+.app-pagination .el-pagination .btn-prev:hover{
+  color:#3691e9;
+}
+.app-pagination .el-pagination .btn-prev[disabled='disabled']{
+  background:none;
+  color:#777;
+}
+.app-pagination .el-pagination .el-pager .number{
+  background:none;
+  color:#fff;
+}
+.app-pagination .el-pagination .el-pager .number:hover{
+  color:#3691e9;
+}
+.app-pagination .el-pagination .el-pager .number.active{
+  color:#3691e9;
+}
+.app-pagination .el-pagination .el-pager .el-icon-more{
+  background:none;
+  color:#fff;
+}
+.app-pagination .el-pagination .el-pager .btn-quickprev:hover{
+  background:none;
+  color:#3691e9;
+}
+.app-pagination .el-pagination .el-pager .btn-quicknext:hover{
+  background:none;
+  color:#3691e9;
+}
+.app-pagination .el-pagination .btn-next{
+  background:none;
+  color:#fff;
+}
+.app-pagination .el-pagination .btn-next:hover{
+  color:#3691e9;
+}
+.app-pagination .el-pagination .btn-next[disabled='disabled']{
+  background:none;
+  color:#777;
+}
+/*图层管理*/
+.layer-manage-dialog-pop .dialog-title span{
+  border-bottom:2px solid #3691e9;
+}
+/*图层管理-树中的按钮*/
+.tree-content-btn{
+  cursor: pointer;
+  color:#3691e9;
+}
+.tree-content-btn:hover{
+  color:rgba(54, 145, 233,0.8);
+}
+/*图层管理下拉框*/
+.layer-manage-dialog .select-input-area .service-list-input.service-list-input-is-active{
+  border-right: 1px solid #3691e9;
+  border-top: 1px solid #3691e9;
+  border-bottom: 1px solid #3691e9;
+}
+#web-app-builder #web-app-builder-body .service-list-input-is-active-select .el-input .el-input__inner{
+  border-right:1px solid #3691e9;
+} 
+/*图层管理按钮*/
+.common-layer-tree-container .btn-group-area .el-button-group .el-button{
+  background: #3691e9;
+  border-top:1px solid #3691e9;
+  border-bottom:1px solid #3691e9;
+  border-right:1px solid #2e80d3;
+}
+.common-layer-tree-container .btn-group-area .el-button-group .el-button:hover{
+  background:rgba(54, 145, 233,0.8);
+}
+.common-layer-tree-container .btn-group-area .el-button-group .el-button:last-child{
+  border-right:1px solid #3691e9;
+} 
+.common-layer-tree-container .btn-group-area .el-button-group .el-button:first-child{
+  border-left:1px solid #3691e9;
+} 
+/*图层管理-页码*/
+.layer-manage-pagination .el-pagination .btn-prev{
+  background:none;
+  color:#242424;
+}
+.layer-manage-pagination .el-pagination .btn-prev:hover{
+  color:#3691e9;
+}
+.layer-manage-pagination .el-pagination .btn-prev[disabled='disabled']{
+  background:none;
+  color:#777;
+}
+.layer-manage-pagination .el-pagination .el-pager .number{
+  background:none;
+  color:#242424;
+}
+.layer-manage-pagination .el-pagination .el-pager .number:hover{
+  color:#3691e9;
+}
+.layer-manage-pagination .el-pagination .el-pager .number.active{
+  color:#3691e9;
+}
+.layer-manage-pagination .el-pagination .el-pager .el-icon-more{
+  background:none;
+  color:#242424;
+}
+.layer-manage-pagination .el-pagination .el-pager .btn-quickprev:hover{
+  background:none;
+  color:#3691e9;
+}
+.layer-manage-pagination .el-pagination .el-pager .btn-quicknext:hover{
+  background:none;
+  color:#3691e9;
+}
+.layer-manage-pagination .el-pagination .btn-next{
+  background:none;
+  color:#242424;
+}
+.layer-manage-pagination .el-pagination .btn-next:hover{
+  color:#3691e9;
+}
+.layer-manage-pagination .el-pagination .btn-next[disabled='disabled']{
+  background:none;
+  color:#777;
+}
+/*微件*/
+.widget-container .widget-box {
+  background: #64a0dc;
+}
+.widget-container .widget-box .widget-icon {
+  color: #fff;
+}
+.widget-container .widget-box .widget-box-edit {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+}
+.widget-container .widget-box .widget-box-edit:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+.widget-container .widget-box .widget-box-show {
+  color: #fff;
+}
+.widget-container .widget-box .widget-box-show:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+.widget-container:hover .widget-box-font {
+  color: #64a0dc;
+}
+/*微件隐藏状态*/
+.is-hidden .widget-box {
+  background: #c1d9f1;
+}
+.is-hidden .widget-box i {
+  color: #eef5fb;
+}
+.is-hidden .widget-box-font {
+  color: #d9dad8 !important;
+}
+.is-hidden:hover .widget-box-font {
+  color: #d9dad8;
+}
+
+
+/*图层目录设置弹出窗*/
+.layer-cataloguer-dialog-pop .dialog-title span{
+  border-bottom:2px solid #3691e9;
+}
+/*弹出窗关闭按钮*/
+.layer-cataloguer-dialog-pop .el-dialog__header .el-dialog__headerbtn:focus .el-dialog__close{
+  color:#3691e9 !important;
+}
+.layer-cataloguer-dialog-pop .el-dialog__header .el-dialog__headerbtn:hover .el-dialog__close{
+  color:#3691e9 !important;
+}

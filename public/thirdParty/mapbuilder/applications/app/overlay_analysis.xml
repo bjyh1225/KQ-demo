@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <layers>
+    <layer query_id="19" src_name="source0" id="19" label="2012年">
+      <type></type>
+      <fields>OBJECTID,SHEN,SHI,XIAN,CLND,SQDW,XMMC,PZWH,YDZMJ,QZNZY,QZWLY,QZCL,XZJSYDMJ,BCGDMJ,BCGDZJ,GDKKF,TDGLF,YCSYF,SHAPE_LENG,SLID,MJDW,SHAPE_LE_1,XMWZ,SHAPE</fields>
+      <fields_alias>OBJECTID,SHEN,SHI,XIAN,CLND,SQDW,XMMC,PZWH,YDZMJ,QZNZY,QZWLY,QZCL,XZJSYDMJ,BCGDMJ,BCGDZJ,GDKKF,TDGLF,YCSYF,SHAPE_LENG,SLID,MJDW,SHAPE_LE_1,XMWZ,SHAPE</fields_alias>
+      <chart_field></chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="20" src_name="source0" id="20" label="2011年">
+      <type></type>
+      <fields>OBJECTID,SHEN,SHI,XIAN,CLND,SQDW,XMMC,PZWH,YDZMJ,QZNZY,QZWLY,QZCL,XZJSYDMJ,BCGDMJ,BCGDZJ,GDKKF,TDGLF,YCSYF,SHAPE_LENG,MJDW,SHAPE_LE_1,XMWZ,SLID,SHAPE</fields>
+      <fields_alias>OBJECTID,SHEN,SHI,XIAN,CLND,SQDW,XMMC,PZWH,YDZMJ,QZNZY,QZWLY,QZCL,XZJSYDMJ,BCGDMJ,BCGDZJ,GDKKF,TDGLF,YCSYF,SHAPE_LENG,MJDW,SHAPE_LE_1,XMWZ,SLID,SHAPE</fields_alias>
+      <chart_field></chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="21" src_name="source0" id="21" label="2010年以前">
+      <type></type>
+      <fields>OBJECTID,SHEN,SHI,XIAN,CLND,SQDW,XMMC,PZWH,YDZMJ,QZNZY,QZWLY,QZCL,XZJSYDMJ,BCGDMJ,BCGDZJ,GDKKF,TDGLF,YCSYF,SHAPE_LENG,MJDW,SHAPE_LE_1,XMWZ,SLID,SHAPE</fields>
+      <fields_alias>OBJECTID,SHEN,SHI,XIAN,CLND,SQDW,XMMC,PZWH,YDZMJ,QZNZY,QZWLY,QZCL,XZJSYDMJ,BCGDMJ,BCGDZJ,GDKKF,TDGLF,YCSYF,SHAPE_LENG,MJDW,SHAPE_LE_1,XMWZ,SLID,SHAPE</fields_alias>
+      <chart_field></chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="24" src_name="source0" id="24" label="2012年">
+      <type></type>
+      <fields>OBJECTID,PXMBH,PDKBH,PDKMC,PDKMJ,PDKSJMJ,PDKYT,PXMSJ,PBPPC,PYDDW,PLAYER,PBZ,PDYZH,PXZBM,PFHDM,PYSDM,PBSM,PPZWH,SLID,MJDW,PXMMC,PPZJG,PXMLX,PHY,PXMWZ,SHAPE</fields>
+      <fields_alias>OBJECTID,PXMBH,PDKBH,PDKMC,PDKMJ,PDKSJMJ,PDKYT,PXMSJ,PBPPC,PYDDW,PLAYER,PBZ,PDYZH,PXZBM,PFHDM,PYSDM,PBSM,PPZWH,SLID,MJDW,PXMMC,PPZJG,PXMLX,PHY,PXMWZ,SHAPE</fields_alias>
+      <chart_field>PXZBM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="25" src_name="source0" id="25" label="2011年">
+      <type></type>
+      <fields>PBSM,PPZWH,MJDW,PXMWZ,PHY,PXMLX,PPZJG,PXMMC,SLID,DKTYBM,DKLYBM,SHAPE,OBJECTID,PXMBH,PDKBH,PDKMC,PDKMJ,PDKSJMJ,PDKYT,PXMSJ,PBPPC,PYDDW,PLAYER,PBZ,PDYZH,PXZBM,PFHDM,PYSDM</fields>
+      <fields_alias>PBSM,PPZWH,MJDW,PXMWZ,PHY,PXMLX,PPZJG,PXMMC,SLID,DKTYBM,DKLYBM,SHAPE,OBJECTID,PXMBH,PDKBH,PDKMC,PDKMJ,PDKSJMJ,PDKYT,PXMSJ,PBPPC,PYDDW,PLAYER,PBZ,PDYZH,PXZBM,PFHDM,PYSDM</fields_alias>
+      <chart_field>DKTYBM</chart_field>
+      <summary_field>PBSM</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="26" src_name="source0" id="26" label="2010年以前">
+      <type></type>
+      <fields>OBJECTID,PXMBH,PDKBH,PDKMC,PDKMJ,PDKSJMJ,PDKYT,PXMSJ,PBPPC,PYDDW,PLAYER,PBZ,PDYZH,PXZBM,PFHDM,PYSDM,PBSM,PPZWH,MJDW,SHAPE_LENG,SE_ANNO_20,PXMWZ,PHY,PXMLX,PPZJG,PXMMC,SLID,SHAPE</fields>
+      <fields_alias>OBJECTID,PXMBH,PDKBH,PDKMC,PDKMJ,PDKSJMJ,PDKYT,PXMSJ,PBPPC,PYDDW,PLAYER,PBZ,PDYZH,PXZBM,PFHDM,PYSDM,PBSM,PPZWH,MJDW,SHAPE_LENG,SE_ANNO_20,PXMWZ,PHY,PXMLX,PPZJG,PXMMC,SLID,SHAPE</fields_alias>
+      <chart_field>PXZBM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="33" src_name="source0" id="33" label="2010年以前">
+      <type></type>
+      <fields>OBJECTID,XMBH,DKBH,DKMC,DKMJ,DKSJMJ,DKYT,XMSJ,BPPC,YDDW,LAYER,BZ,DYZH,XZBM,FHDM,YSDM,BSM,PZWH,SHAPE_LENG,MJDW,SLID,SHAPE</fields>
+      <fields_alias>OBJECTID,XMBH,DKBH,DKMC,DKMJ,DKSJMJ,DKYT,XMSJ,BPPC,YDDW,LAYER,BZ,DYZH,XZBM,FHDM,YSDM,BSM,PZWH,SHAPE_LENG,MJDW,SLID,SHAPE</fields_alias>
+      <chart_field>XZBM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="35" src_name="source0" id="35" label="2013年">
+      <type></type>
+      <fields>OBJECTID,ZXMBH,ZDKBH,ZDKMC,ZDKMJ,ZDKSJMJ,ZDKYT,ZXMSJ,ZBPPC,ZYDDW,ZLAYER,ZBZ,ZDYZH,ZXZBM,ZFHDM,ZYSDM,ZBSM,ZPZWH,SHAPE_LENG,SLID,MJDW,SHAPE</fields>
+      <fields_alias>OBJECTID,ZXMBH,ZDKBH,ZDKMC,ZDKMJ,ZDKSJMJ,ZDKYT,ZXMSJ,ZBPPC,ZYDDW,ZLAYER,ZBZ,ZDYZH,ZXZBM,ZFHDM,ZYSDM,ZBSM,ZPZWH,SHAPE_LENG,SLID,MJDW,SHAPE</fields_alias>
+      <chart_field>ZXZBM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="36" src_name="source0" id="36" label="2012年">
+      <type></type>
+      <fields>OBJECTID,ZXMBH,ZDKBH,ZDKMC,ZDKMJ,ZDKSJMJ,ZDKYT,ZXMSJ,ZBPPC,ZYDDW,ZLAYER,ZBZ,ZDYZH,ZXZBM,ZFHDM,ZYSDM,ZBSM,ZPZWH,SHAPE_LENG,SLID,MJDW,SHAPE</fields>
+      <fields_alias>OBJECTID,ZXMBH,ZDKBH,ZDKMC,ZDKMJ,ZDKSJMJ,ZDKYT,ZXMSJ,ZBPPC,ZYDDW,ZLAYER,ZBZ,ZDYZH,ZXZBM,ZFHDM,ZYSDM,ZBSM,ZPZWH,SHAPE_LENG,SLID,MJDW,SHAPE</fields_alias>
+      <chart_field>ZXZBM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="37" src_name="source0" id="37" label="2011年">
+      <type></type>
+      <fields>OBJECTID,ZXMBH,ZDKBH,ZDKMC,ZDKMJ,ZDKSJMJ,ZDKYT,ZXMSJ,ZBPPC,ZYDDW,ZLAYER,ZBZ,ZDYZH,ZXZBM,ZFHDM,ZYSDM,ZBSM,ZPZWH,SHAPE_LENG,MJDW,SLID,DKTYBM,DKLYBM,SHAPE</fields>
+      <fields_alias>OBJECTID,ZXMBH,ZDKBH,ZDKMC,ZDKMJ,ZDKSJMJ,ZDKYT,ZXMSJ,ZBPPC,ZYDDW,ZLAYER,ZBZ,ZDYZH,ZXZBM,ZFHDM,ZYSDM,ZBSM,ZPZWH,SHAPE_LENG,MJDW,SLID,DKTYBM,DKLYBM,SHAPE</fields_alias>
+      <chart_field>ZXZBM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="38" src_name="source0" id="38" label="2010年以前">
+      <type></type>
+      <fields>OBJECTID,ZXMBH,ZDKBH,ZDKMC,ZDKMJ,ZDKSJMJ,ZDKYT,ZXMSJ,ZBPPC,ZYDDW,ZLAYER,ZBZ,ZDYZH,ZXZBM,ZFHDM,ZYSDM,ZBSM,ZPZWH,SHAPE_LENG,MJDW,SLID,SHAPE</fields>
+      <fields_alias>OBJECTID,ZXMBH,ZDKBH,ZDKMC,ZDKMJ,ZDKSJMJ,ZDKYT,ZXMSJ,ZBPPC,ZYDDW,ZLAYER,ZBZ,ZDYZH,ZXZBM,ZFHDM,ZYSDM,ZBSM,ZPZWH,SHAPE_LENG,MJDW,SLID,SHAPE</fields_alias>
+      <chart_field>ZXZBM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="40" src_name="source0" id="40" label="2013年">
+      <type></type>
+      <fields>OBJECTID,JK,SHAPE_LENG,CRNX,DKMC,PZSJ,DKBH,YDDW,TDZL,FHDM,YSDM,BSM,PZWH,QDFS,BZ,ZMJ,JMJ,ZJK,TDYT,YJK,QZGD,ZDPW,JDRQ,CJQRS,QZSY,CRHTH,XMMC,DJ,RJL,JZMD,JZGD,LHL,KGQX,JGRQ,BPQK,LYGH,JZZMJ,XZBM,SLID,MJDW,SHAPE</fields>
+      <fields_alias>OBJECTID,JK,SHAPE_LENG,CRNX,DKMC,PZSJ,DKBH,YDDW,TDZL,FHDM,YSDM,BSM,PZWH,QDFS,BZ,ZMJ,JMJ,ZJK,TDYT,YJK,QZGD,ZDPW,JDRQ,CJQRS,QZSY,CRHTH,XMMC,DJ,RJL,JZMD,JZGD,LHL,KGQX,JGRQ,BPQK,LYGH,JZZMJ,XZBM,SLID,MJDW,SHAPE</fields_alias>
+      <chart_field>YSDM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="41" src_name="source0" id="41" label="2012年">
+      <type></type>
+      <fields>YDDW,TDZL,FHDM,YSDM,BSM,PZWH,QDFS,BZ,ZMJ,JMJ,ZJK,TDYT,YJK,QZGD,ZDPW,JDRQ,CJQRS,QZSY,CRHTH,XMMC,DJ,RJL,JZMD,JZGD,LHL,KGQX,JGRQ,BPQK,LYGH,JZZMJ,XZBM,SLID,MJDW,SHAPE,OBJECTID,JK,SHAPE_LENG,CRNX,DKMC,PZSJ,DKBH</fields>
+      <fields_alias>YDDW,TDZL,FHDM,YSDM,BSM,PZWH,QDFS,BZ,ZMJ,JMJ,ZJK,TDYT,YJK,QZGD,ZDPW,JDRQ,CJQRS,QZSY,CRHTH,XMMC,DJ,RJL,JZMD,JZGD,LHL,KGQX,JGRQ,BPQK,LYGH,JZZMJ,XZBM,SLID,MJDW,SHAPE,OBJECTID,JK,SHAPE_LENG,CRNX,DKMC,PZSJ,DKBH</fields_alias>
+      <chart_field>YSDM</chart_field>
+      <summary_field>YDDW</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="42" src_name="source0" id="42" label="2011年">
+      <type></type>
+      <fields>OBJECTID,JK,SHAPE_LENG,CRNX,DKMC,PZSJ,DKBH,YDDW,TDZL,FHDM,YSDM,BSM,PZWH,QDFS,BZ,ZMJ,JMJ,ZJK,TDYT,YJK,QZGD,ZDPW,JDRQ,CJQRS,QZSY,CRHTH,XMMC,DJ,RJL,JZMD,JZGD,LHL,KGQX,JGRQ,BPQK,LYGH,JZZMJ,XZBM,MJDW,SLID,SHAPE</fields>
+      <fields_alias>OBJECTID,JK,SHAPE_LENG,CRNX,DKMC,PZSJ,DKBH,YDDW,TDZL,FHDM,YSDM,BSM,PZWH,QDFS,BZ,ZMJ,JMJ,ZJK,TDYT,YJK,QZGD,ZDPW,JDRQ,CJQRS,QZSY,CRHTH,XMMC,DJ,RJL,JZMD,JZGD,LHL,KGQX,JGRQ,BPQK,LYGH,JZZMJ,XZBM,MJDW,SLID,SHAPE</fields_alias>
+      <chart_field>YSDM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="43" src_name="source0" id="43" label="2010年以前">
+      <type></type>
+      <fields>OBJECTID,JK,SHAPE_LENG,CRNX,DKMC,PZSJ,DKBH,YDDW,TDZL,FHDM,YSDM,BSM,PZWH,QDFS,BZ,ZMJ,JMJ,ZJK,TDYT,YJK,QZGD,ZDPW,JDRQ,CJQRS,QZSY,CRHTH,XMMC,DJ,RJL,JZMD,JZGD,LHL,KGQX,JGRQ,BPQK,LYGH,JZZMJ,XZBM,MJDW,SLID,SHAPE</fields>
+      <fields_alias>OBJECTID,JK,SHAPE_LENG,CRNX,DKMC,PZSJ,DKBH,YDDW,TDZL,FHDM,YSDM,BSM,PZWH,QDFS,BZ,ZMJ,JMJ,ZJK,TDYT,YJK,QZGD,ZDPW,JDRQ,CJQRS,QZSY,CRHTH,XMMC,DJ,RJL,JZMD,JZGD,LHL,KGQX,JGRQ,BPQK,LYGH,JZZMJ,XZBM,MJDW,SLID,SHAPE</fields_alias>
+      <chart_field>YSDM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="45" src_name="source0" id="45" label="用而未尽">
+      <type></type>
+      <fields>OBJECTID,XMBH,DKBH,DKMC,DKMJ,DKSJMJ,DKYT,XMSJ,BPPC,YDDW,LAYER,BZ,DYZH,XZBM,FHDM,YSDM,BSM,PZWH,SHAPE_LENG,MJDW,SLID,SHAPE</fields>
+      <fields_alias>OBJECTID,XMBH,DKBH,DKMC,DKMJ,DKSJMJ,DKYT,XMSJ,BPPC,YDDW,LAYER,BZ,DYZH,XZBM,FHDM,YSDM,BSM,PZWH,SHAPE_LENG,MJDW,SLID,SHAPE</fields_alias>
+      <chart_field>XZBM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="46" src_name="source0" id="46" label="供而未用">
+      <type></type>
+      <fields>OBJECTID,XMBH,DKBH,DKMC,DKMJ,DKSJMJ,DKYT,XMSJ,BPPC,YDDW,LAYER,BZ,DYZH,XZBM,FHDM,YSDM,BSM,PZWH,SHAPE_LENG,MJDW,SLID,SHAPE</fields>
+      <fields_alias>OBJECTID,XMBH,DKBH,DKMC,DKMJ,DKSJMJ,DKYT,XMSJ,BPPC,YDDW,LAYER,BZ,DYZH,XZBM,FHDM,YSDM,BSM,PZWH,SHAPE_LENG,MJDW,SLID,SHAPE</fields_alias>
+      <chart_field>XZBM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="47" src_name="source0" id="47" label="征而未供">
+      <type></type>
+      <fields>OBJECTID,XMBH,DKBH,DKMC,DKMJ,DKSJMJ,DKYT,XMSJ,BPPC,YDDW,LAYER,BZ,DYZH,XZBM,FHDM,YSDM,BSM,PZWH,SHAPE_LENG,MJDW,SLID,SHAPE</fields>
+      <fields_alias>OBJECTID,XMBH,DKBH,DKMC,DKMJ,DKSJMJ,DKYT,XMSJ,BPPC,YDDW,LAYER,BZ,DYZH,XZBM,FHDM,YSDM,BSM,PZWH,SHAPE_LENG,MJDW,SLID,SHAPE</fields_alias>
+      <chart_field>XZBM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="48" src_name="source0" id="48" label="批而未征">
+      <type></type>
+      <fields>OBJECTID,XMBH,DKBH,DKMC,DKMJ,DKSJMJ,DKYT,XMSJ,BPPC,YDDW,LAYER,BZ,DYZH,XZBM,FHDM,YSDM,BSM,PZWH,MJDW,SLID,SHAPE</fields>
+      <fields_alias>OBJECTID,XMBH,DKBH,DKMC,DKMJ,DKSJMJ,DKYT,XMSJ,BPPC,YDDW,LAYER,BZ,DYZH,XZBM,FHDM,YSDM,BSM,PZWH,MJDW,SLID,SHAPE</fields_alias>
+      <chart_field>XZBM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="51" src_name="source0" id="51" label="2013年">
+      <type></type>
+      <fields>OBJECTID,SHEN,SHI,XIAN,CLND,TDZL,TDSZ,TDMJ,ZZQDL,ZZHDL,JHZZND,SLID,MJDW,SHAPE</fields>
+      <fields_alias>OBJECTID,SHEN,SHI,XIAN,CLND,TDZL,TDSZ,TDMJ,ZZQDL,ZZHDL,JHZZND,SLID,MJDW,SHAPE</fields_alias>
+      <chart_field></chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="52" src_name="source0" id="52" label="2012年">
+      <type></type>
+      <fields>ZZQDL,ZZHDL,JHZZND,SLID,MJDW,SHAPE,OBJECTID,SHEN,SHI,XIAN,CLND,TDZL,TDSZ,TDMJ</fields>
+      <fields_alias>ZZQDL,ZZHDL,JHZZND,SLID,MJDW,SHAPE,OBJECTID,SHEN,SHI,XIAN,CLND,TDZL,TDSZ,TDMJ</fields_alias>
+      <chart_field></chart_field>
+      <summary_field>ZZQDL</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="53" src_name="source0" id="53" label="2011年">
+      <type></type>
+      <fields>OBJECTID,SHEN,SHI,XIAN,CLND,TDZL,TDSZ,TDMJ,ZZQDL,ZZHDL,JHZZND,SLID,MJDW,SHAPE</fields>
+      <fields_alias>OBJECTID,SHEN,SHI,XIAN,CLND,TDZL,TDSZ,TDMJ,ZZQDL,ZZHDL,JHZZND,SLID,MJDW,SHAPE</fields_alias>
+      <chart_field></chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="54" src_name="source0" id="54" label="2010年以前">
+      <type></type>
+      <fields>OBJECTID,SHEN,SHI,XIAN,CLND,TDZL,TDSZ,TDMJ,ZZQDL,ZZHDL,JHZZND,SLID,MJDW,SHAPE</fields>
+      <fields_alias>OBJECTID,SHEN,SHI,XIAN,CLND,TDZL,TDSZ,TDMJ,ZZQDL,ZZHDL,JHZZND,SLID,MJDW,SHAPE</fields_alias>
+      <chart_field></chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="56" src_name="source0" id="56" label="2013年">
+      <type></type>
+      <fields>OBJECTID,SHEN,SHI,XIAN,CLND,ZZXMMC,ZZMJ,TDZL,TDSZ,ZZLXWH,LXTGRQ,KGRQ,JGRQ,ZZYSWH,YSTGRQ,SSZZDW,ZJLY,ZJZE,SLID,MJDW,SHAPE</fields>
+      <fields_alias>OBJECTID,SHEN,SHI,XIAN,CLND,ZZXMMC,ZZMJ,TDZL,TDSZ,ZZLXWH,LXTGRQ,KGRQ,JGRQ,ZZYSWH,YSTGRQ,SSZZDW,ZJLY,ZJZE,SLID,MJDW,SHAPE</fields_alias>
+      <chart_field></chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="57" src_name="source0" id="57" label="2012年">
+      <type></type>
+      <fields>OBJECTID,SHEN,SHI,XIAN,CLND,ZZXMMC,ZZMJ,TDZL,TDSZ,ZZLXWH,LXTGRQ,KGRQ,JGRQ,ZZYSWH,YSTGRQ,SSZZDW,ZJLY,ZJZE,SLID,MJDW,SHAPE</fields>
+      <fields_alias>OBJECTID,SHEN,SHI,XIAN,CLND,ZZXMMC,ZZMJ,TDZL,TDSZ,ZZLXWH,LXTGRQ,KGRQ,JGRQ,ZZYSWH,YSTGRQ,SSZZDW,ZJLY,ZJZE,SLID,MJDW,SHAPE</fields_alias>
+      <chart_field></chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="58" src_name="source0" id="58" label="2011年">
+      <type></type>
+      <fields>OBJECTID,SHEN,SHI,XIAN,CLND,ZZXMMC,ZZMJ,TDZL,TDSZ,ZZLXWH,LXTGRQ,KGRQ,JGRQ,ZZYSWH,YSTGRQ,SSZZDW,ZJLY,ZJZE,SLID,MJDW,SHAPE</fields>
+      <fields_alias>OBJECTID,SHEN,SHI,XIAN,CLND,ZZXMMC,ZZMJ,TDZL,TDSZ,ZZLXWH,LXTGRQ,KGRQ,JGRQ,ZZYSWH,YSTGRQ,SSZZDW,ZJLY,ZJZE,SLID,MJDW,SHAPE</fields_alias>
+      <chart_field></chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="59" src_name="source0" id="59" label="2010年以前">
+      <type></type>
+      <fields>OBJECTID,SHEN,SHI,XIAN,CLND,ZZXMMC,ZZMJ,TDZL,TDSZ,ZZLXWH,LXTGRQ,KGRQ,JGRQ,ZZYSWH,YSTGRQ,SSZZDW,ZJLY,ZJZE,SLID,MJDW,SHAPE</fields>
+      <fields_alias>OBJECTID,SHEN,SHI,XIAN,CLND,ZZXMMC,ZZMJ,TDZL,TDSZ,ZZLXWH,LXTGRQ,KGRQ,JGRQ,ZZYSWH,YSTGRQ,SSZZDW,ZJLY,ZJZE,SLID,MJDW,SHAPE</fields_alias>
+      <chart_field></chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="61" src_name="source0" id="61" label="2013年">
+      <type></type>
+      <fields>OBJECTID,SHEN,SHI,XIAN,CLND,ZZXMMC,ZZMJ,TDZL,TDSZ,ZZLXWH,LXTGRQ,KGRQ,JGRQ,ZZYSWH,YSTGRQ,SSZZDW,ZJLY,ZJZE,SLID,MJDW,SHAPE</fields>
+      <fields_alias>OBJECTID,SHEN,SHI,XIAN,CLND,ZZXMMC,ZZMJ,TDZL,TDSZ,ZZLXWH,LXTGRQ,KGRQ,JGRQ,ZZYSWH,YSTGRQ,SSZZDW,ZJLY,ZJZE,SLID,MJDW,SHAPE</fields_alias>
+      <chart_field></chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="62" src_name="source0" id="62" label="2012年">
+      <type></type>
+      <fields>OBJECTID,SHEN,SHI,XIAN,CLND,ZZXMMC,ZZMJ,TDZL,TDSZ,ZZLXWH,LXTGRQ,KGRQ,JGRQ,ZZYSWH,YSTGRQ,SSZZDW,ZJLY,ZJZE,SLID,MJDW,SHAPE</fields>
+      <fields_alias>OBJECTID,SHEN,SHI,XIAN,CLND,ZZXMMC,ZZMJ,TDZL,TDSZ,ZZLXWH,LXTGRQ,KGRQ,JGRQ,ZZYSWH,YSTGRQ,SSZZDW,ZJLY,ZJZE,SLID,MJDW,SHAPE</fields_alias>
+      <chart_field></chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="63" src_name="source0" id="63" label="2011年">
+      <type></type>
+      <fields>OBJECTID,SHEN,SHI,XIAN,CLND,ZZXMMC,ZZMJ,TDZL,TDSZ,ZZLXWH,LXTGRQ,KGRQ,JGRQ,ZZYSWH,YSTGRQ,SSZZDW,ZJLY,ZJZE,SLID,MJDW,SHAPE</fields>
+      <fields_alias>OBJECTID,SHEN,SHI,XIAN,CLND,ZZXMMC,ZZMJ,TDZL,TDSZ,ZZLXWH,LXTGRQ,KGRQ,JGRQ,ZZYSWH,YSTGRQ,SSZZDW,ZJLY,ZJZE,SLID,MJDW,SHAPE</fields_alias>
+      <chart_field></chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="64" src_name="source0" id="64" label="2010年以前">
+      <type></type>
+      <fields>OBJECTID,SHEN,SHI,XIAN,CLND,ZZXMMC,ZZMJ,TDZL,TDSZ,ZZLXWH,LXTGRQ,KGRQ,JGRQ,ZZYSWH,YSTGRQ,SSZZDW,ZJLY,ZJZE,SLID,MJDW,SHAPE</fields>
+      <fields_alias>OBJECTID,SHEN,SHI,XIAN,CLND,ZZXMMC,ZZMJ,TDZL,TDSZ,ZZLXWH,LXTGRQ,KGRQ,JGRQ,ZZYSWH,YSTGRQ,SSZZDW,ZJLY,ZJZE,SLID,MJDW,SHAPE</fields_alias>
+      <chart_field></chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="67" src_name="source0" id="67" label="2013年">
+      <type></type>
+      <fields>OBJECTID,XZQDM,XMC,JCBH,TBLX,QSX,HSX,XZB,YZB,JCMJ,BGDL,BGFW,WBGLX,BZ,SHAPE</fields>
+      <fields_alias>OBJECTID,XZQDM,XMC,JCBH,TBLX,QSX,HSX,XZB,YZB,JCMJ,BGDL,BGFW,WBGLX,BZ,SHAPE</fields_alias>
+      <chart_field></chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="68" src_name="source0" id="68" label="2012年">
+      <type></type>
+      <fields>OBJECTID,XZQDM,XMC,JCBH,TBLX,QSX,HSX,XZB,YZB,JCMJ,BGDL,BGFW,WBGLX,BZ,SHAPE</fields>
+      <fields_alias>OBJECTID,XZQDM,XMC,JCBH,TBLX,QSX,HSX,XZB,YZB,JCMJ,BGDL,BGFW,WBGLX,BZ,SHAPE</fields_alias>
+      <chart_field></chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="69" src_name="source0" id="69" label="2011年">
+      <type></type>
+      <fields>OBJECTID,XZQDM,XMC,JCBH,TBLX,QSX,HSX,XZB,YZB,JCMJ,BGDL,BGFW,WBGLX,BZ,SHAPE</fields>
+      <fields_alias>OBJECTID,XZQDM,XMC,JCBH,TBLX,QSX,HSX,XZB,YZB,JCMJ,BGDL,BGFW,WBGLX,BZ,SHAPE</fields_alias>
+      <chart_field></chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="70" src_name="source0" id="70" label="2010年以前">
+      <type></type>
+      <fields>OBJECTID,XZQDM,XMC,JCBH,TBLX,QSX,HSX,XZB,YZB,JCMJ,BGDL,BGFW,WBGLX,BZ,SHAPE</fields>
+      <fields_alias>OBJECTID,XZQDM,XMC,JCBH,TBLX,QSX,HSX,XZB,YZB,JCMJ,BGDL,BGFW,WBGLX,BZ,SHAPE</fields_alias>
+      <chart_field></chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="74" src_name="source0" id="73" label="宗地发证情况">
+      <type></type>
+      <fields>OBJECTID,BSM,YSDM,DJH,TXDZ,TDZL,QSXZ,SYQLX,SCMJ,FZMJ,TDYT,JZRJL,JZMD,TDJB,SBDJ,QDJG,ZLDWDM,FHDM,DZ,NZ,XZ,BZ,ZDID,ZDMJ,SZTF,QLR,JZWZDMJ,JZMJ,JDLH,XDLH,ISZY,YSDJH,ZDTZM,JZWLX,SM,YBDJH,TDZH,YTDZH,TXQL,ZDSZ,QSDWDM,DWXZ,SYQX,ZZRQ,ZGBM,HYDM,SFFZ,QSXZMC,SHAPE</fields>
+      <fields_alias>OBJECTID,BSM,YSDM,DJH,TXDZ,TDZL,QSXZ,SYQLX,SCMJ,FZMJ,TDYT,JZRJL,JZMD,TDJB,SBDJ,QDJG,ZLDWDM,FHDM,DZ,NZ,XZ,BZ,ZDID,ZDMJ,SZTF,QLR,JZWZDMJ,JZMJ,JDLH,XDLH,ISZY,YSDJH,ZDTZM,JZWLX,SM,YBDJH,TDZH,YTDZH,TXQL,ZDSZ,QSDWDM,DWXZ,SYQX,ZZRQ,ZGBM,HYDM,SFFZ,QSXZMC,SHAPE</fields_alias>
+      <chart_field>YSDM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="77" src_name="source0" id="76" label="宗地">
+      <type></type>
+      <fields>OBJECTID,BSM,YSDM,DJH,TXDZ,TDZL,QSXZ,SYQLX,SCMJ,FZMJ,TDYT,JZRJL,JZMD,TDJB,SBDJ,QDJG,ZLDWDM,FHDM,DZ,NZ,XZ,BZ,ZDID,ZDMJ,SZTF,QLR,JZWZDMJ,JZMJ,JDLH,XDLH,ISZY,YSDJH,ZDTZM,JZWLX,SM,YBDJH,TDZH,YTDZH,TXQL,ZDSZ,QSDWDM,DWXZ,SYQX,ZZRQ,ZGBM,HYDM,SFFZ,QSXZMC,SHAPE</fields>
+      <fields_alias>OBJECTID,BSM,YSDM,DJH,TXDZ,TDZL,QSXZ,SYQLX,SCMJ,FZMJ,TDYT,JZRJL,JZMD,TDJB,SBDJ,QDJG,ZLDWDM,FHDM,DZ,NZ,XZ,BZ,ZDID,ZDMJ,SZTF,QLR,JZWZDMJ,JZMJ,JDLH,XDLH,ISZY,YSDJH,ZDTZM,JZWLX,SM,YBDJH,TDZH,YTDZH,TXQL,ZDSZ,QSDWDM,DWXZ,SYQX,ZZRQ,ZGBM,HYDM,SFFZ,QSXZMC,SHAPE</fields_alias>
+      <chart_field>YSDM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="80" src_name="source0" id="79" label="房屋">
+      <type></type>
+      <fields>OBJECTID,BSM,YSDM,LSZD,FWBH,FWMC,ZLDZ,FWJG,FWCS,JZMJ,ZDMJ,ZLDWDM,FHDM,SHAPE</fields>
+      <fields_alias>OBJECTID,BSM,YSDM,LSZD,FWBH,FWMC,ZLDZ,FWJG,FWCS,JZMJ,ZDMJ,ZLDWDM,FHDM,SHAPE</fields_alias>
+      <chart_field>YSDM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="84" src_name="source0" id="82" label="城镇地籍底图">
+      <type></type>
+      <fields>OBJECTID,BSM,YSDM,TBYBH,TBBH,DLBM,DLMC,QSXZ,QSDWDM,QSDWMC,ZLDWDM,ZLDWMC,TKXS,TBMJ,XZDWMJ,TKMJ,TBDLMJ,PZWH,BGJLH,BGRQ,GDLX,KCLX,KCDLBM,DLBZ,FHDM,GMJJ,SHAPE</fields>
+      <fields_alias>OBJECTID,BSM,YSDM,TBYBH,TBBH,DLBM,DLMC,QSXZ,QSDWDM,QSDWMC,ZLDWDM,ZLDWMC,TKXS,TBMJ,XZDWMJ,TKMJ,TBDLMJ,PZWH,BGJLH,BGRQ,GDLX,KCLX,KCDLBM,DLBZ,FHDM,GMJJ,SHAPE</fields_alias>
+      <chart_field>YSDM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="93" src_name="source0" id="92" label="地类图斑">
+      <type></type>
+      <fields>OBJECTID,XZBM,BSM,YSDM,TBYBH,TBBH,DLBM,DLMC,QSXZ,QSDWDM,QSDWMC,ZLDWDM,ZLDWMC,GDLX,KCLX,KCDLBM,TKXS,TBMJ,XZDWMJ,LXDWMJ,TKMJ,TBDLMJ,PZWH,BGJLH,BGRQ,DLBZ,GDPDJ,SHAPE_LENG,SHAPE_LE_1,SHAPE</fields>
+      <fields_alias>OBJECTID,XZBM,BSM,YSDM,TBYBH,TBBH,DLBM,DLMC,QSXZ,QSDWDM,QSDWMC,ZLDWDM,ZLDWMC,GDLX,KCLX,KCDLBM,TKXS,TBMJ,XZDWMJ,LXDWMJ,TKMJ,TBDLMJ,PZWH,BGJLH,BGRQ,DLBZ,GDPDJ,SHAPE_LENG,SHAPE_LE_1,SHAPE</fields_alias>
+      <chart_field>XZBM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="96" src_name="source0" id="96" label="基本农田保护片块">
+      <type></type>
+      <fields>OBJECTID,XZBM,BSM,YSDM,BHPKBH,PKJBNTMJ,SFBH,BZ,BGRQ,SHAPE</fields>
+      <fields_alias>OBJECTID,XZBM,BSM,YSDM,BHPKBH,PKJBNTMJ,SFBH,BZ,BGRQ,SHAPE</fields_alias>
+      <chart_field>XZBM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="98" src_name="source0" id="97" label="土地利用底图">
+      <type></type>
+      <fields>OBJECTID,XZBM,BSM,YSDM,DLBM,DLMC,XZDWYBH,XZDWBH,CD,KD,XZDWMJ,XZDWMC,QSDWDM1,QSDWMC1,QSDWDM2,QSDWMC2,KCTBBH1,KCTBDWDM1,KCTBBH2,KCTBDWDM2,QSXZ,KCBL,BGJLH,BGRQ,SHAPE</fields>
+      <fields_alias>OBJECTID,XZBM,BSM,YSDM,DLBM,DLMC,XZDWYBH,XZDWBH,CD,KD,XZDWMJ,XZDWMC,QSDWDM1,QSDWMC1,QSDWDM2,QSDWMC2,KCTBBH1,KCTBDWDM1,KCTBBH2,KCTBDWDM2,QSXZ,KCBL,BGJLH,BGRQ,SHAPE</fields_alias>
+      <chart_field>XZBM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="105" src_name="source0" id="104" label="地类图斑">
+      <type></type>
+      <fields>OBJECTID,XZBM,BSM,YSDM,TBYBH,TBBH,DLBM,DLMC,QSXZ,QSDWDM,QSDWMC,ZLDWDM,ZLDWMC,GDLX,KCLX,KCDLBM,TKXS,TBMJ,XZDWMJ,LXDWMJ,TKMJ,TBDLMJ,PZWH,BGJLH,BGRQ,DLBZ,GDPDJ,SHAPE</fields>
+      <fields_alias>OBJECTID,XZBM,BSM,YSDM,TBYBH,TBBH,DLBM,DLMC,QSXZ,QSDWDM,QSDWMC,ZLDWDM,ZLDWMC,GDLX,KCLX,KCDLBM,TKXS,TBMJ,XZDWMJ,LXDWMJ,TKMJ,TBDLMJ,PZWH,BGJLH,BGRQ,DLBZ,GDPDJ,SHAPE</fields_alias>
+      <chart_field>XZBM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="108" src_name="source0" id="108" label="基本农田保护片块">
+      <type></type>
+      <fields>OBJECTID,XZBM,BSM,YSDM,BHPKBH,PKJBNTMJ,SFBH,BZ,BGRQ,SHAPE</fields>
+      <fields_alias>OBJECTID,XZBM,BSM,YSDM,BHPKBH,PKJBNTMJ,SFBH,BZ,BGRQ,SHAPE</fields_alias>
+      <chart_field>XZBM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="110" src_name="source0" id="109" label="土地利用底图">
+      <type></type>
+      <fields>OBJECTID,XZBM,BSM,YSDM,DLBM,DLMC,XZDWYBH,XZDWBH,CD,KD,XZDWMJ,XZDWMC,QSDWDM1,QSDWMC1,QSDWDM2,QSDWMC2,KCTBBH1,KCTBDWDM1,KCTBBH2,KCTBDWDM2,QSXZ,KCBL,BGJLH,BGRQ,SHAPE</fields>
+      <fields_alias>OBJECTID,XZBM,BSM,YSDM,DLBM,DLMC,XZDWYBH,XZDWBH,CD,KD,XZDWMJ,XZDWMC,QSDWDM1,QSDWMC1,QSDWDM2,QSDWMC2,KCTBBH1,KCTBDWDM1,KCTBBH2,KCTBDWDM2,QSXZ,KCBL,BGJLH,BGRQ,SHAPE</fields_alias>
+      <chart_field>XZBM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="117" src_name="source0" id="116" label="地类图斑">
+      <type></type>
+      <fields>OBJECTID,XZBM,BSM,YSDM,TBYBH,TBBH,DLBM,DLMC,QSXZ,QSDWDM,QSDWMC,ZLDWDM,ZLDWMC,GDLX,KCLX,KCDLBM,TKXS,TBMJ,XZDWMJ,LXDWMJ,TKMJ,TBDLMJ,PZWH,BGJLH,BGRQ,DLBZ,GDPDJ,SHAPE</fields>
+      <fields_alias>OBJECTID,XZBM,BSM,YSDM,TBYBH,TBBH,DLBM,DLMC,QSXZ,QSDWDM,QSDWMC,ZLDWDM,ZLDWMC,GDLX,KCLX,KCDLBM,TKXS,TBMJ,XZDWMJ,LXDWMJ,TKMJ,TBDLMJ,PZWH,BGJLH,BGRQ,DLBZ,GDPDJ,SHAPE</fields_alias>
+      <chart_field>XZBM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="120" src_name="source0" id="120" label="基本农田保护片块">
+      <type></type>
+      <fields>OBJECTID,XZBM,BSM,YSDM,BHPKBH,PKJBNTMJ,SFBH,BZ,BGRQ,SHAPE</fields>
+      <fields_alias>OBJECTID,XZBM,BSM,YSDM,BHPKBH,PKJBNTMJ,SFBH,BZ,BGRQ,SHAPE</fields_alias>
+      <chart_field>XZBM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="122" src_name="source0" id="121" label="土地利用底图">
+      <type></type>
+      <fields>OBJECTID,XZBM,BSM,YSDM,DLBM,DLMC,XZDWYBH,XZDWBH,CD,KD,XZDWMJ,XZDWMC,QSDWDM1,QSDWMC1,QSDWDM2,QSDWMC2,KCTBBH1,KCTBDWDM1,KCTBBH2,KCTBDWDM2,QSXZ,KCBL,BGJLH,BGRQ,SHAPE</fields>
+      <fields_alias>OBJECTID,XZBM,BSM,YSDM,DLBM,DLMC,XZDWYBH,XZDWBH,CD,KD,XZDWMJ,XZDWMC,QSDWDM1,QSDWMC1,QSDWDM2,QSDWMC2,KCTBBH1,KCTBDWDM1,KCTBBH2,KCTBDWDM2,QSXZ,KCBL,BGJLH,BGRQ,SHAPE</fields_alias>
+      <chart_field>XZBM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="128" src_name="source0" id="127" label="农用地分等定级">
+      <type></type>
+      <fields>OBJECTID,单元编号,行政代码,地类代码,市州,县市区,乡镇,村,面积,地貌,海拔高度,坡度,地面岩石露,灌溉保证率,排水条件,土壤名称,土壤质地,土体构型,有效土层,土壤酸碱度,土壤有机质,作物1,作物2,作物3,作物4,作物5,平均单产1,平均单产2,平均单产3,平均单产4,平均单产5,投入1,投入2,投入3,投入4,投入5,自然质量分,自然质量0,自然质量等,土地利用系,等值区利用,利用等指数,土地经济系,等值区经济,农用地等指,标准粮产量,自然质量1,利用等等别,农用地等别,XZBM,SHAPE</fields>
+      <fields_alias>OBJECTID,单元编号,行政代码,地类代码,市州,县市区,乡镇,村,面积,地貌,海拔高度,坡度,地面岩石露,灌溉保证率,排水条件,土壤名称,土壤质地,土体构型,有效土层,土壤酸碱度,土壤有机质,作物1,作物2,作物3,作物4,作物5,平均单产1,平均单产2,平均单产3,平均单产4,平均单产5,投入1,投入2,投入3,投入4,投入5,自然质量分,自然质量0,自然质量等,土地利用系,等值区利用,利用等指数,土地经济系,等值区经济,农用地等指,标准粮产量,自然质量1,利用等等别,农用地等别,XZBM,SHAPE</fields_alias>
+      <chart_field>XZBM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="132" src_name="source0" id="132" label="规划路网图">
+      <type></type>
+      <fields>OBJECTID,XWRQ,YSDM,XZDWDM,XZDWMC,XZDWFHDM,LOCALID,OPERATORID,CSRQ,MBBSM,FROMOPER09,RKXUHAO,XZBM,SHAPE</fields>
+      <fields_alias>OBJECTID,XWRQ,YSDM,XZDWDM,XZDWMC,XZDWFHDM,LOCALID,OPERATORID,CSRQ,MBBSM,FROMOPER09,RKXUHAO,XZBM,SHAPE</fields_alias>
+      <chart_field>YSDM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="133" src_name="source0" id="133" label="城市规划图">
+      <type></type>
+      <fields>OBJECTID,ENTID,TXTVALUE,TXTMEMO,TXTHT,TXTROTATE,TXTWIDTH,TXTOBLIQUE,TXTGENTYPE,TXTJUST,VERTALIGN,TXTSTYLE,TXTFONT,TXTBOXHT,TXTBOXWD,TXTREFWD,TXTATTACH,TXTDIR,LNSPACE,SPACEFACT,DOCID,OWNERID,CADTYPE,LEVEL_,COLOR,LINEWT,LAYER,HANDLE,REFNAME,CLASS,LINETYPE,LTSCALE,WIDTH,THICKNESS,CADANGLE,CADMODEL,EXTX,EXTY,EXTZ,SCALEX,SCALEY,SCALEZ,QROTW,QROTX,QROTY,QROTZ,ELEVATION,FILLCOLOR,GGROUP,SE_ANNO_54,SHAPE</fields>
+      <fields_alias>OBJECTID,ENTID,TXTVALUE,TXTMEMO,TXTHT,TXTROTATE,TXTWIDTH,TXTOBLIQUE,TXTGENTYPE,TXTJUST,VERTALIGN,TXTSTYLE,TXTFONT,TXTBOXHT,TXTBOXWD,TXTREFWD,TXTATTACH,TXTDIR,LNSPACE,SPACEFACT,DOCID,OWNERID,CADTYPE,LEVEL_,COLOR,LINEWT,LAYER,HANDLE,REFNAME,CLASS,LINETYPE,LTSCALE,WIDTH,THICKNESS,CADANGLE,CADMODEL,EXTX,EXTY,EXTZ,SCALEX,SCALEY,SCALEZ,QROTW,QROTX,QROTY,QROTZ,ELEVATION,FILLCOLOR,GGROUP,SE_ANNO_54,SHAPE</fields_alias>
+      <chart_field></chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="135" src_name="source0" id="135" label="中心城区片区">
+      <type></type>
+      <fields>OBJECTID,ZXCQMJ,YSDM,CQMC,BSM,GHBBH,SHAPE</fields>
+      <fields_alias>OBJECTID,ZXCQMJ,YSDM,CQMC,BSM,GHBBH,SHAPE</fields_alias>
+      <chart_field>YSDM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="136" src_name="source0" id="136" label="建设用地空间管制区">
+      <type></type>
+      <fields>OBJECTID,BSM,YSDM,GZQLXDM,GZQMJ,SM,XZQDM,GZQLXMC,SHAPE</fields>
+      <fields_alias>OBJECTID,BSM,YSDM,GZQLXDM,GZQMJ,SM,XZQDM,GZQLXMC,SHAPE</fields_alias>
+      <chart_field>YSDM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="137" src_name="source0" id="137" label="土地用途分区">
+      <type></type>
+      <fields>OBJECTID,BSM,YSDM,TDYTQLXDM,TDYTQBH,TDYTQMJ,SM,XZQDM,TDYTQLXMC,SHAPE</fields>
+      <fields_alias>OBJECTID,BSM,YSDM,TDYTQLXDM,TDYTQBH,TDYTQMJ,SM,XZQDM,TDYTQLXMC,SHAPE</fields_alias>
+      <chart_field>YSDM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="138" src_name="source0" id="138" label="土地规划地类">
+      <type></type>
+      <fields>OBJECTID,DLMC,BSM,YSDM,TBBH,MJ,SM,XZQDM,GHDLDM,SHAPE</fields>
+      <fields_alias>OBJECTID,DLMC,BSM,YSDM,TBBH,MJ,SM,XZQDM,GHDLDM,SHAPE</fields_alias>
+      <chart_field>DLMC</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="141" src_name="source0" id="140" label="2012年">
+      <type></type>
+      <fields>OBJECTID,ID,序号,采矿许可证,采矿权人,矿山名称,经济类型,开采矿种,开采方式,储量单位,登记资源储,生产规模,登记面积,XX,YY,YY0,有效时间,序号0,矿山编号,矿产名称,资源储量,开发状态,开采规模,产量单位,设计能力_,产量,矿业产值_,矿产总回收,XZBM,SHAPE</fields>
+      <fields_alias>OBJECTID,ID,序号,采矿许可证,采矿权人,矿山名称,经济类型,开采矿种,开采方式,储量单位,登记资源储,生产规模,登记面积,XX,YY,YY0,有效时间,序号0,矿山编号,矿产名称,资源储量,开发状态,开采规模,产量单位,设计能力_,产量,矿业产值_,矿产总回收,XZBM,SHAPE</fields_alias>
+      <chart_field>XZBM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="145" src_name="source0" id="144" label="安岳县">
+      <type></type>
+      <fields>OBJECTID,XZBM,BSM,YSDM,JXLX,JXXZ,JXSM,BGRQ,SHAPE</fields>
+      <fields_alias>OBJECTID,XZBM,BSM,YSDM,JXLX,JXXZ,JXSM,BGRQ,SHAPE</fields_alias>
+      <chart_field>XZBM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="153" src_name="source0" id="152" label="简阳市">
+      <type></type>
+      <fields>OBJECTID,MSSM,JSMJ,KZMJ,XZQMC,XZQDM,YSDM,BSM,FHDM,SHAPE</fields>
+      <fields_alias>OBJECTID,MSSM,JSMJ,KZMJ,XZQMC,XZQDM,YSDM,BSM,FHDM,SHAPE</fields_alias>
+      <chart_field>YSDM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="160" src_name="source0" id="159" label="乐至县">
+      <type></type>
+      <fields>OBJECTID,MSSM,JSMJ,KZMJ,XZQMC,XZQDM,YSDM,BSM,FHDM,SHAPE</fields>
+      <fields_alias>OBJECTID,MSSM,JSMJ,KZMJ,XZQMC,XZQDM,YSDM,BSM,FHDM,SHAPE</fields_alias>
+      <chart_field>YSDM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="167" src_name="source0" id="166" label="雁江区">
+      <type></type>
+      <fields>OBJECTID,MSSM,JSMJ,KZMJ,XZQMC,XZQDM,YSDM,BSM,FHDM,SHAPE</fields>
+      <fields_alias>OBJECTID,MSSM,JSMJ,KZMJ,XZQMC,XZQDM,YSDM,BSM,FHDM,SHAPE</fields_alias>
+      <chart_field>YSDM</chart_field>
+      <summary_field>OBJECTID</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="174" src_name="source0" id="174" label="2012年">
+      <type></type>
+      <fields>(null)</fields>
+      <fields_alias></fields_alias>
+      <chart_field></chart_field>
+      <summary_field>(null)</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="175" src_name="source0" id="175" label="2011年">
+      <type></type>
+      <fields>(null)</fields>
+      <fields_alias></fields_alias>
+      <chart_field></chart_field>
+      <summary_field>(null)</summary_field>
+      <expression></expression>
+    </layer>
+    <layer query_id="176" src_name="source0" id="176" label="2009年">
+      <type></type>
+      <fields>(null)</fields>
+      <fields_alias></fields_alias>
+      <chart_field></chart_field>
+      <summary_field>(null)</summary_field>
+      <expression></expression>
+    </layer>
+  </layers>
+  <display>
+    <group id="1" name="叠置分析图层">
+      <layer src_name="source0" id="19"/>
+      <layer src_name="source0" id="20"/>
+      <layer src_name="source0" id="21"/>
+      <layer src_name="source0" id="24"/>
+      <layer src_name="source0" id="25"/>
+      <layer src_name="source0" id="26"/>
+      <layer src_name="source0" id="33"/>
+      <layer src_name="source0" id="35"/>
+      <layer src_name="source0" id="36"/>
+      <layer src_name="source0" id="37"/>
+      <layer src_name="source0" id="38"/>
+      <layer src_name="source0" id="40"/>
+      <layer src_name="source0" id="41"/>
+      <layer src_name="source0" id="42"/>
+      <layer src_name="source0" id="43"/>
+      <layer src_name="source0" id="45"/>
+      <layer src_name="source0" id="46"/>
+      <layer src_name="source0" id="47"/>
+      <layer src_name="source0" id="48"/>
+      <layer src_name="source0" id="51"/>
+      <layer src_name="source0" id="52"/>
+      <layer src_name="source0" id="53"/>
+      <layer src_name="source0" id="54"/>
+      <layer src_name="source0" id="56"/>
+      <layer src_name="source0" id="57"/>
+      <layer src_name="source0" id="58"/>
+      <layer src_name="source0" id="59"/>
+      <layer src_name="source0" id="61"/>
+      <layer src_name="source0" id="62"/>
+      <layer src_name="source0" id="63"/>
+      <layer src_name="source0" id="64"/>
+      <layer src_name="source0" id="67"/>
+      <layer src_name="source0" id="68"/>
+      <layer src_name="source0" id="69"/>
+      <layer src_name="source0" id="70"/>
+      <layer src_name="source0" id="73"/>
+      <layer src_name="source0" id="76"/>
+      <layer src_name="source0" id="79"/>
+      <layer src_name="source0" id="82"/>
+      <layer src_name="source0" id="92"/>
+      <layer src_name="source0" id="96"/>
+      <layer src_name="source0" id="97"/>
+      <layer src_name="source0" id="104"/>
+      <layer src_name="source0" id="108"/>
+      <layer src_name="source0" id="109"/>
+      <layer src_name="source0" id="116"/>
+      <layer src_name="source0" id="120"/>
+      <layer src_name="source0" id="121"/>
+      <layer src_name="source0" id="127"/>
+      <layer src_name="source0" id="132"/>
+      <layer src_name="source0" id="133"/>
+      <layer src_name="source0" id="135"/>
+      <layer src_name="source0" id="136"/>
+      <layer src_name="source0" id="137"/>
+      <layer src_name="source0" id="138"/>
+      <layer src_name="source0" id="140"/>
+      <layer src_name="source0" id="144"/>
+      <layer src_name="source0" id="152"/>
+      <layer src_name="source0" id="159"/>
+      <layer src_name="source0" id="166"/>
+      <layer src_name="source0" id="174"/>
+      <layer src_name="source0" id="175"/>
+      <layer src_name="source0" id="176"/>
+    </group>
+  </display>
+</config>

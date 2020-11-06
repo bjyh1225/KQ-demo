@@ -1,0 +1,149 @@
+export default {
+  importPath:"import {particleAnimate} from 'common/animate/particleAnimate.js'",
+  importPathTitle:"引用路径",
+  paramsDesc:[
+    {
+      paramsName:"el",
+      defalutValue:"无",
+      desc:"必须，值是元素的dom选择器，如果不自动创建canvas，则需传入canvas元素的选择器"
+    },
+    {
+      paramsName:"isAutoCreateCanvas",
+      defalutValue:"true",
+      desc:"是否自动创建画布"
+    },
+    {
+      paramsName:"canvasWidth",
+      defalutValue:"无",
+      desc:"创建画布的宽度，此参数不赋值，则取父容器的宽度"
+    },
+    {
+      paramsName:"canvasHeight",
+      defalutValue:"无",
+      desc:"创建画布的高度，此参数不赋值，则取父容器的高度"
+    },
+    {
+      paramsName:"canvasClass",
+      defalutValue:"无",
+      desc:"画布的类，创建画布时会将该值赋值给canvas的class属性"
+    },
+    {
+      paramsName:"canvasStyle",
+      defalutValue:"无",
+      desc:"画布的样式，创建画布时会将该值赋值给canvas的style属性"
+    },
+    {
+      paramsName:"isAutoConnectingLineSegment",
+      defalutValue:"true",
+      desc:"是否自动连线粒子"
+    },
+    {
+      paramsName:"isShadow",
+      defalutValue:"false",
+      desc:"粒子是否有阴影"
+    },
+    {
+      paramsName:"speed",
+      defalutValue:"1",
+      desc:"粒子的移动速度，从0开始值越大速度越快"
+    },
+    {
+      paramsName:"dotsAlpha",
+      defalutValue:"1",
+      desc:"粒子背景颜色的透明度，需传入0-1之间的值"
+    },
+    {
+      paramsName:"lineMaxLength",
+      defalutValue:"250",
+      desc:"粒子与粒子之间连线的最大长度"
+    },
+    {
+      paramsName:"dotsNumber",
+      defalutValue:"50",
+      desc:"粒子的数目"
+    },
+    {
+      paramsName:"maxRadius",
+      defalutValue:"6",
+      desc:"生成粒子的最大半径"
+    },
+    {
+      paramsName:"dotsColor",
+      defalutValue:"0,0,0",
+      desc:"粒子的背景颜色，传入rgb颜色值"
+    },
+    {
+      paramsName:"lineColor",
+      defalutValue:"0,0,0",
+      desc:"粒子与粒子间连线的颜色，传入rgb颜色值"
+    },
+    {
+      paramsName:"lineWidth",
+      defalutValue:"1",
+      desc:"粒子与粒子间连线的宽度"
+    },
+    {
+      paramsName:"shadowColor",
+      defalutValue:"0,0,0",
+      desc:"阴影的颜色"
+    },
+    {
+      paramsName:"shadowBlur",
+      defalutValue:"10",
+      desc:"阴影的模糊值"
+    },
+    {
+      paramsName:"style",
+      defalutValue:"rebirth",
+      desc:"粒子的运动风格，取值范围：rebirth（超出画布重生）、nobirth（不重生，粒子超出画布会原路返回）"
+    },
+    {
+      paramsName:"birthX",
+      defalutValue:"无",
+      desc:"粒子出生的X轴坐标，此参数不赋值，则随机选择出生X轴"
+    },
+    {
+      paramsName:"birthY",
+      defalutValue:"无",
+      desc:"粒子出生的Y轴坐标，此参数不赋值，则随机选择出生Y轴"
+    },
+    {
+      paramsName:"birthFunction",
+      defalutValue:"无",
+      desc:"粒子出生函数，自定义出生规则，需返回一个对象如：{x:0,y:0},如果同时传入birthFunction和birthX、birthY优先选择birthFunction"
+    },
+    {
+      paramsName:"motionTrack",
+      defalutValue:"random",
+      desc:"粒子的运动轨迹，取值范围：random（随机运动）,to-left（向左运动）,to-top（向上运动）,to-bottom（向下运动）,to-right（向右运动）,to-top-left（向左上运动）,to-top-right（向右上运动）,to-bottom-left（向左下运动）,to-bottom-right（向右下运动）"
+    }
+  ],
+  paramsDescTitle:"粒子效果参数说明",
+  codeTitle:"示例代码",
+  code:`
+  <pre style="
+  margin: 0;
+  padding: 0;
+  color: #606266;
+  font-size: 15px;
+  line-height: 22px;
+  font-family: 'pingfang SC','helvetica neue',arial,'hiragino sans gb','microsoft yahei ui','microsoft yahei',simsun,sans-serif;">
+    &lt;template&gt;
+      &lt;div id='testDiv' &gt;
+      &lt;/div&gt;
+    &lt;/template&gt;
+    &lt;script&gt;
+      import {particleAnimate} from 'common/animate/particleAnimate.js'
+      export default {
+        mounted(){
+          new particleAnimate({
+            el:'#testDiv',
+            dotsColor:'29,93,197',
+            lineColor:'29,93,197'
+          })
+        }
+      }
+    &lt;/script&gt;
+  </pre>
+  `
+}

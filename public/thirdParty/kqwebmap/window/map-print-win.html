@@ -1,0 +1,249 @@
+
+<style>
+  body {
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+  }
+
+  #map-print-win {
+    height: 100%;
+    width: 100%;
+  }
+  
+  #print-area {
+    /*font-family: "DejaVu Sans", "Arial", sans-serif;*/
+    /*margin: 1cm 1cm 1cm 1cm;*/
+    /*padding: 1cm 1cm 1cm 1cm;*/
+    color: #000;
+  }
+
+  #print-map-box {
+    background-color: #DDDDDD;
+    /*border: solid 1px;*/
+    margin-left: 1px;
+    margin-right: 1px;
+    height: calc(100% - 92px);
+    width: 100%;
+    /*overflow: auto;*/
+    overflow: scroll;
+  }
+
+  #map-to-print {
+    position: relative;
+    border: none;
+    /*height: 794px;*/
+    /*width: 1123px;*/
+    height: 718px;
+    width: 1047px;
+  
+    text-align: center;
+  }
+
+  #map-print-compass {
+    margin-top: 5px;
+    margin-left: 5px;
+    position: absolute;
+    right: 40px;
+    top: 10px;
+    z-index: 901;
+  }
+
+  #print-control-panel {
+    height: 92px;
+  }
+  
+  #title-set-panel .k-colorpicker {
+    margin-bottom: 3px;
+  }
+  
+  #text-print-button, #map-print-html-button {
+    min-width: 80px;
+    margin: 15px 6px 10px 6px;
+  }
+
+  #map-print-title-button {
+    min-width: 80px;
+    margin: 7px 6px 10px 15px;
+  }
+  
+  #map-print-chart-button {
+    min-width: 80px;
+    margin: 7px 6px 10px 15px;
+  }
+
+  #map-print-title {
+    /*min-width: 120px;*/
+    /*min-height: 40px;*/
+    
+    /*left: 465px;*/
+    position: relative;
+    z-index: 505;
+
+    white-space: nowrap;
+	  /*background-color: transparent;*/
+  
+    display: inline-block;
+  
+    border-radius: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    
+    
+    font-family: NSimSun;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    background-color: rgba(135, 206, 250, 0.72);
+    box-shadow: 5px 2px 6px #000;
+    
+  }
+  
+  #map-print-legend-div {
+    /*visibility: hidden;*/
+    position: absolute;
+    width: 470px;
+    height: 400px;
+    overflow: hidden;
+    left: 0px;
+    top: 0px;
+    z-index: 503;
+  }
+
+  /*图例列表属性*/
+  .map-print-legend-list
+  {
+    width: 39em;  /* room for 3 columns */
+  }
+
+  .print-layer-total-legend-div
+  {
+    float: left;
+    width: 39em;  /* room for 3 columns */
+  }
+  
+  .print-layer-single-legend
+  {
+    float: left;
+    width: 13em;  /* accommodate the widest item */
+  }
+
+  /* map-print-info-div属性 */
+  .map-print-info-div {
+    min-width: 100px;
+    min-height: 100px;
+    border: 0px solid;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: 505;
+  }
+
+  #action-button-group, #title-set-panel {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .paper-size-dropdownlist .k-dropdown-wrap,
+  .paper-direction-dropdownlist .k-dropdown-wrap,
+  .pixel-dropdownlist .k-dropdown-wrap
+  {
+    height: 24px;
+  }
+
+  .pixel-dropdownlist {
+    width: 60px;
+  }
+  
+
+  #ruler {
+    visibility: hidden;
+    white-space: nowrap;
+    font-size: 24px;
+  }
+
+</style>
+
+<script type="text/kendo-x-tmpl" id="print-legend-template">
+    <div class="print-layer-total-legend-div">
+      <p style="float:center; font-size: 120%;" >#: layerName #</p>
+      # for (let i = 0; i < legendList.length; ++i) { #
+        <div class="print-layer-single-legend">
+          <img style="float:left;" src="#: legendList[i].legend #" alt="#: legendList[i].label #" />
+          <p style="float:left;">#: legendList[i].label #</p>
+        </div>
+      # } #
+     
+    </div>
+ </script>
+
+
+<div id="map-print-win" class="map-print-widget">
+
+  <div id="print-control-panel">
+    <div id="action-button-group">
+      <button id="sender-to-printer-button" class="k-primary" type="button">__send-to-printer__</button>
+      <button id="choose-print-layer-button" type="button">__select-layer__</button>
+      <!--<button id="save-print-pdf-button" type="button">__saved-as-pdf__</button>-->
+      <button id="save-print-image-button" type="button">__saved-as-image__</button>
+      <button id="clear-print-button" type="button">__clear__</button>
+      <button id="text-print-button" type="button">__text__</button>
+      <button id="map-print-html-button" type="button">__mark__</button>
+
+      <label id="paper-label">__paper__</label>
+      <input id="paper-size-dropdownlist" class="paper-size-dropdownlist"/>
+      <input id="paper-direction-dropdownlist" class="paper-direction-dropdownlist"/>
+
+      <label id="pixel-label">__pixels-per-inch__</label>
+      <input id="pixel-dropdownlist" class="pixel-dropdownlist"/>
+
+    </div>
+
+    <div id="title-set-panel">
+
+      <ul class="display-print-widget-list">
+        <li>
+          <input type="checkbox" id="display-scale-checkbox" class="k-checkbox" checked="checked">
+          <label class="k-checkbox-label" for="display-scale-checkbox">__scale__</label>
+        </li>
+        <li>
+          <input type="checkbox" id="operate-zoom-checkbox" class="k-checkbox" checked="checked">
+          <label class="k-checkbox-label" for="operate-zoom-checkbox">__zoom-button__</label>
+        </li>
+        <li>
+          <input type="checkbox" id="display-compass-checkbox" class="k-checkbox" checked="checked">
+          <label class="k-checkbox-label" for="display-compass-checkbox">__compass__</label>
+        </li>
+        <li>
+          <input type="checkbox" id="display-legend-checkbox" class="k-checkbox">
+          <label class="k-checkbox-label" for="display-legend-checkbox">__legend__</label>
+        </li>
+      </ul>
+      
+      <button id="map-print-title-button" type="button">__title__</button>
+      <button id="map-print-chart-button" type="button">__chart__</button>
+    </div>
+    
+  </div>
+
+  <div id="print-map-box" >
+    <div id="print-map-control-tree" style="height: 100%; background-color: #fff;" >
+      <div id="print-map-tree" style="height: 100%;"></div>
+    </div>
+
+    <div id="print-area" style="height: 100%">
+
+      <div id="map-to-print" class="print-map" >
+        <p id="map-print-title" >__a-map__</p>
+        
+        <img id="map-print-compass"/>
+        <div id="map-print-legend-div" class="map-print-legend-list"></div>
+        <div class="map-print-info-div" id="map-print-info-div"></div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<span id="ruler"></span>

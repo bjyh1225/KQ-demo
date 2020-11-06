@@ -1,0 +1,1 @@
+define(function(){var n={paths:{}};return n.paths.tours="config/kmltours.json",n.paths.markers="config/markers.czml",n.paths.moving="config/moving.czml",n.paths.moving2="config/moving-2.czml",n});

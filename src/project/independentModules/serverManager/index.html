@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="./favicon_kq.png">
+    <title>KQGIS Server</title>
+    <script>
+      var img = new Image();
+      img.onload = function(){
+        window.isWebP = !!(img.height>0 && img.width>0);
+      };
+      img.onerror = function(){
+        window.isWebP = false;
+      };
+      img.src="/config/imageConfig/system/testWebp/1px.webp";
+    </script>
+    <script type="text/javascript">
+      window.portal_config={
+        "MESSAGE_USER_CONFIG":{
+          "username":"admin",
+          "password":"admin"
+        },
+        "VUE_APP_MESSAGE_URL":"ws://172.16.0.9:8614",
+        "NO_SWITCH_LANGUAGE":false,
+        "NO_SWITCH_THEME":false,
+        "WEB_APP_BUILDER_STYLE":"/config/webAppBuilderStyleConfig/webAppBuilder.css",
+        "COVER_MENU_ROUTER_CONFIG":{
+          // "appCenter":{
+          //   component:"webAppBuilderSC"
+          // }
+        },
+        "DELETE_PORTAL_DEFAULT_MENU_ROUTER_CONFIG":[],
+        "ADD_MENU_ROUTER_CONFIG":{
+          // "testMenu":{
+          //   name: "testMenu",
+          //   path:"https://www.baidu.com/",
+          //   menuName:"测试百度",
+          //   sortNo:1.1,
+          //   isIndexMenu: true,
+          //   defaultDisplay:true,
+          //   externalLinksRouter:true
+          // }
+        },
+        "ENABLE_JWT":false
+      };
+      localStorage.setItem("portal_config",JSON.stringify(window.portal_config));
+    </script>
+    <style>
+      html{
+        font-size:16px;
+        font-family:'pingfang SC','helvetica neue',arial,'hiragino sans gb','microsoft yahei ui','microsoft yahei',simsun,sans-serif;
+      }
+      body{
+        overflow-x: hidden;
+      }
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      #loader {
+        display: block;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        width: 150px;
+        height: 150px;
+        margin: -75px 0 0 -75px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-top-color: #6455fe;
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+      }
+      .loader-text{
+        display: block;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        width: 150px;
+        margin-top: 10px;
+        margin-left: -30px;
+        font-size: 18px;
+      }
+      #loader:before {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-top-color: #5182fe;
+        -webkit-animation: spin 3s linear infinite;
+        animation: spin 3s linear infinite;
+      }
+      #loader:after {
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-top-color: #40aafe;
+        -webkit-animation: spin 1.5s linear infinite;
+        animation: spin 1.5s linear infinite;
+      }
+      @-webkit-keyframes spin {
+        0% {
+            -webkit-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+      }
+      @keyframes spin {
+        0% {
+          -webkit-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+          -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      /*滚动条*/
+      ::-webkit-scrollbar {
+        width:9px;
+      }
+      ::-webkit-scrollbar-track-piece {
+        background-color:#f8f8f8;
+        -webkit-border-radius: 2em;
+        -moz-border-radius: 2em;
+        border-radius: 2em;
+      }
+      ::-webkit-scrollbar-thumb {
+        background:rgba(144,147,153,.3);
+        background-clip:padding-box;
+        -webkit-border-radius: 2em;
+        -moz-border-radius: 2em;
+        border-radius: 2em;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background:rgba(144,147,153,.5);
+      }
+    </style>
+  </head>
+  <body data-theme="">
+    <noscript>
+      <strong>We're sorry but kqportal doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="preloader">
+      <div id="loader"></div>
+      <div class="loader-text">Loading...</div>
+    </div>
+    <div id="app"></div>
+  </body>
+</html>

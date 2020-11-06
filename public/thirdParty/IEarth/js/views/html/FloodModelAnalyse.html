@@ -1,0 +1,84 @@
+<div class="flood_model_analysise_module">
+  <table class="table table-condensed" style="table-layout: fixed;">
+    <tbody>
+      <!-- SelectTilesData -->
+      <tr>
+        <td colspan="1">{{titles.selectTilesData}}</td>
+        <td colspan="1">
+          <select id="selectData" class="form-control" v-model="floodModelAnalyse.curTilesData">
+            <option v-for="item in floodModelAnalyse.tilesData" :value="item.id">{{item.name}}</option>
+          </select>
+        </td>
+      </tr>
+      <!--Speed-->
+      <tr>
+        <td colspan="1">{{titles.floodSpeed}}</td>
+        <td colspan="1">
+          <input type="number" min="1.0" class="form-control" placeholder="" v-model="floodModelAnalyse.speed" @input="changeFloodSpeed"
+          />
+        </td>
+      </tr>
+      <!--MinHeight-->
+      <tr>
+        <td colspan="1">{{titles.floodMinHeight}}</td>
+        <td colspan="1">
+          <input type="number" class="form-control" placeholder="" v-model="floodModelAnalyse.minHeight" @input="changeFlooddMinHeight"
+          />
+        </td>
+      </tr>
+      <!--MaxHeight-->
+      <tr>
+        <td colspan="1">{{titles.floodMaxHeight}}</td>
+        <td colspan="1">
+          <input type="number" class="form-control" placeholder="" v-model="floodModelAnalyse.maxHeight" @input="changeFloodMaxHeight"
+          />
+        </td>
+      </tr>
+      <!--Alpha-->
+      <tr>
+        <td colspan="1">{{titles.floodAlpha}}</td>
+        <td colspan="1">
+          <input type="number" min="0.0" max="1.0" step="0.01" class="form-control" placeholder="" v-model="floodModelAnalyse.alpha"
+            @input="changeFloodAlpha" />
+        </td>
+      </tr>
+      <!--MoveMode-->
+      <tr>
+        <td colspan="1">{{titles.floodMoveMode}}</td>
+        <td colspan="1">
+          <select class="form-control" style="height: 32px;" @change="changeMoveMode">
+            <option value="0" id="oneWay">{{titles.floodMoveMode0}}</option>
+            <option value="1" id="bothWay">{{titles.floodMoveMode1}}</option>
+          </select>
+        </td>
+      </tr>
+      <!--ColorImage-->
+      <tr>
+        <td colspan="1">{{titles.floodColorImage}}</td>
+        <td colspan="1">
+          <div class="dropdown bootstrap-select" style="height: 32px;
+          width: 100%;">
+            <select id="colorTable" class="form-control selectpicker" style="height: 32px !important;
+            width: 100% !important;
+            left: 0% !important;
+            color: #272b30;
+            background-color: rgba(255,255,255,0.75);
+            opacity: 1 !important;
+            padding: 5px 12px !important;" tabindex="-98" @change="changeFloodColorImage">
+              <option value="0" data-content="<span class='label band2' style=' background: -webkit-linear-gradient(left, #d00303 0%, #c9de1d 15%, #3bde1d 30%, #18c3ac 45%, #1835c3 60%, #a918c3 75%, #b118c3 90%, #c3183f 100%) !important;'>&nbsp;</span>">
+                &nbsp;Color1</option>
+              <option value="1" data-content="<span class='label band1' style=' background: -webkit-linear-gradient(left, #c7164e 0%, #c7164e 15%, #1d37bd  30%, #1eaf9c 45%, #1eaf9c 60%, #46ce1c 75%, #c3b019 90%, #c5512c 100%) !important;'>&nbsp;</span>">
+                &nbsp;Color2</option>
+              <option value="2" data-content="<span class='label band4' style=' background: -webkit-linear-gradient(left, #1c6d0c 0%, #248296 50%, #0e1f8c 100%) !important;'>&nbsp;</span>">
+                &nbsp;Color3</option>
+            </select>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="text-align: right; margin: 5px;">
+    <a href="#" class="btn btn-default" style="width: 20%" @click='startAnalysis'>{{titles.start}}</a>
+    <a href="#" class="btn btn-default" style="width: 20%" @click='clearAnalysis'>{{titles.clear}}</a>
+  </div>
+</div>

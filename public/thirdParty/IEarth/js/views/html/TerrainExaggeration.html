@@ -1,0 +1,24 @@
+<style>
+    .module-terrain-exaggeration-content table {
+        margin-bottom: 0px;
+    }
+
+    .module-terrain-exaggeration-content table td {
+        vertical-align: middle !important;
+        border: none;
+    }
+</style>
+
+<div class="module-terrain-exaggeration-content" v-cloak>
+    <table class="table table-condensed">
+        <tr>
+            <td>
+                <input type="range" min="0.0" max="5" step="0.1" value="1" defaultValue="1"
+                       class="form-control" v-model="exaggeration" :title="exaggeration"/>
+            </td>
+            <td style="width: 90px;">
+                <input type="number" min="0.0" max="5" step="0.1" class="form-control" v-model="exaggeration"/>
+            </td>
+        </tr>
+    </table>
+</div>

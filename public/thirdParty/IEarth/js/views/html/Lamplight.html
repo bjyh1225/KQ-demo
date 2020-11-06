@@ -1,0 +1,229 @@
+<!-- <div role="tabpanel" class="tab-pane fade in active " :id="'evalation_analysist_'+guid"> -->
+<style>
+    [v-cloak] {
+        display: none !important;
+    }
+
+    .lamplight_module .btn {
+        /* border: none;*/
+    }
+
+    .lamplight_module .tab-content {
+        padding: 10px 5px;
+    }
+
+    .lamplight_module table {
+        margin-bottom: 0px;
+    }
+
+    .lamplight_module .noborder table td {
+        vertical-align: middle !important;
+        padding: 2px;
+        border: none !important;
+    }
+
+    .lamplight_module .h-style .btn {
+        text-align: justify !important;
+        position: relative;
+    }
+
+    .lamplight_module .h-style .caret {
+        position: absolute;
+        right: 8px;
+        top: 45%;
+        /*calc(50% - 5px);*/
+    }
+
+    .lamplight_module .color-selector-container {
+        position: relative;
+    }
+
+    .lamplight_module .color-selector-container .caret-container {
+        position: absolute;
+        bottom: 7px;
+        right: 8px;
+        z-index: 99;
+    }
+
+    .lamplight_module .marker {
+        display: inline-block;
+        height: 28px;
+        width: 28px;
+        margin: 5px;
+        border-radius: 16px;
+        border: 1px solid rgba(63, 166, 255, 0.5);
+        padding: 2px;
+        cursor: pointer;
+        box-sizing: border-box;
+    }
+
+    .lamplight_module .marker:hover,
+    .lamplight_module .marker.selected {
+        border: 2px solid rgba(63, 166, 255, 1);
+        box-sizing: border-box;
+    }
+
+    .lamplight_module .marker img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .lamplight_module .fill_symbolic_library {
+        display: inline;
+        text-align: center;
+        /* padding-top: 10px; */
+        border: 1px solid transparent;
+        border-radius: 3px;
+        /* padding: 15px; */
+        margin-left: 15px;
+    }
+
+    .lamplight_module .fill_symbolic_library div {
+        display: inline-block;
+        width: 25%;
+        text-align: center;
+        
+    }
+
+    .lamplight_module .fill_symbolic_library div a {
+        text-decoration: none;
+        color: rgb(169, 151, 151);
+        background-color: transparent;
+        border: none;
+    }
+
+    /* .lamplight_module .fill_symbolic_library div a.icon-guanglight56 {
+        color: #ffffff;
+    } */
+
+    .lamplight_module .fill_symbolic_library div label {
+        margin-top: 3px;
+    }
+
+</style>
+<div class="lamplight_module">
+    <table class="table table-condensed" style="table-layout: fixed;">
+        <tbody>
+            <tr>
+                <td colspan="2">{{titles.fillSize}}</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center">
+                    <div class="fill_symbolic_library" v-for="(item,index) in lamplist">
+                        <div>
+                            <a :class="item.icon" class="form-control" @click='selectSymble($event.target,item.mode)'></a>
+                            <label>{{item.font}}</label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <!-- pointlight-lightIntensity -->
+            <tr v-show="onPointLight">
+                <td colspan="2">{{titles.lightIntensity}}</td>
+            </tr>
+            <tr v-show='onPointLight'>
+                <td colspan="2">
+                    <input type="number" min="0" max="5" step="0.1" value="3" defaultValue="3" class="form-control" v-model="viewModel_point.lightIntensity"
+                        :title="viewModel_point.lightIntensity" @input="changeLightStrength" />
+                </td>
+            </tr>
+            <!--pointlight-cutoffDistance-->
+            <tr v-show='onPointLight'>
+                <td colspan="2">{{titles.cutoffDistance}}</td>
+            </tr>
+            <tr v-show='onPointLight'>
+                <td colspan="2">
+                    <input type="number" min="0" max="10" step="0.5" value="3" defaultValue="3" class="form-control" v-model="viewModel_point.cutoffDistance"
+                        :title="viewModel_point.cutoffDistance" @input="changeLightDiffusionDiatance"/>
+                </td>
+            </tr>
+            </tr v-show='onPointLight'>
+            <!--pointlight-decay-->
+            <tr v-show='onPointLight'>
+                <td colspan="2">{{titles.decayFactor}}</td>
+            </tr>
+            <tr v-show='onPointLight'>
+                <td colspan="2">
+                    <input type="number" min="0" max="1" step="0.01" class="form-control" placeholder="" v-model="viewModel_point.decay" :title="viewModel_point.decay"
+                        v-on:input="changeLightDecayFactor"/>
+                </td>
+            </tr>
+            <!-- pointlight-Color -->
+            <tr v-show='onPointLight'>
+                <td colspan="1">{{titles.color}}</td>
+            </tr>
+            <tr v-show='onPointLight'>
+                <td colspan="2">
+                    <div class="color-selector-container">
+                        <input :id="'pointlight_color_'+guid" class="color-selector form-control" type="text" class="form-control" v-model="viewModel_point.point_color"
+                            :style="{backgroundColor:viewModel_point.point_color}" />
+                        <span class="caret-container">
+                            <span class="caret"></span>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- projector-lightIntensity -->
+            <tr v-show="onProjectorLight">
+                <td colspan="2">{{titles.lightIntensity}}</td>
+            </tr>
+            <tr v-show='onProjectorLight'>
+                <td colspan="2">
+                    <input type="number" min="0" max="10" step="0.1" value="7.86" defaultValue="7.86" class="form-control" v-model="viewModel_projector.lightIntensity"
+                        :title="viewModel_projector.lightIntensity" @input="changeProjectorStrength" />
+                </td>
+            </tr>
+            <!--projector-cutoffDistance-->
+            <tr v-show='onProjectorLight'>
+                <td colspan="2">{{titles.cutoffDistance}}</td>
+            </tr>
+            <tr v-show='onProjectorLight'>
+                <td colspan="2">
+                    <input type="number" min="0" max="40" step="2" value="19.0" defaultValue="19.0" class="form-control" v-model="viewModel_projector.cutoffDistance"
+                        :title="viewModel_projector.cutoffDistance" @input="changeProjectornDiatance" />
+                </td>
+            </tr>
+            <!--projector-angle-->
+            <tr v-show='onProjectorLight'>
+                <td colspan="2">{{titles.angle}}</td>
+            </tr>
+            <tr v-show='onProjectorLight'>
+                <td colspan="2">
+                    <input type="number" min="0" max="170" step="1" value="100.17" defaultValue="100.17" class="form-control" v-model="viewModel_projector.angle"
+                        :title="viewModel_projector.angle" @input="changeProjectornAngle" />
+                </td>
+            </tr>
+            </tr v-show='onProjectorLight'>
+            <!--projector-decay-->
+            <tr v-show='onProjectorLight'>
+                <td colspan="2">{{titles.decayFactor}}</td>
+            </tr>
+            <tr v-show='onProjectorLight'>
+                <td colspan="2">
+                    <input type="number" min="0" max="1" step="0.01" class="form-control" placeholder="" v-model="viewModel_projector.decay"
+                        :title="viewModel_projector.decay" v-on:input="changeProjectorDeacy" />
+                </td>
+            </tr>
+            <!-- projector-Color -->
+            <tr v-show='onProjectorLight'>
+                <td colspan="1">{{titles.color}}</td>
+            </tr>
+            <tr v-show='onProjectorLight'>
+                <td colspan="2">
+                    <div class="color-selector-container">
+                        <input :id="'Projector_color_'+guid" class="color-selector form-control" type="text" class="form-control" v-model="viewModel_projector.colorFont"
+                            :style="{backgroundColor:viewModel_projector.color}" />
+                        <span class="caret-container">
+                            <span class="caret"></span>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="text-align: right; margin: 5px;">
+        <a href="#" class="btn btn-default" style="width: 20%" @click='onPointAnlayse()'>{{titles.add}}</a>
+        <a href="#" class="btn btn-default" style="width: 20%" @click='onClear()'>{{titles.clear}}</a>
+    </div>
+</div>

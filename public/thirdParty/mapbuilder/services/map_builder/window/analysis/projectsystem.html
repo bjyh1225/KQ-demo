@@ -1,0 +1,52 @@
+<div class="analysis-item-body-projectsystem">
+    <div class="parameters">
+        <div class="parameters-container">
+            <div>
+                <div class="parameter-prj"></div>
+                <div class="parameter-out-srs-type"></div>
+                <div class="parameter-result"></div>
+            </div>
+        </div>
+
+        <div class="toolbox-scrollbar">
+            <div style="display: none"></div>
+        </div>
+    </div>
+
+    <div class="analysis-item-run"></div>
+</div>
+
+
+<script>
+
+  $(document).ready(function () {
+    let selector = ".analysis-item-body-projectsystem";
+    let mapView = KQ.Builder.BuilderProject.getInstance().mapView;
+
+    KQ.Control.Waiting.show(mapView._getMap(), 'pin', 'meter');
+
+    setTimeout(function () {
+      try {
+        // 进行初始化
+        createParametersHtml(selector);
+        initControls(selector);
+
+        // 添加tips
+        $(".analysis-item-body-projectsystem .parameter-prj label").append('<div class="add-information"></div>');
+        $(".analysis-item-body-projectsystem .parameter-out-srs-type label").append('<div class="add-information"></div>');
+        KQ.Builder.BuilderUi.InformationTips.getInstance().init(selector + " .parameter-prj .add-information", KQ.Local.Builder.layerHelp.projectSystemPrjTips());
+        KQ.Builder.BuilderUi.InformationTips.getInstance().init(selector + " .parameter-out-srs-type .add-information", KQ.Local.Builder.layerHelp.projectSystemOutSrsTypeTips());
+
+        /* 滚动条 */
+        toolBoxScrollBar(selector);
+
+        // 进行投影系统转换接口的事件绑定
+        KQ.Builder.BuilderToolbox.BuilderProjectSystem.getInstance().init(selector);
+
+      } finally {
+        KQ.Control.Waiting.close();
+      }
+    }, 50);
+  })
+
+</script>

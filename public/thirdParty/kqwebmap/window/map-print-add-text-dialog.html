@@ -1,0 +1,40 @@
+<style>
+	
+	#map-print-add-text-dialog {
+		overflow: hidden;
+		text-align: center;
+	}
+	
+	#print-add-text-panel {
+		height: 47px;
+		
+		text-align: left;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	
+	#print-add-text-panel .k-colorpicker {
+		margin-top: 3px;
+	}
+	
+	#print-add-text-textarea {
+		width: 95%;
+		height: calc(100% - 55px);
+		overflow: auto;
+		resize: none;
+		
+		position: relative;
+	}
+</style>
+
+<div id="map-print-add-text-dialog">
+	<div id="print-add-text-panel">
+		<input id="print-text-font-family-dropdownlist" style="margin: 10px 3px 8px 15px;" />
+		<input id="print-text-font-size-dropdownlist" style="margin: 10px 3px 8px 2px; width: 60px" />
+		<input id="print-text-font-color-picker" style="margin: 2px 3px 8px 2px;" type="color"/>
+		<button id="print-add-text-button" class="k-button k-primary" type="button" style="min-width: 45px; margin: 12px 3px 10px 4px;" >__add-text__</button>
+		<button id="print-delete-text-button" class="k-button" type="button" style="min-width: 45px; margin: 12px 3px 10px 2px;" >__clear-text__</button>
+	</div>
+
+	<textarea id="print-add-text-textarea" class="k-textbox" ></textarea>
+</div>

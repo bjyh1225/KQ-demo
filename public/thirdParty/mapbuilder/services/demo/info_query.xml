@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <layers>
+    <layer min_stdscale="0.00000001" max_stdscale="0.001" query_id="2" src_name="source0" id="1" label="贫困户">
+      <fields>OBJECTID,Shape,hzxm,hzsfzh,jtzz,xz,xzc_1,zrz,jtrk,ldl,st,hd,zpyy,f_tpjc,f_jhtpnf,hzdh,f_bfr,f_bfrdw,f_bfrzw,f_bfrdh,f_zfzr,f_clly,bz,link_1,hzxm_12,hzsfzh_1,sbdf,jtrk_1,gslx,gsd,qx,xz_1,cun,zrz_1,Shape_Length,Shape_Area</fields>
+      <fields_alias>OBJECTID,Shape,hzxm,hzsfzh,jtzz,xz,xzc_1,zrz,jtrk,ldl,st,hd,zpyy,f_tpjc,f_jhtpnf,hzdh,f_bfr,f_bfrdw,f_bfrzw,f_bfrdh,f_zfzr,f_clly,bz,link_1,hzxm_12,hzsfzh_1,sbdf,jtrk_1,gslx,gsd,qx,xz_1,cun,zrz_1,Shape_Length,Shape_Area</fields_alias>
+      <show_name>OBJECTID</show_name>
+      <expression></expression>
+    </layer>
+    <layer min_stdscale="0.00000001" max_stdscale="0.001" query_id="4" src_name="source0" id="4" label="zxdc">
+      <fields>OBJECTID_1,Shape,OBJECTID,ELEMID,ENTIID,CLASID,NAME,SOURCE,PRODATE,PAC,SHAPE_Leng,RuleID,ORIG_FID,PKSX</fields>
+      <fields_alias>OBJECTID_1,Shape,OBJECTID,ELEMID,ENTIID,CLASID,NAME,SOURCE,PRODATE,PAC,SHAPE_Leng,RuleID,ORIG_FID,PKSX</fields_alias>
+      <show_name>OBJECTID_1</show_name>
+      <expression></expression>
+    </layer>
+    <layer min_stdscale="0.00000001" max_stdscale="0.001" query_id="5" src_name="source0" id="5" label="xxzq">
+      <fields>OBJECTID_1,Shape,OBJECTID,ELEMID,ENTIID,CLASID,NAME,PAC,SOURCE,PRODATE,Shape_Leng,Shape_Length,Shape_Area</fields>
+      <fields_alias>OBJECTID_1,Shape,OBJECTID,ELEMID,ENTIID,CLASID,NAME,PAC,SOURCE,PRODATE,Shape_Leng,Shape_Length,Shape_Area</fields_alias>
+      <show_name>OBJECTID_1</show_name>
+      <expression></expression>
+    </layer>
+  </layers>
+</config>

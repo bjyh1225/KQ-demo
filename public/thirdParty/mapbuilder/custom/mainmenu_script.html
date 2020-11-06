@@ -1,0 +1,71 @@
+<script>
+  function onMainMenuSelect(e) {
+    console.log("Selected: " + $(e.item).children(".k-link").text());
+    var css_active = "kq-mainmenu-active";
+    var item = $(e.item);
+
+    // debugger
+
+    // 管理焦点
+    var isSelected = item.hasClass(css_active);
+    if (item.hasClass('kq-mainmenu-btn-zoom-in') || item.hasClass('kq-mainmenu-btn-zoom-out')
+      || item.hasClass('kq-mainmenu-btn-hand') || item.hasClass('kq-mainmenu-btn-info-query')) {
+      $('#kq-mainmenu li').removeClass(css_active);
+      item.addClass(css_active);
+    }
+
+    // 管理行为
+    var mapView = KQ.Control.Manager.getInstance().getMapView();
+    if (item.hasClass('kq-mainmenu-btn-zoom-in')) {
+      mapView.callApi('zoom_in')
+    }
+    else if (item.hasClass('kq-mainmenu-btn-zoom-out')) {
+      mapView.callApi('zoom_out')
+    }
+    else if (item.hasClass('kq-mainmenu-btn-hand')) {
+      mapView.callApi('roaming')
+    }
+    else if (item.hasClass('kq-mainmenu-btn-arrow-left')) {
+      mapView.callApi('forward-map')
+    }
+    else if (item.hasClass('kq-mainmenu-btn-arrow-right')) {
+      mapView.callApi('backward-map')
+    }
+    else if (item.hasClass('kq-mainmenu-btn-full-map')) {
+      mapView.callApi('full-map')
+    }
+    else if (item.hasClass('kq-mainmenu-btn-draw')) {
+      mapView.callApi('drawing')
+    }
+    else if (item.hasClass('kq-mainmenu-btn-info-query')) {
+      mapView.callApi('info-query')
+    }
+    else if (item.hasClass('kq-mainmenu-btn-more')) {
+      $('#kq-advmenu').toggle('normal');
+    }
+  }
+
+  function mainmenu_init () {
+    console.log('function mainmenu_init() run !!!');
+
+
+    $(".kq-mainmenu-dropdown").hover(function(){
+      var class_name = "k-state-hover";
+      var item = $(this);
+
+      if (!item.hasClass(class_name)) {
+        item.addClass(class_name);
+      }
+    },function(){
+      var class_name = "k-state-hover";
+      var item = $(this);
+
+      if (item.hasClass(class_name)) {
+        // 如果不设置计时器会出现闪烁
+        setTimeout(function () {
+          item.removeClass(class_name);
+        }, 100);
+      }
+    });
+  }
+</script>

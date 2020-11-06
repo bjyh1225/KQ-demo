@@ -1,0 +1,65 @@
+<div class="viewshed_analysise_module">
+  <table class="table table-condensed" style="table-layout: fixed;">
+    <tbody>
+      <!--FovH-->
+      <tr>
+        <td colspan="1">{{titles.FovH}}</td>
+        <td colspan="1">
+          <input type="number" min="1" max="179" class="form-control" placeholder="" v-model="viewshedAnalyse.fovH" @input="changeFovH"
+          />
+        </td>
+      </tr>
+      <!--FovV-->
+      <tr>
+        <td colspan="1">{{titles.FovV}}</td>
+        <td colspan="1">
+          <input type="number" min="1" max="179" class="form-control" placeholder="" v-model="viewshedAnalyse.fovV" @input="changeFovV"
+          />
+        </td>
+      </tr>
+      <!--OffsetHeight-->
+      <tr>
+        <td colspan="1">{{titles.offsetHeight}}</td>
+        <td colspan="1">
+          <input type="number" class="form-control" placeholder="" v-model="viewshedAnalyse.offsetHeight" @input="changeOffsetHeight"
+          />
+        </td>
+      </tr>
+      <!-- VisibleColor -->
+      <tr>
+        <td colspan="1">{{titles.visibleColor}}</td>
+        <td colspan="1">
+          <div class="color-selector-container">
+            <input :id="'visible_color_'+guid" class="color-selector form-control" type="text" class="form-control" v-model="viewshedAnalyse.visibleColor" :style="{backgroundColor:viewshedAnalyse.visibleColor}" />
+            <span class="caret-container">
+              <span class="caret"></span>
+            </span>
+          </div>
+        </td>
+      </tr>
+      <!-- InvisibleColor -->
+      <tr>
+        <td colspan="1">{{titles.invisibleColor}}</td>
+        <td colspan="1">
+          <div class="color-selector-container">
+            <input :id="'invisible_color_'+guid" class="color-selector form-control" type="text" class="form-control" v-model="viewshedAnalyse.invisibleColor" :style="{backgroundColor:viewshedAnalyse.invisibleColor}" />
+            <span class="caret-container">
+              <span class="caret"></span>
+            </span>
+          </div>
+        </td>
+      </tr>
+      <!-- ShowGridLine -->
+      <tr>
+        <td colspan="1">{{titles.showGridLine}}</td>
+        <td colspan="1">
+          <input id="showGridLine" type="checkbox" checked style="height:23px;" @change="showGridLine" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="text-align: right; margin: 5px;">
+    <a href="#" class="btn btn-default" style="width: 20%" @click='startAnalysis'>{{titles.start}}</a>
+    <a href="#" class="btn btn-default" style="width: 20%" @click='stopAnalysis'>{{titles.clear}}</a>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<style>
+	
+	#map-print-add-html-dialog {
+		overflow: hidden;
+		text-align: center;
+	}
+	
+	#print-add-html-panel {
+		height: 47px;
+		
+		text-align: left;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	
+	#print-add-html-textarea {
+		width: 95%;
+		height: calc(100% - 55px);
+		/*height: 90%;*/
+		overflow: auto;
+		/*resize: none;*/
+		
+		position: relative;
+	}
+	
+	.k-upload-button {
+		float: left;
+		display: inline;
+	}
+	
+	#print-add-html-template-files {
+		margin: 11px 3px 10px 8px;
+		/*display: inline;*/
+		display:none;
+	}
+	
+	/*.k-editor {*/
+		/*width: 95%;*/
+		/*!*height: calc(100% - 55px);*!*/
+		/*height: 90%;*/
+		/*overflow: auto;*/
+		/*!*resize: none;*!*/
+		/**/
+		/*position: relative;*/
+	/*}*/
+	
+</style>
+
+<div id="map-print-add-html-dialog">
+	<div id="print-add-html-panel">
+		<input name="print-add-html-template-files" id="print-add-html-template-files" type="file" />
+		<button id="print-import-file-button" class="k-button" type="button" style="min-width: 45px; margin: 11px 3px 10px 8px;" >__import_html__</button>
+		<input id="print-html-template-dropdownlist" class="print-html-template-dropdownlist" style="margin: 11px 3px 10px 8px;" />
+		
+		<button id="print-add-html-button" class="k-button k-primary" type="button" style="min-width: 45px; margin: 11px 3px 10px 20px;" >__add-text__</button>
+		<button id="print-delete-html-button" class="k-button" type="button" style="min-width: 45px; margin: 11px 10px 10px 4px;" >__clear-text__</button>
+		
+	</div>
+
+	<textarea id="print-add-html-textarea" class="k-editor" ></textarea>
+</div>

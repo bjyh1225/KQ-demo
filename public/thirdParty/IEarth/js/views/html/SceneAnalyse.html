@@ -1,0 +1,17 @@
+
+
+<div class="module-scene-analysist-content" v-cloak>
+    <ul class="nav nav-tabs nav-justified">
+        <li v-for="(val,key) in sceneAnalyseText" :class="val.liClassName">
+            <a :href="'#'+ val.id" :aria-controls="val.id" role="tab" data-toggle="tab" :title="val.title" class="moudle-scene-analysist-tab">
+                {{val.title}}
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div v-for="(val,key) in sceneAnalyseText" role="tabpanel" :class="'tab-pane fade in '+val.liClassName" :id="val.id">
+
+        </div>
+    </div>
+
+</div>

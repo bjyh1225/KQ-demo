@@ -1,0 +1,56 @@
+<style>
+  
+  /*#feature-import-button {*/
+    /*min-width: 80px;*/
+    /*float: right;*/
+    /*min-width: 80px;*/
+    /*margin: 15px 28px 10px 6px;*/
+  /*}*/
+
+  #feature-update-attribute-dialog {
+    overflow: hidden;
+    display: inline-block;
+  }
+
+  #feature-update-record-list {
+    overflow-y: auto;
+    float: left;
+    margin-right: 8px;
+  
+    width: 200px;
+    max-height: 99%;
+    min-height: 99%;
+  }
+
+  #feature-update-property-div {
+    height: 100%;
+  }
+  
+  #feature-update-property-grid {
+    overflow: auto;
+    height: calc(99% - 38px);
+    /*height: 558px;*/
+    margin-bottom: 4px;
+  }
+  
+  #feature-update-button-div {
+    display: inline-block;
+  }
+
+  #featureUpdateButton, #featureUpdateResetButton {
+    min-width: 100px;
+    margin: 6px 3px 6px 3px;
+  }
+  
+</style>
+
+<div id="feature-update-attribute-dialog">
+  <ul id="feature-update-record-list"></ul>
+  <div id="feature-update-property-div" >
+    <div id="feature-update-button-div" >
+      <button class="k-button k-primary" id="featureUpdateButton" >__feature-update__</button>
+      <button class="k-button" id="featureUpdateResetButton" >__feature-reset__</button>
+    </div>
+    <div id="feature-update-property-grid"></div>
+  </div>
+</div>

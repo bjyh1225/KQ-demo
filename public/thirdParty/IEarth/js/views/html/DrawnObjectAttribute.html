@@ -1,0 +1,707 @@
+<style>
+    [v-cloak] {
+        display: none !important;
+    }
+
+    .module-drawn-object-attr-content .btn {
+        /* border: none;*/
+    }
+
+    .module-drawn-object-attr-content .tab-content {
+        padding: 10px 5px;
+    }
+
+    .module-drawn-object-attr-content table {
+        margin-bottom: 0px;
+    }
+
+    .module-drawn-object-attr-content .noborder table td {
+        vertical-align: middle !important;
+        padding: 2px;
+        border: none !important;
+    }
+
+    .module-drawn-object-attr-content .h-style .btn {
+        text-align: justify !important;
+        position: relative;
+    }
+
+    .module-drawn-object-attr-content .h-style .caret {
+        position: absolute;
+        right: 8px;
+        top: 45%;
+        /*calc(50% - 5px);*/
+    }
+
+    .module-drawn-object-attr-content .color-selector-container {
+        position: relative;
+    }
+
+    .module-drawn-object-attr-content .color-selector-container .caret-container {
+        position: absolute;
+        bottom: 7px;
+        right: 8px;
+        z-index: 99;
+    }
+
+    .module-drawn-object-attr-content .marker {
+        display: inline-block;
+        height: 28px;
+        width: 28px;
+        margin: 5px;
+        border-radius: 16px;
+        border: 1px solid rgba(63, 166, 255, 0.5);
+        padding: 2px;
+        cursor: pointer;
+        box-sizing: border-box;
+    }
+
+    .module-drawn-object-attr-content .marker:hover,
+    .module-drawn-object-attr-content .marker.selected {
+        border: 2px solid rgba(63, 166, 255, 1);
+        box-sizing: border-box;
+    }
+
+    .module-drawn-object-attr-content .marker img {
+        height: 100%;
+        width: 100%;
+    }
+</style>
+
+<div class="module-drawn-object-attr-content" v-cloak>
+    <ul class="nav nav-tabs nav-justified">
+        <li class="active">
+            <a :href="'#drawn_object_general_'+guid" data-toggle="tab" @click="onTabsToggle('general')">
+                {{titles.general}}
+            </a>
+        </li>
+        <li>
+            <a :href="'#drawn_object_view_'+guid" data-toggle="tab" @click="onTabsToggle('view')">
+                {{titles.view}}
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content" style="padding: 8px 5px 5px 5px;">
+        <!--常规-->
+        <div class="tab-pane fade in active" :id="'drawn_object_general_'+guid">
+            <div class="noborder">
+                <!--点-->
+                <table class="table table-condensed" style="table-layout: fixed;" v-show="drawObjectType=='Point'">
+                    <tbody>
+                        <!--name-->
+                        <tr>
+                            <td colspan="2">{{titles.name}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="text" class="form-control" placeholder="" v-model="pointParams.name" />
+                            </td>
+                        </tr>
+                        <!--label-->
+                        <tr>
+                            <td colspan="2">{{titles.label}}</td>
+                        </tr>
+                        <tr>
+                            <td>{{titles.color}}</td>
+                            <td>{{titles.transparency}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="color-selector-container">
+                                    <input :id="'point_label_color_'+guid" class="color-selector form-control" type="text" class="form-control" v-model="pointParams.labelColor"
+                                        :style="{backgroundColor:pointParams.labelColor}" />
+                                    <span class="caret-container">
+                                        <span class="caret"></span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="range" min="0" max="100" step="1" value="100" defaultValue="100" class="form-control" v-model="pointParams.labelColorAlpha"
+                                    :title="pointParams.labelColorAlpha" />
+                            </td>
+                        </tr>
+                        <!--position-->
+                        <tr>
+                            <td colspan="2">{{titles.position}}</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">
+                                <div class="input-group">
+                                    <span class="input-group-addon" :id="'x_label_' + guid">X:</span>
+                                    <input type="number" class="form-control" :aria-describedby="'x_label_' + guid" v-model="pointParams.x" readonly/>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-addon" :id="'y_label_' + guid">Y:</span>
+                                    <input type="number" class="form-control" :aria-describedby="'y_label_' + guid" v-model="pointParams.y" readonly/>
+                                </div>
+                            </td>
+                        </tr>
+                        <!--altitude-->
+                        <tr>
+                            <td colspan="2">{{titles.altitude}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="input-group h-style" style="width: 100%;">
+                                    <span class="input-group-btn" style="width: 50%;">
+                                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 100%;">
+                                            {{heightParams.name}}&nbsp;&nbsp;
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu" style="min-width: 172px;">
+                                            <li v-for="(item,key) in heightParams.heightStyleMap">
+                                                <a href="#" @click="onToggleHeightStyleClk(item.value,item.name)">{{item.name}}</a>
+                                            </li>
+                                        </ul>
+                                    </span>
+                                    <input type="number" class="form-control" :aria-describedby="'alt_label1_' + guid" :disabled="heightParams.style==heightParams.heightStyleMap[0].value || heightParams.style==heightParams.heightStyleMap[1].value"
+                                        v-model="heightParams.value" />
+                                    <span class="input-group-addon" :id="'alt1_label_' + guid">m</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <!--symbol-->
+                        <tr>
+                            <td colspan="2">{{titles.icon}}</td>
+                        </tr>
+                        <tr style="border:1px solid;">
+                            <td colspan="2">
+                                <div style="max-height:80px;overflow: auto;">
+                                    <span v-for="(item,index) in pointParams.markerIconList">
+                                        <a class="marker" @click.prevent="onSelectedMarkerIconBtnClk($event,item)">
+                                            <img :src="item.url" :title="item.name" />
+                                        </a>
+                                    </span>
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">{{titles.iconStyle}}</td>
+                        </tr>
+                        <tr>
+                            <td>{{titles.color}}</td>
+                            <td>{{titles.transparency}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="color-selector-container">
+                                    <input :id="'point_color_'+guid" class="color-selector form-control" type="text" class="form-control" v-model="pointParams.color"
+                                        :style="{backgroundColor:pointParams.color}" readonly/>
+                                    <span class="caret-container">
+                                        <span class="caret"></span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="range" min="0" max="100" step="1" value="100" defaultValue="100" class="form-control" v-model="pointParams.colorAlpha"
+                                    :title="pointParams.colorAlpha" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">{{titles.size}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="number" class="form-control" v-model="pointParams.pointSize" />
+                            </td>
+                        </tr>                        
+                    </tbody>
+                </table>
+                <!--线-->
+                <table class="table table-condensed" style="table-layout: fixed;" v-show="drawObjectType=='Polyline'">
+                    <tbody>
+                        <!--name-->
+                        <tr>
+                            <td colspan="2">{{titles.name}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="text" class="form-control" placeholder="" v-model="polylineParams.name" />
+                            </td>
+                        </tr>
+                        <!--label-->
+                        <tr>
+                            <td colspan="2">{{titles.label}}</td>
+                        </tr>
+                        <tr>
+                            <td>{{titles.color}}</td>
+                            <td>{{titles.transparency}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="color-selector-container">
+                                    <input :id="'polyline_label_color_'+guid" class="color-selector form-control" type="text" class="form-control" v-model="polylineParams.labelColor"
+                                        :style="{backgroundColor:polylineParams.labelColor}" />
+                                    <span class="caret-container">
+                                        <span class="caret"></span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="range" min="0" max="100" step="1" value="100" defaultValue="100" class="form-control" v-model="polylineParams.labelColorAlpha"
+                                    :title="polylineParams.labelColorAlpha" />
+                            </td>
+                        </tr>
+                        <!--altitude-->
+                        <tr>
+                            <td colspan="2">{{titles.altitude}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="input-group h-style" style="width: 100%;">
+                                    <span class="input-group-btn" style="width: 50%;">
+                                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 100%;">
+                                            {{heightParams.name}}&nbsp;&nbsp;
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu" style="min-width: 172px;">
+                                            <li v-for="(item,key) in heightParams.heightStyleMap">
+                                                <a href="#" @click="onToggleHeightStyleClk(item.value,item.name)">{{item.name}}</a>
+                                            </li>
+                                        </ul>
+                                    </span>
+                                    <input type="number" class="form-control" aria-describedby="'alt_label2_' + guid" :disabled="heightParams.style==heightParams.heightStyleMap[0].value || heightParams.style==heightParams.heightStyleMap[1].value"
+                                        v-model="heightParams.value" />
+                                    <span class="input-group-addon" :id="'alt2_label_' + guid">m</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <!--symbol-->
+                        <tr>
+                            <td colspan="2">{{titles.lineStyle}}</td>
+                        </tr>
+                        <tr>
+                            <td>{{titles.color}}</td>
+                            <td>{{titles.transparency}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="color-selector-container">
+                                    <input :id="'polyline_color_'+guid" class="color-selector form-control" type="text" class="form-control" v-model="polylineParams.color"
+                                        :style="{backgroundColor:polylineParams.color}" readonly/>
+                                    <span class="caret-container">
+                                        <span class="caret"></span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="range" min="0" max="100" step="1" value="100" defaultValue="100" class="form-control" v-model="polylineParams.colorAlpha"
+                                    :title="polylineParams.colorAlpha" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">{{titles.lineWeight}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="number" class="form-control" v-model="polylineParams.lineWeight" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- 面 -->
+                <table class="table table-condensed" style="table-layout: fixed;" v-show="drawObjectType=='Polygon'">
+                    <tbody>
+                        <!--name-->
+                        <tr>
+                            <td colspan="2">{{titles.name}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="text" class="form-control" placeholder="" v-model="polygonParams.name" />
+                            </td>
+                        </tr>
+                        <!--label-->
+                        <tr>
+                            <td colspan="2">{{titles.label}}</td>
+                        </tr>
+                        <tr>
+                            <td>{{titles.color}}</td>
+                            <td>{{titles.transparency}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="color-selector-container">
+                                    <input :id="'polygon_label_color_'+guid" class="color-selector form-control" type="text" class="form-control" v-model="polygonParams.labelColor"
+                                        :style="{backgroundColor:polygonParams.labelColor}" />
+                                    <span class="caret-container">
+                                        <span class="caret"></span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="range" min="0" max="100" step="1" value="100" defaultValue="100" class="form-control" v-model="polygonParams.labelColorAlpha"
+                                    :title="polygonParams.labelColorAlpha" />
+                            </td>
+                        </tr>
+                        <!--altitude-->
+                        <tr>
+                            <td colspan="2">{{titles.altitude}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="input-group h-style" style="width: 100%;">
+                                    <span class="input-group-btn" style="width: 50%;">
+                                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 100%;">
+                                            {{heightParams.name}}&nbsp;&nbsp;
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu" style="min-width: 172px;">
+                                            <li v-for="(item,key) in heightParams.heightStyleMap">
+                                                <a href="#" @click="onToggleHeightStyleClk(item.value,item.name)">{{item.name}}</a>
+                                            </li>
+                                        </ul>
+                                    </span>
+                                    <input type="number" class="form-control" aria-describedby="'alt_label3_' + guid" :disabled="heightParams.style==heightParams.heightStyleMap[0].value || heightParams.style==heightParams.heightStyleMap[1].value"
+                                        v-model="heightParams.value" />
+                                    <span class="input-group-addon" :id="'alt_label3_' + guid">m</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <!--symbol-->
+                        <tr>
+                            <td colspan="2">{{titles.fillStyle}}</td>
+                        </tr>
+                        <tr>
+                            <td>{{titles.color}}</td>
+                            <td>{{titles.transparency}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="color-selector-container">
+                                    <input :id="'polygon_color_'+guid" class="color-selector form-control" type="text" class="form-control" v-model="polygonParams.color"
+                                        :style="{backgroundColor:polygonParams.color}" readonly/>
+                                    <span class="caret-container">
+                                        <span class="caret"></span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="range" min="0" max="100" step="1" value="100" defaultValue="100" class="form-control" v-model="polygonParams.colorAlpha"
+                                    :title="polygonParams.colorAlpha" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">{{titles.outlineStyle}}</td>
+                        </tr>
+                        <tr>
+                            <td>{{titles.color}}</td>
+                            <td>{{titles.transparency}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="color-selector-container">
+                                    <input :id="'polygon_line_color_'+guid" class="color-selector form-control" type="text" class="form-control" v-model="polygonParams.lineColor"
+                                        :style="{backgroundColor:polygonParams.lineColor}" readonly/>
+                                    <span class="caret-container">
+                                        <span class="caret"></span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="range" min="0" max="100" step="1" value="100" defaultValue="100" class="form-control" v-model="polygonParams.lineColorAlpha"
+                                    :title="polygonParams.lineColorAlpha" />
+                            </td>
+                        </tr>
+                        <!-- <tr>
+                            <td colspan="2">{{titles.outlineWidth}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="number" class="form-control" v-model="polygonParams.lineWeight" />
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+                <!-- 模型 -->
+                <table class="table table-condensed" style="table-layout: fixed;" v-show="drawObjectType=='Model'">
+                    <tbody>
+                        <!--name-->
+                        <tr>
+                            <td colspan="3">{{titles.name}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <input type="text" class="form-control" placeholder="" v-model="modelParams.name" />
+                            </td>
+                        </tr>
+                        <!--label-->
+                        <tr>
+                            <td colspan="2">{{titles.label}}</td>
+                        </tr>
+                        <tr>
+                            <td>{{titles.color}}</td>
+                            <td></td>
+                            <td>{{titles.transparency}}</td>
+                        </tr>
+                        <tr>
+                            <td  colspan="2">
+                                <div class="color-selector-container">
+                                    <input :id="'model_label_color_'+guid" class="color-selector form-control" type="text" class="form-control" v-model="modelParams.labelColor"
+                                        :style="{backgroundColor:modelParams.labelColor}" />
+                                    <span class="caret-container">
+                                        <span class="caret"></span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td  colspan="1">
+                                <input type="range" min="0" max="100" step="1" value="100" defaultValue="100" class="form-control" v-model="modelParams.labelColorAlpha"
+                                    :title="modelParams.labelColorAlpha" />
+                            </td>
+                        </tr>
+                        <!-- position -->
+                        <tr>
+                            <td colspan="3">{{titles.position}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <div class="input-group" style="width: 100% !important">
+                                    <span class="input-group-addon" :id="'x_label_' + guid">X:</span>
+                                    <input type="number" class="form-control" :aria-describedby="'x_label_' + guid" v-model="modelParams.x"  readonly/>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <div class="input-group" style="width: 100% !important">
+                                    <span class="input-group-addon" :id="'y_label_' + guid">Y:</span>
+                                    <input type="number" class="form-control" :aria-describedby="'y_label_' + guid" v-model="modelParams.y" readonly/>
+                                </div>
+                            </td>
+                        </tr>
+                        <!--altitude-->
+                        <!-- <tr>
+                        <td colspan="2">{{titles.altitude}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="input-group h-style" style="width: 100%;">
+                                <span class="input-group-btn" style="width: 50%;">
+                                    <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                       aria-haspopup="true" aria-expanded="false" style="width: 100%;">
+                                        {{heightParams.name}}&nbsp;&nbsp;<span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li v-for="(item,key) in heightParams.heightStyleMap">
+                                            <a href="#" @click="onToggleHeightStyleClk(item.value,item.name)">{{item.name}}</a>
+                                        </li>
+                                    </ul>
+                                </span>
+                                <input type="number" class="form-control" aria-describedby="'alt_label3_' + guid"
+                                       :disabled="heightParams.style==heightParams.heightStyleMap[0].value || heightParams.style==heightParams.heightStyleMap[1].value"
+                                       v-model="heightParams.value"/>
+                                <span class="input-group-addon" :id="'alt_label3_' + guid">m</span>
+                            </div>
+                        </td>
+                    </tr> -->
+                        <!--symbol-->
+                        <tr>
+                            <td colspan="3">{{titles.model}}</td>
+                        </tr>
+                        <tr style="border:1px solid;">
+                            <td colspan="3">
+                                <div style="max-height:80px;overflow: auto;">
+                                    <span v-for="(item,index) in modelParams.modelIconList">
+                                        <a class="marker" @click.prevent="onSelectedModelIconBtnClk($event,item)">
+                                            <img :src="item.uri" :title="item.name" />
+                                        </a>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">{{titles.rotate}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="input-group" style="width: 100%;!important">
+                                    <span class="input-group-addon">X:</span>
+                                    <input type="number" class="form-control" v-model="modelParams.modelPropertyParamsHeading" />
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Y:</span>
+                                    <input type="number" class="form-control" v-model="modelParams.modelPropertyParamsPitch" />
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Z:</span>
+                                    <input type="number" class="form-control" v-model="modelParams.modelPropertyParamsRoll" />
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- <tr>
+                        <td colspan="2">{{titles.rotateX}}</td>
+                    </tr> -->
+                        <!-- <tr>
+                        <td colspan="2">
+                            <input type="number" class="form-control"  placeholder="绕X轴旋转(度)" v-model="modelParams.modelPropertyParamsHeading"/>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2">
+                            <input type="number" class="form-control" placeholder="绕Y轴旋转(度)" v-model="modelParams.modelPropertyParamsPitch"/>
+                        </td>
+                    </tr>
+                   
+                    <tr>
+                        <td colspan="2">
+                            <input type="number" class="form-control"  placeholder="绕Z轴旋转(度)" v-model="modelParams.modelPropertyParamsRoll"/>
+                        </td>
+                    </tr> -->
+                        <!-- <tr>
+                            <td colspan="3">{{titles.display}}</td>
+                        </tr> -->
+                        <tr>
+                            <td colspan="3">
+                                <!-- <label class="custom-label">
+                                    <input class="custom-checkbox" type="checkbox" v-model="modelParams.modelPixel" @change="onChangeMinMumPixel(modelParams.modelPixel)"
+                                    />
+                                    <span class="custom-checkbox checkbox-span"></span>{{titles.modelPixelText}}
+                                </label> -->
+                                <input type="radio" name="display" checked="checked" @change="onChangeMinMumPixel()">
+                                <label>{{titles.modelScaleDisplay}}</label>
+                                <input type="radio" name="display" @change="onChangeMinMumPixel()">
+                                <label>{{titles.fixedPixelDisplay}}</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">{{modelParams.SwitchModelPixel? titles.minmunPixelSize:titles.modelSize}}</td>
+                        </tr>
+                        <tr v-if="modelParams.SwitchModelPixel">
+                            <td colspan="3">
+                                <input type="number" class="form-control" v-model="modelParams.minimumPixelSize" />
+                            </td>
+                        </tr>
+                        <tr v-if="modelParams.SwitchModelScale">
+                            <td colspan="3">
+                                <input type="number" class="form-control" v-model="modelParams.modelScale" />
+                            </td>
+                        </tr>
+                        <!-- <tr>
+                        <td colspan="2">{{titles.fill}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{titles.color}}</td>
+                        <td>{{titles.transparency}}</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="color-selector-container">
+                                <input :id="' model_color_'+guid" class="color-selector form-control" type="text"
+                                       class="form-control"
+                                       v-model="modelParams.modelColor"
+                                       :style="{backgroundColor:modelParams.modelColor}" readonly/>
+                                <span class="caret-container"> <span class="caret"></span></span>
+                            </div>
+                        </td>
+                        <td>
+                            <input type="range" min="0" max="100" step="1" value="100" defaultValue="100"
+                                   class="form-control" v-model="modelParams.colorAlpha"
+                                   :title="modelParams.colorAlpha"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">{{titles.stroke}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{titles.color}}</td>
+                        <td>{{titles.transparency}}</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="color-selector-container">
+                                <input :id="'model_line_color_'+guid" class="color-selector form-control" type="text"
+                                       class="form-control"
+                                       v-model="modelParams.lineColor"
+                                       :style="{backgroundColor:modelParams.lineColor}" readonly/>
+                                <span class="caret-container"> <span class="caret"></span></span>
+                            </div>
+                        </td>
+                        <td>
+                            <input type="range" min="0" max="1" step="0.1" value="1" defaultValue="1"
+                                   class="form-control" v-model="modelParams.lineColorAlpha"
+                                   :title="modelParams.lineColorAlpha"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">{{titles.lineWeight}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="number" class="form-control" v-model="modelParams.lineWeight"/>
+                        </td>
+                    </tr> -->
+                    </tbody>
+                </table>
+            </div>
+            <div style="text-align: right;margin: 5px;">
+                <a href="#" class="btn btn-default" style="width: 40%" @click="onStartDrawingGeometry">{{titles.apply}}</a>
+            </div>
+        </div>
+        <!--视角-->
+        <div class="tab-pane fade" :id="'drawn_object_view_'+guid">
+            <div>
+                <h5>{{titles.currentView}}</h5>
+            </div>
+            <table class="table table-condensed table-striped table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:30%;min-width:75px;">{{titles.longitude}}</td>
+                        <td>
+                            {{viewsParams.longitudeText}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{titles.latitude}}</td>
+                        <td>
+                            {{viewsParams.latitudeText}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{titles.altitude}}</td>
+                        <td>
+                            {{viewsParams.altitudeText}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{titles.heading}}</td>
+                        <td>
+                            {{viewsParams.headingText}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{titles.tilt}}</td>
+                        <td>
+                            {{viewsParams.tiltText}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{titles.roll}}</td>
+                        <td>
+                            {{viewsParams.rollText}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table" style="table-layout: fixed;">
+                <tr>
+                    <td>
+                        <a href="#" class="btn btn-default" style="width: 100%" @click="onUseCurrentViewBtnClk">{{titles.useCurrentView}}
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="btn btn-default" style="width: 100%" @click="onResetCenterViewBtnClk">{{titles.resetCenterView}}
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

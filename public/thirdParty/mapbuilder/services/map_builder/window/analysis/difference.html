@@ -1,0 +1,61 @@
+<div class="analysis-item-body-difference">
+    <div class="parameters">
+        <div class="parameters-container">
+            <div>
+                <div class="parameter-src-layers"></div>
+                <div class="parameter-dest-layers"></div>
+                <div class="parameter-geo-srs"></div>
+                <div class="parameter-dest-geo-srs"></div>
+                <div class="parameter-tolerance"></div>
+                <div class="parameter-handle-result"></div>
+                <!--<div class="parameter-out-srs"></div>-->
+            </div>
+        </div>
+
+        <div class="toolbox-scrollbar">
+            <div style="display: none"></div>
+        </div>
+    </div>
+
+    <div class="analysis-item-run"></div>
+</div>
+
+<script>
+
+  $(document).ready(function () {
+    let selector = '.analysis-item-body-difference';
+    let mapView = KQ.Builder.BuilderProject.getInstance().mapView;
+
+    KQ.Control.Waiting.show(mapView._getMap(), 'pin', 'meter');
+
+    setTimeout(function () {
+      try {
+        // 进行初始化
+        createParametersHtml(selector);
+        initControls(selector);
+
+        // 添加tips
+        $(".analysis-item-body-difference .parameter-src-layers label").append('<div class="add-information"></div>');
+        $(".analysis-item-body-difference .parameter-dest-layers label").append('<div class="add-information"></div>');
+        $(".analysis-item-body-difference .parameter-geo-srs label").append('<div class="add-information"></div>');
+        $(".analysis-item-body-difference .parameter-dest-geo-srs label").append('<div class="add-information"></div>');
+        $(".analysis-item-body-difference .parameter-tolerance label").append('<div class="add-information"></div>');
+        KQ.Builder.BuilderUi.InformationTips.getInstance().init(selector + " .parameter-src-layers .add-information", KQ.Local.Builder.layerHelp.differenceSrcLayerTips());
+        KQ.Builder.BuilderUi.InformationTips.getInstance().init(selector + " .parameter-dest-layers .add-information", KQ.Local.Builder.layerHelp.differenceDestLayerTips());
+        KQ.Builder.BuilderUi.InformationTips.getInstance().init(selector + " .parameter-geo-srs .add-information", KQ.Local.Builder.layerHelp.differenceGeoSrsTips());
+        KQ.Builder.BuilderUi.InformationTips.getInstance().init(selector + " .parameter-dest-geo-srs .add-information", KQ.Local.Builder.layerHelp.differenceDestGeoSrsTips());
+        KQ.Builder.BuilderUi.InformationTips.getInstance().init(selector + " .parameter-tolerance .add-information", KQ.Local.Builder.layerHelp.differenceToleranceTips());
+
+        /* 滚动条 */
+        toolBoxScrollBar(selector);
+
+        // 进行差异分析接口的事件绑定
+        KQ.Builder.BuilderToolbox.BuilderDifference.getInstance().init(selector);
+
+      } finally {
+        KQ.Control.Waiting.close();
+      }
+    }, 50);
+  })
+
+</script>

@@ -1,0 +1,62 @@
+<style>
+	
+	#print-title-content-panel {
+		height: 35px;
+	}
+	
+	#print-title-label {
+		margin: 15px 6px 15px 22px;
+	}
+	
+	#print-title-input-textbox {
+		margin: 11px 3px 10px 8px;
+		height: 26px;
+		width: 230px;
+	}
+	
+	#title-background-color-label {
+		margin: 15px 6px 15px 22px;
+	}
+	
+	#display-title-box-shadow {
+		margin: 0px 3px 15px 10px;
+	}
+	
+	#display-title-checkbox {
+		margin: 0px 3px 15px 3px;
+	}
+	
+	#print-title-font-panel {
+		height: 47px;
+		
+		text-align: left;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	
+</style>
+
+<div id="map-print-title-setting-dialog">
+	<div id="print-title-content-panel">
+		<label id="print-title-label" for="print-title-input-textbox">__title__</label>
+		<input id="print-title-input-textbox" class="print-title-input-textbox" autofocus="autofocus" value="__a-map__" />
+	</div>
+	
+	<div id="print-title-font-panel" style="margin: 10px 0px 0px 0px;">
+		<input id="print-title-font-family-dropdownlist" style="margin: 8px 3px 8px 20px;" />
+		<input id="print-title-font-size-dropdownlist" style="margin: 8px 3px 8px 2px; width: 60px" />
+		<div id="print-title-font-color-picker" style="margin: 2px 3px 8px 2px;" type="color"></div>
+	</div>
+	
+	<div id="print-title-background-panel">
+		<label id="title-background-color-label">__title-background-color__</label>
+		<div id="title-background-color-picker" class="title-background-color-picker" type="color"></div>
+		
+		<input type="checkbox" id="display-title-box-shadow" class="k-checkbox" checked="checked">
+		<label class="k-checkbox-label" for="display-title-box-shadow">__title-box-shadow__</label>
+		
+		<input type="checkbox" id="display-title-checkbox" class="k-checkbox" checked="checked">
+		<label class="k-checkbox-label" for="display-title-checkbox">__display-title__</label>
+	</div>
+	
+</div>

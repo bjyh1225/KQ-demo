@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config custom="0">
+  <theme name="builder-black"/>
+  <map id="map" init_extent="12709112.454389 3552954.946287176 12761068.04056757 3593341.130560235 "
+       full_extent="12709112.454389 3552954.946287176 12761068.04056757 3593341.130560235 " min_scale_id="2" nodraw="1" isbuilder="1">
+    <scales>
+      <scale id="0">0.000000001690166886495264869</scale>
+      <scale id="1">0.0000000033803337729905297381</scale>
+      <scale id="2">0.0000000067606675459810594762</scale>
+      <scale id="3">0.0000000135213350919621189524</scale>
+      <scale id="4">0.0000000270426701839242379048</scale>
+      <scale id="5">0.0000000540853403678484758096</scale>
+      <scale id="6">0.0000001081706807356969516192</scale>
+      <scale id="7">0.0000002163413614713939032383</scale>
+      <scale id="8">0.0000004326827229427878064767</scale>
+      <scale id="9">0.0000008653654458855756129534</scale>
+      <scale id="10">0.0000017307308917711512259068</scale>
+      <scale id="11">0.0000034614617835423024518136</scale>
+      <scale id="12">0.0000069229235670846049036271</scale>
+      <scale id="13">0.0000138458471341692098072543</scale>
+      <scale id="14">0.0000276916942683384196145085</scale>
+      <scale id="15">0.0000553833885366768392290171</scale>
+      <scale id="16">0.0001107667770733536784580342</scale>
+      <scale id="17">0.0002215335541467073569160684</scale>
+      <scale id="18">0.0004430671082934147138321368</scale>
+      <!--<scale id="19">0.0008861342165868294276642736</scale>-->
+      <!--<scale id="20">0.0017722684331736588553285472</scale>-->
+      <!--<scale id="21">0.0035445368663473177106570944</scale>-->
+      <!--<scale id="22">0.0070890737326946354213141888</scale>-->
+      <!--<scale id="23">0.0141781474653892708426283775</scale>-->
+    </scales>
+    <projection>
+      <prj>
+        PROJCS["WGS_1984_Web_Mercator_Auxiliary_Sphere",GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Mercator_Auxiliary_Sphere"],PARAMETER["False_Easting",0.0],PARAMETER["False_Northing",0.0],PARAMETER["Central_Meridian",0.0],PARAMETER["Standard_Parallel_1",0.0],PARAMETER["Auxiliary_Sphere_Type",0.0],UNIT["Meter",1.0],AUTHORITY["EPSG",3857]]&#xd;
+      </prj>
+      <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null
+        +wktext +no_defs
+      </proj4>
+      <epsg>3857</epsg>
+    </projection>
+  </map>
+  <controls custom="0">
+    <control fullscreen="1" position="topright" type="zoom"/>
+    <control position="topright" type="measureseparate"/>
+    <control position="topright" type="setlocation"/>
+    <control label_x="经度" decimals="2" label_y="纬度" position="bottomright" type="coordinates"/>
+    <control position="bottomright" type="scale"/>
+    <control type="buildersearchbar"/>
+  </controls>
+  <tree label="图层">
+    <sources is_ipmapping="1">
+      <source name="source0" url="http://127.0.0.1:8699/KQGis/rest/services/test" type="kqmapping"/>
+    </sources>
+    <layers id="layers">
+    </layers>
+  </tree>
+  <builder>
+    <dbinfomations>
+      <info url="27.17.43.14" port="9499" dbname="172.16.0.6/orcl" username="KQ2" password="KQ2" featureclassname="JQLXDW" name="JQLXDW"/>
+      <info url="27.17.43.14" port="9499" dbname="172.16.0.6/orcl" username="KQ2" password="KQ2" featureclassname="JQXZDW" name="JQXZDW"/>
+      <info url="27.17.43.14" port="9499" dbname="172.16.0.6/orcl" username="KQ2" password="KQ2" featureclassname="JQDLTB" name="JQDLTB"/>
+    </dbinfomations>
+    <fileserver url="http://27.17.43.14:9411/file"/><!--本地测试模式用的url，指向霍双平的测试文件服务器-->
+  </builder>
+</config>

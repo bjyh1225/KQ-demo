@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <theme/>
+  <map init_extent="104.1750719525951 29.40408057254157 105.8139158280334 30.66781562500631 " min_scale_id="0" full_extent="104.1750719525951 29.40408057254157 105.8139158280334 30.66781562500631 " id="map">
+    <scales>
+      <scale id="0">0.000001</scale>
+      <scale id="1">0.000002</scale>
+      <scale id="2">0.000004</scale>
+      <scale id="3">0.000008</scale>
+      <scale id="4">0.000015625</scale>
+      <scale id="5">0.00003125</scale>
+      <scale id="6">0.0000625</scale>
+      <scale id="7">0.000125</scale>
+      <scale id="8">0.00025</scale>
+      <scale id="9">0.0005</scale>
+      <scale id="10">0.001</scale>
+      <scale id="11">0.002</scale>
+    </scales>
+    <projection>
+      <prj>GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433],AUTHORITY["EPSG",4326]]&#xd;
+</prj>
+      <proj4>+proj=longlat +datum=WGS84 +no_defs </proj4>
+    </projection>
+  </map>
+  <controls>
+    <control position="topright" type="toolbar">
+      <subcontrol type="zoom_in"/>
+      <subcontrol type="zoom_out"/>
+      <subcontrol type="roaming"/>
+      <subcontrol type="forward-map"/>
+      <subcontrol type="backward-map"/>
+      <subcontrol type="full-map"/>
+      <subcontrol type="drawing"/>
+      <subcontrol type="info-query"/>
+    </control>
+    <control init_open_id="layers" position="topleft" type="sidebar">
+      <subcontrol type="tree" id="controlTree"/>
+      <subcontrol type="advanced" id="controlAdvancedQuery"/>
+      <subcontrol type="overlay" id="controlOverlayAnalysis"/>
+      <subcontrol type="setting" id="controlSetting"/>
+    </control>
+    <control fullscreen="true" position="topright" type="zoom"/>
+    <control tooltip="苍穹数码" url="http://www.kanq.com.cn" type="attribution" label="Kanq" img="../../images/logo.png"/>
+    <control decimals="2" position="bottomleft" label_x="Lng" type="coordinates" label_y="Lat"/>
+    <control position="topleft" import_export="true" type="draw"/>
+    <control position="topleft" type="styleeditor"/>
+    <control position="topright" type="compare"/>
+    <control position="bottomleft" type="scale"/>
+  </controls>
+  <tree label="图层">
+    <sources>
+      <source url="http://172.16.1.185:8699/KQGis/rest/services/zy" type="kqmapping" name="source0"/>
+    </sources>
+    <layers id="layers">
+      <layer is_group="1" label="管理数据">
+        <layer is_group="1" label="批">
+          <layer is_group="1" label="独立选址项目">
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="19" is_dynamic="1" label="2012年"/>
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="20" is_dynamic="1" label="2011年"/>
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="21" is_dynamic="1" label="2010年以前"/>
+          </layer>
+          <layer is_group="1" label="城镇分批次建设项目">
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="24" is_dynamic="1" label="2012年"/>
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="25" is_dynamic="1" label="2011年"/>
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="26" is_dynamic="1" label="2010年以前"/>
+          </layer>
+          <layer is_group="1" label="全征全转范围">
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="33" is_dynamic="1" label="2010年以前"/>
+          </layer>
+        </layer>
+        <layer is_group="1" label="征">
+          <layer opacity="1" src_name="source0" icon="vector" type="sl" id="35" is_dynamic="1" label="2013年"/>
+          <layer opacity="1" src_name="source0" icon="vector" type="sl" id="36" is_dynamic="1" label="2012年"/>
+          <layer opacity="1" src_name="source0" icon="vector" type="sl" id="37" is_dynamic="1" label="2011年"/>
+          <layer opacity="1" src_name="source0" icon="vector" type="sl" id="38" is_dynamic="1" label="2010年以前"/>
+        </layer>
+        <layer is_group="1" label="供">
+          <layer opacity="1" src_name="source0" icon="vector" type="sl" id="40" is_dynamic="1" label="2013年"/>
+          <layer opacity="1" src_name="source0" icon="vector" type="sl" id="41" is_dynamic="1" label="2012年"/>
+          <layer opacity="1" src_name="source0" icon="vector" type="sl" id="42" is_dynamic="1" label="2011年"/>
+          <layer opacity="1" src_name="source0" icon="vector" type="sl" id="43" is_dynamic="1" label="2010年以前"/>
+        </layer>
+        <layer is_group="1" label="用">
+          <layer opacity="1" src_name="source0" icon="vector" type="sl" id="45" is_dynamic="1" label="用而未尽"/>
+          <layer opacity="1" src_name="source0" icon="vector" type="sl" id="46" is_dynamic="1" label="供而未用"/>
+          <layer opacity="1" src_name="source0" icon="vector" type="sl" id="47" is_dynamic="1" label="征而未供"/>
+          <layer opacity="1" src_name="source0" icon="vector" type="sl" id="48" is_dynamic="1" label="批而未征"/>
+        </layer>
+        <layer is_group="1" label="补">
+          <layer is_group="1" label="土地整治计划区">
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="51" is_dynamic="1" label="2013年"/>
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="52" is_dynamic="1" label="2012年"/>
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="53" is_dynamic="1" label="2011年"/>
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="54" is_dynamic="1" label="2010年以前"/>
+          </layer>
+          <layer is_group="1" label="土地整治项目立项">
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="56" is_dynamic="1" label="2013年"/>
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="57" is_dynamic="1" label="2012年"/>
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="58" is_dynamic="1" label="2011年"/>
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="59" is_dynamic="1" label="2010年以前"/>
+          </layer>
+          <layer is_group="1" label="土地整治项目验收">
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="61" is_dynamic="1" label="2013年"/>
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="62" is_dynamic="1" label="2012年"/>
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="63" is_dynamic="1" label="2011年"/>
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="64" is_dynamic="1" label="2010年以前"/>
+          </layer>
+        </layer>
+        <layer is_group="1" label="查">
+          <layer is_group="1" label="卫片执法疑问图斑">
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="67" is_dynamic="1" label="2013年"/>
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="68" is_dynamic="1" label="2012年"/>
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="69" is_dynamic="1" label="2011年"/>
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="70" is_dynamic="1" label="2010年以前"/>
+          </layer>
+        </layer>
+      </layer>
+      <layer is_group="1" label="基础数据">
+        <layer is_group="1" label="城镇地籍">
+          <layer src_name="source0" icon="compound_layer" id="73" is_dynamic="1" label="宗地发证情况"/>
+          <layer src_name="source0" icon="compound_layer" id="76" is_dynamic="1" label="宗地"/>
+          <layer src_name="source0" icon="compound_layer" id="79" is_dynamic="0" label="房屋"/>
+          <layer src_name="source0" icon="compound_layer" id="82" is_dynamic="0" label="城镇地籍底图"/>
+        </layer>
+        <layer is_group="1" label="土地利用现状">
+          <layer is_group="1" label="2011年">
+            <layer src_name="source0" icon="compound_layer" id="92" is_dynamic="0" label="地类图斑"/>
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="96" is_dynamic="0" label="基本农田保护片块"/>
+            <layer src_name="source0" icon="compound_layer" id="97" is_dynamic="0" label="土地利用底图"/>
+          </layer>
+          <layer is_group="1" label="2010年">
+            <layer src_name="source0" icon="compound_layer" id="104" is_dynamic="0" label="地类图斑"/>
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="108" is_dynamic="0" label="基本农田保护片块"/>
+            <layer src_name="source0" icon="compound_layer" id="109" is_dynamic="0" label="土地利用底图"/>
+          </layer>
+          <layer is_group="1" label="2009年">
+            <layer src_name="source0" icon="compound_layer" id="116" is_dynamic="0" label="地类图斑"/>
+            <layer opacity="1" src_name="source0" icon="vector" type="sl" id="120" is_dynamic="0" label="基本农田保护片块"/>
+            <layer src_name="source0" icon="compound_layer" id="121" is_dynamic="0" label="土地利用底图"/>
+          </layer>
+        </layer>
+        <layer src_name="source0" icon="compound_layer" id="127" is_dynamic="0" label="农用地分等定级"/>
+      </layer>
+      <layer is_group="1" label="规划数据">
+        <layer is_group="1" label="城市规划">
+          <layer opacity="1" src_name="source0" icon="vector" type="sl" id="132" is_dynamic="0" label="规划路网图"/>
+          <layer opacity="1" src_name="source0" icon="vector" type="sl" id="133" is_dynamic="0" label="城市规划图"/>
+        </layer>
+        <layer is_group="1" label="土地利用规划">
+          <layer opacity="1" src_name="source0" icon="vector" type="sl" id="135" is_dynamic="0" label="中心城区片区"/>
+          <layer opacity="1" src_name="source0" icon="vector" type="sl" id="136" is_dynamic="0" label="建设用地空间管制区"/>
+          <layer opacity="1" src_name="source0" icon="vector" type="sl" id="137" is_dynamic="0" label="土地用途分区"/>
+          <layer opacity="1" src_name="source0" icon="vector" type="sl" id="138" is_dynamic="0" label="土地规划地类"/>
+        </layer>
+        <layer is_group="1" label="矿产资源规划">
+          <layer src_name="source0" icon="compound_layer" id="140" is_dynamic="0" label="2012年"/>
+        </layer>
+      </layer>
+      <layer is_group="1" label="基础地理数据">
+        <layer is_group="1" label="行政区划">
+          <layer src_name="source0" icon="compound_layer" id="144" is_dynamic="0" label="安岳县"/>
+          <layer src_name="source0" icon="compound_layer" id="152" is_dynamic="0" label="简阳市"/>
+          <layer src_name="source0" icon="compound_layer" id="159" is_dynamic="0" label="乐至县"/>
+          <layer src_name="source0" icon="compound_layer" id="166" is_dynamic="0" label="雁江区"/>
+        </layer>
+        <layer is_group="1" label="遥感影像">
+          <layer opacity="1" src_name="source0" icon="image" type="yx" id="174" is_dynamic="0" label="2012年"/>
+          <layer opacity="1" src_name="source0" icon="image" type="yx" id="175" is_dynamic="0" label="2011年"/>
+          <layer opacity="1" src_name="source0" icon="image" type="yx" id="176" is_dynamic="0" label="2009年"/>
+        </layer>
+      </layer>
+    </layers>
+  </tree>
+</config>

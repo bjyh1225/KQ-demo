@@ -1,0 +1,45 @@
+<div id="compare-4win">
+  <div id="window-tree-line0-0"><div id="map-control-tree-line0-0"></div></div>
+  <div id="window-tree-line0-1"><div id="map-control-tree-line0-1"></div></div>
+  <div id="window-tree-line1-0"><div id="map-control-tree-line1-0"></div></div>
+  <div id="window-tree-line1-1"><div id="map-control-tree-line1-1"></div></div>
+
+  <div id="vertical-splitter">
+    <div id="pane-line0">
+      <div id="h-splitter-line0">
+        <div id="map-line0-0" class="compare-map"></div>
+        <div id="map-line0-1" class="compare-map"></div>
+      </div>
+    </div>
+    <div id="pane-line1">
+      <div id="h-splitter-line1">
+        <div id="map-line1-0" class="compare-map"></div>
+        <div id="map-line1-1" class="compare-map"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #compare-4win {
+    height: 100%;
+  }
+
+  #vertical-splitter, #pane-line0, #pane-line1, #h-splitter-line0, #h-splitter-line1 {
+    height: 100%;
+  }
+
+  #h-splitter-line0 .compare-map {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  #h-splitter-line1 .compare-map {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .k-splitbar-static-vertical {
+    height: 5px;
+  }
+</style>

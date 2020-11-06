@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<config>
+  <map id='map' init_extent="12064306.56825543 2655921.404514898 12119152.13666126 2729344.374448654" full_extent="12064306.56825543 2655921.404514898 12119152.13666126 2729344.374448654" min_scale_id='3' enable_opacity="0">
+    <scales>
+      <scale id="0" >0.000000001690163571602659</scale>
+      <scale id="1" >0.000000003380327143205318</scale>
+      <scale id="2" >0.000000006760654286410635</scale>
+      <scale id="3" >0.00000001352130857282127</scale>
+      <scale id="4" >0.00000002704261714564254</scale>
+      <scale id="5" >0.00000005408523429128508</scale>
+      <scale id="6" >0.0000001081704685825702</scale>
+      <scale id="7" >0.0000002163409371651403</scale>
+      <scale id="8" >0.0000004326818743302807</scale>
+      <scale id="9" >0.0000008653637486605613</scale>
+      <scale id="10">0.000001730727497321123</scale>
+      <scale id="11">0.000003461454994642245</scale>
+      <scale id="12">0.000006922909989284491</scale>
+      <scale id="13">0.00001384581997856898</scale>
+      <scale id="14">0.00002769163995713796</scale>
+      <scale id="15">0.00005538327991427592</scale>
+      <scale id="16">0.0001107665598285518</scale>
+    </scales>
+    <projection>
+      <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +over +no_defs</proj4>
+      <origin x="-20037508.3427892" y="20037508.3427892"></origin>
+      <bound>-20037508.3427892 -20037508.3427892 20037508.3427892 20037508.3427892</bound>
+    </projection>
+  </map>
+  <controls>
+    <control type="basemap" position="topright" visible="1">
+      <subcontrol name="天地图矢量" maptype="tianditu" subtype="vector" is_selected="1"></subcontrol>
+      <subcontrol name="天地图影像" maptype="tianditu" subtype="image"></subcontrol>
+      <subcontrol name="天地图地形" maptype="tianditu" subtype="terrain"></subcontrol>
+      <subcontrol name="高德矢量" maptype="gaode" subtype="vector"></subcontrol>
+      <subcontrol name="高德影像" maptype="gaode" subtype="image"></subcontrol>
+      <subcontrol name="谷歌矢量" maptype="google" subtype="vector"></subcontrol>
+      <subcontrol name="谷歌影像" maptype="google" subtype="image"></subcontrol>
+      <subcontrol name="智图常规" maptype="geoq" subtype="vector"></subcontrol>
+      <subcontrol name="智图蓝色" maptype="geoq" subtype="blue"></subcontrol>
+      <subcontrol name="智图灰色" maptype="geoq" subtype="gray"></subcontrol>
+      <subcontrol name="智图暖色" maptype="geoq" subtype="warm"></subcontrol>
+      <subcontrol name="智图冷色" maptype="geoq" subtype="cold"></subcontrol>
+      <subcontrol name="OSM矢量" maptype="osm" subtype="vector"></subcontrol>
+    </control>
+  </controls>
+  <tree label="图层控制">
+    <sources>
+      <source name="merc" url="http://172.16.1.174:8699/KQGis/rest/services/merc" type="kqmapping"></source>
+    </sources>
+    <layers>
+      <layer is_group="1" label="基础数据层">
+        <layer id="1" label="复合图层" src_name="merc" opacity="1" icon="compound_layer" is_dynamic="0" type="sl" visible="1"></layer>
+        <layer id="1" label="复合图层" src_name="merc" opacity="1" icon="compound_layer" is_dynamic="0" type="sl" visible="1"></layer>
+        <layer id="1" label="复合图层" src_name="merc" opacity="1" icon="compound_layer" is_dynamic="0" type="sl" visible="1"></layer>
+        <layer id="1" label="复合图层" src_name="merc" opacity="0.5" icon="compound_layer" is_dynamic="0" type="sl" visible="1"></layer>
+      </layer>
+    </layers>
+  </tree>
+  <geometrysource url="http://172.16.1.157:8699/KQGis/rest/services/geometryserver"/>
+</config>

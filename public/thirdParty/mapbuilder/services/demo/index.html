@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>KQWebMap Example</title>
+
+  <meta name="mobile-web-app-capable" content="yes">
+</head>
+<body>
+<div id="map"></div>
+
+<script src="../../dist/jquery.min.js"></script>
+<script src="../../dist/jquery-ui.min.js"></script>
+
+<script src="../../dist/kqcss-default-red.js"></script>
+<script src="../../dist/kqwebmap.min.js"></script>
+
+<script>
+  function test () {
+    var config = KQ.Map.MapConfig.getInstance();
+    config.initAsync('', false, function () {
+      KQ.Local.setLanguage('cn');
+
+      var mapView = new KQ.Map.MapView({});
+
+      mapView.initAsync(function () {
+        console.log('mapview initialized!');
+      });
+    });
+  }
+
+  $(document).ready(function () {
+      test();
+  });
+</script>
+</body>
+</html>

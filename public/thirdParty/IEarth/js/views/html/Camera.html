@@ -1,0 +1,104 @@
+<!-- <div role="tabpanel" class="tab-pane fade in active " :id="'evalation_analysist_'+guid"> -->
+<style>
+    [v-cloak] {
+        display: none !important;
+    }
+
+    input,
+    textarea {
+        color: #d3d9e0;
+    }
+
+    .camera_module table tr td a {
+        text-decoration: none;
+    }
+
+    #files {
+        background-color: rgba(15, 14, 14, 0.87);
+        width: 100%;
+    }
+
+    .camera-control a {
+        display: inline-block;
+        font-size: 25px;
+        padding: 0 15px;
+        border: 1px solid #3c2d2d;
+    }
+
+    .camera-control a:hover {
+        background-color: rgb(34, 30, 30);
+    }
+
+    .table_list {
+        text-align: center;
+    }
+
+    .showNumber{
+       border: none;
+    }
+
+    .del{
+        border-color: darkolivegreen;
+        width: 25%
+    }
+    .showNumber{
+        width: 100%;
+        text-align: center;
+    }
+</style>
+<div class="camera_module">
+    <table class="table table-condensed" style="table-layout: fixed;margin-bottom: 0">
+        <tbody>
+            <tr>
+                <td colspan="4">{{titles.route}}</td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <input id="files" type="file" value="upload" placeholder="select file" @input="selectFile($event)">
+                </td>
+            </tr>
+            <!--camera-control-->
+            <tr>
+                <td colspan="4">{{titles.control}}</td>
+            </tr>
+
+            <tr>
+                <td colspan="4">
+                    <div class="camera-control">
+                        <a href="#" class="iconfont icon-play" :title="titles.play" @click="play()"></a>
+                        <a href="#" class="iconfont icon-zanting" :title="titles.pause" @click="pause()"></a>
+                        <a href="#" class="iconfont icon-stop1" :title="titles.stop" @click="stop()"></a>
+                    </div>
+                </td>
+            </tr>
+            <!--camera-nodes-->
+            <tr>
+                <td colspan="4">{{titles.nodes}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-condensed" style="table-layout: fixed; ">
+        <thead style="text-align: center;">
+            <tr>
+                <td>
+                    <span>{{titles.no}}</span>
+                </td>
+                <td>
+                    <span>{{titles.position}}</span>
+                </td>
+                <td>
+                    <span>{{titles.time}}</span>
+                </td>
+               
+            </tr>
+        </thead>
+        <tbody class="nodesTable" style="text-align: center;">
+           
+        </tbody>
+    </table>
+    <div style="text-align: right; margin: 5px;">
+        <a href="#" class="btn btn-default" @click='addNodesToTable()'>{{titles.addNode}}</a>
+        <a href="#" class="btn btn-default" @click='delNodes()'>{{titles.delNode}}</a>
+        <a href="#" class="btn btn-default" @click='exportXml()'>{{titles.exportXmlFile}}</a>
+    </div>
+</div>

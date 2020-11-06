@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>KQWebMap Example</title>
+
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <link href="../../dist/kqmaploading.min.css" rel="stylesheet" type="text/css">
+  <script src="../../dist/kqbuildercss.js"></script>
+
+  <script src="./window/analysis/common.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<!-- Side Bar -->
+<div id="buildersidebar" class="buildersidebar collapsed">
+  <!-- Nav tabs -->
+  <div class="buildersidebar-tabs">
+    <ul role="tablist">
+      <li class="nav-icon-top">
+        <a href="#home" role="tab">
+          <div id="builder-title-image" class="slide-link"><span class="iconfont icon-builder-logo"></span>
+          </div>
+          <div class="slide-link"><span class="nav-icon-font iconfont icon-menu-unfold"></span></div>
+        </a>
+      </li>
+      <li class="nav-icon">
+        <a href="#layers" role="tab" class="nav-icon-content">
+          <span class="nav-icon-font iconfont icon-layers"></span>
+          <span class="nav-icon-name">图层</span>
+        </a>
+      </li>
+      <li class="nav-icon">
+        <a href="#analysis" role="tab" class="nav-icon-content">
+          <span class="nav-icon-font iconfont icon-map-builder-analysis"></span>
+          <span class="nav-icon-name">工具</span>
+        </a>
+      </li>
+      <li class="nav-icon">
+        <a href="#settings" role="tab" class="nav-icon-content">
+          <span class="nav-icon-font iconfont icon-setting"></span>
+          <span class="nav-icon-name">设置</span>
+        </a>
+      </li>
+    </ul>
+    <div class="nav-space-left"></div>
+    <ul role="tablist">
+      <li class="nav-icon nav-icon-bottom"><a href="#bottom-menu" role="tab"><span
+        class="nav-icon-font iconfont icon-user"></span></a></li>
+    </ul>
+  </div>
+
+  <!-- Tab panes -->
+  <div class="buildersidebar-content">
+    <div class="buildersidebar-pane" id="home">
+    </div>
+
+    <div class="buildersidebar-pane" id="layers">
+      <div class="sidebar-layers-manager" style="height: 100%">
+        <h1 class="buildersidebar-header">
+          <p id="current-project-name" contenteditable="true"
+             style="width: 148px; height: 32px; line-height: 32px; display:inline-block; vertical-align: middle; text-overflow: ellipsis; white-space:nowrap; overflow:hidden;">
+            无标题</p>
+          <div class="saveToolBar"></div>
+        </h1>
+        <div class="buildersidebar-body">
+          <div tabindex="-1" class="add-layer-container">
+            <div class="add-layer-tag">
+              <span class="fa fa-plus"></span>
+              <span>添加图层</span>
+            </div>
+
+            <div class="add-layer-list" style="display: none;" tabindex="1">
+              <div class="add-layer-list-item" id="add-layer-list-item-file"><span>通过远程文件添加</span></div>
+              <div class="add-layer-list-item" id="add-layer-list-item-database"><span>通过数据库添加</span></div>
+            </div>
+            <div id="load-file-layer-container"></div>
+            <div id="load-database-layer-container"></div>
+            <div id="project-download-container"></div>
+            <div id="save-as-dialog-container"></div>
+          </div>
+          <div class="layers-container" style="height: 100%">
+            <div style="position: relative; overflow: hidden; width: 100%; height: 100%;">
+              <div class="vector-layers layer-sort-container" id="vector-layers-container"></div>
+              <div class="web-layers layer-sort-container"></div>
+              <div class="base-layers layer-sort-container">
+                <li class="">
+                  <div class="first-line">
+                    <div class="layer-icon">
+                      <img src="./images/amap.png"/>
+                    </div>
+                    <span class="editable-span title" title="智图蓝色">
+                      <span style="display: inline-block;">智图蓝色</span>
+                        <input value="智图蓝色" style="display: none;"/>
+                      </span>
+                      <span class="supermapol-icons-visible" style="opacity: 0;">
+                    </span>
+                  </div>
+                </li>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar-content-panel" style="display: none;">
+        <h1 class="buildersidebar-header">
+          <span class="buildersiderbar-back"><i class="fa fa-mail-reply"></i></span>
+          <span class="layer-editor-title-name">line-layer-test-name</span>
+          <span class="buildersidebar-close"><i class="fa fa-caret-left"></i></span>
+        </h1>
+        <div class="content-editor-pane content-editor-pane-point" style="display: none;"></div>
+        <div class="content-editor-pane content-editor-pane-line" style="display: none;"></div>
+        <div class="content-editor-pane content-editor-pane-polygon" style="display: none;"></div>
+        <div class="content-editor-pane content-editor-pane-basemap" style="display: none;"></div>
+      </div>
+    </div>
+    <div class="buildersidebar-pane" id="analysis">
+      <div class="analysis-main" style="display: block; height: 100%"></div>
+    </div>
+    <div class="buildersidebar-pane" id="settings"></div>
+  </div>
+
+</div>
+</div>
+
+
+<div class="buildersidebar-pane" id="bottom-menu">
+  <h1 class="buildersidebar-header">用户<span class="buildersidebar-close"><i class="fa fa-caret-left"></i></span>
+  </h1>
+</div>
+</div>
+</div>
+<div id="map" style="height: 100%;" class="loading">
+  <div class="kqmaploadingtxt">Loading...</div>
+</div>
+<div id="empty-window"></div>
+<div id="confirm-div"></div>
+
+<!--<script>L_NO_TOUCH = true;</script>-->
+<script src="../../dist/jquery.min.js"></script>
+<script src="../../dist/jquery-ui.min.js"></script>
+<script src="../../dist/kqlibs.js"></script>
+<script src="../../dist/map-example_3.js"></script>
+<script src="../../dist/other.js"></script>
+<script src="../../dist/kqbuilder-debug.js"></script>
+
+<script>
+  var mapView = null;
+  var layersContainer = null;
+
+  function test() {
+    var config = KQ.Map.MapConfig.getInstance();
+    let buildProject = KQ.Builder.BuilderProject.getInstance();
+
+    // 添加图层列表显示事件判断
+    $(".add-layer-list").blur(function() {
+      $('.add-layer-tag').css("focus");
+      $(".add-layer-list").css("display", "none");
+    })
+
+    // 添加图层方式的列表
+    $(".add-layer-tag").click(function () {
+      let display = $(".add-layer-list").css("display");
+      if (display == 'none') {
+        $(".add-layer-list").css("display", "block");
+        $(".add-layer-list").focus();
+      }
+    });
+
+      // 通过远程文件添加
+    window.loadFileDialog = null;
+    $("#add-layer-list-item-file").click(function() {
+      $(".add-layer-list").css("display", "none");
+
+      if (!window.loadFileDialog) {
+        window.loadFileDialog = new KQ.Builder.BuilderUi.FileLoadDialog("#load-file-layer-container", {filter: "geojson"});
+        window.loadFileDialog.on('load', async function (data) {
+          await KQ.Builder.BuilderCommon.addNewLayer(data.dataSourceInfo);
+        })
+
+        window.loadFileDialog.on('delete', function (data) {
+          // 初始化删除工程按钮
+          $("#confirm-div").kendoConfirm({
+            title: "删除远程图层文件",
+            content: "远程图层文件删除后无法恢复，确定删除？",
+            messages:{
+              okText: "确定",
+              cancelText: "取消",
+            }
+          }).data("kendoConfirm").result.done(function(){
+            $('body').append($('<div id="confirm-div">'));
+            window.loadFileDialog.fire("delete_event", data);
+          }).fail(function(){
+            $('body').append($('<div id="confirm-div">'));
+          });
+        })
+
+        // 删除图层事件
+        window.loadFileDialog.on("delete_event", async function(data) {
+          // 删除图层与 删除工程函数可公用
+          await deleteProject(data.dataSourceInfo['downloadPath']);
+        })
+      }
+
+      $("#load-file-layer-container").data("kendoWindow").center().open();
+    })
+
+    // 通过数据库添加
+    window.loadDatabaseDialog = null;
+    $("#add-layer-list-item-database").click(function() {
+      $(".add-layer-list").css("display", "none");
+
+      if (!window.loadDatabaseDialog) {
+        window.loadDatabaseDialog = new KQ.Builder.BuilderUi.DatabaseLoadDialog("#load-database-layer-container", {filter: "geojson"});
+
+        window.loadDatabaseDialog.on('load', function (data) {
+          KQ.Builder.BuilderCommon.addNewLayer(data.dataSourceInfo);
+        })
+      }
+
+      $("#load-database-layer-container").data("kendoWindow").center().open();
+    })
+
+    config.initAsync('', false, function () {
+      KQ.Local.setLanguage('cn');
+      mapView = new KQ.Map.MapView({
+        center: [40, -50],
+        zoom: 2,
+      });
+
+      mapView.initAsync(function () {
+        // Catches unhandled canvas layer events and re-dispatches them to the next layer in the stack
+        // 修正问题：点线面图层添加后，鼠标点击事件无法穿透
+        const myEventForwarder = new L.eventForwarder({
+          // ref to leaflet map
+          map: mapView._getMap(),
+          // events to forward
+          events: {
+            click: true,
+            mousemove: false
+          },
+          // throttle options for mousemove events (same as underscore.js)
+          throttleMs: 100,
+          throttleOptions: {
+            leading: true,
+            trailing: false
+          }
+        });
+
+        // enable event forwarding
+        myEventForwarder.enable();
+
+        // 初始化图例window
+        var win = new KQ.Control.Window('legend-window', {
+          parentID: 'KqMapID',
+          position: {
+            left: '355px',
+            top: '10px',
+          },
+          icon: 'fa fa-bar-chart',
+          width: '240px',
+          // height: "240px",
+          title: ' 图例',
+          draggable: false,
+          resizable: false,
+          scrollable: false,
+          close: function(e) {
+            // e.preventDefault();
+          },
+        });
+
+        win.initAsync(function () {
+          mapView.legend_window = win;
+        });
+
+        // 图例跟随sidebar
+        jQuery.extend( jQuery.easing,
+          {
+            easeOutQuad: function (x, t, b, c, d) {
+              return -c *(t/=d)*(t-2) + b;
+            },
+          });
+        var options = {
+          onOpened: function() {
+            $("#legend-window").parent().animate({left: "355px"}, 500, 'easeOutQuad');
+          },
+          onClosed: function() {
+            $("#legend-window").parent().animate({left: "63px"}, 500, 'easeOutQuad');
+          }
+        }
+
+        // 初始化侧边栏
+        var buildersidebar = $('#buildersidebar').buildersidebar(options);
+        buildProject.siderbar = buildersidebar;
+        buildersidebar.close();
+
+        $('.saveToolBar').kendoSaveToolBar({
+          sidebar: buildersidebar,
+          onSelect: async function (e) {
+            var type = $(e.item).data("type");
+            console.log("Selected: " + type);
+            switch (type) {
+              case 'save': {
+                try {
+                  KQ.Control.Waiting.show(mapView._getMap(), 'pin', 'meter');
+                  let projectManager = KQ.Builder.ProjectManager.getInstance();
+                  await projectManager.saveProject();
+                } catch (e) {
+                  KQ.Control.Waiting.close();
+                } finally {
+                  KQ.Control.Waiting.close();
+                }
+                break;
+              }
+
+              case 'saveas': {
+                let dialog = $("#save-as-dialog-container").kendoDialog({
+                  content: "<label style='margin: 10px;'>另存名称：</label>" +
+                    "<input id='save-as-project-name' style='width: 360px;' /><br/></br>" +
+                    "<label style='margin: 10px;'>用户标记：</label>" +
+                    "<input id='save-as-project-mark' style='width: 360px;' /><br/>" +
+                    "<button id='new-layer-add' style='margin: 10px; width: 60px' class='k-primary'>保存</button>"
+                }).data("kendoDialog");
+
+                var title = '<i class="fa fa-cloud-download" aria-hidden="true"></i><span style="margin-left: 6px">另存为</span>';
+                dialog.wrapper.find('.k-window-title').html(title);
+                dialog.wrapper.find('.k-dialog-titlebar').css("background-color", "rgba(27,43,82, .86)");
+                $("#save-as-dialog-container").css("background-color", "rgba(27,43,82, .86)");
+                dialog.wrapper.find('#save-as-project-name').css("background-color", "rgba(0,0,0, .2)");
+                dialog.wrapper.find('#save-as-project-mark').css("background-color", "rgba(0,0,0, .2)");
+                dialog.wrapper.find('.k-window-actions .k-dialog-close').css("margin", "-3px 3px 0px -0.5rem");
+                break;
+              }
+
+              case 'clouddown': {
+                window.loadProjectDialog = null;
+                if (!window.loadProjectDialog) {
+                  window.loadProjectDialog = new KQ.Builder.BuilderUi.ProjectLoadDialog("#project-download-container", {filter: "prj"});
+
+                  window.loadProjectDialog.on('load', async function (data) {
+                    KQ.Control.Waiting.show( mapView._getMap(), 'pin', 'meter' );
+                    await loadProject(data.dataSourceInfo['url']);
+
+                    // 读取的工程配置信息
+                    let reloadConfig = KQ.Builder.BuilderProject.getInstance().reloadConfig;
+                    let projectName = reloadConfig.title;
+                    let reloadLayers = reloadConfig.layers;
+
+                    // 清除原有的图层
+                    KQ.Builder.BuilderCommon.clearLayersContainer();
+                    for (let index in reloadLayers) {
+                      let val = reloadLayers[index][1];
+                      let featureType = val.featureType;
+                      let url = val.url;
+                      let options = val.options;
+                      let fileName = val.name;
+                      let dataSourceInfo = {
+                        type: "STATIC_DATA",
+                        url: url,
+                        name: fileName,
+                      };
+
+                      let layer = await KQ.Builder.BuilderCommon.addNewLayerWithoutWaitingDialog(dataSourceInfo);
+                      layer.setRenderType(options.renderType, mapView);
+
+                      // 重新设置layer的options
+                      let render = layer.getRender();
+                      render.setOptions(options);
+                      layer.renderType = options.renderType;
+                      // 根据option重新生成options.thematicColors
+                      global.builderInitDoms.refreshThematicColors(layer, options);
+
+                      buildProject.setting.layer = layer;
+
+                      // 设置当前激活图层，及渲染的样式（basic，single还是section）
+                      buildProject.setting.layer = layer;
+
+                      // 刷新图层的model信息
+                      switch (featureType) {
+                        case 'point':
+                          onPointLayerReady();
+                          break;
+                        case 'line':
+                          onLineLayerReady();
+                          break;
+                        case 'polygon':
+                          onPolygonLayerReady();
+                          break;
+                      }
+                    }
+
+                    KQ.Builder.BuilderCommon.refreshLayersContainer();
+                    global.builderInitDoms.render();
+                    setTimeout(function () {
+                      KQ.Builder.BuilderProject.getInstance().siderbar.open("layers");
+                      // 设置标题为加载的工程title
+                      $("#current-project-name").text(projectName);
+                      KQ.Control.Waiting.close();
+                    }, 200);
+                  })
+
+                  window.loadProjectDialog.on('delete', async function (data) {
+                    // 初始化删除工程按钮
+                    $("#confirm-div").kendoConfirm({
+                      title: "删除远程工程",
+                      content: "工程删除后无法恢复，确定删除？",
+                      messages:{
+                        okText: "确定",
+                        cancelText: "取消",
+                      }
+                    }).data("kendoConfirm").result.done(function(){
+                      $('body').append($('<div id="confirm-div">'));
+                      window.loadProjectDialog.fire("delete_event", data);
+                    }).fail(function(){
+                      $('body').append($('<div id="confirm-div">'));
+                    });
+                  })
+
+                  window.loadProjectDialog.on("delete_event", async function(data) {
+                    await deleteProject(data.dataSourceInfo['url']);
+                  })
+                }
+
+                $("#project-download-container").data("kendoWindow").center().open();
+                break;
+              }
+
+              case 'fold': {
+                console.log('do fold1!');
+                if (this.options.sidebar)
+                  this.options.sidebar.close();
+                break;
+              }
+            }
+          }
+        });
+
+        initLayersContainer();
+      });
+
+      buildProject.mapView = mapView;
+    });
+  }
+
+  // 加载网络projectloadProject
+  async function loadProject(project_url) {
+    try {
+      let projectString = await KQ.Common.NetworkTools.httpGetAsync(project_url);
+      // 工程文件需要解码
+      let projectJson = JSON.parse(decodeURIComponent(projectString));
+
+      let buildProject = KQ.Builder.BuilderProject.getInstance();
+
+      // config中加载的layer信息保存到buildProject中
+      buildProject.reloadConfig = projectJson;
+    }catch(e) {
+      KQ.Control.Notification.getInstance().showError("加载失败，请检查网络！");
+    }
+  }
+
+  // 加载远程图层
+  async function loadLayer(layer_url) {
+    try {
+      let layerString = await KQ.Common.NetworkTools.httpPostAsync(layer_url);
+      // 图层文件不需要解码
+      let layerJson = JSON.parse(layerString);
+      return layerJson;
+    } catch (e) {
+      console.log("加载远程图层失败！");
+      return null;
+    }
+    return null;
+  }
+
+  async function deleteProject(project_url) {
+    try {
+      KQ.Control.Waiting.show(mapView._getMap(), 'pin', 'meter');
+
+      let result = null;
+
+      if (KQ.Builder.BuilderCommon.isPortalEnvironment()) {
+        result = await deleteProject_protal(project_url)
+      } else {
+        result = await deleteProject_server(project_url);
+      }
+
+      if (result === 'success') {
+        KQ.Control.Notification.getInstance().showSuccess("删除工程成功！");
+        await window.loadProjectDialog._refreshData();
+      } else {
+        KQ.Control.Notification.getInstance().showError("删除工程失败！");
+      }
+    } catch (e) {
+      console.log("删除工程失败, error: ", e);
+    } finally {
+      KQ.Control.Waiting.close();
+    }
+  }
+
+  // 删除远程工程
+  async function deleteProject_server(project_url) {
+    let cmd = project_url.replace('/download/', '/deleteFileById?taskIds=');
+    let result = JSON.parse(await KQ.Common.NetworkTools.httpGetAsync(cmd));
+
+    return result.result;
+  }
+
+  // 删除远程工程
+  async function deleteProject_protal(project_url) {
+    let taskIds = project_url.slice(project_url.lastIndexOf("/") + 1);
+
+    return parent.window.vm.$api.mapBuilderApi.deleteFileById({
+      taskIds: taskIds,
+    }, {__LOGINTYPE: "dialog", noLoading: true}).then(async function (res) {
+      return res.data.result;
+    }).catch(() => {
+      return "error";
+    })
+  }
+
+  async function initLayersContainer() {
+    let buildProject = KQ.Builder.BuilderProject.getInstance();
+
+    // 初始化图层容器
+    layersContainer = new KQ.Builder.BuilderUi.LayerListBox("vector-layers-container", {
+      dataSource: [],
+
+      // 拖动item的响应函数
+      dragend: function () {
+        // 添加各个图层 注意这个地方需要反序添加 因为items是从上到下，但是压盖顺序是从下到上
+        let items = this.items();
+        let length = items.length;
+
+        for (let i = 0; i < length; ++i) {
+          let data = layersContainer.getDataFromListItem(items[i]);
+          let layer = data.layer;
+
+          layer.setPaneZIndex(length - i);
+        }
+      }
+    });
+
+    buildProject.layersContainer = layersContainer;
+    KQ.Control.Waiting.show(mapView._getMap(), 'pin', 'meter');
+
+    // 添加各个图层到map中
+    setTimeout(function () {
+      try {
+        // 添加智图 矢量图层 午夜蓝
+        let baselayers = KQ.Control.MapBaseLayer.getLayers('geoq', 'blue');
+
+        buildProject.basemapGroup = L.layerGroup(baselayers);
+        buildProject.basemapGroup.addTo(mapView._getMap());
+      } finally {
+        KQ.Control.Waiting.close();
+
+        setTimeout(function () {
+          KQ.Builder.BuilderProject.getInstance().siderbar.open("layers");
+        }, 100);
+      }
+    }, 0);
+
+    // 响应底图点击信号
+    $(".layers-container .base-layers li").click(function () {
+      $(".sidebar-content-panel").css("display", "block");
+      $(".sidebar-layers-manager").css("display", "none");
+      $(".content-editor-pane-basemap").css("display", "block");
+    })
+
+    // 图层容器的信号响应函数
+    $("#vector-layers-container").bind("select", function (event, dataItem) {
+      buildProject.setting.name = dataItem.name;
+      buildProject.setting.layer = dataItem.layer;
+
+      $(".sidebar-content-panel").css("display", "block");
+      $(".sidebar-layers-manager").css("display", "none");
+      $(".content-editor-pane-" + dataItem.type).css("display", "block");
+
+      $(".layer-editor-title-name").text(dataItem.name);
+
+      if (dataItem.type == 'point') {
+        onPointLayerReady();
+      } else if (dataItem.type == 'line') {
+        onLineLayerReady();
+      } else if (dataItem.type == 'polygon') {
+        onPolygonLayerReady();
+      }
+    })
+
+    // 监听图层可见信号
+    $("#vector-layers-container").bind("builder_layer_visible", function (event, dataItem) {
+      let layer = dataItem.layer;
+      layer.getRender().addToMapView(mapView);
+
+      buildProject.addLayer(layer);
+    });
+
+    // 监听图层不可见信号
+    $("#vector-layers-container").bind("builder_layer_invisible", function (event, dataItem) {
+      buildProject.removeLayer(dataItem.layer);
+    });
+
+    // 监听全图信号
+    $("#vector-layers-container").bind("builder_full_map", function (event, dataItem) {
+      let layer = dataItem.layer;
+      layer.getRender().flyToBounds();
+    });
+
+    // 监听导出图层信号
+    $("#vector-layers-container").bind("builder_export", function (event, dataItem) {
+      let layer = dataItem.layer;
+      let geojson = KQ.Builder.BuilderLayerDatas.getInstance().getData(layer.options.guid);
+      let geojson_string = JSON.stringify(geojson);
+
+      KQ.Common.CommonTools.exportData(geojson_string, 'exportdata.geojson');
+      KQ.Control.Notification.getInstance().showSuccess(KQ.Local.Control.drawControl.exportDraw.success());
+    });
+
+    // 监听属性表信号
+    $("#vector-layers-container").bind("builder_attribute_table", function (event, dataItem) {
+      let layer = dataItem.layer;
+      let geojson = KQ.Builder.BuilderLayerDatas.getInstance().getData(layer.options.guid);
+      let columns = [];
+      let dataSource = [];
+      let fields = geojson.fields || Object.keys(geojson.features[0].properties);
+      let features = geojson.features;
+
+      // 组织columns
+      for (let i = 0; i < fields.length; ++i) {
+        let field = fields[i].name || fields[i];
+        let title = fields[i].aliasName || field;
+
+        columns.push({
+          field: field,
+          title: title,
+        })
+      }
+
+      // 组织dataSource
+      for (let i = 0; i < features.length; ++i) {
+        dataSource.push(features[i].properties);
+      }
+
+      KQ.Builder.BuilderUi.BuilderInfoDialog.getInstance().open(dataSource, columns);
+    });
+
+    // 监听图例信号
+    $("#vector-layers-container").bind("builder_legend", function (event, dataItem, el) {
+      mapView.legend_window.open();
+      global.builderInitDoms.updateLegend(dataItem.layer);
+    });
+
+    // 监听图层删除信号
+    $("#vector-layers-container").bind("builder_layer_delete", function (event, dataItem, el) {
+      layersContainer.remove(el);
+      buildProject.deleteLayer(dataItem.layer);
+
+      // 刷新图层控件
+      KQ.Builder.BuilderCommon.refreshAnalysisLayersControl();
+    });
+
+    // 监听图层重命名信号
+    $("#vector-layers-container").bind("builder_rename", function (event, dataItem, el) {
+      // 隐藏菜单
+      $(el).find(".secound-line .lists").css("display", "none");
+
+      // 隐藏span，显示input用于编辑
+      let $span = $(el).find(".first-line .title span");
+      let $input = $(el).find(".first-line .title input");
+      $span.css("display", "none");
+      $input.css("display", "inline-block");
+
+      // 光标移动到最后一个字符
+      var value = $input.val();
+      $input.val("").focus().val(value);
+
+      // 阻止click、mousedown事件冒泡
+      $input.bind("click mousedown", function (e) {
+        e.stopPropagation();
+      });
+
+      // 失去焦点
+      $input.blur(function (e) {
+        // 隐藏input，显示span用于显示
+        $span.css("display", "inline-block");
+        $input.css("display", "none");
+
+        // 修改数据
+        let $li = $span.closest("li");
+        let dataItem = layersContainer._listbox.dataItem($li);
+        dataItem.set("name", $input.val());
+      })
+    });
+
+  }
+
+  $(document).ready(function () {
+    test();
+  });
+
+  setTimeout(function () {
+    $(".content-editor-pane-point").load("./window/point.html");
+    $(".content-editor-pane-line").load("./window/line.html");
+    $(".content-editor-pane-polygon").load("./window/polygon.html");
+    $(".content-editor-pane-basemap").load("./window/basemap.html");
+    $("#analysis .analysis-main").load("./window/analysis/main.html");
+    $("#settings").load("./window/setting.html");
+
+    setTimeout(function () {
+      global.builderInitDoms.initAllDoms();
+    }, 1000);
+  }, 0);
+
+
+  $('.buildersiderbar-back').click(function () {
+    $(".sidebar-content-panel").css("display", "none");
+    $(".content-editor-pane").css("display", "none");
+    $(".sidebar-layers-manager").css("display", "block");
+  })
+
+  function swapRenderType(renderType, model_map) {
+    let buildProject = KQ.Builder.BuilderProject.getInstance();
+    let layer = buildProject.setting.layer; // 当前激活的layer
+
+    layer.setRenderType(renderType, mapView);
+    buildProject.setInfo('render_model', model_map.get(renderType));
+
+    //重绘图例
+    global.builderInitDoms.updateLegend(layer);
+  }
+
+  function onPointLayerReady() {
+    let buildProject = KQ.Builder.BuilderProject.getInstance();
+    let layer = buildProject.setting.layer; // 当前激活的layer
+
+    var symbolType = layer.render.get('basic').options.pointSymbolType;
+    if (symbolType == 'vector') {
+      buildProject.symbolTypeGroupButton.select(0);
+    } else {
+      buildProject.symbolTypeGroupButton.select(1);
+    }
+
+    // 点数据 基本类型
+    let basicStyleOptions = layer.render.get('basic').options;
+    basicStyleOptions.lineColor = basicStyleOptions.vectorInfo.strokeColor;
+    basicStyleOptions.lineWidth = basicStyleOptions.vectorInfo.strokeWidth;
+    let basicModel = kendo.observable({
+      styleOptions: basicStyleOptions,
+      pointSize: basicStyleOptions.vectorInfo.fontSize.split("px")[0],  // 点大小
+
+      pointOpacity: basicStyleOptions.vectorInfo.fillOpacity * 100,     // 点的不透明度
+      lineOpacity: basicStyleOptions.vectorInfo.strokeOpacity * 100,    // 线的不透明度
+
+      labelDirectionDropDownList: builderInitDoms.labelDirectionDropDownList,
+      labelFieldDropDownList: global.builderInitDoms.labelFieldDropDownList,
+      labelFontDropDownList: global.builderInitDoms.labelFontDropDownList
+    });
+
+    // 点数据 单值类型
+    let singleStyleOptions = layer.render.get('single').options;
+    let singleModel = kendo.observable({
+      styleOptions: singleStyleOptions,
+      pointSize: singleStyleOptions.vectorInfo.fontSize.split("px")[0], // 点大小
+
+      pointOpacity: singleStyleOptions.vectorInfo.fillOpacity * 100,   // 点的不透明度
+      lineOpacity: singleStyleOptions.vectorInfo.strokeOpacity * 100,  // 线的不透明度
+
+      specialFieldDropDownList: global.builderInitDoms.specialFieldDropDownList,
+      rampColorDropDownList: global.builderInitDoms.rampColorDropDownList,
+
+      labelDirectionDropDownList: global.builderInitDoms.labelDirectionDropDownList,
+      labelFieldDropDownList: global.builderInitDoms.labelFieldDropDownList,
+      labelFontDropDownList: global.builderInitDoms.labelFontDropDownList
+    });
+
+    // 点数据 分段类型
+    let sectionStyleOptions = layer.render.get('section').options;
+    let sectionModel = kendo.observable({
+      styleOptions: sectionStyleOptions,
+      pointSize: sectionStyleOptions.vectorInfo.fontSize.split("px")[0], // 点大小
+
+      pointOpacity: sectionStyleOptions.vectorInfo.fillOpacity * 100,   // 点的不透明度
+      lineOpacity: sectionStyleOptions.vectorInfo.strokeOpacity * 100,  // 线的不透明度
+
+      specialFieldDropDownList: global.builderInitDoms.sectionSpecialFieldDropDownList,
+      subsectionTypeDropDownList: global.builderInitDoms.subsectionTypeDropDownList,
+      subsectionNumberDropDownList: global.builderInitDoms.subsectionNumberDropDownList,
+      rampColorDropDownList: global.builderInitDoms.rampColorDropDownList,
+      lineStyleDropDownList: global.builderInitDoms.lineStyleDropDownList,
+
+      labelDirectionDropDownList: global.builderInitDoms.labelDirectionDropDownList,
+      labelFieldDropDownList: global.builderInitDoms.labelFieldDropDownList,
+      labelFontDropDownList: global.builderInitDoms.labelFontDropDownList
+    });
+
+    // 点数据 热力图类型
+    let heatmapStyleOptions = layer.render.get('heatmap').options;
+    let heatmapModel = kendo.observable({
+      styleOptions: heatmapStyleOptions,
+
+      weightFieldDropDownList: global.builderInitDoms.weightFieldDropDownList,
+      heatmapRampColorDropDownList: global.builderInitDoms.heatmapRampColorDropDownList,
+    });
+
+    // 初始化model
+    let model_map = new Map([
+      ["basic", basicModel],
+      ["single", singleModel],
+      ["section", sectionModel],
+      ["heatmap", heatmapModel],
+    ]);
+
+    // 视图和model进行绑定
+    model_map.forEach(function (value, key) {
+      kendo.bind($("div#point-theme-tools-" + key), value);
+    });
+
+    global.builderInitDoms.initFieldColorContainer();
+
+    $(".point-layer-types " + ".layer-type-img").removeClass('img-selected');
+    $(".point-layer-types .point-" + layer.renderType).addClass('img-selected');
+    $(".point-theme-tools > .theme-tools-item").css("display", "none");
+    $("#point-theme-tools-" + layer.renderType).css("display", "block");
+
+
+    $('.point-layer-types .layer-type-img').click(function () {
+      // 如果为激活的layer type，不做相应
+      if ( $(this).hasClass("img-selected") ) {
+        return;
+      }
+      $(".point-layer-types " + ".layer-type-img").removeClass('img-selected');
+      $(this).addClass('img-selected');
+      $(".point-theme-tools > .theme-tools-item").css("display", "none");
+
+      let render_type = $(this).attr("type");
+      $("#point-theme-tools-" + render_type).css("display", "block");
+
+      swapRenderType(render_type, model_map);
+    });
+
+    swapRenderType(layer.renderType, model_map);
+
+    /* point basic symbol type switch */
+    let pointSymbolType = basicStyleOptions.pointSymbolType;
+    if (pointSymbolType == 'vector')
+      swapPointSvg();
+    else
+      swapPointImg();
+
+    $(".point-symbol-svg").click(function () {
+      swapPointSvg();
+      $(".default-point-icon div").eq(0).trigger('symbol_type_vector');
+    });
+    $(".point-symbol-img").click(function () {
+      swapPointImg();
+      $(".default-point-icon div").eq(1).trigger('symbol_type_image');
+    });
+
+    /* swap svg/img */
+    function swapPointSvg() {
+      $('<style>.only-svg-symbol-tyle{display:block;}</style>').appendTo(document.body);
+
+      let renderModel = buildProject.getInfo('render_model');
+      let options = renderModel.styleOptions;
+      buildProject.getInfo('render_model').styleOptions.pointSymbolType = "vector";
+      global.builderInitDoms.fillSvgSymbols();
+      // 防止多个点图层存在时 svg/img相互彼此影响
+      $(".default-point-icon div").eq(0).trigger('symbol_type_vector');
+    }
+
+    function swapPointImg() {
+      $('<style>.only-svg-symbol-tyle{display:none;}</style>').appendTo(document.body);
+
+      let renderModel = buildProject.getInfo('render_model');
+      let options = renderModel.styleOptions;
+      buildProject.getInfo('render_model').styleOptions.pointSymbolType = "image";
+      global.builderInitDoms.fillImageSymbols();
+      $(".default-point-icon div").eq(1).trigger('symbol_type_image');
+    }
+  }
+
+  function onLineLayerReady() {
+    let buildProject = KQ.Builder.BuilderProject.getInstance();
+    let layer = buildProject.setting.layer; // 当前激活的layer
+
+    let basicStyleOptions = layer.render.get('basic').options;
+    var basicModel = kendo.observable({
+      styleOptions: basicStyleOptions,
+      lineOpacity: basicStyleOptions.lineOpacity * 100,
+
+      lineStyleDropDownList: global.builderInitDoms.lineStyleDropDownList,
+      labelFieldDropDownList: global.builderInitDoms.labelFieldDropDownList,
+      labelFontDropDownList: global.builderInitDoms.labelFontDropDownList
+    });
+
+
+    var singleStyleOptions = layer.render.get('single').options;
+    var singleModel = kendo.observable({
+      styleOptions: layer.render.get('single').options,
+      lineOpacity: singleStyleOptions.lineOpacity * 100,
+      specialFieldDropDownList: global.builderInitDoms.specialFieldDropDownList,
+      lineStyleDropDownList: global.builderInitDoms.lineStyleDropDownList,
+      lineRampColorDropDownList: global.builderInitDoms.rampColorDropDownList,
+      labelFieldDropDownList: global.builderInitDoms.labelFieldDropDownList,
+      labelFontDropDownList: global.builderInitDoms.labelFontDropDownList
+    });
+
+    let sectionStyleOptions = layer.render.get('section').options;
+    var sectionModel = kendo.observable({
+      styleOptions: layer.render.get('section').options,
+      specialFieldDropDownList: global.builderInitDoms.sectionSpecialFieldDropDownList,
+      subsectionTypeDropDownList: global.builderInitDoms.subsectionTypeDropDownList,
+      subsectionNumberDropDownList: global.builderInitDoms.subsectionNumberDropDownList,
+      lineRampColorDropDownList: global.builderInitDoms.rampColorDropDownList,
+      lineOpacity: sectionStyleOptions.lineOpacity * 100,
+      lineStyleDropDownList: global.builderInitDoms.lineStyleDropDownList,
+      labelFieldDropDownList: global.builderInitDoms.labelFieldDropDownList,
+      labelFontDropDownList: global.builderInitDoms.labelFontDropDownList
+    });
+
+    // 初始化model
+    let model_map = new Map([
+      ["basic", basicModel],
+      ["single", singleModel],
+      ["section", sectionModel],
+    ]);
+
+    // 视图和model进行绑定
+    model_map.forEach(function (value, key) {
+      kendo.bind($("div#line-theme-tools-" + key), value);
+    });
+
+    global.builderInitDoms.initFieldColorContainer();
+
+    $(".line-layer-types " + ".layer-type-img").removeClass('img-selected');
+    $(".line-layer-types .line-" + layer.renderType).addClass('img-selected');
+    $(".line-theme-tools > .theme-tools-item").css("display", "none");
+    $("#line-theme-tools-" + layer.renderType).css("display", "block");
+
+    $('.line-layer-types .layer-type-img').click(function () {
+      $(".line-layer-types " + ".layer-type-img").removeClass('img-selected');
+      $(this).addClass('img-selected');
+
+      $(".line-theme-tools > .theme-tools-item").css("display", "none");
+
+      let render_type = $(this).attr("type");
+
+      $("#line-theme-tools-" + render_type).css("display", "block");
+      swapRenderType(render_type, model_map);
+    });
+
+    swapRenderType(layer.renderType, model_map);
+  }
+
+  function onPolygonLayerReady() {
+    let buildProject = KQ.Builder.BuilderProject.getInstance();
+    let layer = buildProject.setting.layer; // 当前激活的layer
+
+    // 面数据、基本类型
+    let basicStyleOpacity = layer.render.get('basic').options;
+    var basicModel = kendo.observable({
+      styleOptions: basicStyleOpacity,
+      fillOpacity: basicStyleOpacity.fillOpacity * 100,
+      lineOpacity: basicStyleOpacity.lineOpacity * 100,
+
+      lineStyleDropDownList: global.builderInitDoms.lineStyleDropDownList(),
+      labelFieldDropDownList: global.builderInitDoms.labelFieldDropDownList(),
+      labelFontDropDownList: global.builderInitDoms.labelFontDropDownList()
+    });
+
+    // 面数据、单值类型
+    let singleStyleOpacity = layer.render.get('single').options;
+    let singleModel = kendo.observable({
+      styleOptions: singleStyleOpacity,
+      fillOpacity: singleStyleOpacity.fillOpacity * 100,
+      lineOpacity: singleStyleOpacity.lineOpacity * 100,
+
+      specialFieldDropDownList: global.builderInitDoms.specialFieldDropDownList(),
+      rampColorDropDownList: global.builderInitDoms.rampColorDropDownList(),
+      lineStyleDropDownList: global.builderInitDoms.lineStyleDropDownList(),
+      labelFieldDropDownList: global.builderInitDoms.labelFieldDropDownList(),
+      labelFontDropDownList: global.builderInitDoms.labelFontDropDownList()
+    });
+
+    // 面数据、分段类型
+    let sectionStyleOpacity = layer.render.get('section').options;
+    let sectionModel = kendo.observable({
+      styleOptions: sectionStyleOpacity,
+      fillOpacity: sectionStyleOpacity.fillOpacity * 100,
+      lineOpacity: sectionStyleOpacity.lineOpacity * 100,
+
+      specialFieldDropDownList: global.builderInitDoms.sectionSpecialFieldDropDownList,
+      subsectionTypeDropDownList: global.builderInitDoms.subsectionTypeDropDownList,
+      subsectionNumberDropDownList: global.builderInitDoms.subsectionNumberDropDownList,
+      rampColorDropDownList: global.builderInitDoms.rampColorDropDownList,
+      lineStyleDropDownList: global.builderInitDoms.lineStyleDropDownList,
+      labelFieldDropDownList: global.builderInitDoms.labelFieldDropDownList,
+      labelFontDropDownList: global.builderInitDoms.labelFontDropDownList
+    });
+
+    // 初始化model
+    let model_map = new Map([
+      ["basic", basicModel],
+      ["single", singleModel],
+      ["section", sectionModel],
+    ]);
+
+    // 视图和model进行绑定
+    model_map.forEach(function (value, key) {
+      kendo.bind($("div#polygon-theme-tools-" + key), value);
+    });
+
+    global.builderInitDoms.initFieldColorContainer();
+
+    $(".polygon-layer-types " + ".layer-type-img").removeClass('img-selected');
+    $(".polygon-layer-types .region-" + layer.renderType).addClass('img-selected');
+    $(".polygon-theme-tools > .theme-tools-item").css("display", "none");
+    $("#polygon-theme-tools-" + layer.renderType).css("display", "block");
+
+    $('.polygon-layer-types .layer-type-img').click(function () {
+      $(".polygon-layer-types " + ".layer-type-img").removeClass('img-selected');
+      $(this).addClass('img-selected');
+
+      $(".polygon-theme-tools > .theme-tools-item").css("display", "none");
+
+      let render_type = $(this).attr("type");
+      $("#polygon-theme-tools-" + render_type).css("display", "block");
+      swapRenderType(render_type, model_map);
+    });
+
+    swapRenderType(layer.renderType, model_map);
+  }
+
+</script>
+</body>
+</html>

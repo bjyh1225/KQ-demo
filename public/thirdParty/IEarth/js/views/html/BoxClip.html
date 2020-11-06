@@ -1,0 +1,80 @@
+<div class="boxClip_module">
+  <table class="table table-condensed" style="table-layout: fixed;">
+    <tbody>
+      <!-- selectTilesData -->
+      <tr>
+        <td colspan="1">{{titles.selectTilesData}}</td>
+        <td colspan="1">
+          <select id="selectData" class="form-control" v-model="boxClip.curTilesData">
+            <option v-for="item in boxClip.tilesData" :value="item.id">{{item.name}}</option>
+          </select>
+        </td>
+      </tr>
+      <!--clipLength-->
+      <tr>
+        <td colspan="1">{{titles.clipLength}}</td>
+        <td colspan="1">
+          <input type="number" min="1" class="form-control" placeholder="" v-model="boxClip.axisX" @input="changeClipLength" />
+        </td>
+      </tr>
+      <!--clipWidth-->
+      <tr>
+        <td colspan="1">{{titles.clipWidth}}</td>
+        <td colspan="1">
+          <input type="number" min="1" max="179" class="form-control" placeholder="" v-model="boxClip.axisY" @input="changeClipWidth"
+          />
+        </td>
+      </tr>
+      <!--clipHeight-->
+      <tr>
+        <td colspan="1">{{titles.clipHeight}}</td>
+        <td colspan="1">
+          <input type="number" min="1" class="form-control" placeholder="" v-model="boxClip.axisZ" @input="changeClipHeight" />
+        </td>
+      </tr>
+      <!--clipRotation-->
+      <tr>
+        <td colspan="1">{{titles.clipRotation}}</td>
+        <td colspan="1">
+          <input type="number" class="form-control" placeholder="" v-model="boxClip.angle" @input="changeClipRotation" />
+        </td>
+      </tr>
+      <!--clipEdgeWidth-->
+      <tr>
+        <td colspan="1">{{titles.clipEdgeWidth}}</td>
+        <td colspan="1">
+          <input type="number" min="1" class="form-control" placeholder="" v-model="boxClip.clipEdgeWidth" @input="changeClipEdgeWidth"
+          />
+        </td>
+      </tr>
+      <!-- clipEdgeColor -->
+      <tr>
+        <td colspan="1">{{titles.clipEdgeColor}}</td>
+        <td colspan="1">
+          <div class="color-selector-container">
+            <input :id="'clipEdge_color_'+guid" class="color-selector form-control" type="text" class="form-control" v-model="boxClip.clipEdgeColor"
+              :style="{backgroundColor:boxClip.clipEdgeColor}" />
+            <span class="caret-container">
+              <span class="caret"></span>
+            </span>
+          </div>
+        </td>
+      </tr>
+      <!--clipPattern-->
+      <tr>
+        <td colspan="1">{{titles.clipPattern}}</td>
+        <td colspan="1">
+          <select id="clipPattern" class="form-control" style="height: 32px;" @change="changeClipPattern">
+            <option value="0">{{titles.insideClip}}</option>
+            <option value="1">{{titles.outsideClip}}</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="text-align: right; margin: 5px;">
+    <a href="#" class="btn btn-default" style="width: 20%" @click='start'>{{titles.start}}</a>
+    <a href="#" class="btn btn-default" style="width: 20%" @click='clear'>{{titles.clear}}</a>
+    <!-- <a href="#" class="btn btn-default" style="width: 20%" @click='reset'>{{titles.reset}}</a> -->
+  </div>
+</div>

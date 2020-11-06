@@ -1,0 +1,70 @@
+<!-- <div role="tabpanel" class="tab-pane fade" :id="'flood_analysise_'+guid"> -->
+<div class="slope_analysist_module">
+    <table class="table table-condensed" style="table-layout: fixed;">
+        <tbody>
+            <!--name-->
+            <tr>
+                <td colspan="2">{{titles.slope}}</td>
+            </tr>
+            <!-- <tr>
+                <td colspan="2">
+                    <input type="number" class="form-control" placeholder="" v-model="evalationCounter.evalationSpace" />
+                </td>
+            </tr>
+            <!--altitude-->
+            <!-- <tr>
+                <td colspan="2">{{titles.evaltionCounterWidth}}</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="number" class="form-control" placeholder="" v-model="evalationCounter.evaltionWidth" />
+                </td>
+            </tr> -->
+            <!-- Color -->
+            <!-- <tr>
+                <td colspan="1">{{titles.evaltionCounterColor}}</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="color-selector-container">
+                        <input :id="'point_label_color_'+guid" class="color-selector form-control" type="text" class="form-control" v-model="evalationCounter.evaltionCounterColor"
+                            :style="{backgroundColor:evalationCounter.evaltionCounterColor}" readonly/>
+                        <span class="caret-container">
+                            <span class="caret"></span>
+                        </span>
+                    </div>
+                </td>
+                <!-- <td>
+                            <input type="range" min="0" max="100" step="1" value="100" defaultValue="100"
+                                    class="form-control" v-model="evalationCounter.evaltionCounterAlpha"
+                                    :title="evalationCounter.evaltionCounterAlpha"/>
+                        </td> -->
+            <!-- </tr>  -->
+            <!-- fill -->
+            <tr>
+                <td colspan="2">{{titles.evaltionCounterfill}}</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="input-group h-style" style="width: 100%;">
+                        <span class="input-group-btn" style="width: 100%;">
+                            <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 100%;text-align: left">
+                                {{evalationCounter.defaultName}}&nbsp;&nbsp;
+                                <span class="caret" style="position: absolute;top: 12px;right:5px"></span>
+                            </a>
+                            <ul class="dropdown-menu" style="width: 100%;">
+                                <li v-for="(item,key) in evalationCounter.fillName">
+                                    <a href="#" @click="onToggleFillStyleClk(item.name)">{{item.name}}</a>
+                                </li>
+                            </ul>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="text-align: right; margin: 5px;">
+            <a href="#" class="btn btn-default" style="width: 20%" @click='onThreeDimensionalAnalyse(drawObjectType)'>{{titles.analysist}}</a>
+            <a href="#" class="btn btn-default" style="width: 20%">{{titles.destory}}</a>
+    </div>
+</div>

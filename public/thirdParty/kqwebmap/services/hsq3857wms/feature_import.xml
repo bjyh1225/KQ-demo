@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config custom="0">
+  <layers>
+    <layer query_id="1" src_name="source0" geo_type="polygon" id="1" label="洪山区_行政区">
+      <fields>OID_,XZBM,FHDM,QSRQ,ZZRQ,BSM,YSDM,XZQDM,XZQMC,KZMJ,JSMJ,MSSM,BGRQ,SHAPE_AREA,SHAPE_LEN</fields>
+      <fields_alias>OID_,XZBM,FHDM,QSRQ,ZZRQ,BSM,YSDM,XZQDM,XZQMC,KZMJ,JSMJ,MSSM,BGRQ,SHAPE_AREA,SHAPE_LEN</fields_alias>
+      <primary_key></primary_key>
+      <filter_fields>XZBM,FHDM,QSRQ,ZZRQ,BSM,YSDM,XZQDM,XZQMC,KZMJ,JSMJ,MSSM,BGRQ</filter_fields>
+      <filter_fields_alias>XZBM,FHDM,QSRQ,ZZRQ,BSM,YSDM,XZQDM,XZQMC,KZMJ,JSMJ,MSSM,BGRQ</filter_fields_alias>
+    </layer>
+  </layers>
+</config>

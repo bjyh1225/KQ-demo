@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>KQGIS 3D for WebGL</title>
+    <!-- Use correct character set. -->
+    <meta charset="utf-8">
+    <!-- Tell IE to use the latest, best version. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- Make the applcation on mobile take up the full browser screen and disable user scaling. -->
+    <meta name="viewport" content="width=device-width, initial-scale=0.6, maximum-scale=0.6, minimum-scale=0.6, user-scalable=no">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="x5-fullscreen" content="true">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/divPoint.css" />
+    <link id="skin_link" rel="stylesheet" type="text/css" href="js/libs/bootstrap/css/Slate/bootstrap.css" />
+    <!-- <link href="js/libs/bootstrap/css/bootstrap.css" rel="stylesheet"> -->
+    <!-- <link href="js/libs/bootstrap/bootstrap-select/css/bootstrap-select.css" rel="stylesheet"> -->
+    <style type="text/css">
+        @import "css/iconfont/iconfont.css";
+        @import "Build/Cesium/Widgets/widgets.css";
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000000;
+        }
+
+        #cesiumContainer {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000000;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        #cesiumContainer.left {
+            /*width: 50%;*/
+            float: left;
+        }
+
+        .cesium-street-view-map-container {
+            width: 50%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            float: left;
+            background-clip: padding-box, border-box;
+            background-origin: padding-box, border-box;
+            background-image: linear-gradient(135deg, #000, #000), linear-gradient(135deg, #E70303, #FFFF44);
+            border: 3px transparent solid;
+            box-sizing: border-box;
+            display: none;
+            position: relative;
+        }
+
+        .cesium-street-view-map-container .caption {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #fff;
+            font-family: Verdana, "微软雅黑", Arial, Helvetica, sans-serif;
+            text-transform: none !important;
+            word-wrap: break-word;
+            word-break: break-all;
+            font-size: 1.5em !important;
+            line-height: 2;
+            text-decoration: none;
+            user-select: text;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            z-index: 999;
+        }
+
+        .cesium-street-view-map-container .toolbar {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 999;
+            height: 42px;
+            min-width: 10px;
+        }
+
+        .cesium-street-view-map-container .toolbar span.bar {
+            float: right;
+            font-size: 1.5em;
+            line-height: 42px;
+            display: inline-block;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+
+        .cesium-street-view-map-container .toolbar span.bar:hover {
+            background-color: #a2aab4;
+        }
+
+        .cesium-viewer-cesiumInspectorContainer {
+            top: auto;
+            bottom: 35px;
+        }
+
+        .cesium-viewer-cesiumInspectorContainer * {
+            box-sizing: content-box;
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+        }
+    </style>
+    <script type="text/javascript" src="js/libs/requirejs/require.js" data-main="js/index"></script>
+    <script type="text/javascript" src="js/requireConfig.js"></script>
+    <script type="text/javascript" src="js/dataBaseURL.js"></script>
+    <!-- <script type="text/javascript" src=""></script> -->
+    <!-- <script src="js/libs/jquery/jquery.min.js"></script>
+    <script src="js/libs/bootstrap/js/bootstrap.js"></script>
+    <script src="js/libs/bootstrap/bootstrap-select/js/bootstrap-select.js"></script> -->
+    <script type="text/javascript" src="./js/libs/babel-polyfill/polyfill.min.js"></script>
+    <script type="text/javascript" src="https://map.qq.com/api/js?v=2.exp&key=d84d6d83e0e51e481e50454ccbe8986b"></script>
+    <script type="text/javascript" src="https://ditu.google.cn/maps/api/js?key=AIzaSyBRBjOcj7vUVkKVaMYpdMydG7LHf7ABOd0"></script>
+</head>
+
+<body>
+    <div id="cesiumContainer"></div>
+    <!--<div id="cesiumStreetViewMapContainer" class="cesium-street-view-map-container">-->
+    <!--<div id="cesiumStreetViewMapCaption" class="caption">-->
+    <!--</div>-->
+    <!--<div id="cesiumStreetViewMapBar" class="toolbar">-->
+    <!--<span class="iconfont icon-closed bar" title="Close"></span>-->
+    <!--<span class="iconfont icon-fullscreen bar" title="FullScreen"></span>-->
+    <!--</div>-->
+    <!--</div>-->
+    <div id="cesiumLoadingOverlay" class="" v-show="loading">
+        <div class="loading"></div>
+    </div>
+    <script>
+
+    </script>
+</body>
+
+</html>

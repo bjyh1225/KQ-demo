@@ -1,0 +1,149 @@
+/* eslint-disable */
+import Vue from 'vue'
+import Router from 'vue-router'
+import store from '../store'
+import baseRouter from 'common/config/router/baseRouter.js'
+import {getDefaultMenu} from 'common/routerUtils/menuFun.js'
+import {Loading } from 'element-ui';
+import {setRouter} from 'common/routerUtils/router.js'
+var loading;
+
+function startLoading(lock, text, target, background) {
+  loading = Loading.service({
+    lock: false,
+    text: "Loading...",
+    spinner:"el-icon-loading",
+    target: target || 'document.body',
+    background: 'rgba(244,243,243,0.6)'
+  })
+}
+
+function endLoading() {
+  if (loading) {
+    loading.close();
+  }
+}
+
+Vue.use(Router);
+const router = new Router({
+  mode: 'history',
+  scrollBehavior: () => ({
+    y: 0
+  }),
+  routes: baseRouter
+});
+
+var loop=0;
+router.beforeEach((to, from, next) => {
+  if(!to.meta||(to.meta&&!to.meta.noLoading)){
+    startLoading();
+  }
+  var userInfo=sessionStorage.getItem('userInfo');
+  //登录状态保持
+  if(!store.getters.username){
+    if(userInfo){
+      store.dispatch('user/login', JSON.parse(userInfo));
+    }
+  }
+  else{
+    if(!userInfo){
+      store.dispatch('user/login', {});
+    }
+  }
+  //路由和菜单状态同步
+  var sessionRouterList=sessionStorage.getItem('routers');
+  if(!sessionRouterList){
+    store.dispatch('menu/setRouters',[]);
+    store.dispatch('menu/setMenus',{});
+  }
+  //路由和菜单初始化
+  if(store.getters.routers.length>0||loop>5){
+    if (to.matched.length === 0) {
+      next('/404');
+    }
+    //登录权限
+    if (to.meta.requireAuth) {
+      if (store.getters.username) {
+        next();
+      }
+      else if (sessionStorage.getItem('username')) {
+        next();
+      }
+      else {
+        next({
+          path: '/login',
+          query: { redirect: to.fullPath }
+        })
+      }
+    }
+    //不需要国际化的默认TITLE
+    if (!to.meta && !to.meta.needI18N && !to.meta.title) {
+      document.title = to.meta.title;
+    }
+    //改变菜单是否自选中的状态
+    store.dispatch('menu/setActiveMenuStatus', false);
+    next();
+  }
+  else{
+    var menuList=sessionStorage.getItem('menus');
+    var routerList=sessionStorage.getItem('routers');
+    if(routerList){
+      store.dispatch('menu/setRouters', JSON.parse(routerList));
+      store.dispatch('menu/setMenus', JSON.parse(menuList));
+      // routerGo(to, next,JSON.parse(routerList));
+      setRouter(router,JSON.parse(routerList));
+      next({...to, replace: true});
+    }
+    else{
+      loop++;
+      var menuResult = getDefaultMenu();
+      var menuInfo=menuResult.menuGroup;
+      var routerInfo=menuResult.routerTree;
+      sessionStorage.setItem('menus',JSON.stringify(menuInfo));
+      store.dispatch('menu/setMenus', menuInfo);
+      sessionStorage.setItem('routers',JSON.stringify(routerInfo));
+      store.dispatch('menu/setRouters', routerInfo);
+      // routerGo(to, next,routerInfo);    
+      setRouter(router,routerInfo);
+      next({...to, replace: true});
+    }
+  }
+});
+
+//动态添加
+// function routerGo(to, next,asynRouters) {
+//   setComponent(asynRouters,0);
+//   asynRouters.forEach(function(item){
+//     router.options.routes[0].children.push(item);
+//   })
+//   router.addRoutes(router.options.routes);
+//   next({...to, replace: true});
+// }
+
+router.afterEach(() => {
+  endLoading();
+  //路由信息
+  if(!window.portalRouterInfo){
+    window.portalRouterInfo={};
+  }
+  window.portalRouterInfo.routerChangeTime=new Date();
+  //文件上传任务重置
+  window.sliceFileUploadTask={};
+  //国际化设置
+  if(!store.getters.language){
+    var language=sessionStorage.getItem('language');
+    if(!language){
+      if(vm.$i18n.locale){
+        language=vm.$i18n.locale;
+      }
+      else{
+        language="chinese";
+      }
+    }
+    store.dispatch('language/setLanguage',language);
+    vm.$i18n.locale=language;
+  }
+})
+
+export default router
+

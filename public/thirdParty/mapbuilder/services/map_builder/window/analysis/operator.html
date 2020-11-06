@@ -1,0 +1,25 @@
+<div class="analysis-item-body-operator">
+    <div class="parameters">
+        <div class="parameter-operator-geometry1"></div>
+        <div class="parameter-operator-geometry2"></div>
+        <div class="parameter-operator-type"></div>
+        <div class="parameter-operator-checkGeo"></div>
+    </div>
+
+    <div class="analysis-item-run"></div>
+</div>
+
+<script>
+
+  $(document).ready(function () {
+    let selector = " .analysis-item-body-operator";
+
+    // 进行初始化
+    createParametersHtml(selector);
+    initControls(selector);
+
+    // 进行图形几何操作接口的事件绑定
+    KQ.Builder.BuilderToolbox.BuilderOperator.getInstance().init(selector);
+  })
+
+</script>

@@ -1,0 +1,95 @@
+<style>
+  
+  #raster-image-algebra-input-1-label, #raster-image-algebra-input-2-label,
+  #raster-image-algebra-operator-label, #raster-image-algebra-output-label {
+    font-weight: bold;
+    font-size: 12px;
+  }
+
+  #raster-image-algebra-input-1-panel {
+    margin: 12px 8px 8px 16px;
+  }
+
+  .raster-image-algebra-input-1-dropdownlist {
+    margin-top: 5px;
+    width: 95%;
+  }
+  
+  #raster-image-algebra-input-2-panel {
+    margin: 20px 8px 8px 16px;
+  }
+  
+  .raster-image-algebra-input-2-dropdownlist {
+    margin-top: 5px;
+    width: 95%;
+  }
+
+  #raster-image-algebra-output-panel {
+    margin: 20px 8px 8px 16px;
+  }
+
+  #raster-image-algebra-output-data {
+    font-size: 15px;
+    display: none;
+  }
+  
+  #raster-image-algebra-select-operator {
+    margin: 20px 8px 8px 16px;
+  }
+  
+  .raster-image-algebra-operator-dropdownlist {
+    margin-top: 5px;
+    width: 95%;
+  }
+  
+  #raster-image-algebra-execute-btn {
+    margin: 20px 8px 8px 16px;
+    min-width: 80px;
+  }
+
+  #raster-image-algebra-close-btn {
+    margin: 20px 8px 8px 16px;
+    min-width: 80px;
+  }
+
+  #raster-image-algebra-button-panel {
+    /*overflow: hidden;*/
+    text-align: center;
+  }
+  
+
+</style>
+
+<div id="raster-image-algebra-dialog" >
+  
+  <div id="raster-image-algebra-input-1-panel">
+    <label id="raster-image-algebra-input-1-label">__input-1__</label><br/>
+    <input id="raster-image-algebra-input-1-dropdownlist" class="raster-image-algebra-input-1-dropdownlist"/>
+  </div>
+  
+  <div id="raster-image-algebra-input-2-panel">
+    <label id="raster-image-algebra-input-2-label">__input-2__</label><br/>
+    <input id="raster-image-algebra-input-2-dropdownlist" class="raster-image-algebra-input-2-dropdownlist"/>
+  </div>
+  
+  <div id="raster-image-algebra-output-panel">
+    <label id="raster-image-algebra-output-label" for="raster-image-algebra-output-data">__output-raster-data__</label><br/>
+    <!--<input id="raster-image-algebra-output-data" type="text" class="k-textbox raster-image-algebra-output-data" />-->
+    <div style="margin-top: 5px; height: 25px;">
+      <a id="raster-image-algebra-output-data" href="javascript: void(0)">__download-analysis-results__</a>
+    </div>
+    
+    
+  </div>
+  
+  <div id="raster-image-algebra-select-operator">
+    <label id="raster-image-algebra-operator-label">__operator__</label><br/>
+    <input id="raster-image-algebra-operator-dropdownlist" class="raster-image-algebra-operator-dropdownlist"/>
+  </div>
+  
+  <div id="raster-image-algebra-button-panel">
+    <button id="raster-image-algebra-execute-btn" class="k-button k-primary" type="button" >__confirm__</button>
+    <button id="raster-image-algebra-close-btn" class="k-button" type="button" >__close__</button>
+  </div>
+  
+</div>

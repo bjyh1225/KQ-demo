@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config custom="0">
+  <layers>
+    <layer id="1" label="洪山区_行政区" query_id="1" src_name="source0">
+      <type>3</type>
+      <fields>OID_,XZBM,FHDM,QSRQ,ZZRQ,BSM,YSDM,XZQDM,XZQMC,KZMJ,JSMJ,MSSM,BGRQ,SHAPE_AREA,SHAPE_LEN</fields>
+      <fields_alias>OID_,XZBM,FHDM,QSRQ,ZZRQ,BSM,YSDM,XZQDM,XZQMC,KZMJ,JSMJ,MSSM,BGRQ,SHAPE_AREA,SHAPE_LEN</fields_alias>
+      <chart_field>XZQMC</chart_field>
+      <summary_field></summary_field>
+      <expression></expression>
+    </layer>
+  </layers>
+  <display>
+    <group id="1" name="叠置分析图层">
+      <layer id="1" src_name="source0"/>
+    </group>
+  </display>
+</config>

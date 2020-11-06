@@ -1,0 +1,16 @@
+<div class="module-visualization-content">
+    <div class="items">
+        <div v-for="(item,index) in visualizationItemsCollection" class="item" :title="item.title||item.name"
+             @click="onVisualizationItemsClk(index)">
+            <div class="item-thumbnail">
+                <img style="width:100%;height:100%;" v-lazy="item.iconUrl" :title="item.name">
+                <div class="attr">
+                    <div class="bg"></div>
+                    <div class="description">{{item.dataSourceType}}</div>
+                    <div class="selected" v-show="item.selected"><span class="fui-check"></span></div>
+                </div>
+            </div>
+            <div class="item-h">{{item.name}}</div>
+        </div>
+    </div>
+</div>

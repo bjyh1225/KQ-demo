@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>KQWebMap Example</title>
+
+  <meta name="mobile-web-app-capable" content="yes">
+</head>
+<body>
+<div id="map"></div>
+
+<script src="../../dist/jquery.min.js"></script>
+<script src="../../dist/jquery-ui.min.js"></script>
+
+<script src="../../dist/kqcss.js"></script>
+<script src="../../dist/map-example.js"></script>
+<script src="../../dist/other.js"></script>
+<link href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ui-contextmenu/1.17.0/jquery.ui-contextmenu.min.js"></script>
+
+<!--<script id="template" type="text/x-kendo-template">-->
+  <!--<a class="k-button" href="\#" onclick="return toolbar_click()">Command</a>-->
+<!--</script>-->
+
+<script>
+  function test () {
+    var config = KQ.Map.MapConfig.getInstance();
+    config.initAsync('', false, function () {
+      // KQ.Local.setLanguage('en');
+      KQ.Local.setLanguage('cn');
+
+      var mapView = new KQ.Map.MapView({
+        center: [ 30.56, 113.66 ],
+        zoom: 10,
+      }, 'osm');
+
+      mapView.initAsync();
+    });
+  }
+
+  $(document).ready(function () {
+//          test();
+    //      testMap();
+    //        testCommonValues();
+    //              testComputeTools();
+    //      testKQ();
+    //              testControl();
+    //        testProjectionObject();
+    //      testAjax();
+    //      testMapServiceMapping();
+    //      testStruct();
+    //      testMapView();
+//                  testConfig();
+//                    testInfoQueryConfig();
+//                    testAdvancedSearchConfig();
+//                    testOverlayAnalysisConfig();
+
+    //        testZipString();
+
+    //        testTreeRequest();
+    //        test3degreeImageVector();
+    //        testXian80ImageVector();
+    //        test3degree();
+    //        testLatLng();
+    //        testMapView();
+//            testLoading();
+    // testWGS84();
+
+    // testLayerTileLayer();
+    // testLayerTileWMS();
+    //        testLayerTileWMTS();
+    //        testJQueryGet();
+    //testLayerMapping();
+
+//            testOverlayAnalysisTree();
+//            testToolBar();
+
+    //      testLayerKQMapping();
+    //      testSidebar();
+    //        testSidebarTree();
+//            testLeafletDraw();
+//        testLocal();
+//          testStyleEditor();
+//          testKendo();
+//    testInfoQuery();
+//          testAdvancedSearch();
+//            testOverlayAnalysis();
+//          testGeoJSON();
+//    testGeoJSONData();
+//          testEasyButton();
+//          testDownloadShpFromGeoJSON();
+//          testExportData();
+//          testWindow();
+//    testMapButton();
+
+//    testChanPinLoading();
+	  testNewMappinging();
+
+//      testIconQuery();
+//      testSrv2Config();
+  });
+</script>
+</body>
+</html>

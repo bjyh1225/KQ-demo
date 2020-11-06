@@ -1,0 +1,49 @@
+<div class="analysis-item-body-analysis_server_overlap">
+    <div class="parameters">
+        <div class="parameters-container">
+            <div>
+                <div class="parameter-src-layers"></div>
+                <div class="parameter-dest-layers"></div>
+                <div class="parameter-geo-srs"></div>
+                <div class="parameter-dest-geo-srs"></div>
+                <div class="parameter-tolerance"></div>
+                <div class="parameter-handle-result"></div>
+                <div class="parameter-return-result-button"></div>
+            </div>
+        </div>
+
+        <div class="toolbox-scrollbar">
+            <div style="display: none"></div>
+        </div>
+    </div>
+
+    <div class="analysis-item-run"></div>
+</div>
+
+<script>
+
+  $(document).ready(function () {
+    let selector = '.analysis-item-body-analysis_server_overlap';
+    let mapView = KQ.Builder.BuilderProject.getInstance().mapView;
+
+    KQ.Control.Waiting.show(mapView._getMap(), 'pin', 'meter');
+
+    setTimeout(function () {
+      try {
+        // 进行初始化
+        createParametersHtml(selector);
+        initControls(selector);
+
+        /* 滚动条 */
+        toolBoxScrollBar(selector);
+
+        // 进行叠置分析接口的事件绑定
+        KQ.Builder.BuilderToolbox.BuilderAnalysisServerOverlap.getInstance().init(selector);
+
+      } finally {
+        KQ.Control.Waiting.close();
+      }
+    }, 50);
+  })
+
+</script>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config custom="0">
+  <theme name="large-blue"/>
+  <map init_extent="38511904.37736598 3361591.513185912 38566131.25000026 3398875.758785348 " min_scale_id="0" id="map" full_extent="38511904.37736598 3361591.513185912 38566131.25000026 3398875.758785348 ">
+    <scales>
+      <scale id="0">0.0000009999999999999999547481</scale>
+      <scale id="1">0.0000019999999999999999094962</scale>
+      <scale id="2">0.0000039999999999999998189924</scale>
+      <scale id="3">0.0000079999999999999996379849</scale>
+      <scale id="4">0.0000156250000000000003252607</scale>
+      <scale id="5">0.0000312500000000000006505213</scale>
+      <scale id="6">0.0000625000000000000013010426</scale>
+      <scale id="7">0.0001250000000000000026020852</scale>
+      <scale id="8">0.0002500000000000000052041704</scale>
+      <scale id="9">0.0005000000000000000104083409</scale>
+    </scales>
+    <projection>
+      <prj>PROJCS["Xian 1980 / 3-degree Gauss-Kruger zone 38",GEOGCS["GCS_Xian 1980",DATUM["D_Xian_1980",SPHEROID["IAG 1975",6378140,298.257]],PRIMEM["Greenwich",0.0000],UNIT["degree",0.0174532925199433],AUTHORITY["EPSG",4610]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",114],PARAMETER["scale_factor",1],PARAMETER["false_easting",38500000],PARAMETER["false_northing",0],UNIT["metre",1],AUTHORITY["EPSG",2362]]</prj>
+      <proj4>+proj=tmerc +lat_0=0 +lon_0=114 +k=1 +x_0=38500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs </proj4>
+    </projection>
+  </map>
+  <controls custom="0">
+    <control position="topleft" type="plotting"/>
+    <control position="topleft" init_open_id="layers" type="sidebar">
+      <subcontrol id="controlTree" type="tree"/>
+      <subcontrol id="controlAdvancedQuery" type="advanced"/>
+      <subcontrol id="controlOverlayAnalysis" type="overlay"/>
+      <subcontrol is_add="1" is_delete="1" id="controlFeatureImport" is_update="1" type="featureImport"/>
+      <subcontrol id="controlBookmark" type="bookmark"/>
+      <subcontrol id="controlSetting" type="setting"/>
+    </control>
+    <control position="topleft" import_export="1" type="draw"/>
+    <control position="topleft" type="styleeditor"/>
+    <control position="topright" type="toolbar">
+      <subcontrol type="zoom_in"/>
+      <subcontrol type="zoom_out"/>
+      <subcontrol type="roaming"/>
+      <subcontrol type="forward-map"/>
+      <subcontrol type="backward-map"/>
+      <subcontrol type="full-map"/>
+      <subcontrol type="drawing"/>
+      <subcontrol type="info-query"/>
+      <subcontrol is_trace_back="1" is_traveling_salesman_problem="1" type="network-analysis" is_optimal_path="1"/>
+      <subcontrol type="raster-image-analysis"/>
+    </control>
+    <control position="topright" type="zoom" fullscreen="1"/>
+    <control position="topright" type="measureseparate"/>
+    <control position="topright" type="compare"/>
+    <control light_size="256" position="topright" type="searchlight"/>
+    <control position="topright" type="sidebyside"/>
+    <control position="topright" type="screenshot"/>
+    <control position="topright" type="print"/>
+    <control position="topright" type="setlocation"/>
+    <control decimals="2" label_y="纬度" position="bottomleft" type="coordinates" label_x="经度"/>
+    <control position="bottomleft" type="scale"/>
+  </controls>
+  <tree label="图层">
+    <sources is_ipmapping="1">
+      <source name="source0" type="kqmapping" url="http://172.16.0.176:8699/KQGis/rest/services/hsq_kqorcl"/>
+    </sources>
+    <layers id="layers">
+      <layer tooltip_forefather="洪山区" min_standard_scale="0.0000000001000000000000000036" is_group="1" label="洪山区" layer_extent="114.1679000000000030468072509393 30.3836079999999988388026395114 114.6346249999999997726263245568 30.6960739999999994154222804355">
+        <layer opacity="1" src_name="source0" is_building="0" min_standard_scale="0.0000000001000000000000000036" tooltip_forefather="洪山区_洪山区_行政区注记" label="洪山区_行政区注记" is_network_analysis="0" layer_extent="29854119.8383575975894927978515625000 38517748.4892143011093139648437500000 3396274.6120517114177346229553222656 9859835.7850241120904684066772460938" icon="point" id="2" is_dynamic="0" type="sl"/>
+        <layer opacity="1" src_name="source0" is_building="0" min_standard_scale="0.0000000001000000000000000036" tooltip_forefather="洪山区_洪山区_线状地物" label="洪山区_线状地物" is_network_analysis="0" layer_extent="29854996.1920872479677200317382812500 38516925.6167279779911041259765625000 3396889.5828408990055322647094726563 9860051.9383577853441238403320312500" icon="line" id="3" is_dynamic="0" type="sl"/>
+        <layer opacity="1" src_name="source0" is_building="0" min_standard_scale="0.0000000001000000000000000036" tooltip_forefather="洪山区_洪山区_行政区" label="洪山区_行政区" is_network_analysis="0" layer_extent="29855789.3426754847168922424316406250 38516085.8150106817483901977539062500 3397292.6177068427205085754394531250 9860142.3316805195063352584838867188" icon="polygon" id="4" is_dynamic="0" type="sl"/>
+      </layer>
+      <layer opacity="1" src_name="source0" is_building="0" min_standard_scale="0.0000000001000000000000000036" tooltip_forefather="武昌区" label="武昌区" is_network_analysis="0" layer_extent="38511904.3773659765720367431640625000 3361591.5131859118118882179260253906 38566131.2500002607703208923339843750 3398875.7587853479199111461639404297" icon="image" id="5" is_dynamic="0" type="yx"/>
+    </layers>
+  </tree>
+</config>

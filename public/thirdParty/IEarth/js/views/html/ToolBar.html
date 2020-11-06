@@ -1,0 +1,123 @@
+<style type="text/css">
+    .module-toolbar-content a.btn {
+        border: none;
+        border-radius: 0;
+        padding: 8px 12px !important;
+        /*background: none;*/
+    }
+
+    .module-toolbar-content .dropdown > a:hover .dropdown-menu {
+        display: block;
+    }
+</style>
+
+<div class="module-toolbar-content" v-cloak>
+    <div class="btn-toolbar" role="toolbar">
+        <!--LayerList-->
+        <div class="btn-group" role="group">
+            <a class="btn btn-default" href="#" @click="onLayerListBtnClk" :title="titles.layerList">
+                <span class="iconfont icon-list" aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="animated" style="float:left;margin-left: 0px;"
+             v-show="titles.tempExpCollapse==titles.collapsed">
+            <div class="btn-group" role="group">
+                <!--BaseMapAndTerrain-->
+                <a class="btn btn-default" href="#" @click="onBaseMapAndTerrainBtnClk"
+                   :title="titles.baseMapAndTerrain">
+                    <span class="iconfont icon-image-list" aria-hidden="true"></span>
+                </a>
+                <!--AddData-->
+                <!--<router-linker to="AddData">-->
+                <a class="btn btn-default" href="#" @click="onAddDataLayerBtnClk" :title="titles.addData">
+                    <span class="iconfont icon-add2" aria-hidden="true"></span>
+                </a>
+                <!--</router-linker>-->
+
+                <!--Draw-->
+                <a class="btn btn-default" href="#" @click="onDrawBtnClk" :title="titles.draw">
+                    <span class="iconfont icon-draw" aria-hidden="true"></span>
+                </a>
+                <!--Measure-->
+                <a class="btn btn-default" href="#" @click="onMeasureBtnClk" :title="titles.measure">
+                    <span class="iconfont icon-ruler" aria-hidden="true"></span>
+                </a>
+                <!--漫游-->
+                <a class="btn btn-default" href="#" @click="onToursBtnClk" :title="titles.tour">
+                    <span class="iconfont icon-zhifeiji" aria-hidden="true"></span>
+                </a>
+                <!--Visualization-->
+                <a class="btn btn-default" href="#" @click="onVisualizeBtnClk" :title="titles.visualization">
+                    <span class="iconfont icon-star" aria-hidden="true"></span>
+                </a>
+            </div>
+            <div class="btn-group" role="group">
+                
+                <!-- <a class="btn btn-default" href="#" @click="onOpen3dAnalysistBtnClk" :title="titles.d3Analysist"-->
+                <!-- <data-toggle="modal" data-target="#toolbarModal"> -->
+                <!-- <span class="iconfont icon-picture-w" aria-hidden="true"></span> -->
+                <!-- </a>  --> 
+                
+                <!--3D 全景图-->
+                <a class="btn btn-default" href="#" @click="on3DPanoramaBtnClk" :title="titles.panorama" >
+                    <span class="iconfont icon-picture-w" aria-hidden="true"></span>
+                </a>
+                <!-- scene -场景 -->
+                <a class="btn btn-default" href="#" @click="onOpenSceneBtnClk" :title="titles.scene" >
+                    <span class="iconfont icon-changjingguanli" aria-hidden="true"></span>
+                </a>
+                
+                <!--Print-->
+                <!-- <a class="btn btn-default" href="#" @click="onPrintBtnClk" :title="titles.print" data-toggle="modal"-->
+                   <!-- data-target="#toolbarModal"> -->
+                    <!-- <span class="iconfont icon-print" aria-hidden="true"></span> -->
+                <!-- </a>  -->
+                <!--3dAnanlsist-->
+                <a class="btn btn-default" href="#" @click="onOpen3dAnalysistBtnClk" :title="titles.d3Analysist">
+                    <span class="iconfont icon-icon-sanweifenxi" aria-hidden="true"></span>
+                </a>
+                <!--Settings-->
+                <!-- <a class="btn btn-default" href="#" @click="onSceneSettingsBtnClk" :title="titles.settings">
+                    <span class="iconfont icon-settings" aria-hidden="true"></span>
+                </a> -->
+            </div>
+            <!--Skin-->
+            <div class="dropdown btn-group" role="group">
+                <a :id="'dropdown_menu'+guid" class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#"
+                   :title="titles.skin">
+                    <span class="iconfont icon-skin" aria-hidden="true"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu" :aria-labelledby="'dropdown_menu'+guid">
+                    <li v-for="(item,index) in skinConfig" role="presentation" :title="item.title"
+                        @click="onToggleSkinBtnClk(index)">
+                        <a role="menuitem" :tabindex="index" href="#">{{item.name}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="btn-group" role="group" style="margin-left: 0;">
+            <!--//Collapse Expand-->
+            <a class="btn btn-default" href="#" @click="onExpandListBtnClk"
+               :title="titles.tempExpCollapse"><span
+                    :class="classes.tempExpCollapse" aria-hidden="true"></span></a>
+        </div>
+    </div>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="toolbarModal" tabindex="-1" role="dialog" aria-labelledby="toolbarModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" class="close" data-dismiss="modal" aria-hidden="true">&times;</a>
+                <h5 id="toolbarModalTitle" class="modal-title">Tips:</h5>
+            </div>
+            <div id="toolbarModalContent" class="modal-body" v-html="toolbarModalContent"></div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-default" data-dismiss="modal">关闭</a>
+                <a href="#" class="btn btn-primary" data-dismiss="modal">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+

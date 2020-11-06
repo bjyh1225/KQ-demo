@@ -1,0 +1,158 @@
+[{
+	"name": "海滨",
+    "panorama": "resources/panoramas/2.jpg",
+	"show": true,
+	"position": {
+		"cartographicDegrees": [121.656736,28.741682]
+	},
+	"scale": 1.0,
+	"image": "images/icon/42/quanjing.png",
+	"color": {
+		"rgba": [255, 255, 255, 255]
+	},
+	"width": 42,
+	"height": 42,
+	"distanceDisplayCondition": {
+		"distanceDisplayCondition": [0, 100000000000]
+	},
+	"disableDepthTestDistance": 10000000000000,
+	"label": {}
+},
+{
+	"name": "滨海城市",
+    "panorama": "resources/panoramas/4.jpg",
+	"show": true,
+	"position": {
+		"cartographicDegrees": [116.676818,23.248518]
+	},
+	"scale": 1.0,
+	"image": "images/icon/42/quanjing.png",
+	"color": {
+		"rgba": [255, 255, 255, 255]
+    },
+    "width": 42,
+    "height": 42,
+    "distanceDisplayCondition": {
+       "distanceDisplayCondition": [0, 100000000000]
+    },
+    "disableDepthTestDistance": 10000000000000,
+    "label": {} 
+},{
+	"name": "滨海城镇",
+    "panorama": "resources/panoramas/7.jpg",
+	"show": true,
+	"position": {
+		"cartographicDegrees": [122.211218,40.749071]
+	},
+	"scale": 1.0,
+	"image": "images/icon/42/quanjing.png",
+	"color": {
+		"rgba": [255, 255, 255, 255]
+    },
+    "width": 42,
+    "height": 42,
+    "distanceDisplayCondition": {
+       "distanceDisplayCondition": [0, 100000000000]
+    },
+    "disableDepthTestDistance": 10000000000000,
+    "label": {} 
+},{
+	"name": "喜马拉雅山脉",
+    "panorama": "resources/panoramas/6.jpg",
+	"show": true,
+	"position": {
+		"cartographicDegrees": [86.391273,27.939707]
+	},
+	"scale": 1.0,
+	"image": "images/icon/42/quanjing.png",
+	"color": {
+		"rgba": [255, 255, 255, 255]
+    },
+    "width": 42,
+    "height": 42,
+    "distanceDisplayCondition": {
+       "distanceDisplayCondition": [0, 100000000000]
+    },
+    "disableDepthTestDistance": 10000000000000,
+    "label": {} 
+},
+{
+	"name": "四川渠县鲜渡断桥村",
+    "panorama": "resources/panoramas/四川渠县鲜渡断桥村.jpg",
+	"show": true,
+	"position": {
+		"cartographicDegrees": [106.881338,30.753207]
+	},
+	"scale": 1.0,
+	"image": "images/icon/42/quanjing.png",
+	"color": {
+		"rgba": [255, 255, 255, 255]
+    },
+    "width": 42,
+    "height": 42,
+    "distanceDisplayCondition": {
+       "distanceDisplayCondition": [0, 100000000000]
+    },
+    "disableDepthTestDistance": 10000000000000,
+    "label": {} 
+},
+{
+	"name": "山脉",
+    "panorama": "resources/panoramas/山脉.jpg",
+	"show": true,
+	"position": {
+		"cartographicDegrees": [102.523119,29.260459]
+	},
+	"scale": 1.0,
+	"image": "images/icon/42/quanjing.png",
+	"color": {
+		"rgba": [255, 255, 255, 255]
+    },
+    "width": 42,
+    "height": 42,
+    "distanceDisplayCondition": {
+       "distanceDisplayCondition": [0, 100000000000]
+    },
+    "disableDepthTestDistance": 10000000000000,
+    "label": {} 
+},
+{
+	"name": "益阳稻田",
+    "panorama": "resources/panoramas/益阳稻田.jpg",
+	"show": true,
+	"position": {
+		"cartographicDegrees": [112.005235,28.545365]
+	},
+	"scale": 1.0,
+	"image": "images/icon/42/quanjing.png",
+	"color": {
+		"rgba": [255, 255, 255, 255]
+    },
+    "width": 42,
+    "height": 42,
+    "distanceDisplayCondition": {
+       "distanceDisplayCondition": [0, 100000000000]
+    },
+    "disableDepthTestDistance": 10000000000000,
+    "label": {} 
+},
+{
+	"name": "城市道路街景",
+    "panorama": "resources/panoramas/9.jpg",
+	"show": true,
+	"position": {
+		"cartographicDegrees": [116.52154,39.76646]
+	},
+	"scale": 1.0,
+	"image": "images/icon/42/quanjing.png",
+	"color": {
+		"rgba": [255, 255, 255, 255]
+    },
+    "width": 42,
+    "height": 42,
+    "distanceDisplayCondition": {
+       "distanceDisplayCondition": [0, 100000000000]
+    },
+    "disableDepthTestDistance": 10000000000000,
+    "label": {} 
+}]

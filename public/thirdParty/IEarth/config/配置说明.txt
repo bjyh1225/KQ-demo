@@ -1,0 +1,20 @@
+
+展示平台初始化数据配置信息
+
+1. baselayers.json
+    基础图层配置
+    
+2. kmltours.json
+    漫游路径配置
+    
+3. markers.czml
+    图标标注配置
+    
+4. moving.czml
+    运动的物体配置
+    
+5. moving-2.czml
+    运动的物体配置2
+    
+6. panoramas.json
+    全景图配置

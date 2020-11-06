@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="./favicon_kq.png">
+    <!--portal默认加载动画样式-->
+    <!-- <link rel="stylesheet" href="/preloadStyle/default/preloadDefault.css"> -->
+    <!--portal提供-彩色字体加载动画-->
+    <link rel="stylesheet" href="/preloadStyle/colorFont/preloadColorFont.css">
+    <title>KQGIS Portal</title>
+    <script>
+      var img = new Image();
+      img.onload = function(){
+        window.isWebP = !!(img.height>0 && img.width>0);
+      };
+      img.onerror = function(){
+        window.isWebP = false;
+      };
+      img.src="/config/imageConfig/system/testWebp/1px.webp";
+    </script>
+    <script type="text/javascript">
+      window.portal_config={
+        "DOCUMENT_TITLE":"KQGIS Portal",//网页标题配置
+        "MESSAGE_USER_CONFIG":{
+          "username":"admin",
+          "password":"admin"
+        },
+        "VUE_APP_MESSAGE_URL":"ws://172.16.0.9:8614",
+        "NO_SWITCH_LANGUAGE":false,
+        "NO_SWITCH_THEME":false,
+        "WEB_APP_BUILDER_STYLE":"/config/webAppBuilderStyleConfig/webAppBuilder.css",
+        "COVER_MENU_ROUTER_CONFIG":{
+          // "appCenter":{
+          //   component:"webAppBuilderSC"
+          // }
+        },
+        "DELETE_PORTAL_DEFAULT_MENU_ROUTER_CONFIG":[],
+        "ADD_MENU_ROUTER_CONFIG":{
+          // "testMenu":{
+          //   name: "testMenu",
+          //   path:"https://www.baidu.com/",
+          //   menuName:"测试百度",
+          //   sortNo:1.1,
+          //   isIndexMenu: true,
+          //   defaultDisplay:true,
+          //   externalLinksRouter:true
+          // }
+        },
+        "ENABLE_JWT":false
+      };
+      localStorage.setItem("portal_config",JSON.stringify(window.portal_config));
+    </script>
+    <style>
+      html{
+        font-size:16px;
+        font-family:'pingfang SC','helvetica neue',arial,'hiragino sans gb','microsoft yahei ui','microsoft yahei',simsun,sans-serif;
+      }
+      body{
+        overflow-x: hidden;
+      }
+      /*滚动条*/
+      ::-webkit-scrollbar {
+        width:9px;
+      }
+      ::-webkit-scrollbar-track-piece {
+        background-color:#f8f8f8;
+        -webkit-border-radius: 2em;
+        -moz-border-radius: 2em;
+        border-radius: 2em;
+      }
+      ::-webkit-scrollbar-thumb {
+        background:rgba(144,147,153,.3);
+        background-clip:padding-box;
+        -webkit-border-radius: 2em;
+        -moz-border-radius: 2em;
+        border-radius: 2em;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background:rgba(144,147,153,.5);
+      }
+    </style>
+  </head>
+  <body data-theme="">
+    <noscript>
+      <strong>We're sorry but kqportal doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <!--portal默认加载动画-->
+      <!-- <div id="preloader">
+        <div id="loader"></div>
+        <div class="loader-text">Loading...</div>
+      </div> -->
+    <!--portal默认加载动画end-->
+
+    <!--portal提供-彩色字体加载动画-->
+      <div id="preloader" needAnimated="true" animateClass="slideOutLeft" animateDefer="2000" closeTime="3000">
+        <div class="text-wrapper">
+          <div class="text part1">
+            <div>
+              <span class="letter"><div class="character">K</div> <span></span></span>
+              <span class="letter"><div class="character">Q</div> <span></span></span>
+              <span class="letter"><div class="character">G</div> <span></span></span>
+              <span class="letter"><div class="character">I</div> <span></span></span>
+              <span class="letter"><div class="character">S</div> <span></span></span>
+              <span class="letter"><div class="character">P</div> <span></span></span>
+              <span class="letter"><div class="character">O</div> <span></span></span>
+              <span class="letter"><div class="character">R</div> <span></span></span>
+              <span class="letter"><div class="character">T</div> <span></span></span>
+              <span class="letter"><div class="character">A</div> <span></span></span>
+              <span class="letter"><div class="character">L</div> <span></span></span>
+            </div>
+          </div>
+          <div class="how-to"><span>Loading...</span></div>
+        </div>
+      </div>
+    <!--portal提供-彩色字体加载动画end-->
+    <div id="app"></div>
+  </body>
+</html>

@@ -1,0 +1,305 @@
+<template>
+  <div>
+    <group-menu 
+    :activeName="activeName" 
+    @groupAdd="groupAdd" 
+    :filterInfo="filterInfo" 
+    @filterGroupList="filterGroupList"
+    @goToList="goToList"
+    ></group-menu>
+    <group-list v-show="activeName=='list'" 
+    @groupAdd="groupAdd" 
+    @groupDetails="getGroupDetails"
+    :groupList="groupList"
+    :pageIndex="pageIndex"
+    :pageSize="pageSize"
+    :total="total"
+    @handleSizeChange="handleGroupListSizeChange"
+    @handleCurrentChange="handleGroupListCurrentChange"
+    :filterInfo="filterInfo"
+    :orderByInfo="orderByInfo"
+    @filterGroupList="filterGroupList"
+    @applyJoinGroup="applyJoinGroup"
+    :timeStamp="timeStamp"
+    :task="task"
+    ></group-list>
+    <group-add v-show="activeName=='add'" :activeName="activeName" :status="status" @goToList="goToList" :addGroupInfo="addGroupInfo" :groupInfo="groupInfo" @saveAdd="saveAdd" @cancelEdit="cancelEdit"></group-add>
+    <group-details v-show="activeName=='details'" :timeStamp="timeStamp" :task="task" @applyJoinGroup="applyJoinGroup" @goToList="goToList" @deleteGroup="deleteGroup" :groupInfo="groupInfo" :groupUserList="groupUserList" :activeName="activeName" @editGroup="editGroup" @kickOutOfGroup="kickOutOfGroup" @refreshGroupDetails="needRefreshCurrentGroupDetails"></group-details>
+  </div>
+</template>
+
+<script>
+import GroupMenu from './GroupMenu'
+import GroupList from './GroupList'
+import GroupAdd from './GroupAdd'
+import GroupDetails from './GroupDetails'
+export default {
+  name:"Group",
+  components:{
+    GroupMenu,
+    GroupList,
+    GroupAdd,
+    GroupDetails
+  },
+  data(){
+    return {
+      activeName:"list",
+      addGroupInfo:{
+        groupName:"",//名称
+        headImg:"",//头像
+        groupTag:"",//标签
+        describe:"",//描述
+        groupEnterType:2,//加群方式（默认：需要审核）
+        groupType:true,//群公开
+        groupContributeType:1//资源共享者（默认：创建人）
+      },//新增群组
+      groupInfo:{},//群组信息
+      groupUserList:[],//群组用户信息
+      pageIndex:1,
+      pageSize:10,
+      total:0,
+      groupList:[],//群组列表
+      filterInfo:{//过滤字段
+        search:"",//搜索
+        ownType:"",//所有者
+        days:"",//创建日期
+        onlyEnter:""//我可以加入的群
+      },
+      orderByInfo:{
+        sortNo:"c_create_time",
+        order:"DESC"
+      },
+      //任务队列
+      timeStamp:null,
+      task:{},
+      status:'add'
+    }
+  },
+  methods:{
+    groupAdd(){//新建群组
+      this.resetAddGroupInfo();
+      this.activeName='add';
+      this.status='add';
+    },
+    saveAdd(){//保存新建群组
+      var addInfo=JSON.parse(JSON.stringify(this.addGroupInfo));
+      if(addInfo.groupType){
+        addInfo.groupType=1;
+      }
+      else{
+        addInfo.groupType=2;
+      }
+      this.$api.groupApi.save(addInfo,
+      {
+        loadingText: this.$t("myCenter.Saving") 
+      }).then(res=>{
+        this.$message({
+          message: this.$t("management.succeeded"),
+          type: "success"
+        });
+        var data=res.data.data;
+        if(data){
+          if(data.groupDto&&data.groupDto.createByDto){
+            this.createGroupDetailsInfo(data);
+            this.showGroupDetails();
+            window.scrollTo(0,0);
+          }
+          else{
+            this.goToList();
+          }
+        }
+        else{
+          this.goToList();
+        }
+      }).catch(()=>{})
+    },
+    handleGroupListSizeChange(val){
+      this.pageIndex = 1;
+      this.pageSize = val;
+      this.getGroupList();
+    },
+    handleGroupListCurrentChange(val){
+      this.pageIndex = val;
+      this.getGroupList();
+    },
+    filterGroupList(){//过滤
+      this.pageIndex = 1;
+      this.getGroupList();
+    },
+    getGroupList(){
+      this.$api.groupApi.getGroupListByPage({
+        pageIndex:this.pageIndex,
+        pageSize:this.pageSize,
+        ...this.filterInfo,
+        ...this.orderByInfo
+      },
+      {
+        loadingText: this.$t("service.searching") 
+      }).then(res=>{
+        var data=res.data.data;
+        if(data){
+          this.groupList=data.rows||[];
+          this.pageIndex=data.pageIndex;
+          this.pageSize=data.pageSize;
+          this.total=data.total;
+        }
+      }).catch(()=>{})
+    },
+    goToList(){//返回列表
+      this.activeName='list';
+      // this.resetFilterInfo();
+      this.getGroupList();
+    },
+    showGroupDetails(){//显示详情
+      this.activeName='details';
+    },
+    editGroup(){//编辑
+      this.resetAddGroupInfo();
+      this.activeName='add';
+      this.status='edit';
+    },
+    cancelEdit(){
+      if(this.status=='add'){
+        this.goToList();
+      }
+      else{
+        this.activeName='details';
+      }
+    },
+    kickOutOfGroup(id){//踢出群
+      this.$api.groupApi.kickOutOfGroup({
+        groupId:this.groupInfo.id,
+        userIds:id
+      }).then(()=>{
+        this.$message({
+          type:'success',
+          message:this.$t('group.Operatedsuccessfully')
+        })
+        this.getGroupDetails(this.groupInfo.id,'kickOutOf');
+      }).catch(()=>{})
+    },
+    createGroupDetailsInfo(data){
+      this.resetGroupDetailsInfo();
+      this.groupInfo=data.groupDto;
+      this.groupInfo.createByName=data.groupDto.createByDto.name;
+      this.groupInfo.auditNum=0;
+      if(data.userList){
+        data.groupDto.createByDto.isGroupOwner=true;
+        this.groupUserList=data.userList;
+        this.groupUserList.unshift(data.groupDto.createByDto);  
+      }
+      else{
+        data.groupDto.createByDto.isGroupOwner=true;
+        this.groupUserList.unshift(data.groupDto.createByDto);
+      }
+      if(data.auditList){
+        this.groupInfo.auditNum=data.auditList.length;
+      }
+    },
+    needRefreshCurrentGroupDetails(){
+      this.getGroupDetails(this.groupInfo.id);
+    },
+    getGroupDetails(id,type){
+      this.$api.groupApi.getGroupInfosByGroupIds({
+        chkGroupIds:id
+      },
+      {
+        loadingText: this.$t("service.searching") 
+      }).then(res=>{
+        var data=res.data.data;
+        if(data){
+          this.createGroupDetailsInfo(data[0]);
+          this.showGroupDetails();
+          if(type=='kickOutOf'){
+            if(this.groupInfo.groupType!=1){
+              this.goToList();
+            }
+          }
+        }
+      }).catch(()=>{})
+    },
+    resetPageInfo(){//重置分页信息
+      this.pageIndex=1;
+    },
+    resetAddGroupInfo(){//重置新建群组记录
+      this.addGroupInfo={
+        groupName:"",//名称
+        headImg:"",//头像
+        groupTag:"",//标签
+        describe:"",//描述
+        groupEnterType:2,//加群方式（默认：需要审核）
+        groupType:true,//群公开
+        groupContributeType:1//资源共享者（默认：创建人）
+      };
+    },
+    resetFilterInfo(){//重置查询过滤条件
+      this.filterInfo={//过滤字段
+        search:"",//搜索
+        ownType:"",//所有者
+        days:"",//创建日期
+        onlyEnter:""//我可以加入的群
+      }
+    },
+    resetGroupDetailsInfo(){//重置群组详情数据
+      this.groupInfo={};
+      this.groupUserList=[];
+    },
+    applyJoinGroup(val){//申请加入
+      this.$api.groupApi.apply2Group(val)
+      .then(()=>{
+        this.timeStamp=new Date();
+        this.task={
+          target:"applyJoinGroup",
+          params:{
+            id:val.groupId
+          }
+        }
+        this.$message({
+          type:"success",
+          message:this.$t('group.Appliedsuccessfully')
+        })
+      })  
+      .catch(res=>{
+        if(res.data.status===996){
+          this.timeStamp=new Date();
+          this.task={
+            target:"applyJoinGroup",
+            params:{
+              id:val.groupId
+            }
+          }
+        }
+      })
+      .finally(()=>{
+        if(val.needRefresh){
+          this.needRefreshCurrentGroupDetails();
+        }
+        if(val.needRefreshList){
+          this.getGroupList();
+        }
+      })
+    },
+    deleteGroup(id){//解散群组
+      this.$api.groupApi.delById({
+        id:id
+      })     
+      .then(()=>{
+        this.$message({
+          type:"success",
+          message:this.$t('group.Ungroupedsuccessfully')
+        })
+        this.resetPageInfo();
+        this.goToList();
+      })  
+      .catch(()=>{})
+    }
+  },
+  mounted(){
+    this.getGroupList();
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>

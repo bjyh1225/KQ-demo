@@ -1,0 +1,42 @@
+<config>
+    <layers>
+        <layer query_id="1" src_name="source0" id="1" label="行政区">
+            <fields>OBJECTID,XZQMC,XZQDM,YSDM,BSM,FHDM,MSSM,JSMJ,KZMJ</fields>
+            <fields_alias>OBJECTID,XZQMC,XZQDM,YSDM,BSM,FHDM,MSSM,JSMJ,KZMJ</fields_alias>
+            <chart_field>YSDM</chart_field>
+            <summary_field>OBJECTID</summary_field>
+            <server_type>kq</server_type>
+            <filterWhere>XZQMC LIKE '%[VALUE]%' OR XZQDM LIKE '%[VALUE]%'</filterWhere>
+            <tooltip>行政区名称、代码</tooltip>
+        </layer>
+
+        <layer src_name="source0" query_id="161" label="乐至县" id="160">
+            <fields>OBJECTID,XZBM,BSM,YSDM,JXLX,JXXZ,JXSM,BGRQ</fields>
+            <fields_alias>OBJECTID,XZBM,BSM,YSDM,JXLX,JXXZ,JXSM,BGRQ</fields_alias>
+            <chart_field>XZBM</chart_field>
+            <summary_field>OBJECTID</summary_field>
+            <server_type>kq</server_type>
+            <filterWhere>BSM LIKE '%[VALUE]%'</filterWhere>
+            <tooltip>标识码</tooltip>
+        </layer>
+
+        <layer query_id="2" src_name="source0" id="2" label="房屋">
+            <fields>OBJECTID,BSM,YSDM,LSZD,FWBH,FWMC,ZLDZ,FWJG,FWCS,JZMJ,ZDMJ,ZLDWDM,FHDM</fields>
+            <fields_alias>OBJECTID,BSM,YSDM,LSZD,FWBH,FWMC,ZLDZ,FWJG,FWCS,JZMJ,ZDMJ,ZLDWDM,FHDM</fields_alias>
+            <chart_field>YSDM</chart_field>
+            <summary_field>OBJECTID</summary_field>
+            <server_type>kq</server_type>
+            <filterWhere>FWMC LIKE '%[VALUE]%'</filterWhere>
+            <tooltip>房屋名称</tooltip>
+        </layer>
+        <layer query_id="3" src_name="source0" id="3" label="宗地">
+            <fields>OBJECTID,BSM,YSDM,DJH,TXDZ,TDZL,QSXZ,SYQLX,SCMJ,FZMJ,TDYT,JZRJL,JZMD,TDJB,SBDJ,QDJG,ZLDWDM,FHDM,DZ,NZ,XZ,BZ,ZDID,ZDMJ,SZTF,QLR,JZWZDMJ,JZMJ,JDLH,XDLH,ISZY,YSDJH,ZDTZM,JZWLX,SM,YBDJH,TDZH,YTDZH,TXQL,ZDSZ,QSDWDM,DWXZ,SYQX,ZZRQ,ZGBM,HYDM,SFFZ,QSXZMC</fields>
+            <fields_alias>OBJECTID,BSM,YSDM,DJH,TXDZ,TDZL,QSXZ,SYQLX,SCMJ,FZMJ,TDYT,JZRJL,JZMD,TDJB,SBDJ,QDJG,ZLDWDM,FHDM,DZ,NZ,XZ,BZ,ZDID,ZDMJ,SZTF,QLR,JZZDMJ,JZMJ,JDLH,XDLH,ISZY,YSDJH,ZDTZM,JZWLX,SM,YBDJH,TDZH,YTDZH,TXQL,ZDSZ,QSDWDM,DWXZ,SYQX,ZZRQ,ZGBM,HYDM,SFFZ,权属性质名称</fields_alias>
+            <chart_field>YSDM</chart_field>
+            <summary_field>OBJECTID</summary_field>
+            <server_type>kq</server_type>
+            <filterWhere>DJH LIKE '%[VALUE]%' OR QLR LIKE '%[VALUE]%'</filterWhere>
+            <tooltip>地籍号、权利人</tooltip>
+        </layer>
+    </layers>
+</config>

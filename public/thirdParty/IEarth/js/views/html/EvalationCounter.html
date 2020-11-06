@@ -1,0 +1,76 @@
+<!-- <div role="tabpanel" class="tab-pane fade in active " :id="'evalation_analysist_'+guid"> -->
+<div class="evalation_analysist_module">
+    <table class="table table-condensed" style="table-layout: fixed;">
+        <tbody>
+            <!--Space-->
+            <tr>
+                <td colspan="1">{{titles.evalationSpace}}</td>
+                <td colspan="1">
+                    <input min=0 type="number" class="form-control" placeholder="" v-model="evalationCounters.spaceing" v-on:input="changeCounterSpace"
+                    />
+                </td>
+            </tr>
+            <!--Width-->
+            <tr>
+                <td colspan="1">{{titles.evaltionCounterWidth}}</td>
+                <td colspan="1">
+                    <input min=1 type="number" class="form-control" placeholder="" v-model="evalationCounters.lineWidth" v-on:input="changeCounterWidth"
+                    />
+                </td>
+            </tr>
+            <!-- Color -->
+            <tr>
+                <td colspan="1">{{titles.evaltionCounterColor}}</td>
+                <td colspan="1">
+                    <div class="color-selector-container">
+                        <input :id="'point_label_color_'+guid" class="color-selector form-control" type="text" class="form-control" v-model="evalationCounters.evaltionCounterColor"
+                            :style="{backgroundColor:evalationCounters.evaltionCounterColor}" />
+                        <span class="caret-container">
+                            <span class="caret"></span>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+            <!-- MaxHeight -->
+            <tr>
+                <td colspan="1">{{titles.maxHeight}}</td>
+                <td colspan="1">
+                    <input min=0 type="number" class="form-control" placeholder="" v-model="evalationCounters.maxHeight" @input="changeMaxHeight" />
+                </td>
+            </tr>
+            <!-- MinHeight -->
+            <tr>
+                <td colspan="1">{{titles.minHeight}}</td>
+                <td colspan="1">
+                    <input min=0 type="number" class="form-control" placeholder="" v-model="evalationCounters.minHeight" @input="changeMinHeight" />
+                </td>
+            </tr>
+            <!-- fill -->
+            <!-- <tr>
+                <td colspan="1">{{titles.evaltionCounterfill}}</td>
+                <td colspan="1">
+                    <div class="input-group h-style" style="width: 100%;">
+                        <span class="input-group-btn" style="width: 100%;">
+                            <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 100%;text-align: left">
+                                {{evalationCounters.defaultName}}&nbsp;&nbsp;
+                                <span class="caret" style="position: absolute;top: 12px;right:5px"></span>
+                            </a>
+                            <ul class="dropdown-menu" style="width: 100%;">
+                                <li v-for="(item,key) in evalationCounters.fillName">
+                                    <a href="#" @click="onToggleFillStyleClk(item)">{{item.name}}</a>
+                                </li>
+                            </ul>
+                        </span>
+                    </div>
+                </td>
+            </tr> -->
+            <!-- <tr>
+
+            </tr> -->
+        </tbody>
+    </table>
+    <div style="text-align: right; margin: 5px;">
+        <a href="#" class="btn btn-default" style="width: 20%" @click='analyse()'>{{titles.analysist}}</a>
+        <!-- <a href="#" class="btn btn-default" style="width: 20%" @click='clear()'>{{titles.clear}}</a> -->
+    </div>
+</div>

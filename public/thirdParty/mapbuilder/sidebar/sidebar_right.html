@@ -1,0 +1,51 @@
+<div id="sidebar-right" class="sidebar collapsed">
+    <!-- Nav tabs -->
+    <div class="sidebar-tabs">
+        <ul role="tablist">
+            <li id="tab_advanced"><a title=_advancedSearch_ href="#advancedSearch" role="tab"><i class="icon iconfont icon-advanced_search"></i></a></li>
+            <li id="tab_overlay"><a title=_overlayAnalysis_ href="#overlayAnalysis" role="tab"><i class="icon iconfont icon-overlay_analysis"></i></a>
+            </li>
+        </ul>
+
+        <ul role="tablist">
+            <li id="tab_setting"><a title=_settings_ href="#settings" role="tab"><i class="fa fa-gear"></i></a></li>
+        </ul>
+    </div>
+
+    <!-- Tab panes -->
+    <div class="sidebar-content">
+        <div class="sidebar-pane" id="advancedSearch">
+            <h1 class="sidebar-header">_advancedSearch_<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+            <div class="sidebar-content-content" id="controlAdvancedQuery"></div>
+        </div>
+
+        <div class="sidebar-pane" id="overlayAnalysis">
+            <h1 class="sidebar-header">_overlayAnalysis_<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+            <div id="controlOverlayAnalysis"></div>
+        </div>
+
+        <div class="sidebar-pane" id="settings">
+            <h1 class="sidebar-header">_settings_<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+            <div id="controlSetting"></div>
+        </div>
+    </div>
+</div>
+<style>
+    #newTabButton {
+        display: inline-block;
+        padding: .3em .5em;
+        background-image: linear-gradient(#ddd, #ddd);
+        border: 1px solid rgba(0,0,0,.2);
+        border-radius: .3em;
+        box-shadow: 0 1px white inset;
+        text-align: center;
+        text-shadow: 0 1px 1px black;
+        color:white;
+        font-weight: bold;
+    }
+    #newTabButton:active{
+        box-shadow: .05em .1em .2em rgba(0,0,0,.6) inset;
+        border-color: rgba(0,0,0,.3);
+        background: #bbb;
+    }
+</style>

@@ -1,0 +1,186 @@
+<div id="user-info" class="buildersidebar-user-info">
+    <div class="user-info-content">
+        <div class="account-info" style="border-width: 0 1px 1px 0;">
+            <span class="nav-icon-font iconfont icon-setting"></span>
+            <span class="title">账户信息</span>
+        </div>
+        <div class="skin" style="border-width: 0 0 1px 0;">
+            <span class="nav-icon-font iconfont icon-clothing-store"></span>
+            <span class="title">皮肤</span>
+        </div>
+        <div class="create-map" style="border-width: 0 1px 1px 0;">
+            <span class="nav-icon-font iconfont icon-setting"></span>
+            <span class="title">创建地图</span>
+        </div>
+        <div class="my-map" style="border-width: 0 0 1px 0;">
+            <span class="nav-icon-font iconfont icon-setting"></span>
+            <span class="title">我的地图</span>
+        </div>
+        <div class="back-home" style="border-width: 0 1px 0 0;">
+            <span class="nav-icon-font iconfont icon-setting"></span>
+            <span class="title">返回首页</span>
+        </div>
+        <div class="problem-feedback" style="border-width: 0;color: gray">
+            <span class="nav-icon-font iconfont icon-setting"></span>
+            <span class="title">问题反馈</span>
+        </div>
+    </div>
+    <div class="skin-content" style="">
+        <div class="skin-header" style="height: 20px;">
+            <i class="fa fa-mail-reply"></i>
+            <span style="padding-left: 10px">皮肤</span>
+        </div>
+        <div class="skin-content-body">
+            <div class="light-skin" style="border-width: 0 1px 1px 0;">
+                <span class="nav-icon-font iconfont icon-clothing-store"></span>
+                <span class="title">浅色</span>
+            </div>
+            <div class="dark-skin" style="border-width: 0 0 1px 0;">
+                <span class="nav-icon-font iconfont icon-clothing-store"></span>
+                <span class="title">深色</span>
+            </div>
+            <div class="skins-coming-soon" style="border-width: 0 1px 1px 0;color: gray">
+                <span class="nav-icon-font iconfont icon-clothing-store"></span>
+                <span class="title">敬请期待</span>
+            </div>
+            <div class="" style="border-width: 0 0 1px 0;"></div>
+            <div class="" style="border-width: 0 1px 0 0;"></div>
+            <div class="" style="border-width: 0"></div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .buildersidebar-user-info {
+        display: none;
+        background-color: #0a4d85;
+        position: fixed;
+        left: 52px;
+        bottom: 0;
+        width: 200px;
+        height: 275px;
+        border-radius:0 5px 0 0;
+        padding: 20px;
+        color: white;
+    }
+    .buildersidebar-user-info .user-info-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center
+    }
+    .buildersidebar-user-info .user-info-content div {
+        width: 80px;
+        height: 80px;
+        padding: 5px;
+        text-align: center;
+        border-color: gray;
+        border-style: solid;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .buildersidebar-user-info .user-info-content div .iconfont {
+        width: 100%;
+        height: 70%;
+        font-size: 40px;
+    }
+    .buildersidebar-user-info .user-info-content div .title {
+        width: 100%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .buildersidebar-user-info .user-info-content div:nth-child(-n+5):hover {
+        cursor: pointer;
+        background: #1A2A51;
+    }
+    .buildersidebar-user-info .user-info-content .problem-feedback:hover {
+        cursor: not-allowed;
+        background: #1A2A51;
+    }
+    .buildersidebar-user-info .skin-content {
+        display: none;
+        flex-direction: column;
+        justify-content: center
+    }
+    .buildersidebar-user-info .skin-content .skin-content-body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 10px;
+    }
+    .buildersidebar-user-info .skin-content .skin-content-body div {
+        width: 80px;
+        height: 70px;
+        padding: 5px;
+        text-align: center;
+        border-color: gray;
+        border-style: solid;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .buildersidebar-user-info .skin-content .skin-content-body div .iconfont {
+        width: 100%;
+        height: 70%;
+        font-size: 30px;
+    }
+    .buildersidebar-user-info .skin-content .skin-content-body div .title {
+        width: 100%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .buildersidebar-user-info .skin-content .skin-content-body div:nth-child(-n+2):hover {
+        cursor: pointer;
+        background: #1A2A51;
+    }
+    .buildersidebar-user-info .skin-content .skin-content-body .skins-coming-soon:hover {
+        cursor: not-allowed;
+        background: #1A2A51;
+    }
+</style>
+
+<script>
+    $(function () {
+      $(".user-info").click(function (e) {
+        e.stopPropagation();
+        let userInfoShow = $(".buildersidebar-user-info")[0].style.display;
+        if (userInfoShow === "" || "none") {
+          $(".buildersidebar-user-info").css("display", "block");
+          $(document).click(function (event) {
+            let target = $(event.target);
+            if (target.context.parentNode !== null) {
+              if (target.context.className !== 'buildersidebar-user-info' &&
+                target.context.parentNode.className !== 'buildersidebar-user-info' &&
+                target.context.parentNode.parentNode.className !== 'buildersidebar-user-info' &&
+                target.context.parentNode.parentNode.parentNode.className !== 'buildersidebar-user-info' &&
+                (target.context.parentNode.parentNode.parentNode.className && target.context.parentNode.parentNode.parentNode.parentNode.className) !== 'buildersidebar-user-info') {
+                $(".buildersidebar-user-info").css("display", "none");
+                $(".user-info-content").css("display", "flex");
+                $(".skin-content").css("display", "none");
+              }
+            }
+          })
+        }
+        if (userInfoShow === "block") {
+          $(".buildersidebar-user-info").css("display", "none");
+          setTimeout(function () {
+            $(".buildersidebar-user-info").css("display", "block");
+          }, 200);
+        }
+      });
+
+      $(".skin").click(function () {
+        $(".user-info-content").css("display", "none");
+        $(".skin-content").css("display", "flex");
+      });
+
+      $(".skin-header").click(function () {
+        $(".skin-content").css("display", "none");
+        $(".user-info-content").css("display", "flex");
+      })
+    })
+</script>

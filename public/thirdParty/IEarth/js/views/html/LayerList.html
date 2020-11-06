@@ -1,0 +1,46 @@
+<style>
+    [v-cloak] {
+        display: none !important;
+    }
+</style>
+
+<div class="module-layer-list-content">
+    <div class="tree-container" style="position: absolute;top: 0;bottom: 5px;right: 0px;left:0px;">
+        <ul :id="'layerManagerTree_'+guid" class="ztree" style="height:100%;width:100%;overflow: auto;padding: 0;"></ul>
+    </div>
+    <div class="tree-container" style="position: absolute;bottom: 5px;right: 0px;left:0px;display: none;">
+        <div class="input-group">
+            <!--border-top:0;border-left:0;border-right:0;-->
+            <input type="text" class="form-control" style="" :placeholder="titles.inputKeyword" v-model="keyword"/>
+            <!--{{keyword}}-->
+            <span class="input-group-btn">
+                <!--border-top:0;border-left:0;border-right:0;-->
+                <a class="btn btn-default" href="#" :title="titles.search" @click="searchTree">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                </a>
+            </span>
+        </div>
+    </div>
+
+    <ul :id="'node_context_menu_'+guid" class="dropdown-menu" role="menu">
+        <li role="presentation" @click="treeNodeMenuItemClick('top')" href="#">
+            <a role="menuitem" tabindex="-1">{{titles.raiseToTop}}</a>
+        </li>
+        <li role="presentation" @click="treeNodeMenuItemClick('up')" href="#">
+            <a role="menuitem" tabindex="-1">{{titles.raise}}</a>
+        </li>
+        <li role="presentation" @click="treeNodeMenuItemClick('down')" href="#">
+            <a role="menuitem" tabindex="-1">{{titles.lower}}</a>
+        </li>
+        <li role="presentation" @click="treeNodeMenuItemClick('bottom')" href="#">
+            <a role="menuitem" tabindex="-1">{{titles.lowerToBottom}}</a>
+        </li>
+        <li role="presentation" class="divider"></li>
+        <li role="presentation" @click="treeNodeMenuItemClick('remove')" href="#">
+            <a role="menuitem" tabindex="-1">{{titles.remove}}</a>
+        </li>
+        <li role="presentation" @click="treeNodeMenuItemClick('attribute')" href="#">
+            <a role="menuitem" tabindex="-1">{{titles.properties}}</a>
+        </li>
+    </ul>
+</div>

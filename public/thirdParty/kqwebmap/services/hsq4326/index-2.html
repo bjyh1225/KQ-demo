@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>KQWebMap Example</title>
+
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <link href="../../dist/kqmaploading.min.css" rel="stylesheet" type="text/css">
+  <link href="../../fonts/extra/iconfont.css" rel="stylesheet" type="text/css">
+  <!--<link rel="stylesheet" href="../../../libs/cropper/cropper.css">-->
+  <!--<link rel="stylesheet" href="../../../libs/controls/sidebyside/range.css">-->
+  <!--<link href="../../dist/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">-->
+  <!--<link href="../../../libs/measure/leaflet-measureAction.css" rel="stylesheet" type="text/css">-->
+
+  <!--<link rel="stylesheet" href="../../../node_modules/leaflet/dist/leaflet.css"/>-->
+  <!--<script src="../../../node_modules/leaflet/dist/leaflet.js"></script>-->
+
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<!--<div style="width: 100%; height: 80px;background-color: red;position: relative;"></div>-->
+<!--<div style="height: calc(100% - 80px)">-->
+<div id="map" style="height: 100%;" class="loading">
+  <div class="kqmaploadingtxt">Loading...</div>
+</div>
+<div id="empty-window"></div>
+
+<!--<div id="test" style="width: 500px; height: 500px; background-color: red"></div>-->
+
+<!--<div id="grid"></div>-->
+
+<!--<script>L_NO_TOUCH = true;</script>-->
+<script src="../../dist/jquery.min.js"></script>
+<script src="../../dist/jquery-ui.min.js"></script>
+<!--<script src="../../dist/jquery.mobile-1.4.5.min.js"></script>-->
+
+<!--<script src="../../dist/leaflet-src.js"></script>-->
+<script src="../../dist/kqlibs.js"></script>
+<!--<script src="../../dist/other_kendo.js"></script>-->
+<!--<script src="../../dist/kq.js"></script>-->
+<!--<script src="../../dist/other.js"></script>-->
+<script src="../../dist/map-example_2.js"></script>
+<script src="../../dist/other.js"></script>
+<script src="../../testdata/test-json.js"></script>
+
+<script src="../../testdata/demo-tracks.js"></script>
+<script src="../../dist/jquery.touchSwipe.js"></script>
+<!--<script src="../../dist/OSMBuildings-Leaflet.debug.js"></script>-->
+<script src="zyfw.js"></script>
+<!--<script src="../../../libs/measure/leaflet-measure.js"></script>-->
+<script src="../../dist/echarts-3.8.2.js"></script>
+<!--<script src="../../../libs/measure/leaflet-measureAction.js"></script>-->
+
+<!--<script src="../../../libs/path-drag/L.Path.Drag-src.js"></script>-->
+<!--<script src="../../../libs/plot/goog.js"></script>-->
+<!--<script src="../../../libs/plot/ol.js"></script>-->
+<!--<script src="../../../libs/plot/plot.debug.js"></script>-->
+<!--<script src="../../../libs/plot/plot.min.js"></script>-->
+<script src="../../dist/plot.dist.js"></script>
+
+<!--<script src="../../../libs/kendo/js/kendo.dataviz.mobile.min.js"></script>-->
+<!--<link href="../../../libs/kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" type="text/css">-->
+<!--<script src="../../../libs/controls/draw/leaflet.draw-custom-src.js"></script>-->
+<!--<script src="../../../libs/measure/leaflet-measure.js"></script>-->
+<!--<script src="../../../libs/tileLayer.baidu.js"></script>-->
+
+<!--&lt;!&ndash; BOOTSTRAP Latest compiled and minified CSS &ndash;&gt;-->
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"-->
+      <!--integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"-->
+      <!--crossorigin="anonymous">-->
+
+<!--&lt;!&ndash; BOOTSTRAP Latest compiled and minified JavaScript &ndash;&gt;-->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"-->
+        <!--integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"-->
+        <!--crossorigin="anonymous">-->
+<!--</script>-->
+
+<!--&lt;!&ndash; FONT AWESOME CDN &ndash;&gt;-->
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
+<script src="realworld.10000.js"></script>
+<script>
+  function test() {
+    var config = KQ.Map.MapConfig.getInstance();
+
+    config.initAsync('', false, function () {
+      KQ.Local.setLanguage('cn');
+
+      config.setDrawOption({
+        onImportedFunction: function (geojson) {
+          console.log('onImported!');
+
+          geojson.eachLayer(function (layer) {
+            layer.bindPopup('Hello', {
+              autoClose: false,
+              closeOnClick: false,
+            });
+            layer.openPopup();
+          });
+        },
+      });
+
+      var mapView = new KQ.Map.MapView({});
+
+      console.log(KQ.Map.MapConfig.getInstance().permission());
+
+      mapView.initAsync(function () {
+        mapView.zoom(3);
+
+        var button0 = new KQ.Control.MapButton('fa-globe fa-lg', function (btn, map) {
+          console.log('button clicked!');
+
+        }, '点击这个按钮');
+
+        button0.addToMapView(mapView, 'topleft');
+
+      });
+    });
+  }
+
+  function test1() {
+    var map = L.map('map', {
+      crs: L.CRS.Baidu,
+      minZoom: 3,
+      maxZoom: 18,
+      attributionControl: false,
+      center: [31.834912, 117.220102],
+      zoom: 12
+    });
+
+
+    //控制地图底图
+    L.control.layers(
+      {
+        "百度地图": L.tileLayer.baidu({ layer: 'vec' }).addTo(map),
+        "百度卫星": L.tileLayer.baidu({ layer: 'img' }),
+        "百度地图-大字体": L.tileLayer.baidu({ layer: 'vec',bigfont:true }),
+        "百度卫星-大字体": L.tileLayer.baidu({ layer: 'img', bigfont: true }),
+        "自定义样式-黑色地图": L.tileLayer.baidu({ layer: 'custom', customid:'dark' }),
+        "自定义样式-蓝色地图": L.tileLayer.baidu({ layer: 'custom', customid:'midnight' }) //自定义样式地图，customid可选值：dark,midnight,grayscale,hardedge,light,redalert,googlelite,grassgreen,pink,darkgreen,bluish
+      },
+      {
+        "实时交通信息": L.tileLayer.baidu({ layer: 'time' })
+      },
+      { position: "topright" }).addTo(map);
+  }
+
+  $(document).ready(function () {
+    // test();
+
+    // testCurrentConfigs2();
+
+    // testAllEvent();
+
+    // testPlot();
+    // testMapPlot();
+    // testMapPlot_1();
+    // testAPICompareMap();
+
+    // testBaiDu();
+    //testBaiDu2();
+    // testEChart();
+    // testEChart0();
+    // testEChart1();
+    // testMapChartMigrate();
+
+    // testLayerWMS();
+    // testLayerWMTS();
+    // testSendRequestWMS();
+    // testSendRequestWMTS();
+    // testSendRequestOverlap();
+
+    // testSendRequest();
+
+    // testBug();
+
+    // testMapBaseLayer();
+    // testSrv2Config2();
+
+    // testEvilTransform();getInstance()
+
+    // testScreenShot2();
+
+    // testPosTrans2();
+
+    // testHeatmap();
+
+    // testChangeCRS();
+
+    testGeoJSONZIndex();
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,498 @@
+@import "./theme.scss";
+
+//基础颜色
+@mixin base-color($color:#242424){
+  color: $color;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      color: map-get($map: $theme, $key: baseColor )
+    }
+  }
+}
+
+//基础背景色
+@mixin base-bg-color($color:#1890ff){
+  background: $color;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      background: map-get($map: $theme, $key: baseButtonBgColor )
+    }
+  }
+}
+
+//基础背景和文字配色，以button为基准
+@mixin base-bg-font($bgcolor:#1890ff,$color:#fff){
+  color:$color;
+  background: $bgcolor;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      color:map-get($map: $theme, $key: baseButtonColor );
+      background: map-get($map: $theme, $key: baseButtonBgColor )
+    }
+  }
+}
+
+//基础选中状态颜色
+@mixin base-active-color($color:#1890ff){
+  color: $color;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      color: map-get($map: $theme, $key: baseActiveColor )
+    }
+  }
+}
+//基础选中下划线
+@mixin base-active-underline($width:1px,$style:solid,$color:#1890ff,$types:('top','right','bottom','left')){
+  @each $type in $types {
+    border-#{$type}: $width $style $color;
+  }
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      @each $type in $types {
+        border-#{$type}: $width $style map-get($map: $theme, $key: baseActiveColor);
+      }
+    }
+  }
+}
+//基础Hover颜色
+@mixin base-hover-color-btn($color:#1890ff){
+  color: $color;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      color: map-get($map: $theme, $key: baseButtonBgColor )
+    }
+  }
+}
+
+//基础Hover颜色
+@mixin base-hover-color-btn-font($color:#fff){
+  color: $color;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      color: map-get($map: $theme, $key: baseButtonColor )
+    }
+  }
+}
+
+//基础按钮
+@mixin base-btn($bgcolor:#1890ff,$color:#fff,$bgcolorh:rgba(24,144,255,0.8)){
+  background: $bgcolor;
+  color:$color;
+  border:none;
+  outline:none;
+  &:hover{
+    background:$bgcolorh;
+  }
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      background: map-get($map: $theme, $key: baseButtonBgColor );
+      color: map-get($map: $theme, $key: baseButtonColor );
+      &:hover{
+        background:map-get($map: $theme, $key: baseButtonBgHoverColor );
+      }
+    }
+  }
+
+}
+//基础文字按钮
+@mixin base-btn-text($color:#1890ff,$colorh:rgba(24,144,255,0.8)){
+  color:$color;
+  &:hover{
+    color:$colorh;
+  }
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      color: map-get($map: $theme, $key: baseButtonBgColor );
+      &:hover{
+        color:map-get($map: $theme, $key: baseButtonBgHoverColor );
+      }
+    }
+  }
+
+}
+//基础删除按钮
+@mixin base-btn-del($bgcolor:#f56c6c,$color:#fff,$bgcolorh:rgba(245,108,108,0.8)){
+  background: $bgcolor;
+  color:$color;
+  border:none;
+  outline:none;
+  &:hover{
+    background:$bgcolorh;
+  }
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      background: map-get($map: $theme, $key: baseButtonDelBgColor );
+      color: map-get($map: $theme, $key: baseButtonDelColor );
+      &:hover{
+        background:map-get($map: $theme, $key: baseButtonDelHoverColor );
+      }
+    }
+  }
+}
+
+//单选按钮颜色
+@mixin base-radio-button($bgcolor:#1890ff,$color:#fff){
+  background: $bgcolor;
+  color:$color;
+  border-color:$bgcolor;
+  box-shadow: -1px 0px 0px $bgcolor;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      background: map-get($map: $theme, $key: baseButtonBgColor );
+      color:map-get($map: $theme, $key: baseButtonColor );
+      border-color:map-get($map: $theme, $key: baseButtonBgColor );
+      box-shadow: -1px 0px 0px map-get($map: $theme, $key: baseButtonBgColor );
+    }
+  }
+}
+//页码
+@mixin base-pagination($bgcolor:#f5f5f5,$color:#242424,$hoverColor:#1890ff){
+  background: $bgcolor;
+  color:$color;
+  &:hover{
+    color:$hoverColor;
+  }
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      background: map-get($map: $theme, $key: paginationBgColor );
+      color: map-get($map: $theme, $key: paginationColor );
+      &:hover{
+        color:map-get($map: $theme, $key: paginationActiveBgColor );
+      }
+    }
+  }
+}
+
+//页码选中
+@mixin base-active-pagination($bgcolor:#1890ff,$color:#fff){
+  background: $bgcolor;
+  color:$color;
+  &:hover{
+    color:$color;
+  }
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      background: map-get($map: $theme, $key: paginationActiveBgColor );
+      color: map-get($map: $theme, $key: paginationActiveColor );
+      &:hover{
+        color:map-get($map: $theme, $key: paginationActiveColor );
+      }
+    }
+  }
+}
+
+//页码禁用
+@mixin base-disable-pagination($bgcolor:#f5f5f5,$color:#c9c9c9){
+  background: $bgcolor;
+  color:$color;
+  &:hover{
+    color:$color;
+  }
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      background: map-get($map: $theme, $key: paginationDisableBgColor );
+      color: map-get($map: $theme, $key: paginationDisableColor );
+      &:hover{
+        color:map-get($map: $theme, $key: paginationDisableColor );
+      }
+    }
+  }
+}
+
+@mixin manage-menu-color($color:#3691e9){
+  color: $color;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      color: map-get($map: $theme, $key: baseActiveColor)
+    }
+  }
+}
+
+//菜单选中颜色
+@mixin menu-active-color($color:#3691e9){
+  color: $color;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      color: map-get($map: $theme, $key: baseActiveColor)
+    }
+  }
+}
+//菜单选中下划线背景
+@mixin menu-active-bg($color:#3691e9){
+  background: $color;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      background: map-get($map: $theme, $key: baseActiveColor)
+    }
+  }
+}
+
+//管理中心tab边框颜色
+@mixin manage-tab-border($width:1px,$style:solid,$color:#c8ceda,$types:('top','right','bottom','left')){
+  @each $type in $types {
+    border-#{$type}: $width $style $color;
+  }
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      @each $type in $types {
+        border-#{$type}: $width $style map-get($map: $theme, $key: tabBorderColor);
+      }
+    }
+  }
+}
+
+//管理中心边框颜色
+@mixin manage-border($width:1px,$style:solid,$color:#EBEEF5,$types:('top','right','bottom','left')){
+  @each $type in $types {
+    border-#{$type}: $width $style $color;
+  }
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      @each $type in $types {
+        border-#{$type}: $width $style map-get($map: $theme, $key: manageBorderColor);
+      }
+    }
+  }
+}
+
+//复选框
+@mixin check-box($bgcolor:#1890ff,$color:#fff){
+  background-color:$bgcolor;
+  border-color:$bgcolor;
+  &:after{
+    border-color:$color;
+  }
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      background-color:map-get($map: $theme, $key: baseButtonBgColor);
+      border-color:map-get($map: $theme, $key: baseButtonBgColor);
+      &:after{
+        border-color:map-get($map: $theme, $key: baseButtonColor);
+      }
+    }
+  }
+}
+
+//复选框边框
+@mixin check-box-border($bgcolor:#1890ff){
+  border-color:$bgcolor;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      border-color:map-get($map: $theme, $key: baseButtonBgColor);
+    }
+  }
+}
+
+//复选框文字颜色
+@mixin check-box-font-color($color:#1890ff){
+  color:$color;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      color:map-get($map: $theme, $key: baseButtonBgColor);
+    }
+  }
+}
+
+//对话框标题
+@mixin dialog-title($width:1px,$color:#1890ff){
+  box-shadow: 0px $width 0px $color;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      box-shadow: 0px $width 0px map-get($map: $theme, $key: baseBgColor);
+    }
+  }
+}
+
+//首页字体颜色
+@mixin index-page-menu-color($color:#808080){
+  color: $color;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      color:map-get($map: $theme, $key: indexPageMenuColor);
+    }
+  }
+}
+//首页分割线颜色
+@mixin index-page-border($width:1px,$style:solid,$color:#1890ff,$types:('top','right','bottom','left')){
+  @each $type in $types {
+    border-#{$type}: $width $style $color;
+  }
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      @each $type in $types {
+        border-#{$type}: $width $style map-get($map: $theme, $key: indexPageMenuColor);
+      }
+    }
+  }
+}
+//基础文本框等外层选中颜色
+@mixin input-focus-color($color:#1890ff){
+  border: 1px solid $color;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      border: 1px solid map-get($map: $theme, $key: baseButtonBgColor);
+    }
+  }
+}
+
+//顶部banner图
+@mixin top-banner($url:'~img/theme/default/banner/top_banner.jpg'){
+  background: url($url);
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      background: url(map-get($map: $theme, $key: topBannerBgURL));
+    }
+  }
+}
+
+// 服务中心基础字体色
+@mixin service-base-color($color:#1890ff){
+  color: $color;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      color:map-get($map: $theme, $key: baseButtonBgColor);
+    }
+  }
+}
+
+//服务中心按钮Hover颜色
+@mixin service-base-hover-color-btn($bgcolor:#1890ff,$color:#fff){
+  background: $bgcolor;
+  color:$color;
+  border-color:$bgcolor;
+  box-shadow: -1px 0px 0px $bgcolor;
+  cursor: pointer;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      background: map-get($map: $theme, $key: baseButtonBgColor );
+      color:map-get($map: $theme, $key: baseButtonColor );
+      border-color:map-get($map: $theme, $key: baseButtonBgColor );
+      box-shadow: -1px 0px 0px map-get($map: $theme, $key: baseButtonBgColor );
+    }
+  }
+}
+
+//控制状态的开关打开颜色
+@mixin switch-oppen-color($bgcolor:#3691e9){
+  background-color:$bgcolor;
+  border-color:$bgcolor;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      background-color:map-get($map: $theme, $key: baseButtonBgColor);
+      border-color:map-get($map: $theme, $key: baseButtonBgColor);
+    }
+  }
+}
+
+//hover边框效果
+@mixin dialog-title-hover($width:1px,$color:#1890ff){
+  box-shadow: 0px 0px $width $color;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      box-shadow: 0px  0px $width map-get($map: $theme, $key: baseBgColor);
+    }
+  }
+}
+
+//渐变背景
+@mixin base-gradient-background($direction:to bottom,$colorStart:#32a2e7,$colorEnd:#267cec){
+  background: linear-gradient($direction,$colorStart , $colorStart);
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      background: linear-gradient($direction,map-get($map: $theme, $key: gradientStart),map-get($map: $theme, $key: gradientEnd));
+    }
+  }
+}
+
+//基础边框
+@mixin base-border($width:1px,$color:#1890ff){
+  border: $width solid $color;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      border: $width solid map-get($map: $theme, $key: baseButtonBgColor);
+    }
+  }
+}
+
+//树高亮色
+@mixin tree-highlight($bgcolor:#d8e9fd,$color:#1890ff){
+  background: $bgcolor;
+  color:$color;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      background: map-get($map: $theme, $key: treeHighLightBgColor);
+      color: map-get($map: $theme, $key: baseBgColor);
+    }
+  }
+}
+
+//资源列表hover背景色
+@mixin resources-hover($bgcolor:#ecf5ff){
+  background: $bgcolor;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      background: map-get($map: $theme, $key: resourcesHoverBgColor);
+    }
+  }
+}
+
+//首页应用构建icon
+@mixin home-app-build-icon($url:'~img/index/appBuild/theme/defaultTheme/appBuildIcon.png'){
+  background-image: url($url);
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      background-image: url(map-get($map: $theme, $key: homeAppBuildIconUrl));
+    }
+  }
+}
+//线性按钮
+@mixin base-linear-btn($color:#1890ff,$bgcolorh:#1890ff){
+  background: none;
+  color:$color;
+  border:1px solid $color;
+  &:hover{
+    background:$bgcolorh;
+  }
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      color: map-get($map: $theme, $key: baseButtonLinearColor );
+      border:1px solid map-get($map: $theme, $key: baseButtonLinearColor );
+      &:hover{
+        background:map-get($map: $theme, $key: baseButtonLinearHoverColor );
+      }
+    }
+  }
+}
+
+//hover边框效果
+@mixin box-shadow-border-left($width:1px,$color:#1890ff){
+  box-shadow: -$width 0px 0px $color;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      box-shadow:-$width 0px 0px map-get($map: $theme, $key: baseActiveColor);
+    }
+  }
+}
+
+// 详情标签样式
+@mixin keyword-base-color($color:#1890ff,$bgcolor:#fff,$bscolor:#b3d8ff){
+  background: $bgcolor;
+  color:$color;
+  border:1px solid $bscolor;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      color:map-get($map: $theme, $key: baseActiveColor );
+      border:1px solid map-get($map: $theme, $key: baseKeywordBsColor );
+    }
+  }
+}
+
+//基础边框色
+@mixin base-border-color($color:#1890ff){
+  border-color: $color;
+  @each $themename , $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      border-color: map-get($map: $theme, $key: baseButtonBgColor )
+    }
+  }
+}

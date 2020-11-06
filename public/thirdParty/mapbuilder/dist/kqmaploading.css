@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0px; }
+
+#map {
+  background-color: white;
+  border: none; }
+
+#map.loading {
+  background-color: white;
+  /*display: block;*/
+  text-align: center;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: Center;
+  font-size: 32px !important;
+  font-weight: bolder;
+  color: #64a0dc;
+  background-color: #363940;
+  text-shadow: rgba(100, 160, 220, 0.3) 0 5px 6px, rgba(100, 160, 220, 0.15) 1px 3px 3px;
+  -webkit-background-clip: text; }

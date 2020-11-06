@@ -1,0 +1,86 @@
+/*[class*="analysis-item-body-"] {*/
+    /*height: 670px;*/
+    /*width: 100%;*/
+/*}*/
+
+/*[class*="analysis-item-body-"] .parameters{*/
+    /*height: calc(100% - 80px);*/
+    /*width: 100%;*/
+    /*padding: 0px 30px;*/
+/*}*/
+
+/*[class*="analysis-item-body-"] .parameters [class*="parameter-"] {*/
+    /*width: 100%;*/
+    /*margin-top: 30px;*/
+    /*font-size: 14px;*/
+/*}*/
+
+/*[class*="analysis-item-body-"] .parameters [class*="parameter-"]>label {*/
+    /*display: block;*/
+    /*margin-bottom: 10px;*/
+/*}*/
+
+/*[class*="analysis-item-body-"] .parameters [class*="parameter-"] .control{*/
+    /*width: 100%;*/
+    /*min-height: 32px;*/
+    /*max-height: 100px;*/
+/*}*/
+
+/*[class*="analysis-item-body-"] .parameters [class*="parameter-"] .control-text-area{*/
+    /*height: 100%;*/
+/*}*/
+
+/*[class*="analysis-item-body-"] .parameters .parameter-drawing .control .k-button{*/
+    /*width: 80px;*/
+    /*height: 32px;*/
+/*}*/
+
+/*[class*="analysis-item-body-"] .parameters [class*="parameter-"] .control-text-area .k-textbox{*/
+    /*width: 100%;*/
+    /*min-height: 100px;*/
+    /*max-height: 100px;*/
+/*}*/
+
+/*[class*="analysis-item-body-"] .analysis-item-run {*/
+    /*width: 100%;*/
+/*}*/
+
+/*[class*="analysis-item-body-"] .analysis-item-run .control{*/
+    /*width:  calc(100% - 60px);*/
+    /*margin: 30px;*/
+    /*height: 32px;*/
+/*}*/
+
+/*[class*="analysis-item-body-"] .parameters .parameter-geometry-check-params .control-input ul li{*/
+    /*height: 70px;*/
+/*}*/
+
+/*[class*="analysis-item-body-"] .parameters .parameter-geometry-check-params ul li .k-numerictextbox{*/
+    /*width: 100%;*/
+    /*height: 32px;*/
+    /*margin-top: 5px;*/
+/*}*/
+
+/*[class*="analysis-item-body-"] .parameters .parameter-geometry-check-params ul li .k-numerictextbox .k-input{*/
+    /*height: auto;*/
+    /*text-indent: .2em;*/
+/*}*/
+
+/*[class*="analysis-item-body-"] .parameters [class*="parameter-"] .control .k-multiselect-wrap {*/
+    /*padding-right: 0;*/
+/*}*/
+
+/*[class*="analysis-item-body-"] .parameters [class*="parameter-"] .control .k-multiselect-wrap .k-button {*/
+    /*min-height: calc(1.98571428em);*/
+    /*padding: .1em 1.6em .1em .4em;*/
+/*}*/
+
+/*[class*="analysis-item-body-"] .parameters [class*="parameter-"] .control .k-multiselect-wrap .k-input {*/
+    /*height: 30px;*/
+    /*text-indent: .2em;*/
+/*}*/
+
+/*[class*="analysis-item-body-"] .parameters [class*="parameter-"] .control .k-multiselect-wrap .k-clear-value {*/
+    /*top: calc(1.14642857em - 7px);*/
+    /*right: calc(1.14285714em - 7px);*/
+/*}*/

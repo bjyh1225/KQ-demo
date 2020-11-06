@@ -1,0 +1,2424 @@
+{
+  "id": "260390",
+  "name": "webmap",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "10506194",
+      "name": "空间分析",
+      "font_class": "analysis-spatial",
+      "unicode": "e73c",
+      "unicode_decimal": 59196
+    },
+    {
+      "icon_id": "7556319",
+      "name": "Sql Server",
+      "font_class": "analysis-sql",
+      "unicode": "e63d",
+      "unicode_decimal": 58941
+    },
+    {
+      "icon_id": "8889946",
+      "name": "字段",
+      "font_class": "analysis-fields",
+      "unicode": "e73b",
+      "unicode_decimal": 59195
+    },
+    {
+      "icon_id": "11200927",
+      "name": "位置标记",
+      "font_class": "shape-hand-draw",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "5330822",
+      "name": "圆形2",
+      "font_class": "shape-circle",
+      "unicode": "e7c4",
+      "unicode_decimal": 59332
+    },
+    {
+      "icon_id": "7193685",
+      "name": "文字",
+      "font_class": "shape-text",
+      "unicode": "e738",
+      "unicode_decimal": 59192
+    },
+    {
+      "icon_id": "14421667",
+      "name": "图形-矩形",
+      "font_class": "shape-rectangle",
+      "unicode": "e73a",
+      "unicode_decimal": 59194
+    },
+    {
+      "icon_id": "1116",
+      "name": "账户",
+      "font_class": "account-info",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "604636",
+      "name": "新增",
+      "font_class": "add-map",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "1164427",
+      "name": "首页",
+      "font_class": "home-page",
+      "unicode": "e737",
+      "unicode_decimal": 59191
+    },
+    {
+      "icon_id": "11521313",
+      "name": "地图",
+      "font_class": "my-map",
+      "unicode": "e778",
+      "unicode_decimal": 59256
+    },
+    {
+      "icon_id": "398463",
+      "name": "Zoomin",
+      "font_class": "zoominput",
+      "unicode": "e735",
+      "unicode_decimal": 59189
+    },
+    {
+      "icon_id": "14144600",
+      "name": "iWhereVisual-瓦片地图服务",
+      "font_class": "shape-tile-copy",
+      "unicode": "ef48",
+      "unicode_decimal": 61256
+    },
+    {
+      "icon_id": "14144624",
+      "name": "iWhereVisual-瓦片地图服务",
+      "font_class": "shape-tile-copy1",
+      "unicode": "ef49",
+      "unicode_decimal": 61257
+    },
+    {
+      "icon_id": "14144633",
+      "name": "iWhereVisual-瓦片地图服务",
+      "font_class": "shape-tile-copy2",
+      "unicode": "ef4a",
+      "unicode_decimal": 61258
+    },
+    {
+      "icon_id": "3218767",
+      "name": "iWhereVisual-瓦片地图服务",
+      "font_class": "shape-tile",
+      "unicode": "e736",
+      "unicode_decimal": 59190
+    },
+    {
+      "icon_id": "4510699",
+      "name": "cloud-down-f",
+      "font_class": "clouddown",
+      "unicode": "e730",
+      "unicode_decimal": 59184
+    },
+    {
+      "icon_id": "1997389",
+      "name": "关联",
+      "font_class": "analysis-autocorrelation",
+      "unicode": "e70e",
+      "unicode_decimal": 59150
+    },
+    {
+      "icon_id": "6798076",
+      "name": "地理信息",
+      "font_class": "analysis-projectsystem",
+      "unicode": "e702",
+      "unicode_decimal": 59138
+    },
+    {
+      "icon_id": "8040188",
+      "name": "ts-图标_APPCluster",
+      "font_class": "analysis-clustering",
+      "unicode": "e734",
+      "unicode_decimal": 59188
+    },
+    {
+      "icon_id": "10454671",
+      "name": "数据汇总",
+      "font_class": "analysis-sumstatistics",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "4237402",
+      "name": "应用分析",
+      "font_class": "map-builder-analysis",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "4281532",
+      "name": "map_polygon",
+      "font_class": "analysis-area",
+      "unicode": "e72d",
+      "unicode_decimal": 59181
+    },
+    {
+      "icon_id": "1897790",
+      "name": "交集",
+      "font_class": "analysis-overlay",
+      "unicode": "e72c",
+      "unicode_decimal": 59180
+    },
+    {
+      "icon_id": "3491975",
+      "name": "Buffer analysis",
+      "font_class": "analysis-buffer",
+      "unicode": "e74f",
+      "unicode_decimal": 59215
+    },
+    {
+      "icon_id": "5112894",
+      "name": "差集",
+      "font_class": "analysis-difference",
+      "unicode": "e72e",
+      "unicode_decimal": 59182
+    },
+    {
+      "icon_id": "5436628",
+      "name": "union",
+      "font_class": "analysis-union",
+      "unicode": "ecd1",
+      "unicode_decimal": 60625
+    },
+    {
+      "icon_id": "7094823",
+      "name": "polygon",
+      "font_class": "analysis-geometry-attribute",
+      "unicode": "e72f",
+      "unicode_decimal": 59183
+    },
+    {
+      "icon_id": "8445038",
+      "name": "polygon",
+      "font_class": "analysis-geometrycheck",
+      "unicode": "e731",
+      "unicode_decimal": 59185
+    },
+    {
+      "icon_id": "10438010",
+      "name": "M_Edit_MergeDifference",
+      "font_class": "analysis-symdifference",
+      "unicode": "e732",
+      "unicode_decimal": 59186
+    },
+    {
+      "icon_id": "10958036",
+      "name": "投影",
+      "font_class": "analysis-project",
+      "unicode": "e733",
+      "unicode_decimal": 59187
+    },
+    {
+      "icon_id": "11066392",
+      "name": "circle",
+      "font_class": "circle",
+      "unicode": "e647",
+      "unicode_decimal": 58951
+    },
+    {
+      "icon_id": "11066393",
+      "name": "casino",
+      "font_class": "casino",
+      "unicode": "e648",
+      "unicode_decimal": 58952
+    },
+    {
+      "icon_id": "11066394",
+      "name": "courthouse",
+      "font_class": "courthouse",
+      "unicode": "e649",
+      "unicode_decimal": 58953
+    },
+    {
+      "icon_id": "11066395",
+      "name": "electronics-store",
+      "font_class": "electronics-store",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    },
+    {
+      "icon_id": "11066396",
+      "name": "boat-tour",
+      "font_class": "boat-tour",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    },
+    {
+      "icon_id": "11066397",
+      "name": "female",
+      "font_class": "female",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    },
+    {
+      "icon_id": "11066398",
+      "name": "bicycle-store",
+      "font_class": "bicycle-store",
+      "unicode": "e65b",
+      "unicode_decimal": 58971
+    },
+    {
+      "icon_id": "11066399",
+      "name": "car-repair",
+      "font_class": "car-repair",
+      "unicode": "e65f",
+      "unicode_decimal": 58975
+    },
+    {
+      "icon_id": "11066400",
+      "name": "convenience-store",
+      "font_class": "convenience-store",
+      "unicode": "e661",
+      "unicode_decimal": 58977
+    },
+    {
+      "icon_id": "11066401",
+      "name": "braille",
+      "font_class": "braille",
+      "unicode": "e66a",
+      "unicode_decimal": 58986
+    },
+    {
+      "icon_id": "11066402",
+      "name": "campground",
+      "font_class": "campground",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
+      "icon_id": "11066403",
+      "name": "doctor",
+      "font_class": "doctor",
+      "unicode": "e67c",
+      "unicode_decimal": 59004
+    },
+    {
+      "icon_id": "11066404",
+      "name": "dentist",
+      "font_class": "dentist",
+      "unicode": "e67d",
+      "unicode_decimal": 59005
+    },
+    {
+      "icon_id": "11066405",
+      "name": "canoe",
+      "font_class": "canoe",
+      "unicode": "e67f",
+      "unicode_decimal": 59007
+    },
+    {
+      "icon_id": "11066406",
+      "name": "florist",
+      "font_class": "florist",
+      "unicode": "e680",
+      "unicode_decimal": 59008
+    },
+    {
+      "icon_id": "11066407",
+      "name": "car-dealer",
+      "font_class": "car-dealer",
+      "unicode": "e681",
+      "unicode_decimal": 59009
+    },
+    {
+      "icon_id": "11066408",
+      "name": "fish-cleaning",
+      "font_class": "fish-cleaning",
+      "unicode": "e682",
+      "unicode_decimal": 59010
+    },
+    {
+      "icon_id": "11066409",
+      "name": "bowling-alley",
+      "font_class": "bowling-alley",
+      "unicode": "e683",
+      "unicode_decimal": 59011
+    },
+    {
+      "icon_id": "11066410",
+      "name": "climbing",
+      "font_class": "climbing",
+      "unicode": "e684",
+      "unicode_decimal": 59012
+    },
+    {
+      "icon_id": "11066411",
+      "name": "general-contractor",
+      "font_class": "general-contractor",
+      "unicode": "e685",
+      "unicode_decimal": 59013
+    },
+    {
+      "icon_id": "11066412",
+      "name": "compass",
+      "font_class": "compass",
+      "unicode": "e686",
+      "unicode_decimal": 59014
+    },
+    {
+      "icon_id": "11066413",
+      "name": "gym",
+      "font_class": "gym",
+      "unicode": "e687",
+      "unicode_decimal": 59015
+    },
+    {
+      "icon_id": "11066414",
+      "name": "funeral-home",
+      "font_class": "funeral-home",
+      "unicode": "e688",
+      "unicode_decimal": 59016
+    },
+    {
+      "icon_id": "11066415",
+      "name": "grocery-or-supermarket",
+      "font_class": "grocery-or-supermarket",
+      "unicode": "e68b",
+      "unicode_decimal": 59019
+    },
+    {
+      "icon_id": "11066416",
+      "name": "cross-country-skiing",
+      "font_class": "cross-country-skiing",
+      "unicode": "e68c",
+      "unicode_decimal": 59020
+    },
+    {
+      "icon_id": "11066417",
+      "name": "hardware-store",
+      "font_class": "hardware-store",
+      "unicode": "e68d",
+      "unicode_decimal": 59021
+    },
+    {
+      "icon_id": "11066418",
+      "name": "car-wash",
+      "font_class": "car-wash",
+      "unicode": "e68e",
+      "unicode_decimal": 59022
+    },
+    {
+      "icon_id": "11066419",
+      "name": "food",
+      "font_class": "food",
+      "unicode": "e68f",
+      "unicode_decimal": 59023
+    },
+    {
+      "icon_id": "11066420",
+      "name": "hair-care",
+      "font_class": "hair-care",
+      "unicode": "e690",
+      "unicode_decimal": 59024
+    },
+    {
+      "icon_id": "11066421",
+      "name": "department-store",
+      "font_class": "department-store",
+      "unicode": "e692",
+      "unicode_decimal": 59026
+    },
+    {
+      "icon_id": "11066422",
+      "name": "diving",
+      "font_class": "diving",
+      "unicode": "e693",
+      "unicode_decimal": 59027
+    },
+    {
+      "icon_id": "11066423",
+      "name": "ice-skating",
+      "font_class": "ice-skating",
+      "unicode": "e694",
+      "unicode_decimal": 59028
+    },
+    {
+      "icon_id": "11066424",
+      "name": "car-rental",
+      "font_class": "car-rental",
+      "unicode": "e698",
+      "unicode_decimal": 59032
+    },
+    {
+      "icon_id": "11066425",
+      "name": "hospital",
+      "font_class": "hospital",
+      "unicode": "e699",
+      "unicode_decimal": 59033
+    },
+    {
+      "icon_id": "11066426",
+      "name": "health",
+      "font_class": "health",
+      "unicode": "e69a",
+      "unicode_decimal": 59034
+    },
+    {
+      "icon_id": "11066427",
+      "name": "church",
+      "font_class": "church",
+      "unicode": "e69d",
+      "unicode_decimal": 59037
+    },
+    {
+      "icon_id": "11066428",
+      "name": "laundry",
+      "font_class": "laundry",
+      "unicode": "e69e",
+      "unicode_decimal": 59038
+    },
+    {
+      "icon_id": "11066429",
+      "name": "hang-gliding",
+      "font_class": "hang-gliding",
+      "unicode": "e69f",
+      "unicode_decimal": 59039
+    },
+    {
+      "icon_id": "11066430",
+      "name": "liquor-store",
+      "font_class": "liquor-store",
+      "unicode": "e6a0",
+      "unicode_decimal": 59040
+    },
+    {
+      "icon_id": "11066431",
+      "name": "postal-code",
+      "font_class": "postal-code",
+      "unicode": "e6a1",
+      "unicode_decimal": 59041
+    },
+    {
+      "icon_id": "11066432",
+      "name": "fishing-pier",
+      "font_class": "fishing-pier",
+      "unicode": "e6a2",
+      "unicode_decimal": 59042
+    },
+    {
+      "icon_id": "11066433",
+      "name": "fullscreen",
+      "font_class": "fullscreen1",
+      "unicode": "e6a4",
+      "unicode_decimal": 59044
+    },
+    {
+      "icon_id": "11066434",
+      "name": "school",
+      "font_class": "school",
+      "unicode": "e6a5",
+      "unicode_decimal": 59045
+    },
+    {
+      "icon_id": "11066435",
+      "name": "city-hall",
+      "font_class": "city-hall",
+      "unicode": "e6a8",
+      "unicode_decimal": 59048
+    },
+    {
+      "icon_id": "11066436",
+      "name": "expand",
+      "font_class": "expand",
+      "unicode": "e6a9",
+      "unicode_decimal": 59049
+    },
+    {
+      "icon_id": "11066437",
+      "name": "male",
+      "font_class": "male",
+      "unicode": "e6aa",
+      "unicode_decimal": 59050
+    },
+    {
+      "icon_id": "11066438",
+      "name": "electrician",
+      "font_class": "electrician",
+      "unicode": "e6ab",
+      "unicode_decimal": 59051
+    },
+    {
+      "icon_id": "11066439",
+      "name": "ice-fishing",
+      "font_class": "ice-fishing",
+      "unicode": "e6ac",
+      "unicode_decimal": 59052
+    },
+    {
+      "icon_id": "11066440",
+      "name": "low-vision-access",
+      "font_class": "low-vision-access",
+      "unicode": "e6ae",
+      "unicode_decimal": 59054
+    },
+    {
+      "icon_id": "11066441",
+      "name": "sledding",
+      "font_class": "sledding",
+      "unicode": "e6b0",
+      "unicode_decimal": 59056
+    },
+    {
+      "icon_id": "11066442",
+      "name": "hindu-temple",
+      "font_class": "hindu-temple",
+      "unicode": "e6b3",
+      "unicode_decimal": 59059
+    },
+    {
+      "icon_id": "11066443",
+      "name": "insurance-agency",
+      "font_class": "insurance-agency",
+      "unicode": "e6b6",
+      "unicode_decimal": 59062
+    },
+    {
+      "icon_id": "11066444",
+      "name": "jet-skiing",
+      "font_class": "jet-skiing",
+      "unicode": "e6b7",
+      "unicode_decimal": 59063
+    },
+    {
+      "icon_id": "11066445",
+      "name": "inline-skating",
+      "font_class": "inline-skating",
+      "unicode": "e6b8",
+      "unicode_decimal": 59064
+    },
+    {
+      "icon_id": "11066446",
+      "name": "marina",
+      "font_class": "marina",
+      "unicode": "e6b9",
+      "unicode_decimal": 59065
+    },
+    {
+      "icon_id": "11066447",
+      "name": "closed-captioning",
+      "font_class": "closed-captioning",
+      "unicode": "e6ba",
+      "unicode_decimal": 59066
+    },
+    {
+      "icon_id": "11066448",
+      "name": "square",
+      "font_class": "square",
+      "unicode": "e6bb",
+      "unicode_decimal": 59067
+    },
+    {
+      "icon_id": "11066449",
+      "name": "fire-station",
+      "font_class": "fire-station",
+      "unicode": "e6bc",
+      "unicode_decimal": 59068
+    },
+    {
+      "icon_id": "11066450",
+      "name": "movie-rental",
+      "font_class": "movie-rental",
+      "unicode": "e6bd",
+      "unicode_decimal": 59069
+    },
+    {
+      "icon_id": "11066451",
+      "name": "crosshairs",
+      "font_class": "crosshairs",
+      "unicode": "e6be",
+      "unicode_decimal": 59070
+    },
+    {
+      "icon_id": "11066452",
+      "name": "mosque",
+      "font_class": "mosque",
+      "unicode": "e6bf",
+      "unicode_decimal": 59071
+    },
+    {
+      "icon_id": "11066453",
+      "name": "local-government",
+      "font_class": "local-government",
+      "unicode": "e6c0",
+      "unicode_decimal": 59072
+    },
+    {
+      "icon_id": "11066454",
+      "name": "pet-store",
+      "font_class": "pet-store",
+      "unicode": "e6c1",
+      "unicode_decimal": 59073
+    },
+    {
+      "icon_id": "11066455",
+      "name": "moving-company",
+      "font_class": "moving-company",
+      "unicode": "e6c2",
+      "unicode_decimal": 59074
+    },
+    {
+      "icon_id": "11066456",
+      "name": "embassy",
+      "font_class": "embassy",
+      "unicode": "e6c3",
+      "unicode_decimal": 59075
+    },
+    {
+      "icon_id": "11066457",
+      "name": "night-club",
+      "font_class": "night-club",
+      "unicode": "e6c4",
+      "unicode_decimal": 59076
+    },
+    {
+      "icon_id": "11066458",
+      "name": "kayaking",
+      "font_class": "kayaking",
+      "unicode": "e6c5",
+      "unicode_decimal": 59077
+    },
+    {
+      "icon_id": "11066459",
+      "name": "locksmith",
+      "font_class": "locksmith",
+      "unicode": "e6c6",
+      "unicode_decimal": 59078
+    },
+    {
+      "icon_id": "11066460",
+      "name": "movie-theater",
+      "font_class": "movie-theater",
+      "unicode": "e6c8",
+      "unicode_decimal": 59080
+    },
+    {
+      "icon_id": "11066461",
+      "name": "real-estate-agency",
+      "font_class": "real-estate-agency",
+      "unicode": "e6c9",
+      "unicode_decimal": 59081
+    },
+    {
+      "icon_id": "11066462",
+      "name": "point-of-interest",
+      "font_class": "point-of-interest",
+      "unicode": "e6ca",
+      "unicode_decimal": 59082
+    },
+    {
+      "icon_id": "11066463",
+      "name": "natural-feature",
+      "font_class": "natural-feature",
+      "unicode": "e6cc",
+      "unicode_decimal": 59084
+    },
+    {
+      "icon_id": "11066464",
+      "name": "library",
+      "font_class": "library",
+      "unicode": "e6cd",
+      "unicode_decimal": 59085
+    },
+    {
+      "icon_id": "11066465",
+      "name": "subway-station",
+      "font_class": "subway-station",
+      "unicode": "e6ce",
+      "unicode_decimal": 59086
+    },
+    {
+      "icon_id": "11066466",
+      "name": "jewelry-store",
+      "font_class": "jewelry-store",
+      "unicode": "e6cf",
+      "unicode_decimal": 59087
+    },
+    {
+      "icon_id": "11066467",
+      "name": "roofing-contractor",
+      "font_class": "roofing-contractor",
+      "unicode": "e6d0",
+      "unicode_decimal": 59088
+    },
+    {
+      "icon_id": "11066468",
+      "name": "post-office",
+      "font_class": "post-office",
+      "unicode": "e6d2",
+      "unicode_decimal": 59090
+    },
+    {
+      "icon_id": "11066469",
+      "name": "finance",
+      "font_class": "finance",
+      "unicode": "e6d3",
+      "unicode_decimal": 59091
+    },
+    {
+      "icon_id": "11066470",
+      "name": "museum",
+      "font_class": "museum",
+      "unicode": "e6d4",
+      "unicode_decimal": 59092
+    },
+    {
+      "icon_id": "11066471",
+      "name": "route-pin",
+      "font_class": "route-pin",
+      "unicode": "e6d5",
+      "unicode_decimal": 59093
+    },
+    {
+      "icon_id": "11066472",
+      "name": "synagogue",
+      "font_class": "synagogue",
+      "unicode": "e6d6",
+      "unicode_decimal": 59094
+    },
+    {
+      "icon_id": "11066473",
+      "name": "place-of-worship",
+      "font_class": "place-of-worship",
+      "unicode": "e6d7",
+      "unicode_decimal": 59095
+    },
+    {
+      "icon_id": "11066474",
+      "name": "political",
+      "font_class": "political",
+      "unicode": "e6d8",
+      "unicode_decimal": 59096
+    },
+    {
+      "icon_id": "11066475",
+      "name": "furniture-store",
+      "font_class": "furniture-store",
+      "unicode": "e6d9",
+      "unicode_decimal": 59097
+    },
+    {
+      "icon_id": "11066476",
+      "name": "sheild",
+      "font_class": "sheild",
+      "unicode": "e6da",
+      "unicode_decimal": 59098
+    },
+    {
+      "icon_id": "11066477",
+      "name": "search",
+      "font_class": "search1",
+      "unicode": "e6db",
+      "unicode_decimal": 59099
+    },
+    {
+      "icon_id": "11066478",
+      "name": "lodging",
+      "font_class": "lodging",
+      "unicode": "e6dc",
+      "unicode_decimal": 59100
+    },
+    {
+      "icon_id": "11066479",
+      "name": "location-arrow",
+      "font_class": "location-arrow",
+      "unicode": "e6dd",
+      "unicode_decimal": 59101
+    },
+    {
+      "icon_id": "11066480",
+      "name": "route",
+      "font_class": "route",
+      "unicode": "e6de",
+      "unicode_decimal": 59102
+    },
+    {
+      "icon_id": "11066481",
+      "name": "unisex",
+      "font_class": "unisex",
+      "unicode": "e6df",
+      "unicode_decimal": 59103
+    },
+    {
+      "icon_id": "11066482",
+      "name": "physiotherapist",
+      "font_class": "physiotherapist",
+      "unicode": "e6e0",
+      "unicode_decimal": 59104
+    },
+    {
+      "icon_id": "11066483",
+      "name": "snowmobile",
+      "font_class": "snowmobile",
+      "unicode": "e6e1",
+      "unicode_decimal": 59105
+    },
+    {
+      "icon_id": "11066484",
+      "name": "volume-control-telephone",
+      "font_class": "volume-control-telephone",
+      "unicode": "e6e4",
+      "unicode_decimal": 59108
+    },
+    {
+      "icon_id": "11066485",
+      "name": "post-box",
+      "font_class": "post-box",
+      "unicode": "e6e5",
+      "unicode_decimal": 59109
+    },
+    {
+      "icon_id": "11066486",
+      "name": "wheelchair",
+      "font_class": "wheelchair",
+      "unicode": "e6e6",
+      "unicode_decimal": 59110
+    },
+    {
+      "icon_id": "11066487",
+      "name": "toilet",
+      "font_class": "toilet",
+      "unicode": "e6e7",
+      "unicode_decimal": 59111
+    },
+    {
+      "icon_id": "11066488",
+      "name": "accounting",
+      "font_class": "accounting",
+      "unicode": "e6e8",
+      "unicode_decimal": 59112
+    },
+    {
+      "icon_id": "11066489",
+      "name": "ski-jumping",
+      "font_class": "ski-jumping",
+      "unicode": "e6e9",
+      "unicode_decimal": 59113
+    },
+    {
+      "icon_id": "11066490",
+      "name": "sailing",
+      "font_class": "sailing",
+      "unicode": "e6ea",
+      "unicode_decimal": 59114
+    },
+    {
+      "icon_id": "11066491",
+      "name": "stadium",
+      "font_class": "stadium",
+      "unicode": "e6eb",
+      "unicode_decimal": 59115
+    },
+    {
+      "icon_id": "11066492",
+      "name": "chairlift",
+      "font_class": "chairlift",
+      "unicode": "e6ec",
+      "unicode_decimal": 59116
+    },
+    {
+      "icon_id": "11066493",
+      "name": "surfing",
+      "font_class": "surfing",
+      "unicode": "e6ed",
+      "unicode_decimal": 59117
+    },
+    {
+      "icon_id": "11066494",
+      "name": "gas-station",
+      "font_class": "gas-station",
+      "unicode": "e6ee",
+      "unicode_decimal": 59118
+    },
+    {
+      "icon_id": "11066495",
+      "name": "airport",
+      "font_class": "airport",
+      "unicode": "e6ef",
+      "unicode_decimal": 59119
+    },
+    {
+      "icon_id": "11066496",
+      "name": "scuba-diving",
+      "font_class": "scuba-diving",
+      "unicode": "e6f1",
+      "unicode_decimal": 59121
+    },
+    {
+      "icon_id": "11066497",
+      "name": "restaurant",
+      "font_class": "restaurant",
+      "unicode": "e6f2",
+      "unicode_decimal": 59122
+    },
+    {
+      "icon_id": "11066498",
+      "name": "snowboarding",
+      "font_class": "snowboarding",
+      "unicode": "e6f3",
+      "unicode_decimal": 59123
+    },
+    {
+      "icon_id": "11066499",
+      "name": "open-captioning",
+      "font_class": "open-captioning",
+      "unicode": "e6f4",
+      "unicode_decimal": 59124
+    },
+    {
+      "icon_id": "11066500",
+      "name": "skateboarding",
+      "font_class": "skateboarding",
+      "unicode": "e6f5",
+      "unicode_decimal": 59125
+    },
+    {
+      "icon_id": "11066501",
+      "name": "archery",
+      "font_class": "archery",
+      "unicode": "e6f7",
+      "unicode_decimal": 59127
+    },
+    {
+      "icon_id": "11066502",
+      "name": "spa",
+      "font_class": "spa",
+      "unicode": "e6f8",
+      "unicode_decimal": 59128
+    },
+    {
+      "icon_id": "11066503",
+      "name": "square-rounded",
+      "font_class": "square-rounded",
+      "unicode": "e6f9",
+      "unicode_decimal": 59129
+    },
+    {
+      "icon_id": "11066504",
+      "name": "swimming",
+      "font_class": "swimming",
+      "unicode": "e6fa",
+      "unicode_decimal": 59130
+    },
+    {
+      "icon_id": "11066505",
+      "name": "zoom-out-alt",
+      "font_class": "zoom-out-alt",
+      "unicode": "e6fb",
+      "unicode_decimal": 59131
+    },
+    {
+      "icon_id": "11066506",
+      "name": "parking",
+      "font_class": "parking",
+      "unicode": "e6fc",
+      "unicode_decimal": 59132
+    },
+    {
+      "icon_id": "11066507",
+      "name": "pharmacy",
+      "font_class": "pharmacy",
+      "unicode": "e6fd",
+      "unicode_decimal": 59133
+    },
+    {
+      "icon_id": "11066508",
+      "name": "playground",
+      "font_class": "playground",
+      "unicode": "e6fe",
+      "unicode_decimal": 59134
+    },
+    {
+      "icon_id": "11066509",
+      "name": "clothing-store",
+      "font_class": "clothing-store",
+      "unicode": "e6ff",
+      "unicode_decimal": 59135
+    },
+    {
+      "icon_id": "11066510",
+      "name": "abseiling",
+      "font_class": "abseiling",
+      "unicode": "e701",
+      "unicode_decimal": 59137
+    },
+    {
+      "icon_id": "11066511",
+      "name": "plumber",
+      "font_class": "plumber",
+      "unicode": "e703",
+      "unicode_decimal": 59139
+    },
+    {
+      "icon_id": "11066512",
+      "name": "taxi-stand",
+      "font_class": "taxi-stand",
+      "unicode": "e704",
+      "unicode_decimal": 59140
+    },
+    {
+      "icon_id": "11066513",
+      "name": "travel-agency",
+      "font_class": "travel-agency",
+      "unicode": "e705",
+      "unicode_decimal": 59141
+    },
+    {
+      "icon_id": "11066514",
+      "name": "wind-surfing",
+      "font_class": "wind-surfing",
+      "unicode": "e706",
+      "unicode_decimal": 59142
+    },
+    {
+      "icon_id": "11066515",
+      "name": "veterinary-care",
+      "font_class": "veterinary-care",
+      "unicode": "e707",
+      "unicode_decimal": 59143
+    },
+    {
+      "icon_id": "11066516",
+      "name": "police",
+      "font_class": "police",
+      "unicode": "e708",
+      "unicode_decimal": 59144
+    },
+    {
+      "icon_id": "11066517",
+      "name": "zoom-in-alt",
+      "font_class": "zoom-in-alt",
+      "unicode": "e709",
+      "unicode_decimal": 59145
+    },
+    {
+      "icon_id": "11066518",
+      "name": "postal-code-prefix",
+      "font_class": "postal-code-prefix",
+      "unicode": "e70a",
+      "unicode_decimal": 59146
+    },
+    {
+      "icon_id": "11066519",
+      "name": "painter",
+      "font_class": "painter",
+      "unicode": "e70b",
+      "unicode_decimal": 59147
+    },
+    {
+      "icon_id": "11066520",
+      "name": "waterskiing",
+      "font_class": "waterskiing",
+      "unicode": "e70c",
+      "unicode_decimal": 59148
+    },
+    {
+      "icon_id": "11066521",
+      "name": "amusement-park",
+      "font_class": "amusement-park",
+      "unicode": "e70d",
+      "unicode_decimal": 59149
+    },
+    {
+      "icon_id": "11066522",
+      "name": "zoom-out",
+      "font_class": "zoom-out1",
+      "unicode": "e70f",
+      "unicode_decimal": 59151
+    },
+    {
+      "icon_id": "11066523",
+      "name": "rv-park",
+      "font_class": "rv-park",
+      "unicode": "e710",
+      "unicode_decimal": 59152
+    },
+    {
+      "icon_id": "11066524",
+      "name": "snow-shoeing",
+      "font_class": "snow-shoeing",
+      "unicode": "e711",
+      "unicode_decimal": 59153
+    },
+    {
+      "icon_id": "11066525",
+      "name": "sign-language",
+      "font_class": "sign-language",
+      "unicode": "e712",
+      "unicode_decimal": 59154
+    },
+    {
+      "icon_id": "11066526",
+      "name": "tennis",
+      "font_class": "tennis",
+      "unicode": "e713",
+      "unicode_decimal": 59155
+    },
+    {
+      "icon_id": "11066527",
+      "name": "skiing",
+      "font_class": "skiing",
+      "unicode": "e714",
+      "unicode_decimal": 59156
+    },
+    {
+      "icon_id": "11066528",
+      "name": "lawyer",
+      "font_class": "lawyer",
+      "unicode": "e715",
+      "unicode_decimal": 59157
+    },
+    {
+      "icon_id": "11066529",
+      "name": "square-pin",
+      "font_class": "square-pin",
+      "unicode": "e716",
+      "unicode_decimal": 59158
+    },
+    {
+      "icon_id": "11066530",
+      "name": "atm",
+      "font_class": "atm",
+      "unicode": "e717",
+      "unicode_decimal": 59159
+    },
+    {
+      "icon_id": "11066531",
+      "name": "store",
+      "font_class": "store",
+      "unicode": "e718",
+      "unicode_decimal": 59160
+    },
+    {
+      "icon_id": "11066532",
+      "name": "transit-station",
+      "font_class": "transit-station",
+      "unicode": "e719",
+      "unicode_decimal": 59161
+    },
+    {
+      "icon_id": "11066533",
+      "name": "snow",
+      "font_class": "snow",
+      "unicode": "e71a",
+      "unicode_decimal": 59162
+    },
+    {
+      "icon_id": "11066534",
+      "name": "map-pin",
+      "font_class": "map-pin",
+      "unicode": "e71d",
+      "unicode_decimal": 59165
+    },
+    {
+      "icon_id": "11066535",
+      "name": "university",
+      "font_class": "university",
+      "unicode": "e71e",
+      "unicode_decimal": 59166
+    },
+    {
+      "icon_id": "11066536",
+      "name": "storage",
+      "font_class": "storage",
+      "unicode": "e71f",
+      "unicode_decimal": 59167
+    },
+    {
+      "icon_id": "11066537",
+      "name": "train-station",
+      "font_class": "train-station",
+      "unicode": "e720",
+      "unicode_decimal": 59168
+    },
+    {
+      "icon_id": "11066538",
+      "name": "aquarium",
+      "font_class": "aquarium",
+      "unicode": "e721",
+      "unicode_decimal": 59169
+    },
+    {
+      "icon_id": "11066539",
+      "name": "park",
+      "font_class": "park",
+      "unicode": "e722",
+      "unicode_decimal": 59170
+    },
+    {
+      "icon_id": "11066540",
+      "name": "zoo",
+      "font_class": "zoo",
+      "unicode": "e723",
+      "unicode_decimal": 59171
+    },
+    {
+      "icon_id": "11066541",
+      "name": "assistive-listening-system",
+      "font_class": "assistive-listening-system",
+      "unicode": "e724",
+      "unicode_decimal": 59172
+    },
+    {
+      "icon_id": "11066542",
+      "name": "rafting",
+      "font_class": "rafting",
+      "unicode": "e725",
+      "unicode_decimal": 59173
+    },
+    {
+      "icon_id": "11066543",
+      "name": "whale-watching",
+      "font_class": "whale-watching",
+      "unicode": "e726",
+      "unicode_decimal": 59174
+    },
+    {
+      "icon_id": "11066544",
+      "name": "shopping-mall",
+      "font_class": "shopping-mall",
+      "unicode": "e728",
+      "unicode_decimal": 59176
+    },
+    {
+      "icon_id": "11066545",
+      "name": "zoom-in",
+      "font_class": "zoom-in1",
+      "unicode": "e729",
+      "unicode_decimal": 59177
+    },
+    {
+      "icon_id": "11066546",
+      "name": "art-gallery",
+      "font_class": "art-gallery",
+      "unicode": "e72a",
+      "unicode_decimal": 59178
+    },
+    {
+      "icon_id": "11339236",
+      "name": "地图",
+      "font_class": "builder-logo",
+      "unicode": "e72b",
+      "unicode_decimal": 59179
+    },
+    {
+      "icon_id": "5068613",
+      "name": "流程单-秧田",
+      "font_class": "builder-shuitian",
+      "unicode": "e7df",
+      "unicode_decimal": 59359
+    },
+    {
+      "icon_id": "5466860",
+      "name": "田间管理",
+      "font_class": "builder-chayuan",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "7330134",
+      "name": "码头",
+      "font_class": "builder-matou",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    },
+    {
+      "icon_id": "2116699",
+      "name": "河流面",
+      "font_class": "builder-heliu",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    },
+    {
+      "icon_id": "6417457",
+      "name": "圆形",
+      "font_class": "builder-yuanxing",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "11125623",
+      "name": "首页",
+      "font_class": "builder-shouye",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "11125624",
+      "name": "分类",
+      "font_class": "builder-fenlei",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "11125628",
+      "name": "会员",
+      "font_class": "builder-yonghu",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "11125629",
+      "name": "客服",
+      "font_class": "builder-kefu",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "444324",
+      "name": "商务 购买 钱 羊",
+      "font_class": "builder-shangwu",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "1090229",
+      "name": "宅基地",
+      "font_class": "builder-zhaijidi",
+      "unicode": "e8af",
+      "unicode_decimal": 59567
+    },
+    {
+      "icon_id": "6353940",
+      "name": "五角星",
+      "font_class": "builder-wujiaoxing",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "6763805",
+      "name": "监狱",
+      "font_class": "builder-jianyu",
+      "unicode": "e676",
+      "unicode_decimal": 58998
+    },
+    {
+      "icon_id": "10198201",
+      "name": "警局",
+      "font_class": "builder-jingju",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "14673",
+      "name": "红旗",
+      "font_class": "builder-hongqi",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "166696",
+      "name": "运动",
+      "font_class": "builder-yundong",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "675161",
+      "name": "医院",
+      "font_class": "builder-yiyuan",
+      "unicode": "e6b5",
+      "unicode_decimal": 59061
+    },
+    {
+      "icon_id": "1128716",
+      "name": "方形",
+      "font_class": "fangxing",
+      "unicode": "e6e3",
+      "unicode_decimal": 59107
+    },
+    {
+      "icon_id": "1152449",
+      "name": "住宿",
+      "font_class": "builder-zhusu",
+      "unicode": "e6cb",
+      "unicode_decimal": 59083
+    },
+    {
+      "icon_id": "1793810",
+      "name": "电影院",
+      "font_class": "builder-dianyingyuan",
+      "unicode": "e64d",
+      "unicode_decimal": 58957
+    },
+    {
+      "icon_id": "1976152",
+      "name": "停车场",
+      "font_class": "builder-tingchechang",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "2780518",
+      "name": "菱形",
+      "font_class": "builder-lingxing",
+      "unicode": "e6ad",
+      "unicode_decimal": 59053
+    },
+    {
+      "icon_id": "2805693",
+      "name": "宗教",
+      "font_class": "builder-zongjiao",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "2944861",
+      "name": "林地",
+      "font_class": "builder-lindi",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "3305144",
+      "name": "商场",
+      "font_class": "builder-shangchang",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "3426115",
+      "name": "公共汽车站场",
+      "font_class": "builder-gonggongqichezhan",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "3434710",
+      "name": "三角形",
+      "font_class": "builder-sanjiaoxing",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "4289695",
+      "name": "大学",
+      "font_class": "builder-daxue",
+      "unicode": "e689",
+      "unicode_decimal": 59017
+    },
+    {
+      "icon_id": "4361803",
+      "name": "我的果园",
+      "font_class": "builder-guoyuan",
+      "unicode": "e67e",
+      "unicode_decimal": 59006
+    },
+    {
+      "icon_id": "5102834",
+      "name": "机关行政",
+      "font_class": "builder-xingzhengjiguan",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "5179689",
+      "name": "村庄",
+      "font_class": "builder-cunzhuang",
+      "unicode": "e739",
+      "unicode_decimal": 59193
+    },
+    {
+      "icon_id": "5598195",
+      "name": "加油站",
+      "font_class": "builder-jiayouzhan",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "5811049",
+      "name": "火车",
+      "font_class": "builder-huochezhan",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "6132125",
+      "name": "军事",
+      "font_class": "builder-junshijidi",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "6207095",
+      "name": "飞机",
+      "font_class": "builder-feijichang",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "6539196",
+      "name": "动物园3",
+      "font_class": "builder-dongwuyuan",
+      "unicode": "e6c7",
+      "unicode_decimal": 59079
+    },
+    {
+      "icon_id": "6575590",
+      "name": "银行",
+      "font_class": "builder-yinhang",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "6735776",
+      "name": "公园",
+      "font_class": "builder-gongyuan",
+      "unicode": "e71c",
+      "unicode_decimal": 59164
+    },
+    {
+      "icon_id": "6869152",
+      "name": "厕所",
+      "font_class": "builder-cesuo",
+      "unicode": "e6f6",
+      "unicode_decimal": 59126
+    },
+    {
+      "icon_id": "7110966",
+      "name": "指南针",
+      "font_class": "builder-zhinanzhen",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
+      "icon_id": "7330059",
+      "name": "出租车",
+      "font_class": "builder-chuzuche",
+      "unicode": "eac9",
+      "unicode_decimal": 60105
+    },
+    {
+      "icon_id": "7352374",
+      "name": "乡镇",
+      "font_class": "builder-xiangzhen",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "7474405",
+      "name": "沼泽地",
+      "font_class": "zhaozedi",
+      "unicode": "e652",
+      "unicode_decimal": 58962
+    },
+    {
+      "icon_id": "7774321",
+      "name": "沟渠-01",
+      "font_class": "builder-gouqu",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "7911457",
+      "name": "草地",
+      "font_class": "builder-caodi",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
+      "icon_id": "8624859",
+      "name": "风景",
+      "font_class": "builder-fengjing",
+      "unicode": "e81f",
+      "unicode_decimal": 59423
+    },
+    {
+      "icon_id": "8928444",
+      "name": "死亡殡葬",
+      "font_class": "builder-binzang",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
+      "icon_id": "9170409",
+      "name": "电话咨询 话务综合管理#bl",
+      "font_class": "builder-dianhua",
+      "unicode": "e660",
+      "unicode_decimal": 58976
+    },
+    {
+      "icon_id": "9244393",
+      "name": "使馆",
+      "font_class": "builder-shengzhengfu",
+      "unicode": "e663",
+      "unicode_decimal": 58979
+    },
+    {
+      "icon_id": "9293951",
+      "name": "工业",
+      "font_class": "builder-gongye",
+      "unicode": "e664",
+      "unicode_decimal": 58980
+    },
+    {
+      "icon_id": "9296965",
+      "name": "开采矿产",
+      "font_class": "builder-caikuang",
+      "unicode": "e665",
+      "unicode_decimal": 58981
+    },
+    {
+      "icon_id": "9522917",
+      "name": "水库",
+      "font_class": "builder-shuiku",
+      "unicode": "e75f",
+      "unicode_decimal": 59231
+    },
+    {
+      "icon_id": "9683894",
+      "name": "港口",
+      "font_class": "builder-gangkou",
+      "unicode": "e667",
+      "unicode_decimal": 58983
+    },
+    {
+      "icon_id": "9726654",
+      "name": "湖泊",
+      "font_class": "builder-hupo",
+      "unicode": "e66b",
+      "unicode_decimal": 58987
+    },
+    {
+      "icon_id": "9966987",
+      "name": "点",
+      "font_class": "builder-biaoji",
+      "unicode": "e66d",
+      "unicode_decimal": 58989
+    },
+    {
+      "icon_id": "10048033",
+      "name": "餐饮 (1)",
+      "font_class": "builder-canyin",
+      "unicode": "e66f",
+      "unicode_decimal": 58991
+    },
+    {
+      "icon_id": "10159234",
+      "name": "消防",
+      "font_class": "builder-xiaofang",
+      "unicode": "e671",
+      "unicode_decimal": 58993
+    },
+    {
+      "icon_id": "10317037",
+      "name": "出版年",
+      "font_class": "builder-chubanshe",
+      "unicode": "e677",
+      "unicode_decimal": 58999
+    },
+    {
+      "icon_id": "10337394",
+      "name": "滩涂",
+      "font_class": "builder-tantu",
+      "unicode": "e679",
+      "unicode_decimal": 59001
+    },
+    {
+      "icon_id": "10526426",
+      "name": "大厦",
+      "font_class": "builder-dasha",
+      "unicode": "e67a",
+      "unicode_decimal": 59002
+    },
+    {
+      "icon_id": "10796812",
+      "name": "要素-公路隧道",
+      "font_class": "builder-suidao",
+      "unicode": "e67b",
+      "unicode_decimal": 59003
+    },
+    {
+      "icon_id": "10480261",
+      "name": "散点图",
+      "font_class": "shape-point",
+      "unicode": "e927",
+      "unicode_decimal": 59687
+    },
+    {
+      "icon_id": "430840",
+      "name": "节点-子流程",
+      "font_class": "shape-line",
+      "unicode": "e6e2",
+      "unicode_decimal": 59106
+    },
+    {
+      "icon_id": "1770137",
+      "name": "线框",
+      "font_class": "shape-polygon",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    },
+    {
+      "icon_id": "7459949",
+      "name": "散点",
+      "font_class": "shape-point-old",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "7239814",
+      "name": "menu-unfold",
+      "font_class": "menu-unfold",
+      "unicode": "e73f",
+      "unicode_decimal": 59199
+    },
+    {
+      "icon_id": "5950878",
+      "name": "转发-面",
+      "font_class": "transmit",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "7239816",
+      "name": "menu-fold",
+      "font_class": "menu-fold",
+      "unicode": "e73e",
+      "unicode_decimal": 59198
+    },
+    {
+      "icon_id": "9567060",
+      "name": "save-2-line",
+      "font_class": "save",
+      "unicode": "e8e0",
+      "unicode_decimal": 59616
+    },
+    {
+      "icon_id": "6049543",
+      "name": "user2",
+      "font_class": "user",
+      "unicode": "e68a",
+      "unicode_decimal": 59018
+    },
+    {
+      "icon_id": "587102",
+      "name": "setting",
+      "font_class": "setting",
+      "unicode": "e7f6",
+      "unicode_decimal": 59382
+    },
+    {
+      "icon_id": "2170514",
+      "name": "用户",
+      "font_class": "user0",
+      "unicode": "e700",
+      "unicode_decimal": 59136
+    },
+    {
+      "icon_id": "1876347",
+      "name": "搜索",
+      "font_class": "search",
+      "unicode": "e678",
+      "unicode_decimal": 59000
+    },
+    {
+      "icon_id": "6239383",
+      "name": "ManagePaths",
+      "font_class": "manage-path",
+      "unicode": "e695",
+      "unicode_decimal": 59029
+    },
+    {
+      "icon_id": "7437226",
+      "name": "trajectory path",
+      "font_class": "compute-path",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "873476",
+      "name": "路径分析",
+      "font_class": "my-path",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "1898678",
+      "name": "database",
+      "font_class": "database",
+      "unicode": "e669",
+      "unicode_decimal": 58985
+    },
+    {
+      "icon_id": "5633859",
+      "name": "bookmark",
+      "font_class": "bookmark",
+      "unicode": "ef47",
+      "unicode_decimal": 61255
+    },
+    {
+      "icon_id": "209965",
+      "name": "面型图标1_涂鸦",
+      "font_class": "freedraw-0",
+      "unicode": "e94d",
+      "unicode_decimal": 59725
+    },
+    {
+      "icon_id": "3123896",
+      "name": "涂鸦",
+      "font_class": "freedraw-1",
+      "unicode": "e727",
+      "unicode_decimal": 59175
+    },
+    {
+      "icon_id": "1309152",
+      "name": "缩放,看,探索,查看,搜索,放大镜,优化,线性,扁平,填充,单色,简约,圆润",
+      "font_class": "filter",
+      "unicode": "e6b1",
+      "unicode_decimal": 59057
+    },
+    {
+      "icon_id": "129122",
+      "name": "plus",
+      "font_class": "plus",
+      "unicode": "e832",
+      "unicode_decimal": 59442
+    },
+    {
+      "icon_id": "142335",
+      "name": "minus",
+      "font_class": "minus",
+      "unicode": "e97c",
+      "unicode_decimal": 59772
+    },
+    {
+      "icon_id": "2777958",
+      "name": "D",
+      "font_class": "d",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "405257",
+      "name": "应急标绘",
+      "font_class": "plot",
+      "unicode": "e7bb",
+      "unicode_decimal": 59323
+    },
+    {
+      "icon_id": "1336664",
+      "name": "线标绘",
+      "font_class": "plot-line",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "1573955",
+      "name": "箭头",
+      "font_class": "plot-arrow-up",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "2132377",
+      "name": "箭头",
+      "font_class": "plot-arrow-down",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "2430315",
+      "name": "面标绘",
+      "font_class": "plot-fill",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "3145884",
+      "name": "shexiangtou",
+      "font_class": "camera",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "2591537",
+      "name": "长度",
+      "font_class": "measure-length",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "3218586",
+      "name": "面积",
+      "font_class": "measure-area",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "397070",
+      "name": "长度测量",
+      "font_class": "measure-length_bak",
+      "unicode": "e761",
+      "unicode_decimal": 59233
+    },
+    {
+      "icon_id": "1090207",
+      "name": "面积测量",
+      "font_class": "measure-area_bak",
+      "unicode": "e662",
+      "unicode_decimal": 58978
+    },
+    {
+      "icon_id": "785288",
+      "name": "定位",
+      "font_class": "set-location",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "2898156",
+      "name": "宽度扩展图",
+      "font_class": "search-light-length",
+      "unicode": "e674",
+      "unicode_decimal": 58996
+    },
+    {
+      "icon_id": "2975516",
+      "name": "icon_宽度",
+      "font_class": "search-light-lengthxx",
+      "unicode": "e672",
+      "unicode_decimal": 58994
+    },
+    {
+      "icon_id": "2178253",
+      "name": "灯标",
+      "font_class": "search-light",
+      "unicode": "e65e",
+      "unicode_decimal": 58974
+    },
+    {
+      "icon_id": "741131",
+      "name": "灯光指示",
+      "font_class": "search-lightxxx",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    },
+    {
+      "icon_id": "1479550",
+      "name": "地球",
+      "font_class": "globe",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "526399",
+      "name": "取消顶置",
+      "font_class": "clear-gotop",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "1816694",
+      "name": "置顶",
+      "font_class": "gotop",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "42813",
+      "name": "circle-hollow",
+      "font_class": "draw-circlemarker",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    },
+    {
+      "icon_id": "1918978",
+      "name": "显示",
+      "font_class": "show",
+      "unicode": "e697",
+      "unicode_decimal": 59031
+    },
+    {
+      "icon_id": "2963734",
+      "name": "不显示",
+      "font_class": "not-show",
+      "unicode": "e86a",
+      "unicode_decimal": 59498
+    },
+    {
+      "icon_id": "1067",
+      "name": "剪刀",
+      "font_class": "screen-shot",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "1167659",
+      "name": "剪刀",
+      "font_class": "screen-shot-old",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    },
+    {
+      "icon_id": "2881289",
+      "name": "zoomin",
+      "font_class": "zoomToLayer-copy",
+      "unicode": "e868",
+      "unicode_decimal": 59496
+    },
+    {
+      "icon_id": "3218340",
+      "name": "compare",
+      "font_class": "side-by-side-vertical",
+      "unicode": "e86b",
+      "unicode_decimal": 59499
+    },
+    {
+      "icon_id": "702194",
+      "name": "compare",
+      "font_class": "side-by-side",
+      "unicode": "e780",
+      "unicode_decimal": 59264
+    },
+    {
+      "icon_id": "767477",
+      "name": "框选",
+      "font_class": "region",
+      "unicode": "e673",
+      "unicode_decimal": 58995
+    },
+    {
+      "icon_id": "476294",
+      "name": "E",
+      "font_class": "e",
+      "unicode": "e696",
+      "unicode_decimal": 59030
+    },
+    {
+      "icon_id": "476314",
+      "name": "T",
+      "font_class": "t",
+      "unicode": "e6a7",
+      "unicode_decimal": 59047
+    },
+    {
+      "icon_id": "1927651",
+      "name": "皮肤",
+      "font_class": "change-skin",
+      "unicode": "e6a3",
+      "unicode_decimal": 59043
+    },
+    {
+      "icon_id": "1804805",
+      "name": "marker",
+      "font_class": "marker",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "512771",
+      "name": "line",
+      "font_class": "draw-polyline",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "881461",
+      "name": "rectangle",
+      "font_class": "draw-rectangle",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "23489",
+      "name": "圆形",
+      "font_class": "draw-circle",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "210293",
+      "name": "编辑",
+      "font_class": "draw-edit",
+      "unicode": "e69c",
+      "unicode_decimal": 59036
+    },
+    {
+      "icon_id": "399550",
+      "name": "多边形",
+      "font_class": "draw-polygon",
+      "unicode": "e78f",
+      "unicode_decimal": 59279
+    },
+    {
+      "icon_id": "680805",
+      "name": "垃圾桶_块",
+      "font_class": "draw-remove",
+      "unicode": "e6b2",
+      "unicode_decimal": 59058
+    },
+    {
+      "icon_id": "1162803",
+      "name": "标记",
+      "font_class": "draw-marker",
+      "unicode": "e6b4",
+      "unicode_decimal": 59060
+    },
+    {
+      "icon_id": "1804232",
+      "name": "分时对比－icon",
+      "font_class": "layer-compare",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "2067509",
+      "name": "edit",
+      "font_class": "edit",
+      "unicode": "e69b",
+      "unicode_decimal": 59035
+    },
+    {
+      "icon_id": "1193722",
+      "name": "edit-brush",
+      "font_class": "draw",
+      "unicode": "e83d",
+      "unicode_decimal": 59453
+    },
+    {
+      "icon_id": "130149",
+      "name": "paint-brush",
+      "font_class": "draw-old2",
+      "unicode": "e751",
+      "unicode_decimal": 59217
+    },
+    {
+      "icon_id": "1850632",
+      "name": "hand",
+      "font_class": "hand",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
+    },
+    {
+      "icon_id": "943304",
+      "name": "垃圾桶",
+      "font_class": "clearall",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "208461",
+      "name": "设置",
+      "font_class": "settingbar",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "1484626",
+      "name": "图例",
+      "font_class": "legend",
+      "unicode": "e670",
+      "unicode_decimal": 58992
+    },
+    {
+      "icon_id": "586873",
+      "name": "export-excel",
+      "font_class": "excel",
+      "unicode": "e71b",
+      "unicode_decimal": 59163
+    },
+    {
+      "icon_id": "1909105",
+      "name": "饼图",
+      "font_class": "pie",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "201902",
+      "name": "层_line",
+      "font_class": "layers-line",
+      "unicode": "e792",
+      "unicode_decimal": 59282
+    },
+    {
+      "icon_id": "1996535",
+      "name": "打印",
+      "font_class": "print",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "938714",
+      "name": "放大",
+      "font_class": "zoom-in",
+      "unicode": "e6af",
+      "unicode_decimal": 59055
+    },
+    {
+      "icon_id": "1396449",
+      "name": "缩小",
+      "font_class": "zoom-out",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "1038621",
+      "name": "高级查询",
+      "font_class": "advanced_search",
+      "unicode": "e6f0",
+      "unicode_decimal": 59120
+    },
+    {
+      "icon_id": "12836",
+      "name": "信息",
+      "font_class": "info-query",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "486865",
+      "name": "draw_click",
+      "font_class": "draw-old",
+      "unicode": "e7bf",
+      "unicode_decimal": 59327
+    },
+    {
+      "icon_id": "62029",
+      "name": "右箭头",
+      "font_class": "arrow-right",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "102466",
+      "name": "左箭头",
+      "font_class": "arrow-left",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "427827",
+      "name": "全图",
+      "font_class": "full-map",
+      "unicode": "e80d",
+      "unicode_decimal": 59405
+    },
+    {
+      "icon_id": "1362847",
+      "name": "hand",
+      "font_class": "hand-old",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "427764",
+      "name": "影响对比",
+      "font_class": "layer-compare-old",
+      "unicode": "e867",
+      "unicode_decimal": 59495
+    },
+    {
+      "icon_id": "1936914",
+      "name": "picture",
+      "font_class": "main-map",
+      "unicode": "e6d1",
+      "unicode_decimal": 59089
+    },
+    {
+      "icon_id": "396485",
+      "name": "复制",
+      "font_class": "copy",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "1548366",
+      "name": "粘贴",
+      "font_class": "paste",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "109109",
+      "name": "sync-green",
+      "font_class": "sync",
+      "unicode": "e691",
+      "unicode_decimal": 59025
+    },
+    {
+      "icon_id": "479549",
+      "name": "clear",
+      "font_class": "clear",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "737096",
+      "name": "sync-disabled",
+      "font_class": "sync-disabled",
+      "unicode": "e77d",
+      "unicode_decimal": 59261
+    },
+    {
+      "icon_id": "1751883",
+      "name": "full screen",
+      "font_class": "fullscreen",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "395225",
+      "name": "叠加分析",
+      "font_class": "overlay_analysis",
+      "unicode": "e675",
+      "unicode_decimal": 58997
+    },
+    {
+      "icon_id": "476313",
+      "name": "S",
+      "font_class": "s",
+      "unicode": "e6a6",
+      "unicode_decimal": 59046
+    },
+    {
+      "icon_id": "557133",
+      "name": "self-analysis",
+      "font_class": "overlay_analysis_4",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "646368",
+      "name": "iconfont-export",
+      "font_class": "import",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "794717",
+      "name": "iconfont-export",
+      "font_class": "export",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "1537423",
+      "name": "g",
+      "font_class": "g",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "1794280",
+      "name": "layers",
+      "font_class": "layers",
+      "unicode": "e66c",
+      "unicode_decimal": 58988
+    }
+  ]
+}

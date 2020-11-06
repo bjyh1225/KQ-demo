@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config custom="0">
+  <layers>
+    <layer query_id="1" src_name="source0" id="1" label="洪山区_行政区">
+      <list_fields>OID_,XZBM,FHDM,QSRQ,ZZRQ,BSM,YSDM,XZQDM,XZQMC,KZMJ,JSMJ,MSSM,BGRQ,SHAPE_AREA,SHAPE_LEN</list_fields>
+      <list_fields_alias>OID_,XZBM,FHDM,QSRQ,ZZRQ,BSM,YSDM,XZQDM,XZQMC,KZMJ,JSMJ,MSSM,BGRQ,SHAPE_AREA,SHAPE_LEN</list_fields_alias>
+      <fields>OID_,XZBM,FHDM,QSRQ,ZZRQ,BSM,YSDM,XZQDM,XZQMC,KZMJ,JSMJ,MSSM,BGRQ,SHAPE_AREA,SHAPE_LEN</fields>
+      <fields_alias>OID_,XZBM,FHDM,QSRQ,ZZRQ,BSM,YSDM,XZQDM,XZQMC,KZMJ,JSMJ,MSSM,BGRQ,SHAPE_AREA,SHAPE_LEN</fields_alias>
+      <chart_field>XZQMC</chart_field>
+      <summary_field>OID_</summary_field>
+      <expression></expression>
+      <server_type>kq</server_type>
+    </layer>
+  </layers>
+</config>

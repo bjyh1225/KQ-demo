@@ -1,0 +1,321 @@
+<div id="actionDiv" style="right:0px;top: 15px; position: absolute; height:38px; z-index:10001;">
+  <div  onclick="clickEvent('divshow')" class="actionbgimg" style="box-shadow: 0 1px 5px rgba(0,0,0,.65);width:20px;height:38px;float: left;border: solid 1px #14466B; border-top-left-radius: 3px;border-bottom-left-radius: 3px;cursor: pointer">
+    <img id="sszk" src="../../custom/menuoverwrite/image/ss.png" style="width: 20px;height:28px;float: left;margin-left:-1px;margin-top: 4px;">
+  </div>
+  <div id="tcgl" onclick="clickEvent('tcgl')" class="nav4">
+    <i class="icon iconfont icon-layers" style="color: #fff;padding-left:8px;line-height:35px;font-size:18px"></i>
+    <a href="#" style="padding-left:0px;padding-left:5px;">Layers</a>
+  </div>
+  <div id="gjcx" onclick="clickEvent('gjcx')" class="nav4">
+    <i class="icon iconfont icon-advanced_search" style="color: #fff;padding-left:8px;line-height:35px;font-size:18px"></i>
+    <a href="#" style="padding-left:0px;padding-left:5px;">Advance</a>
+  </div>
+  <div id="dzfx" onclick="clickEvent('dzfx')" class="nav4">
+    <i class="icon iconfont iconfont icon-overlay_analysis" style="color: #fff;padding-left:8px;line-height:35px;font-size:18px"></i>
+    <a href="#" style="padding-left:0px;padding-left:5px;">Overlay</a>
+  </div>
+
+  <div class="actionbgimg" style="height:38px;float: left;">
+    <ul class="nav2">
+      <li id="my" onclick="clickEvent('xxcx')">
+        <i class="icon iconfont icon-info-query" style="color: #fff;padding-left: 5px;margin-top: 8px;font-size:18px;float: left;"></i>
+        <a href="#" class="lia" style="padding-left:2px;">Query</a>
+        <img src="../../custom/menuoverwrite/image/fgx.png" style="float: right;padding-top:10px;margin-right: -1px">
+      </li>
+      <li id="my" onclick="clickEvent('my')">
+        <i class="icon iconfont icon-hand" style="color: #fff;padding-left: 5px;margin-top: 8px;font-size:18px;float: left;"></i>
+        <a href="#" class="lia" style="padding-left:2px;">Roam</a>
+        <img src="../../custom/menuoverwrite/image/fgx.png" style="float: right;padding-top:10px;margin-right: -1px">
+      </li>
+      <li id="ht" onclick="clickEvent('ht')">
+        <i class="icon iconfont iconfont icon-draw" style="color: #fff;padding-left:8px;line-height:35px;font-size:18px"></i>
+        <a href="#" class="lia" style="padding-left:2px;">Paint</a>
+        <img src="../../custom/menuoverwrite/image/fgx.png" style="float: right;padding-top:10px;margin-right: -1px">
+      </li>
+      <li id="tools" onclick="clickEvent('tools')" style="width: 90px">
+        <img src="../../custom/menuoverwrite/image/gj.png" style="width: 18px;height:18px;float: left;margin-left:8px;margin-top: 8px;">
+        <a href="#" class="lia" style="padding-left:4px;float: left;">Tools</a>
+        <img id="gj_img" src="../../custom/menuoverwrite/image/downIcon.png" style="width: 26px;height:26px;margin-left:1px;margin-top:6px;">
+        <ul id="tools_ul" class="sub-nav" style="left:0px;width:90px">
+          <li onclick="clickEvent('lkfd')" title="drop zoom in">
+            <i class="icon iconfont icon-zoom-in" style="color: #fff;padding-left: 11px;font-size:18px"></i>
+            <a href="#" style="padding-left:5px;">ZmIn</a>
+          </li>
+          <li onclick="clickEvent('lksx')" title="drop zoom out">
+            <i class="icon iconfont icon-zoom-out" style="color: #fff;padding-left: 11px;font-size:18px"></i>
+            <a href="#" style="padding-left:5px;">ZmOut</a>
+          </li>
+          <li onclick="clickEvent('dy')">
+            <img src="../../custom/menuoverwrite/image/dy.png" style="width: 24px;height:24px;float: left;margin-left:7px;margin-top: 6px;">
+            <a href="#" style="padding-left:6px;">Print</a>
+          </li>
+          <li onclick="clickEvent('jt')">
+            <img src="../../custom/menuoverwrite/image/jt.png" style="width: 22px;height:22px;float: left;margin-left:9px;margin-top: 8px;">
+            <a href="#" style="padding-left:6px;">ScrShot</a>
+          </li>
+          <li onclick="clickEvent('cjl')">
+            <img src="../../custom/menuoverwrite/image/cjl.png" style="width: 22px;height:22px;float: left;margin-left:8px;margin-top: 7px;">
+            <a href="#" style="padding-left:7px;">Length</a>
+          </li>
+          <li onclick="clickEvent('cmj')">
+            <img src="../../custom/menuoverwrite/image/cmj.png" style="width: 18px;height:18px;float: left;margin-left:11px;margin-top: 9px;">
+            <a href="#" style="padding-left:8px;">Area</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div id="right_bottom_action" onselectstart="return false" class="nav5">
+  <div class="leaflet-control-zoom leaflet-bar leaflet-control">
+    <a class="leaflet-control-zoom-in" style="font-size: 22px" href="#" title="Zoom-in" onclick="clickEvent('fd')">+</a>
+    <a class="leaflet-control-zoom-out" style="font-size: 22px" href="#" title="Zoom-out" onclick="clickEvent('sx')">−</a>
+    <a class="icon iconfont icon-full-map" href="#" title="Full map" onclick="clickEvent('qt')"></a>
+    <a class="icon iconfont icon-fullscreen" href="#" title="Full screen" onclick="clickEvent('qp')"></a>
+  </div>
+</div>
+
+
+<style type="text/css">
+
+  #actionDiv {
+    font-family: arial,sans-serif;
+  }
+
+  .actionbgimg{
+    background-image:url('../../custom/menuoverwrite/image/actionbgimg.png');
+    background-size:100% 100%;
+  }
+
+  .leaflet-bar a:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+  }
+
+  /* 添加边框阴影 */
+  .leaflet-bar {
+    box-shadow: 0 1px 5px rgba(0,0,0,.65) !important;
+  }
+
+  .leaflet-bar a:last-child {
+    border-bottom: none;
+  }
+
+  .nav2{background-image:url('../../custom/menuoverwrite/image/actionbgimg.png');list-style:none;height:38px;width:100%;margin:0 auto;font-size:13px;box-shadow: 0 1px 5px rgba(0,0,0,.65);}
+  .nav2 li:hover{background-image:url('../../custom/menuoverwrite/image/actionbgimg.png');background-size:100% 100%;/* 鼠标经过时的红色背景，可自定义 */}
+  .nav2 li a:hover{color:#2498bc;/* 鼠标经过时的红色背景，可自定义 */}
+  .nav2 li:hover .lia{ color:#2498bc;}
+  .nav2 li{float:left;position:relative;width:66px;height: 38px;}
+  .nav2 li a{text-decoration:none;color:#fff;height:38px;line-height:38px;padding-left:5px;blr:expression(this.onFocus=this.close());blr:expression(this.onFocus=this.blur());display:inline-block;}
+  .nav2 li a:focus{-moz-outline-style: none; }
+  .nav2 li .sub-nav{box-shadow: 0 1px 5px rgba(0,0,0,.65);position:absolute;top:38px;left:0px;list-style:none;background-image:url('../../custom/menuoverwrite/image/actionbgimg.png');background-size:100% 100%;border: solid 1px #14466B;display:none; }
+  .nav2 li .sub-nav li{clear:left;width:100%;height:35px;line-height:35px;position:relative;}
+  .nav2 li .sub-nav li a{height:34px;line-height:34px;padding:0;display:inline-block;font-weight: normal}
+  .nav2 li .sub-nav li:hover a{color:#2498bc;}
+  .nav2 li .sub-nav li:first-child:hover{ border-bottom: solid 1px #14466B;border-left:none;border-right: none;border-top:none}
+  .nav2 li .sub-nav li:hover{ border: solid 1px #14466B;border-left:none;border-right: none}
+  .nav2 li .sub-nav li:last-child:hover{ border-top: solid 1px #14466B;border-left:none;border-right: none;border-bottom:none}
+
+  .nav4{width:92px;height:38px;background-image:url('../../custom/menuoverwrite/image/actionbgimg.png');background-size:100% 100%;float: left;margin-right: 5px;box-shadow: 0 1px 5px rgba(0,0,0,.65);}
+  .nav4:hover{background-color: rgb(50,55,55);text-decoration-color: red}
+  .nav4 a{text-decoration:none;color:#fff;font-size: 13px;height:38px;line-height:38px;}
+  .nav4:hover a{color:#2498bc; }
+
+  .nav5{margin:0px auto;right:12px;bottom: 15px;z-index: 1000;position: absolute;}
+  .nav5 div a{background-image:url('../../custom/menuoverwrite/image/actionbgimg.png');background-size:100% 100%;width: 35px; height: 35px;line-height: 35px;font-size:16px;color:#fff}
+  .nav5 div a:hover{color:#2498bc;background-color: rgb(50,55,55);width: 35px; height: 35px;line-height: 35px;font-size:16px;}
+
+  /*::before, ::after {*/
+    /*vertical-align:initial;*/
+  /*}*/
+
+  /* 修改按钮居中 */
+  .leaflet-touch .leaflet-bar a {
+    line-height: 37px;
+  }
+
+  /* 修改全屏按钮居中 */
+  .nav5 div a.icon-full-map, .nav5 div a.icon-fullscreen {
+    line-height: 29px;
+  }
+
+  /*修改左侧tab边宽度为0，实现隐藏*/
+  .sidebar-left .sidebar-tabs, .sidebar-left .sidebar-tabs>ul{
+    width: 0px;
+  }
+
+  /* 修改left的位置由32px为0px，确保，右侧内容项占据整个div */
+  #map .sidebar-left .sidebar-content, #map sidebar-left .sidebar-content .sidebar-content-content {
+    left: 0px;
+    right: 0;
+  }
+
+
+  /* 收缩后宽度为0，确保靠边位置正确，设置box-shadow和border为none去掉边框阴影*/
+  .sidebar.collapsed {
+    width: 0px;
+    box-shadow: none;
+    border: none;
+  }
+
+  /* 缩放至的位置，由42px修改为0px，确保sidebar全部消失*/
+  .sidebar-left.collapsed ~ .sidebar-map .leaflet-left {
+    left: 0px;
+  }
+
+  .k-primary {
+    background: #052C61;
+  }
+
+  .k-primary:hover {
+    background: #0a4d85;
+  }
+
+</style>
+
+<script>
+
+
+  $(document).ready(function() {
+    setTimeout(function() {
+      var mapView = KQ.Control.Manager.getInstance().getMapView();
+      var sidebar = mapView.getSidebar();
+
+      var dd = $(document).find(".sidebar-close .fa-caret-left");
+      $(document).find(".fa-caret-left").attr('class', 'fa fa-close');
+
+      $(".sidebar-close .fa-caret-left").nextAll().attr('class', 'fa fa-close');
+    }, 500);
+  })
+
+  var tabname = "tcgl";
+  clickEvent = function(type) {
+    var mapView = KQ.Control.Manager.getInstance().getMapView();
+    var sidebar = mapView.getSidebar();
+
+    switch(type) {
+      case "tcgl":
+        var leftsidebar = $("#sidebar");
+        if (leftsidebar.css('width') == '0px') {
+          sidebar.open("layers");
+          leftsidebar.css('opacity', '0.2');
+          leftsidebar.animate({left:'10px', opacity: '1'}, 600);
+          tabname = 'tcgl';
+          break;
+        }
+        if (tabname == 'tcgl')
+          break;
+        leftsidebar.animate({left:'-310px',opacity:'0.2'}, 300, function() {
+          sidebar.open("layers");
+        });
+        leftsidebar.animate({left:'10px', opacity: '1'}, 300);
+        tabname = 'tcgl';
+        break;
+      case "gjcx":
+        var leftsidebar = $("#sidebar");
+        if (leftsidebar.css('width') == '0px') {
+          sidebar.open("advancedSearch");
+          leftsidebar.css('opacity', '0.2');
+          leftsidebar.animate({left: '10px', opacity: '1'}, 600);
+          tabname = 'gjcx';
+          break;
+        }
+        if (tabname == 'gjcx') {
+          break;
+        }
+        leftsidebar.animate({left:'-310px',opacity:'0.2'}, 300, function() {
+          sidebar.open("advancedSearch");
+        });
+        leftsidebar.animate({left:'10px', opacity: '1'}, 300);
+        tabname = 'gjcx';
+        break;
+      case "dzfx":
+        var leftsidebar = $("#sidebar");
+        if (leftsidebar.css('width') == '0px') {
+          sidebar.open("overlayAnalysis");
+          leftsidebar.css('opacity', '0.2');
+          leftsidebar.animate({left:'10px', opacity: '1'}, 600);
+          tabname = 'dzfx';
+          break;
+        }
+        if (tabname == 'dzfx') {
+          break;
+        }
+        leftsidebar.animate({left:'-310px',opacity:'0.2'}, 300, function() {
+          sidebar.open("overlayAnalysis");
+        });
+        leftsidebar.animate({left:'10px', opacity: '1'}, 300);
+        tabname = 'dzfx';
+        break;
+      case "tools":
+        var ul = $("#tools_ul");
+        var ds = $("#tools_ul").css('display');
+        var img = $("#gj_img");
+        if (ds && ds === 'block') {
+          ul.stop(true,true).slideUp(300);
+          img.attr("src", "../../custom/menuoverwrite/image/downIcon.png");
+        } else {
+          ul.stop(true,true).slideDown(300);
+          img.attr("src", "../../custom/menuoverwrite/image/upIcon.png");
+        }
+        break;
+      case "lkfd":
+        mapView.callApi("zoom_in");
+        break;
+      case "lksx":
+        mapView.callApi("zoom_out");
+        break;
+      case "dy":
+        mapView.callApi("print");
+        break;
+      case "jt":
+        mapView.callApi("screenshot");
+        break;
+      case "cjl":
+//        document.getElementsByClassName("icon-measure-length")[0].click();
+        var cjl = document.getElementsByClassName("icon-measure-length")[0];
+        mapView.callApi("measureseparate-length");
+        console.log('cjl: ', cjl);
+        break;
+      case 'cmj':
+        mapView.callApi("measureseparate-area");
+        break;
+      case 'fd':
+        mapView.callApi("zoom-in");
+        break;
+      case 'sx':
+        mapView.callApi("zoom-out");
+        break;
+      case 'qp':
+        mapView.callApi("fullscreen");
+        break;
+      case 'xxcx':
+        console.log('xxcx');
+        mapView.callApi("info-query");
+        break;
+      case "my":
+        console.log('roaming');
+        mapView.callApi("roaming");
+        break;
+      case "qt":
+        mapView.callApi("full-map");
+        break;
+      case "ht":
+        mapView.callApi("drawing");
+        break;
+      case "divshow":
+        var actionDiv = $("#actionDiv")
+        var width = document.body.clientWidth
+        var left = actionDiv.position().left;
+        var right = -(width-left-20);
+        actionDiv.animate({right:''+ right +'px',opacity:'1'},"slow");
+        var img = $("#sszk");
+        if(right==0)
+          img.attr("src", "../../custom/menuoverwrite/image/ss.png");
+        else
+          img.attr("src", "../../custom/menuoverwrite/image/zk.png");
+        break;
+    }
+
+  }
+</script>

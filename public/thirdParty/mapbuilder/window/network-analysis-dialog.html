@@ -1,0 +1,82 @@
+<style>
+  
+  #network-analysis-type-label, #network-analysis-mode-label, #network-analysis-layer-label {
+    font-weight: bold;
+    font-size: 12px;
+  }
+
+  #network-analysis-select-type {
+    margin: 12px 8px 8px 16px;
+  }
+
+  .network-analysis-type-dropdownlist {
+    margin-top: 5px;
+    width: 95%;
+  }
+  
+  #network-analysis-select-mode {
+    margin: 20px 8px 8px 16px;
+  }
+  
+  .network-analysis-mode-dropdownlist {
+    margin-top: 5px;
+    width: 95%;
+  }
+  
+  #network-analysis-select-layer {
+    margin: 20px 8px 8px 16px;
+  }
+  
+  .network-analysis-layer-dropdownlist {
+    margin-top: 5px;
+    width: 95%;
+  }
+  
+  /*#network-analysis-close-btn {*/
+    /*position:absolute;*/
+    /*right: 20px;*/
+    /*bottom: 20px;*/
+  /*}*/
+
+  #network-analysis-execute-btn {
+    margin: 20px 8px 8px 16px;
+    min-width: 80px;
+  }
+
+  #network-analysis-clear-btn {
+    margin: 20px 8px 8px 16px;
+    min-width: 80px;
+  }
+
+  #network-analysis-button-panel {
+    /*overflow: hidden;*/
+    text-align: center;
+  }
+  
+</style>
+
+<div id="network-analysis-dialog" >
+  <!--<button id="network-analysis-close-btn" class="k-button k-primary" type="button" >关闭</button>-->
+  
+  <div id="network-analysis-select-type">
+    <label id="network-analysis-type-label">__select-type__</label><br/>
+    <input id="network-analysis-type-dropdownlist" class="network-analysis-type-dropdownlist"/>
+  </div>
+  
+  <div id="network-analysis-select-mode">
+    <label id="network-analysis-mode-label">__select-mode__</label><br/>
+    <input id="network-analysis-mode-dropdownlist" class="network-analysis-mode-dropdownlist"/>
+  </div>
+  
+  <div id="network-analysis-select-layer">
+    <label id="network-analysis-layer-label">__select-layer__</label><br/>
+    <input id="network-analysis-layer-dropdownlist" class="network-analysis-layer-dropdownlist"/>
+  </div>
+  
+  <div id="network-analysis-button-panel">
+    <button id="network-analysis-execute-btn" class="k-button k-primary" type="button" >__analysis__</button>
+    
+    <button id="network-analysis-clear-btn" class="k-button" type="button" >__clear__</button>
+  </div>
+  
+</div>

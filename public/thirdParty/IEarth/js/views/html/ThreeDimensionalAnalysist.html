@@ -1,0 +1,130 @@
+<style>
+    [v-cloak] {
+        display: none !important;
+    }
+
+    .module-3d-analysist-content .btn {
+        /* border: none;*/
+    }
+
+    .module-3d-analysist-content .tab-content {
+        padding: 10px 0px;
+    }
+
+    .module-3d-analysist-content .tab-content .input-group {
+        padding-bottom: 10px;
+    }
+
+    .module-3d-analysist-content table {
+        margin-bottom: 0px;
+    }
+
+    .module-3d-analysist-content table td {
+        vertical-align: middle !important;
+        /*border-top: none !important;*/
+    }
+
+    .module-3d-analysist-content .url .u-type {
+        text-align: justify;
+    }
+
+    .module-3d-analysist-content .url .u-type .caret {
+        position: absolute;
+        right: 8px;
+        top: 45%;
+        /*calc(50% - 5px);*/
+    }
+
+    .module-3d-analysist-content .url .u-type-list {
+        width: 100%;
+        max-height: 152px;
+        overflow-y: auto;
+    }
+
+    .module-3d-analysist-content .drag-region {
+        width: 100%;
+        height: 120px;
+        padding: 0;
+        background: rgba(204, 204, 204, 0.2);
+        margin-bottom: 10px;
+        color: #00ff00;
+        overflow: auto;
+    }
+
+    .module-3d-analysist-content .drag-region li {
+        float: left;
+        list-style: none;
+        border: 1px dotted #ccc;
+        color: #ccc;
+        width: 130px;
+        margin: 0px 3px 3px 0px;
+        text-align: left;
+    }
+
+    .module-3d-analysist-content .drag-region li img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .module-3d-analysist-content .color-selector-container {
+        position: relative;
+    }
+
+    .module-3d-analysist-content .color-selector-container .caret-container {
+        position: absolute;
+        bottom: 7px;
+        right: 8px;
+        z-index: 99;
+    }
+
+    .module-3d-analysist-content .drag-region .drag-tips {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        line-height: 120px;
+        color: rgba(0, 255, 0, 0.6);
+        text-align: center;
+        pointer-events: none;
+    }
+
+    .moudle-3d-analysist-tab {
+        /* width: 89.5px; */
+        display: inline-block;
+        /* width: 60px; */
+        word-break: keep-all;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+   
+
+    .justify {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+    }
+</style>
+
+<div class="module-3d-analysist-content" v-cloak>
+    <ul class="nav nav-tabs nav-justified">
+        <li v-for="(val,key) in threeDemisenAnalyseText" :class="val.liClassName">
+            <a :href="'#'+ val.id" :aria-controls="val.id" role="tab" data-toggle="tab" :title="val.title" class="moudle-3d-analysist-tab">
+                {{val.title}}
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div v-for="(val,key) in threeDemisenAnalyseText" role="tabpanel" :class="'tab-pane fade in '+val.liClassName" :id="val.id">
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,405 @@
+<style>
+    [v-cloak] {
+        display: none !important;
+    }
+
+    .module-add-data-content .btn {
+        /* border: none;*/
+    }
+
+    .module-add-data-content .tab-content {
+        padding: 10px 0px;
+    }
+
+    .module-add-data-content .tab-content .input-group {
+        padding-bottom: 10px;
+    }
+
+    .module-add-data-content table {
+        margin-bottom: 0px;
+    }
+
+    .module-add-data-content table td {
+        vertical-align: middle !important;
+        /*border-top: none !important;*/
+    }
+
+    .module-add-data-content .url .u-type {
+        text-align: justify;
+    }
+
+    .module-add-data-content .url .u-type .caret {
+        position: absolute;
+        right: 8px;
+        top: 45%; /*calc(50% - 5px);*/
+    }
+
+    .module-add-data-content .url .u-type-list {
+        width: 100%;
+        max-height: 152px;
+        overflow-y: auto;
+    }
+
+    .module-add-data-content .drag-region {
+        width: 100%;
+        height: 120px;
+        padding: 0;
+        background: rgba(204, 204, 204, 0.2);
+        margin-bottom: 10px;
+        color: #00ff00;
+        overflow: auto;
+    }
+
+    .module-add-data-content .drag-region li {
+        float: left;
+        list-style: none;
+        border: 1px dotted #ccc;
+        color: #ccc;
+        width: 130px;
+        margin: 0px 3px 3px 0px;
+        text-align: left;
+    }
+
+    .module-add-data-content .drag-region li img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .module-add-data-content .drag-region .drag-tips {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        line-height: 120px;
+        color: rgba(0, 255, 0, 0.6);
+        text-align: center;
+        pointer-events: none;
+    }
+
+    .justify {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+    }
+
+</style>
+
+<div class="module-add-data-content" v-cloak>
+    <ul class="nav nav-tabs nav-justified">
+        <li class="active">
+            <a :href="'#addData_dataOnline_'+guid" data-toggle="tab" @click="onTabsToggle('online')">
+                {{titles.dataOnline}}
+            </a>
+        </li>
+        <li>
+            <a :href="'#addData_dataFromFile_'+guid" data-toggle="tab" @click="onTabsToggle('file')">
+                {{titles.file}}
+            </a>
+        </li>
+        <li>
+            <a :href="'#addData_dataFromURL_'+guid" data-toggle="tab" @click="onTabsToggle('url')">
+                {{titles.url}}
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <!--在线数据-->
+        <div class="tab-pane fade in active" :id="'addData_dataOnline_'+guid">
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">{{dataTypeNameOnline}}&nbsp;&nbsp;<span
+                            class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li v-for="(val,key) in dataTypeListOnline">
+                            <a href="#" @click="onToggleDataTypeOnlineClk(val.type,val.name)">{{val.name}}</a>
+                        </li>
+                    </ul>
+                </span>
+                <input type="text" class="form-control" style="" :placeholder="titles.inputKeyword" v-model="keyword"
+                       @keyup.13="searchDataOnlineByKeyword"/>
+                <!--{{keyword}}-->
+                <span class="input-group-btn">
+			        <a class="btn btn-default" href="#" :title="titles.search"
+                       @click="searchDataOnlineByKeyword">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </a>
+		        </span>
+            </div>
+
+            <div class="items">
+                <div v-for="(item,index) in dataSourceSettings" class="item lg" :title="item.title||item.name"
+                     @click="onDataSourceItemsClk(index)">
+                    <div class="item-thumbnail">
+                        <img style="width:100%;height:100%;" v-lazy="item.iconUrl" :title="item.name">
+                        <div class="attr">
+                            <div class="bg"></div>
+                            <div class="description">{{item.dataSourceType}}</div>
+                            <div class="selected" v-show="item.selected"><span class="fui-check"></span></div>
+                        </div>
+                    </div>
+
+                    <div class="item-h">{{item.name}}</div>
+                </div>
+            </div>
+        </div>
+        <!--文件-->
+        <div class="tab-pane fade" :id="'addData_dataFromFile_'+guid">
+            <div class="items" style="box-sizing: border-box;">
+                <div class="btn drag-region" :id="'addData_drag_files_'+guid">
+                    <li v-for="(val,key) in selectedFiles" style="float: left;" :title="val.fullName">
+                        <img :src="'images/icon/64/'+val.ext + '.png'"/>
+                        <span>{{val.name.substring(0,6)}}</span>
+                    </li>
+                    <div class="drag-tips" :id="'addData_drag_tips_'+guid">
+                        {{titles.dragFileToArea}}
+                    </div>
+                </div>
+                <div class="justify">
+                    <input :id="'addData_selected_file_'+guid" type="file" multiple="multiple" style="display:none;"/>
+                    <a href="#" class="btn btn-default" style="width:30%;" @click="onSelectFilesBtnClk">
+                        {{titles.selectFiles}}
+                    </a>
+                    <a href="#" class="btn btn-default" style="width:30%;" @click="onClearAllFilesBtnClk">
+                        {{titles.clearFiles}}
+                    </a>
+                    <a href="#" class="btn btn-default" style="width:30%;" @click="onLoadFilesBtnClk">
+                        {{titles.loadFiles}}
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <!--url-->
+        <div class="tab-pane fade" :id="'addData_dataFromURL_'+guid">
+            <div class="items url">
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <td>{{titles.type}}</td>
+                        <td>
+                            <div class="dropdown">
+                                <!--<input type="text" class="form-control" v-model="urlParams.type"/>-->
+                                <a href="#" class="btn btn-default dropdown-toggle u-type" :id="'dropdownMenu_'+guid"
+                                   data-toggle="dropdown" style="width: 100%;">
+                                    <span v-html="urlParams.typeName"></span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu u-type-list" role="menu"
+                                    :aria-labelledby="'dropdownMenu_'+guid">
+                                    <li v-for="(item,index) in URLSupportDataSourceTypeList">
+                                        <a href="#" @click="onUrlDataTypeListClk(item)">{{item.name}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                     <tr v-if="urlParams.type=='Cesium3DTileset'">
+                        <td>{{titles.isKq3dServer}}</td>
+                        <td>
+                            <input type="checkbox" @click="onUrl3DServerChkBoxClk" v-model="urlParams.isKq3dServer" />
+                        </td>
+                    </tr>
+                    <!--通用界面-->
+                    <tr v-if="urlParams.uiStyle==0">
+                        <td>{{titles.url}}</td>
+                        <td>
+                            <input type="text" class="form-control" :placeholder="titles.inputUrl"
+                                   v-model="urlParams.url"/>
+                        </td>
+                    </tr>
+                    <tr v-if="urlParams.uiStyle==0">
+                        <td>{{titles.name}}</td>
+                        <td>
+                            <input type="text" class="form-control" :placeholder="titles.unKnownLayer"
+                                   v-model="urlParams.name"/>
+                        </td>
+                    </tr>
+
+                    <!--KQGIS 3D Server 界面-->
+                    <tr v-if="urlParams.uiStyle==1">
+                        <td>{{titles.url}}</td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control"
+                                       placeholder="http://127.0.0.1:9090/services/kq3dservice"
+                                       v-model="urlParams.url"/>
+                                <span class="input-group-btn">
+                                    <a class="btn btn-default" href="#" @click="onConnectKq3dServerClk">
+                                        <span>{{titles.connect}}</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr v-if="urlParams.uiStyle==1">
+                        <td>{{titles.workspaceName}}</td>
+                        <td>
+                            <div class="dropdown">
+                                <a href="#" class="btn btn-default dropdown-toggle u-type" :id="'dropdown_ws_'+guid"
+                                   data-toggle="dropdown" style="width: 100%;">
+                                    <span v-html="urlParams.workspaceName"></span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu u-type-list" role="menu"
+                                    :aria-labelledby="'dropdown_ws_'+guid">
+                                    <li v-for="(item,index) in urlParams.workspaceNameList">
+                                        <a href="#" @click="onWorkspaceNameListClk(item)">{{item.name}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr v-if="urlParams.uiStyle==1">
+                        <td>{{titles.datasetName}}</td>
+                        <td>
+                            <div class="dropdown">
+                                <a href="#" class="btn btn-default dropdown-toggle u-type" :id="'dropdown_ds_'+guid"
+                                   data-toggle="dropdown" style="width: 100%;">
+                                    <span v-html="urlParams.datasetName"></span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu u-type-list" role="menu"
+                                    :aria-labelledby="'dropdown_ds_'+guid">
+                                    <li v-for="(item,index) in urlParams.datasetNameList">
+                                        <a href="#" @click="onDatasetNameListClk(item)">{{item.name}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!--OCG WMTS-->
+                    <tr v-if="urlParams.uiStyle==3">
+                        <td>{{titles.url}}</td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder=""
+                                       v-model="urlParams.url"/>
+                                <span class="input-group-btn">
+                                    <a class="btn btn-default" href="#" @click="onConnectOGCServerClk">
+                                        <span>{{titles.connect}}</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr v-if="urlParams.uiStyle==3">
+                        <td>{{titles.layerName}}</td>
+                        <td>
+                            <div class="dropdown">
+                                <a href="#" class="btn btn-default dropdown-toggle u-type" :id="'dropdown_wmts_'+guid"
+                                   data-toggle="dropdown" style="width: 100%;">
+                                    <span v-html="urlParams.ogcLayerName"></span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu u-type-list" role="menu"
+                                    :aria-labelledby="'dropdown_wmts_'+guid">
+                                    <li v-for="(item,index) in urlParams.ogcLayerNameList">
+                                        <a href="#" @click="onOGCLayerNameListClk(item,index)">{{item.title||item.name}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Cesium3DTileset 服务-->
+                    <tr v-if="urlParams.uiStyle==4">
+                        <td>{{titles.url}}</td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control"
+                                       placeholder="http://127.0.0.1:9090/services/kq3dservice"
+                                       v-model="urlParams.url"/>
+                                <span class="input-group-btn">
+                                    <a class="btn btn-default" href="#" @click="onConnectKq3dServerClk">
+                                        <span>{{titles.connect}}</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr v-if="urlParams.uiStyle==4">
+                        <td>{{titles.workspaceName}}</td>
+                        <td>
+                            <div class="dropdown">
+                                <a href="#" class="btn btn-default dropdown-toggle u-type" :id="'dropdown_ws_'+guid"
+                                   data-toggle="dropdown" style="width: 100%;">
+                                    <span v-html="urlParams.workspaceName"></span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu u-type-list" role="menu"
+                                    :aria-labelledby="'dropdown_ws_'+guid">
+                                    <li v-for="(item,index) in urlParams.workspaceNameList">
+                                        <a href="#" @click="onWorkspaceNameListClk(item)">{{item.name}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr v-if="urlParams.uiStyle==4">
+                        <td>{{titles.datasetName}}</td>
+                        <td>
+                            <div class="dropdown">
+                                <a href="#" class="btn btn-default dropdown-toggle u-type" :id="'dropdown_ds_'+guid"
+                                   data-toggle="dropdown" style="width: 100%;">
+                                    <span v-html="urlParams.datasetName"></span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu u-type-list" role="menu"
+                                    :aria-labelledby="'dropdown_ds_'+guid">
+                                    <li v-for="(item,index) in urlParams.datasetNameList">
+                                        <a href="#" @click="onDatasetNameListClk(item)">{{item.name}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr v-if="urlParams.uiStyle==4">
+                        <td>{{titles.dataclassName}}</td>
+                        <td>
+                            <div class="dropdown">
+                                <a href="#" class="btn btn-default dropdown-toggle u-type" :id="'dropdown_dc_'+guid"
+                                   data-toggle="dropdown" style="width: 100%;">
+                                    <span v-html="urlParams.dataclassName"></span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu u-type-list" role="menu"
+                                    :aria-labelledby="'dropdown_dc_'+guid">
+                                    <li v-for="(item,index) in urlParams.dataclassNameList">
+                                        <a href="#" @click="onDataclassNameListClk(item)">{{item.name}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Cesium3DTileset高度偏移 -->
+                    <tr v-if="urlParams.type=='Cesium3DTileset'">
+                        <td>{{titles.heightOffset}}</td>
+                        <td>
+                             <input type="number" class="form-control" v-model="urlParams.heightOffset"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td style="text-align: right;">
+                            <a href="#" class="btn btn-primary" @click="onUrlOkBtnClk">{{titles.ok}}</a>
+                            <a href="#" class="btn btn-default" @click="onUrlCancelBtnClk">{{titles.cancel}}</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

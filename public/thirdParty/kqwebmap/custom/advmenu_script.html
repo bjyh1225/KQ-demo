@@ -1,0 +1,54 @@
+<script>
+  function onAdvMenuSelect(e) {
+    console.log("Selected: " + $(e.item).children(".k-link").text());
+    var item = $(e.item);
+
+    // 管理行为
+    var mapView = KQ.Control.Manager.getInstance().getMapView();
+    var screenshot = KQ.Control.Manager.getInstance().getControl('screenshot');
+    if (item.hasClass('kq-advmenu-btn-fullscreen')) {
+      mapView.callApi('fullscreen');
+    }
+    else if (item.hasClass('kq-advmenu-btn-layer-compare')) {
+      mapView.callApi('compare');
+    }
+    else if (item.hasClass('kq-advmenu-btn-side-by-side-h')) {
+      mapView.callApi('sidebyside-h');
+    }
+    else if (item.hasClass('kq-advmenu-btn-side-by-side-v')) {
+      mapView.callApi('sidebyside-v');
+    }
+    else if (item.hasClass('kq-advmenu-btn-screenshot-show')) {
+      screenshot.isShowUI = true;
+      mapView.callApi('screenshot');
+    }
+    else if (item.hasClass('kq-advmenu-btn-screenshot-not-show')) {
+      screenshot.isShowUI = false;
+      mapView.callApi('screenshot');
+    }
+    else if (item.hasClass('kq-advmenu-btn-print')) {
+      mapView.callApi('print');
+    }
+    else if (item.hasClass('kq-advmenu-btn-search-light-do')) {
+      mapView.callApi('searchlight');
+    }
+    else if (item.hasClass('kq-advmenu-btn-search-light-length')) {
+      mapView.callApi('searchlight-length');
+    }
+    else if (item.hasClass('kq-advmenu-btn-measure-length')) {
+      mapView.callApi('measureseparate-length');
+    }
+    else if (item.hasClass('kq-advmenu-btn-measure-area')) {
+      mapView.callApi('measureseparate-area');
+    }
+    else if (item.hasClass('kq-advmenu-btn-set-location')) {
+      mapView.callApi('setlocation');
+    }
+  }
+
+  function advmenu_init () {
+    console.log('function advmenu_init() run !!!');
+
+    $('#kq-advmenu').css({width:'120px'});
+  }
+</script>
